@@ -1,0 +1,22 @@
+{
+  "$schema": "riley-design-tokens/primitive",
+  "id": "CheckMark",
+  "purpose": "Comparison-table yes/no mark and plan-card included/excluded mark.",
+  "props": {
+    "variant": "enum[table-filled, table-empty, plan-check, plan-cross]"
+  },
+  "tokenRefs": [
+    "tokens.10-semantic.color-roles.roles.status.included",
+    "tokens.10-semantic.color-roles.roles.status.excluded"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/lower/ComparisonTable.jsx:17-23",
+      "anchor": "function Check"
+    },
+    {
+      "cite": "src/components/pricing/PlanCard.jsx:3-25",
+      "anchor": "function CheckIcon"
+    }
+  ]
+}

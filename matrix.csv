@@ -1,0 +1,37 @@
+section,category,templates,routes,Homepage,Pricing,404 (dead landing slugs),Blog index,Blog category,Blog article,Editorial process,Legal policy
+chrome.site-header,CHROME,8,242,x,x,x,x,x,x,x,x
+chrome.site-footer,CHROME,8,242,x,x,x,x,x,x,x,x
+chrome.cookie-consent,CHROME,8,242,x,x,x,x,x,x,x,x
+conversion.final-cta,CONVERSION,5,230,x,x,,x,x,x,,
+article.top-bar,ARTICLE,1,221,,,,,,x,,
+article.breadcrumbs,ARTICLE,1,221,,,,,,x,,
+article.header,ARTICLE,1,221,,,,,,x,,
+article.toc,ARTICLE,1,221,,,,,,x,,
+article.body,ARTICLE,1,221,,,,,,x,,
+article.sources,ARTICLE,1,221,,,,,,x,,
+article.share-row,ARTICLE,1,221,,,,,,x,,
+article.related-posts,ARTICLE,1,221,,,,,,x,,
+chrome.announcement-bar,CHROME,6,15,x,x,x,x,,,x,x
+error.not-found,ERROR,1,8,,,x,,,,,
+blog.index-hero,BLOG,2,7,,,,x,x,,,
+blog.search,BLOG,2,7,,,,x,x,,,
+blog.category-tabs,BLOG,2,7,,,,x,x,,,
+blog.featured-banner,BLOG,2,7,,,,x,x,,,
+blog.post-grid,BLOG,2,7,,,,x,x,,,
+blog.pagination,BLOG,2,7,,,,x,x,,,
+legal.policy-embed,LEGAL,1,3,,,,,,,,x
+proof.testimonial-carousel,PROOF,2,2,x,x,,,,,,
+conversion.comparison-table,CONVERSION,2,2,x,x,,,,,,
+support.faq-clouds,SUPPORT,2,2,x,x,,,,,,
+hero.home-parallax,HERO,1,1,x,,,,,,,
+proof.press-marquee,PROOF,1,1,x,,,,,,,
+proof.family-marquee,PROOF,1,1,x,,,,,,,
+product.superpowers-grid,PRODUCT,1,1,x,,,,,,,
+product.chat-featurette,PRODUCT,1,1,x,,,,,,,
+proof.clinical-board,PROOF,1,1,x,,,,,,,
+product.how-it-works,PRODUCT,1,1,x,,,,,,,
+product.feature-cards,PRODUCT,1,1,x,,,,,,,
+content.blog-teaser,CONTENT,1,1,x,,,,,,,
+hero.pricing-plans,HERO,1,1,,x,,,,,,
+legal.editorial-prose,LEGAL,1,1,,,,,,,x,
+ROUTE COUNT,,,242,1,1,8,1,6,221,1,3

@@ -1,0 +1,24 @@
+{
+  "$schema": "riley-design-tokens/primitive",
+  "id": "TextLink",
+  "purpose": "Purple text link (header nav, footer columns, mobile menu).",
+  "props": {
+    "label": "string, maxWords 3",
+    "weight": "enum[bold (nav), semibold (footer/menu)]",
+    "hover": "opacity .8 over 150ms (nav/menu only; footer has none)"
+  },
+  "tokenRefs": [
+    "tokens.20-component.nav.header.link-color",
+    "tokens.20-component.nav.footer.link-color"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/upper/SiteHeader.jsx:64-69",
+      "anchor": "hover:opacity-80"
+    },
+    {
+      "cite": "src/components/SiteFooter.jsx:46-48",
+      "anchor": "font-sans-semibold"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "personalization-marquee",
+  "registryId": "section.personalization-marquee",
+  "version": "1.0.0",
+  "category": "social-proof",
+  "purpose": "Explains personalisation by parenting style with the six family character marks scrolling in reverse.",
+  "iaSectionIds": [
+    "proof.family-marquee"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/PersonalizationMarquee.jsx:13-42",
+      "anchor": "export default function PersonalizationMarquee"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_personalization-marquee",
+    "copyBudget": {
+      "heading": 10,
+      "families[].alt": 3,
+      "body": 28,
+      "tagline": 10
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "marquee-family-50s-reverse",
+    "motionRoles": [
+      "marquee-family"
+    ],
+    "reducedMotionFallback": "Stop the marquee; show the first family row static.",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "gap 32 and no vertical padding (48 / 80px 0 at ≥992)",
+          "H2 keeps 40/48 but renders in Cadiz (serif only ≥992)",
+          "section padding-bottom 48"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/PersonalizationMarquee.jsx:16",
+            "anchor": "lg:gap-12 lg:py-20"
+          },
+          {
+            "cite": "CLONE_SPEC.md:233",
+            "anchor": "Below 992: **Cadiz Regular 40px/48px**"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:230-236",
+      "anchor": "PersonalizationMarquee"
+    }
+  ],
+  "notes": []
+}

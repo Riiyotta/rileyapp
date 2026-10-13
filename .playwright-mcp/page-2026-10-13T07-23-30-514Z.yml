@@ -1,0 +1,387 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e2]
+  - complementary "Promotional message" [ref=e9]:
+    - paragraph [ref=e12]:
+      - link "Try Riley risk free with our 7-day free trial!" [ref=e13] [cursor=pointer]:
+        - /url: https://rileyapp.com/pricing
+  - banner [ref=e20]:
+    - banner [ref=e21]:
+      - generic [ref=e22]:
+        - link [ref=e23] [cursor=pointer]:
+          - /url: https://rileyapp.com/
+          - img "Riley logo" [ref=e24]
+        - navigation [ref=e25]:
+          - generic [ref=e26]:
+            - link "Blog" [ref=e28] [cursor=pointer]:
+              - /url: https://rileyapp.com/blog
+            - button "What's New?" [ref=e30]
+          - button "Get Started For Free" [ref=e33] [cursor=pointer]
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - heading "Panic Scrolling Stops Here. Meet Riley." [level=1] [ref=e39]:
+          - generic [ref=e40]:
+            - text: Panic Scrolling Stops Here. Meet
+            - generic [ref=e41]: Riley.
+        - paragraph [ref=e44]: Get instant, pediatrician-backed parenting support the moment you need it. Riley has award-winning, 24/7 advice tailored to your family with smart tracking and guidance. Parent confidently, with the only parenting app you'll ever need.
+      - generic [ref=e45]:
+        - button "Get Started For Free" [ref=e46] [cursor=pointer]
+        - paragraph [ref=e49]: "Available on:"
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - img "NBC logo" [ref=e59]
+        - img "Axios logo" [ref=e61]
+        - img "Bump logo" [ref=e63]
+        - img "Finsmes logo" [ref=e65]
+        - img "TC logo" [ref=e67]
+        - img "Glamour logo" [ref=e69]
+      - generic [ref=e70]:
+        - img "NBC logo" [ref=e72]
+        - img "Axios logo" [ref=e74]
+        - img "Bump logo" [ref=e76]
+        - img "Finsmes logo" [ref=e78]
+        - img "TC logo" [ref=e80]
+        - img "Glamour logo" [ref=e82]
+      - generic [ref=e83]:
+        - img "NBC logo" [ref=e85]
+        - img "Axios logo" [ref=e87]
+        - img "Bump logo" [ref=e89]
+        - img "Finsmes logo" [ref=e91]
+        - img "TC logo" [ref=e93]
+        - img "Glamour logo" [ref=e95]
+      - generic [ref=e96]:
+        - img "NBC logo" [ref=e98]
+        - img "Axios logo" [ref=e100]
+        - img "Bump logo" [ref=e102]
+        - img "Finsmes logo" [ref=e104]
+        - img "TC logo" [ref=e106]
+        - img "Glamour logo" [ref=e108]
+  - generic [ref=e110]:
+    - heading "Parenting isn't one-size-fits-all. Your support shouldn't be, either." [level=2] [ref=e111]
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - img "Softie logo" [ref=e117]
+        - img "Spark logo" [ref=e119]
+        - img "Uplifter logo" [ref=e121]
+        - img "Riley logo" [ref=e123]
+        - img "Worrier logo" [ref=e125]
+        - img "Guide logo" [ref=e127]
+      - generic [ref=e128]:
+        - img "Softie logo" [ref=e130]
+        - img "Spark logo" [ref=e132]
+        - img "Uplifter logo" [ref=e134]
+        - img "Riley logo" [ref=e136]
+        - img "Worrier logo" [ref=e138]
+        - img "Guide logo" [ref=e140]
+      - generic [ref=e141]:
+        - img "Softie logo" [ref=e143]
+        - img "Spark logo" [ref=e145]
+        - img "Uplifter logo" [ref=e147]
+        - img "Riley logo" [ref=e149]
+        - img "Worrier logo" [ref=e151]
+        - img "Guide logo" [ref=e153]
+      - generic [ref=e154]:
+        - img "Softie logo" [ref=e156]
+        - img "Spark logo" [ref=e158]
+        - img "Uplifter logo" [ref=e160]
+        - img "Riley logo" [ref=e162]
+        - img "Worrier logo" [ref=e164]
+        - img "Guide logo" [ref=e166]
+    - 'heading "Riley learns and remembers what matters: your baby''s growth stage, tracking logs, and past wins to give guidance that fits your family. Support that thinks, adapts, and grows with you." [level=4] [ref=e167]': "Riley learns and remembers what matters: your baby's growth stage, tracking logs, and past wins to give guidance that fits your family.Support that thinks, adapts, and grows with you."
+  - generic [ref=e168]:
+    - generic [ref=e169]:
+      - heading "What Parenting Superpower Do You Need Today?" [level=2] [ref=e170]
+      - generic [ref=e171]:
+        - button "Survive the newborn stage" [ref=e172]
+        - button "Get help with naps and sleep" [ref=e177]
+        - button "Support baby development" [ref=e182]
+        - button "Navigating toddler tantrums" [ref=e187]
+        - button "Starting solid foods" [ref=e192]
+        - button "Build a routine" [ref=e197]
+    - img "Riley" [ref=e202]
+  - generic [ref=e203]:
+    - generic [ref=e204]:
+      - heading "Here's How Real Users Talk to Riley:" [level=2] [ref=e205]: "Here's How Real UsersTalk to Riley:"
+      - generic [ref=e206]:
+        - img "Decorative clouds" [ref=e207]
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - generic [ref=e211]:
+              - img "Phone shell"
+              - img "Interactive Rive animation" [ref=e711]
+            - img "Feeding help" [ref=e215]
+          - generic [ref=e216]:
+            - generic [ref=e217]:
+              - img "Phone shell"
+              - img "Interactive Rive animation" [ref=e712]
+            - img "Seb & daughter testimonial" [ref=e221]
+          - generic [ref=e222]:
+            - generic [ref=e223]:
+              - img "Phone shell"
+              - img "Interactive Rive animation" [ref=e713]
+            - img "Milestone celebration" [ref=e227]
+      - generic [ref=e228]:
+        - button "Previous slide" [ref=e229]
+        - button "Next slide" [ref=e232]
+    - button "Talk to Riley" [ref=e236] [cursor=pointer]
+  - generic [ref=e239]:
+    - generic [ref=e240]:
+      - heading "Our Clinical Advisory Board" [level=3] [ref=e241]
+      - heading "Designed with Experts, for Real Families" [level=2] [ref=e242]
+      - paragraph [ref=e243]: Our Clinical Advisory Board includes pediatricians, therapists, and specialists, who help us keep Riley grounded in real, evidence-based support.
+    - generic [ref=e244]:
+      - article [ref=e245]:
+        - img "Portrait of Dr. Lilly Jay" [ref=e246]
+        - generic [ref=e248]:
+          - heading "Dr. Lilly Jay" [level=3] [ref=e249]
+          - paragraph [ref=e250]: PsyD, PMH-C, Perinatal Health
+      - article [ref=e251]:
+        - img "Portrait of Dr. Kate Roche" [ref=e252]
+        - generic [ref=e254]:
+          - heading "Dr. Kate Roche" [level=3] [ref=e255]
+          - paragraph [ref=e256]: MD, Child Neurology
+  - region [ref=e257]:
+    - generic [ref=e258]:
+      - heading "How Riley Works" [level=2] [ref=e259]
+      - generic [ref=e260]:
+        - article [ref=e261]:
+          - img "Built on science that matters" [ref=e263]
+          - generic [ref=e264]:
+            - heading "Built on science that matters" [level=3] [ref=e265]
+            - paragraph [ref=e266]: When answering your questions, Riley draws from the latest child development research, expert-reviewed sources that are vetted by our Clinical Advisory Board.
+        - article [ref=e267]:
+          - img "Powered by tech that learns and grows with you" [ref=e269]
+          - generic [ref=e270]:
+            - heading "Powered by tech that learns and grows with you" [level=3] [ref=e271]
+            - paragraph [ref=e272]: Once you start using Riley, it doesn’t just log or respond to you, it safely remembers. From tracking to what’s worked in the past, Riley learns from you to offer relevant guidance.
+        - article [ref=e273]:
+          - img "Clarity without ignoring your individuality" [ref=e275]
+          - generic [ref=e276]:
+            - heading "Clarity without ignoring your individuality" [level=3] [ref=e277]
+            - paragraph [ref=e278]: Every family is different, Riley gets that! You'll receive clear, science-backed guidance that respects your individual parenting style and real-life context.
+      - button "Get Started For Free" [ref=e280] [cursor=pointer]
+  - region [ref=e282]:
+    - generic [ref=e283]:
+      - generic [ref=e284]:
+        - paragraph [ref=e285]: Real Reviews, Real Families
+        - heading "Why Parents Love Riley" [level=2] [ref=e286]
+      - generic [ref=e289]:
+        - figure "Max L., Dad of Baby R (1 mo)" [ref=e290]:
+          - blockquote [ref=e297]: “10 days into having our newborn, we’ve already developed the habit of saying “Hm, not sure. Ask Riley” multiple times a day. Not sure what we’d do without having Riley to back our instincts.”
+        - figure "Meg F., Mom of Baby A (5 mos) and Baby H (2 yrs)" [ref=e300]:
+          - blockquote [ref=e307]: “Riley offers calm and reassurance while Google makes me spiral. With my second, it feels like we’re starting over and have forgotten everything about the newborn phase but Riley’s here for all my questions”
+        - figure "Rebeckah R., Mom of Baby N. (7mo)" [ref=e310]:
+          - blockquote [ref=e317]: “Compared to every other app, especially chat tools, Riley asks better questions and more relevant follow-ups based on my child’s age and the nuance of the moment - the end result is always more helpful.”
+        - figure "App Store Review" [ref=e320]:
+          - blockquote [ref=e327]: “Riley’s tracking and recommendations are smart and proactive. I love that it’s personalized and remembers details about my family without me having to myself.”
+        - figure "R, Mom of Baby K. (5mo)" [ref=e330]:
+          - blockquote [ref=e337]: “I was traveling this week and *terrifyingly* my pump broke and I was panicking. Riley pulled through. Having a resource to text with at 1 am? 11/10.”
+      - generic [ref=e340]:
+        - generic [ref=e341]:
+          - button "Previous testimonial" [ref=e342]
+          - button "Next testimonial" [ref=e345]
+        - button "Join the club" [ref=e348] [cursor=pointer]
+  - generic [ref=e350]:
+    - generic [ref=e351]:
+      - generic [ref=e352]:
+        - heading "Parenting is hard. Riley makes it easier." [level=3] [ref=e353]
+        - heading "One App for All Your Parenting Needs" [level=2] [ref=e354]
+      - generic [ref=e355]:
+        - article [ref=e356]:
+          - img "24/7 Personalized Support" [ref=e357]
+          - generic [ref=e358]:
+            - heading "24/7 Personalized Support" [level=4] [ref=e359]
+            - paragraph [ref=e360]:
+              - text: Real-time, science-backed advice tailored to
+              - strong [ref=e361]: your baby's needs
+              - text: and
+              - strong [ref=e362]: your parenting style
+              - text: —available
+              - strong [ref=e363]: whenever
+              - text: you need it (even at 3am).
+        - article [ref=e364]:
+          - img "Smart, Predictive Tracking" [ref=e365]
+          - generic [ref=e366]:
+            - heading "Smart, Predictive Tracking" [level=4] [ref=e367]
+            - paragraph [ref=e368]:
+              - text: Riley doesn't just store your data, it
+              - strong [ref=e369]: learns and grows with you
+              - text: . Track sleep, feed, diapers, development and more to stay on top of what's next for your baby.
+        - article [ref=e370]:
+          - img "Tips Tailored Just for You" [ref=e371]
+          - generic [ref=e372]:
+            - heading "Tips Tailored Just for You" [level=4] [ref=e373]
+            - paragraph [ref=e374]:
+              - text: No more endless Googling. Riley gives you
+              - strong [ref=e375]: helpful tips made just for your family
+              - text: —so you can parent with a little more ease (and a lot less guesswork).
+      - button "Get Started For Free" [ref=e377] [cursor=pointer]
+    - region "Why Parents Love Riley" [ref=e379]:
+      - generic [ref=e380]:
+        - paragraph [ref=e381]: Designed with Real Parents in Mind
+        - heading "Why Riley Stands Out" [level=2] [ref=e382]
+        - paragraph [ref=e385]:
+          - text: See how Riley outshines other parenting tools with
+          - strong [ref=e386]: intelligent features
+          - text: and
+          - strong [ref=e387]: tailored advice
+          - text: . It’s the
+          - strong [ref=e388]: one-stop-shop
+          - text: for all your parenting needs!
+      - table [ref=e391]:
+        - rowgroup [ref=e392]:
+          - row [ref=e393]:
+            - columnheader "Feature/Benefit" [ref=e394]
+            - columnheader "Riley" [ref=e395]
+            - columnheader "Google Search" [ref=e396]
+            - columnheader "Reddit" [ref=e397]
+            - columnheader "ChatGPT" [ref=e398]
+            - columnheader "Claude" [ref=e399]
+            - columnheader "Other Tracking Apps" [ref=e400]
+            - columnheader "Podcasts, Books, & Blogs" [ref=e401]
+        - rowgroup [ref=e402]:
+          - row [ref=e403]:
+            - cell "24/7 Instant Answers" [ref=e404]
+            - cell [ref=e405]
+            - cell [ref=e409]
+            - cell [ref=e413]
+            - cell [ref=e417]
+            - cell [ref=e421]
+            - cell [ref=e425]
+            - cell [ref=e429]
+          - row [ref=e433]:
+            - cell "Expert-Vetted, Science Backed Support" [ref=e434]
+            - cell [ref=e435]
+            - cell [ref=e439]
+            - cell [ref=e443]
+            - cell [ref=e447]
+            - cell [ref=e451]
+            - cell [ref=e455]
+            - cell [ref=e459]
+          - row [ref=e463]:
+            - cell "Guidance Tailored to You & Your Family" [ref=e464]
+            - cell [ref=e465]
+            - cell [ref=e469]
+            - cell [ref=e473]
+            - cell [ref=e477]
+            - cell [ref=e481]
+            - cell [ref=e485]
+            - cell [ref=e489]
+          - row [ref=e493]:
+            - cell "Proactively Turns Tracking Into Tips" [ref=e494]
+            - cell [ref=e495]
+            - cell [ref=e499]
+            - cell [ref=e503]
+            - cell [ref=e507]
+            - cell [ref=e511]
+            - cell [ref=e515]
+            - cell [ref=e519]
+          - row [ref=e523]:
+            - cell "All-In-One Tracking & Support" [ref=e524]
+            - cell [ref=e525]
+            - cell [ref=e529]
+            - cell [ref=e533]
+            - cell [ref=e537]
+            - cell [ref=e541]
+            - cell [ref=e545]
+            - cell [ref=e549]
+      - button "Join Riley—early, easy, free" [ref=e554] [cursor=pointer]
+  - region [ref=e556]:
+    - generic [ref=e557]:
+      - heading "We’re Here to Make Things Clear" [level=2] [ref=e559]
+      - generic [ref=e560]:
+        - group [ref=e561] [cursor=pointer]:
+          - generic "FAQ portrait How do I know I can trust Riley?" [ref=e562]:
+            - img "FAQ portrait" [ref=e563]
+            - generic [ref=e564]: How do I know I can trust Riley?
+        - group [ref=e567] [cursor=pointer]:
+          - generic "FAQ portrait How is Riley different from ChatGPT or other parenting apps?" [ref=e568]:
+            - img "FAQ portrait" [ref=e569]
+            - generic [ref=e570]: How is Riley different from ChatGPT or other parenting apps?
+        - group [ref=e573] [cursor=pointer]:
+          - generic "FAQ portrait What can’t I ask Riley?" [ref=e574]:
+            - img "FAQ portrait" [ref=e575]
+            - generic [ref=e576]: What can’t I ask Riley?
+        - group [ref=e579] [cursor=pointer]:
+          - generic "FAQ portrait Are you going to keep my kids’ data private?" [ref=e580]:
+            - img "FAQ portrait" [ref=e581]
+            - generic [ref=e582]: Are you going to keep my kids’ data private?
+        - group [ref=e585] [cursor=pointer]:
+          - generic "FAQ portrait Do I need to track everything for Riley to work?" [ref=e586]:
+            - img "FAQ portrait" [ref=e587]
+            - generic [ref=e588]: Do I need to track everything for Riley to work?
+  - generic [ref=e602]:
+    - generic [ref=e603]:
+      - heading "Insightful Reads for Modern Parents" [level=4] [ref=e604]
+      - heading "Explore the Riley Blog" [level=2] [ref=e605]
+    - navigation "Blog categories" [ref=e606]:
+      - list [ref=e607]:
+        - listitem [ref=e608]:
+          - link "Development" [ref=e609] [cursor=pointer]:
+            - /url: /blog/development
+        - listitem [ref=e610]:
+          - link "Feeding" [ref=e611] [cursor=pointer]:
+            - /url: /blog/feeding
+        - listitem [ref=e612]:
+          - link "Health" [ref=e613] [cursor=pointer]:
+            - /url: /blog/health
+        - listitem [ref=e614]:
+          - link "News" [ref=e615] [cursor=pointer]:
+            - /url: /blog/news
+        - listitem [ref=e616]:
+          - link "Pregnancy" [ref=e617] [cursor=pointer]:
+            - /url: /blog/pregnancy
+        - listitem [ref=e618]:
+          - link "Sleep" [ref=e619] [cursor=pointer]:
+            - /url: /blog/sleep
+    - generic [ref=e620]:
+      - article [ref=e621]:
+        - link [ref=e622] [cursor=pointer]:
+          - /url: /blog/sleep/baby-witching-hour
+          - 'img "Baby Witching Hour: What It Is, When and Why It Happens, and How to Manage It" [ref=e624]'
+          - 'heading "Baby Witching Hour: What It Is, When and Why It Happens, and How to Manage It" [level=4] [ref=e625]'
+      - article [ref=e626]:
+        - link [ref=e627] [cursor=pointer]:
+          - /url: /blog/sleep/1-month-old-sleep-guide
+          - img "Tired young mom holds her one month old baby" [ref=e629]
+          - 'heading "1 Month Old Sleep Guide: Bedtime and Nap Schedules" [level=4] [ref=e630]'
+      - article [ref=e631]:
+        - link [ref=e632] [cursor=pointer]:
+          - /url: /blog/sleep/16-month-old-sleep-schedule
+          - img "A 16 month old baby sleeping." [ref=e634]
+          - 'heading "16 Month Old Sleep Schedule: How Much Should a 16 Month Old Sleep?" [level=4] [ref=e635]'
+    - button "Explore the blog" [ref=e637] [cursor=pointer]
+  - generic [ref=e639]:
+    - img "Background decoration" [ref=e640]
+    - generic [ref=e641]:
+      - heading "We are raising a generation of confident parents." [level=2] [ref=e642]
+      - button "Get support that gets you" [ref=e644] [cursor=pointer]
+    - img "Mascots" [ref=e647]
+  - contentinfo [ref=e648]:
+    - generic [ref=e649]:
+      - generic [ref=e651]:
+        - paragraph [ref=e653]: Stay in the loop with Riley's newsletter.
+        - generic [ref=e654]:
+          - textbox "Enter your email" [ref=e655]:
+            - /placeholder: Email
+          - button "Sign up" [ref=e656]
+      - navigation [ref=e660]:
+        - generic [ref=e661]:
+          - generic [ref=e662]:
+            - link "Blog" [ref=e663] [cursor=pointer]:
+              - /url: https://rileyapp.com/blog
+            - link "Pricing" [ref=e664] [cursor=pointer]:
+              - /url: https://rileyapp.com/pricing
+            - link "Editorial Process" [ref=e665] [cursor=pointer]:
+              - /url: https://rileyapp.com/editorial-process
+          - generic [ref=e666]:
+            - link "Privacy Policy" [ref=e667] [cursor=pointer]:
+              - /url: https://rileyapp.com/privacy
+            - link "Terms of Service" [ref=e668] [cursor=pointer]:
+              - /url: https://rileyapp.com/tos
+            - link "Support" [ref=e669] [cursor=pointer]:
+              - /url: https://rileyapp.com/support
+      - generic [ref=e674]:
+        - paragraph [ref=e675]: Get the App
+        - link [ref=e676] [cursor=pointer]:
+          - /url: https://rileyapp.onelink.me/JNxh/ln83navr
+    - paragraph [ref=e710]: © 2025 Riley

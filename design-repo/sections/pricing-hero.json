@@ -1,0 +1,98 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "pricing-hero",
+  "registryId": "section.pricing-hero",
+  "version": "1.0.0",
+  "category": "hero",
+  "purpose": "Pricing hero: two plan cards (Plus+ / Basic) over the tangerine radial with the shared parallax clouds at 70% opacity.",
+  "iaSectionIds": [
+    "hero.pricing-plans"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/pricing/PricingHero.jsx:77-111",
+      "anchor": "export default function PricingHero"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_pricing-hero",
+    "copyBudget": {
+      "eyebrow": 4,
+      "heading": 7,
+      "plans[].name": 3,
+      "plans[].description": 9,
+      "plans[].tagline": 7,
+      "plans[].features[].label": 7,
+      "plans[].price.amount": 2,
+      "plans[].price.period": 3,
+      "plans[].price.notes[]": 7,
+      "cta.label": 5
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "parallax-clouds",
+    "motionRoles": [
+      "hero-cloud-drift",
+      "scroll-parallax"
+    ],
+    "reducedMotionFallback": "Freeze cloud layers at parallax progress 0 (no translate/scale) and pause the horizontal cloud drift.",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<768px",
+        "changes": [
+          "plan grid collapses from 2 columns to 1 (gap 24)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/pricing/PricingHero.jsx:96",
+            "anchor": "md:grid-cols-2"
+          },
+          {
+            "cite": "CLONE_SPEC_PAGES_MARKETING.md:159",
+            "anchor": "1 col 358"
+          }
+        ]
+      },
+      {
+        "query": "<640px",
+        "changes": [
+          "plan card radius 16 / padding 24 (24 / 32 at ≥640)",
+          "CTA 16/24 and 326x56 (18/28, 384x60 at ≥640)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/pricing/PlanCard.jsx:29",
+            "anchor": "sm:rounded-3xl sm:p-8"
+          },
+          {
+            "cite": "CLONE_SPEC_PAGES_MARKETING.md:162",
+            "anchor": "**326x56**"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC_PAGES_MARKETING.md:125-236",
+      "anchor": "NEW `PricingHero`"
+    },
+    {
+      "cite": "CLONE_SPEC_PAGES_MARKETING.md:65-68",
+      "anchor": "HeroParallaxClouds"
+    }
+  ],
+  "notes": [
+    "Reuses components/parallax-cloud-stack (HeroParallaxClouds.jsx with withBg={false}, opacity .7); progress target is the PricingHero section (scrollY/1233.7 @1440).",
+    "Plan names, prices and feature lists are Riley's real commercial terms: never invent Riley pricing; other brands supply their own."
+  ]
+}

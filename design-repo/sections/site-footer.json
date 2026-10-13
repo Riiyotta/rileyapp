@@ -1,0 +1,84 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "site-footer",
+  "registryId": "section.site-footer",
+  "version": "1.0.0",
+  "category": "shell",
+  "purpose": "Newsletter signup, footer nav, app download block, logo and copyright.",
+  "iaSectionIds": [
+    "chrome.site-footer"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/SiteFooter.jsx:19-75",
+      "anchor": "export default function SiteFooter"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_site-footer",
+    "copyBudget": {
+      "newsletter.prompt": 8,
+      "newsletter.placeholder": 2,
+      "newsletter.submitLabel": 3,
+      "linkColumns[][].label": 3,
+      "app.heading": 4,
+      "app.badge.alt": 6,
+      "copyright": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "column dividers hidden",
+          "padding 48px 32px, gap 64 (88px 60px, gap 48 at ≥992)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/SiteFooter.jsx:16",
+            "anchor": "hidden lg:flex"
+          },
+          {
+            "cite": "src/components/SiteFooter.jsx:21",
+            "anchor": "lg:py-[5.5rem]"
+          }
+        ]
+      },
+      {
+        "query": "<768px",
+        "changes": [
+          "everything stacks centred; newsletter form full width"
+        ],
+        "evidence": [
+          {
+            "cite": "CLONE_SPEC.md:442",
+            "anchor": "<768: everything stacks centered"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:431-442",
+      "anchor": "SiteFooter"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "parallax-cloud-stack",
+  "purpose": "Four drifting cloud layers with scroll parallax; reused verbatim by PricingHero with withBg={false} at opacity .7.",
+  "composedOf": [
+    "Image"
+  ],
+  "usedBySections": [
+    "hero-home",
+    "pricing-hero"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/upper/HeroParallaxClouds.jsx:64-67",
+      "anchor": "withBg = true"
+    },
+    {
+      "cite": "src/components/pricing/PricingHero.jsx:81",
+      "anchor": "withBg={false}"
+    }
+  ]
+}

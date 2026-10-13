@@ -1,0 +1,154 @@
+/* Blog article body (CLONE_SPEC_PAGES_BLOG §3.6) and text page prose (§4).
+   The original uses @tailwindcss/typography `.prose`; this project has no typography plugin, so the
+   measured computed values are written out here. Mobile = <992px, desktop = ≥992px. */
+
+/* ---------- Article body block renderers (§3.6) ---------- */
+.ab-p {
+  font-family: sansRegular, "sansRegular Fallback";
+  font-size: 16px;
+  line-height: 28px;
+  color: #2e2a42;
+  margin: 20px 0;
+}
+.ab-h2 {
+  font-family: sansBold, "sansBold Fallback";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #2e2a42;
+  margin: 48px 0 24px;
+  scroll-margin-top: 0;
+}
+.ab-h3 {
+  font-family: sansBold, "sansBold Fallback";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: #2e2a42;
+  margin: 32px 0 12px;
+}
+.ab-ul {
+  list-style: disc outside;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+.ab-ul .ab-ul {
+  margin: 8px 0 12px;
+}
+.ab-li {
+  font-family: sansRegular, "sansRegular Fallback";
+  font-size: 16px;
+  line-height: 28px;
+  color: #364153;
+  padding-left: 6px;
+  margin: 8px 0 4px;
+}
+.ab-strong {
+  font-family: sansBold, "sansBold Fallback";
+  font-weight: 600;
+  color: #2e2a42;
+}
+.ab-em {
+  font-style: italic; /* synthetic italic of Cadiz Regular, as on the original */
+}
+.ab-link {
+  color: #101828;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.ab-sup {
+  position: relative;
+  top: -0.5em;
+  vertical-align: baseline;
+  font-size: 12px;
+  line-height: 0;
+  font-weight: 500;
+}
+.ab-sup > a {
+  color: #101828;
+  text-decoration: underline;
+}
+.ab-img {
+  border-radius: 10px;
+  margin: 32px 0;
+  max-width: 100%;
+  height: auto;
+}
+.ab-note-h3 {
+  font-family: sansRegular, "sansRegular Fallback";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: #2e2a42; /* measured rgb(46,42,66) at 1440 and 390 */
+  margin: 32px 0 12px;
+}
+
+@media (max-width: 991.98px) {
+  .ab-body > .ab-p:first-child { margin-top: 0; }
+  /* prose `h2 + *` / `h3 + *` reset: measured p after h2 = 0 0 20 */
+  .ab-h2 + *,
+  .ab-h3 + * { margin-top: 0; }
+  .ab-h2 + .ab-ul,
+  .ab-h3 + .ab-ul { margin-top: 0; }
+}
+@media (min-width: 992px) {
+  .ab-p { margin: 16px 0; }
+  .ab-h2 { margin: 16px 0 32px; }
+  .ab-h3 { margin: 32px 0 16px; }
+  .ab-ul { margin: 8px 0 20px; }
+  .ab-ul .ab-ul { margin: 8px 0 12px; }
+}
+
+/* ---------- TextPage prose (§4) ---------- */
+.tp-prose {
+  font-family: sansRegular, "sansRegular Fallback";
+  font-size: 16px;
+  line-height: 28px;
+  color: #2e2a42;
+}
+.tp-prose h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700; /* measured on the h2 box; the visible text sits in <strong> at 800 */
+  color: #101828;
+  margin: 0 0 24px;
+}
+.tp-prose h3 {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600; /* measured 600 at all widths (spec §4 said 700) */
+  color: #101828;
+  margin: 32px 0 12px;
+}
+.tp-prose p {
+  margin: 20px 0;
+}
+.tp-prose .tp-intro { margin: 0 0 20px; }
+.tp-prose .tp-closing { margin: 20px 0 0; }
+.tp-prose ul {
+  list-style: disc outside;
+  padding-left: 26px;
+  margin: 0 0 20px;
+}
+.tp-prose li {
+  padding-left: 6px;
+  margin: 8px 0;
+}
+.tp-prose li::marker {
+  color: #d1d5dc; /* prose default bullets colour — UNVERIFIED on the original */
+}
+.tp-prose li > p {
+  margin: 20px 0;
+}
+.tp-prose strong {
+  font-weight: 600;
+  color: #101828;
+}
+.tp-prose h2 strong {
+  font-weight: 800;
+}
+.tp-prose a {
+  color: #101828;
+  font-weight: 500;
+  text-decoration: underline;
+}

@@ -1,0 +1,339 @@
+{
+  "$schema": "riley-design-tokens/foundation/motion",
+  "authority": "Values measured live by the animation pass (encoded in src/styles/*.css and component code) win over CLONE_SPEC.md §14 where they differ (e.g. M1 easing is UNVERIFIED in the spec but measured as cubic-bezier(0,0,.58,1) in upper.css).",
+  "duration": {
+    "fast": {
+      "value": "150ms",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:464",
+          "anchor": "150ms cubic-bezier(.4,0,.2,1)"
+        }
+      ],
+      "note": "nav links / blog pills opacity, superpower card bg"
+    },
+    "menu": {
+      "value": "250ms",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:65",
+          "anchor": "upper-menu-up 0.25s"
+        }
+      ]
+    },
+    "base": {
+      "value": "300ms",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:23",
+          "anchor": "transition-all duration-300"
+        },
+        {
+          "cite": "CLONE_SPEC.md:463",
+          "anchor": "all 300ms cubic-bezier(.4,0,.2,1)"
+        }
+      ]
+    },
+    "nav-container": {
+      "value": "300ms",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:46",
+          "anchor": "upper-fade-in 0.3s cubic-bezier(0.25, 0.1, 0.35, 1)"
+        }
+      ]
+    },
+    "faq-open": {
+      "value": "350ms",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:40",
+          "anchor": "transition: all 0.35s ease-in-out"
+        }
+      ]
+    },
+    "faq-plus": {
+      "value": "450ms",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:43",
+          "anchor": "transition: 0.45s ease"
+        }
+      ]
+    },
+    "header-fade": {
+      "value": "500ms",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:41",
+          "anchor": "upper-fade-in 0.5s cubic-bezier(0, 0, 0.58, 1)"
+        }
+      ]
+    },
+    "nav-item": {
+      "value": "600ms",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:55",
+          "anchor": "upper-nav-item-in 0.6s cubic-bezier(0, 0, 0.58, 1)"
+        }
+      ]
+    },
+    "clear-skies-delay": {
+      "value": "1000ms",
+      "evidence": [
+        {
+          "cite": "src/components/FaqClouds.jsx:57",
+          "anchor": "setTimeout(() => setClearSkies(true), 1000)"
+        }
+      ]
+    },
+    "clear-skies": {
+      "value": "2550ms",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:79",
+          "anchor": "transition: 2.55s ease"
+        }
+      ]
+    },
+    "faq-cloud-float": {
+      "value": "10s",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:80",
+          "anchor": "faq-clouds-floating 10s ease-in-out infinite alternate-reverse"
+        }
+      ]
+    },
+    "press-marquee": {
+      "value": "20s",
+      "evidence": [
+        {
+          "cite": "src/components/Hero.jsx:77",
+          "anchor": "[--duration:20s]"
+        }
+      ]
+    },
+    "family-marquee": {
+      "value": "50s",
+      "evidence": [
+        {
+          "cite": "src/components/PersonalizationMarquee.jsx:24",
+          "anchor": "[--duration:50s]"
+        }
+      ]
+    },
+    "cloud-float-slow": {
+      "value": "100s",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:27",
+          "anchor": "upper-float 100s linear infinite"
+        }
+      ]
+    },
+    "cloud-float-medium": {
+      "value": "85s",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:28",
+          "anchor": "upper-float 85s linear infinite"
+        }
+      ]
+    },
+    "cloud-float-fast": {
+      "value": "50s",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:29",
+          "anchor": "upper-float 50s linear infinite"
+        }
+      ]
+    }
+  },
+  "easing": {
+    "standard": {
+      "value": "cubic-bezier(0.4,0,0.2,1)",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:42",
+          "anchor": "DEFAULT: 'cubic-bezier(0.4,0,0.2,1)'"
+        }
+      ]
+    },
+    "ease-out": {
+      "value": "cubic-bezier(0,0,0.58,1)",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:35",
+          "anchor": "cubic-bezier(0,0,.58,1)"
+        }
+      ],
+      "note": "framer easeOut, measured for header fade, nav items, mobile menu"
+    },
+    "framer-default-tween": {
+      "value": "cubic-bezier(0.25,0.1,0.35,1)",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:44",
+          "anchor": "0.3s cubic-bezier(.25,.1,.35,1)"
+        }
+      ]
+    },
+    "ease-in-out": {
+      "value": "ease-in-out",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:40",
+          "anchor": "0.35s ease-in-out"
+        }
+      ]
+    },
+    "ease": {
+      "value": "ease",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:79",
+          "anchor": "2.55s ease"
+        }
+      ]
+    },
+    "linear": {
+      "value": "linear",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:13",
+          "anchor": "animation-timing-function: linear"
+        }
+      ]
+    }
+  },
+  "stagger": {
+    "nav-delay-children": {
+      "value": "100ms",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:9-10",
+          "anchor": "0.1 + i * 0.2"
+        }
+      ]
+    },
+    "nav-stagger-step": {
+      "value": "200ms",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:9-10",
+          "anchor": "staggerChildren .2s"
+        }
+      ]
+    }
+  },
+  "thresholds": {
+    "header-sticky-scrolly": {
+      "value": "54-55px",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:21",
+          "anchor": "window.scrollY > 54"
+        }
+      ],
+      "note": "clone: scrollY > 54; animation-QA measured the original fixing at scrollY >= 55; treat as ~54-55"
+    },
+    "faq-clear-skies-visibility": {
+      "value": "0.2",
+      "evidence": [
+        {
+          "cite": "src/components/FaqClouds.jsx:60",
+          "anchor": "threshold: 0.2"
+        }
+      ]
+    },
+    "embla-drag-threshold": {
+      "value": "10px",
+      "evidence": [
+        {
+          "cite": "src/components/shared/useEmblaLoop.js:15",
+          "anchor": "DRAG_THRESHOLD = 10"
+        }
+      ]
+    }
+  },
+  "embla": {
+    "duration": {
+      "value": "25",
+      "evidence": [
+        {
+          "cite": "src/components/shared/useEmblaLoop.js:13",
+          "anchor": "BASE_DURATION = 25"
+        }
+      ]
+    },
+    "friction": {
+      "value": "0.68",
+      "evidence": [
+        {
+          "cite": "src/components/shared/useEmblaLoop.js:14",
+          "anchor": "BASE_FRICTION = 0.68"
+        }
+      ]
+    }
+  },
+  "parallax": {
+    "layer-1-range": {
+      "value": "-20%",
+      "evidence": [
+        {
+          "cite": "src/components/upper/HeroParallaxClouds.jsx:17",
+          "anchor": "range: 20"
+        }
+      ]
+    },
+    "layer-2-range": {
+      "value": "-35%",
+      "evidence": [
+        {
+          "cite": "src/components/upper/HeroParallaxClouds.jsx:24",
+          "anchor": "range: 35"
+        }
+      ]
+    },
+    "layer-3-range": {
+      "value": "-50%",
+      "evidence": [
+        {
+          "cite": "src/components/upper/HeroParallaxClouds.jsx:34",
+          "anchor": "range: 50"
+        }
+      ]
+    },
+    "layer-4-range": {
+      "value": "-100%",
+      "evidence": [
+        {
+          "cite": "src/components/upper/HeroParallaxClouds.jsx:44",
+          "anchor": "range: 100"
+        }
+      ]
+    },
+    "layer-4-scale": {
+      "value": "0.8 -> 1.2",
+      "evidence": [
+        {
+          "cite": "src/components/upper/HeroParallaxClouds.jsx:46",
+          "anchor": "scale: [0.8, 1.2]"
+        }
+      ]
+    },
+    "progress-formula": {
+      "value": "clamp(scrollY / (heroTop + heroHeight), 0, 1)",
+      "evidence": [
+        {
+          "cite": "src/components/upper/HeroParallaxClouds.jsx:91",
+          "anchor": "p = clamp(scrollY / (heroTop + heroHeight), 0, 1)"
+        }
+      ],
+      "note": "= scrollY/964 @1440 on home; scrollY/1233.7 on /pricing. On home, layer heights use the original's frozen banner height (react-scroll-parallax reads it once at hydration): 992px at >=1024, settled height + 82.06px at 768-1023, + 51.30px below 768 (measured 320-1920; HeroParallaxClouds.jsx:74-82). /pricing uses the settled height."
+    }
+  }
+}

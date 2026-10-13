@@ -1,0 +1,363 @@
+{
+  "$schema": "riley-design-tokens/foundation/color",
+  "note": "Every value is a real hex/rgb from tailwind.config.js (theme.extend.colors) cross-checked against CLONE_SPEC.md §0.3 computed values. No color here is invented; colors only seen inside inline SVG fills are listed only where a component renders them as UI (plan check/cross).",
+  "tokens": {
+    "text-primary": {
+      "value": "#2e2a42",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:8",
+          "anchor": "'text-primary': '#2e2a42'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:32",
+          "anchor": "#2e2a42"
+        }
+      ]
+    },
+    "purple-100": {
+      "value": "#5934c5",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:9",
+          "anchor": "100: '#5934c5'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:33",
+          "anchor": "#5934c5"
+        }
+      ]
+    },
+    "purple-hover": {
+      "value": "#7a55fd",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:9",
+          "anchor": "hover: '#7a55fd'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:34",
+          "anchor": "#7a55fd"
+        }
+      ]
+    },
+    "purple-active": {
+      "value": "#5a20e1",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:9",
+          "anchor": "active: '#5a20e1'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:35",
+          "anchor": "#5a20e1"
+        }
+      ]
+    },
+    "purple-disabled": {
+      "value": "rgb(208,183,243)",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:9",
+          "anchor": "disabled: 'rgb(208,183,243)'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:136",
+          "anchor": "rgb(208,183,243)"
+        }
+      ]
+    },
+    "violet-100": {
+      "value": "#d7befc",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:10",
+          "anchor": "violet: { 100: '#d7befc' }"
+        },
+        {
+          "cite": "CLONE_SPEC.md:36",
+          "anchor": "#d7befc"
+        }
+      ]
+    },
+    "latte-100": {
+      "value": "#fcfbfa",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:11",
+          "anchor": "100: '#fcfbfa'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:38",
+          "anchor": "#fcfbfa"
+        }
+      ]
+    },
+    "latte-125": {
+      "value": "#c7c3c0",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:11",
+          "anchor": "125: '#c7c3c0'"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:233",
+          "anchor": "#c7c3c0"
+        }
+      ]
+    },
+    "latte-150": {
+      "value": "#f9f5f1",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:11",
+          "anchor": "150: '#f9f5f1'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:37",
+          "anchor": "#f9f5f1"
+        }
+      ]
+    },
+    "sea-green-100": {
+      "value": "#4ca67e",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:12",
+          "anchor": "'sea-green': { 100: '#4ca67e' }"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:234",
+          "anchor": "#4ca67e"
+        }
+      ]
+    },
+    "tangerine": {
+      "value": "#ff914d",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:13",
+          "anchor": "tangerine: '#ff914d'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:39",
+          "anchor": "#ff914d"
+        }
+      ]
+    },
+    "apricot": {
+      "value": "#ffa552",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:14",
+          "anchor": "apricot: '#ffa552'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:40",
+          "anchor": "#ffa552"
+        }
+      ]
+    },
+    "marigold": {
+      "value": "#ffd55d",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:15",
+          "anchor": "marigold: '#ffd55d'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:41",
+          "anchor": "#ffd55d"
+        }
+      ]
+    },
+    "star": {
+      "value": "#ffdd7d",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:16",
+          "anchor": "star: '#ffdd7d'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:52",
+          "anchor": "#ffdd7d"
+        }
+      ]
+    },
+    "ink": {
+      "value": "#0a0a0a",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:17",
+          "anchor": "ink: '#0a0a0a'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:19",
+          "anchor": "#0a0a0a"
+        }
+      ]
+    },
+    "pill-development": {
+      "value": "#ffd6a7",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:18",
+          "anchor": "development: '#ffd6a7'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:42",
+          "anchor": "#ffd6a7"
+        }
+      ]
+    },
+    "pill-neutral": {
+      "value": "#f1f5f9",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:18",
+          "anchor": "neutral: '#f1f5f9'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:43",
+          "anchor": "#f1f5f9"
+        }
+      ]
+    },
+    "pill-health": {
+      "value": "#ffc9c9",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:18",
+          "anchor": "health: '#ffc9c9'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:44",
+          "anchor": "#ffc9c9"
+        }
+      ]
+    },
+    "pill-sleep": {
+      "value": "#e7e5e4",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:18",
+          "anchor": "sleep: '#e7e5e4'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:45",
+          "anchor": "#e7e5e4"
+        }
+      ]
+    },
+    "slate-100": {
+      "value": "#f1f5f9",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:19",
+          "anchor": "100: '#f1f5f9'"
+        }
+      ]
+    },
+    "slate-800": {
+      "value": "#1d293d",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:19",
+          "anchor": "800: '#1d293d'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:46",
+          "anchor": "#1d293d"
+        }
+      ]
+    },
+    "gray-50": {
+      "value": "#f9fafb",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:20",
+          "anchor": "50: '#f9fafb'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:50",
+          "anchor": "#f9fafb"
+        }
+      ],
+      "note": "defined in config; CLONE_SPEC's superpower-card hover use was NOT reproduced on the live original (animation-QA) so no semantic role binds it"
+    },
+    "gray-300": {
+      "value": "#d1d5dc",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:20",
+          "anchor": "300: '#d1d5dc'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:47",
+          "anchor": "#d1d5dc"
+        }
+      ]
+    },
+    "gray-700": {
+      "value": "#364153",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:20",
+          "anchor": "700: '#364153'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:48",
+          "anchor": "#364153"
+        }
+      ]
+    },
+    "gray-900": {
+      "value": "#101828",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:20",
+          "anchor": "900: '#101828'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:49",
+          "anchor": "#101828"
+        }
+      ]
+    },
+    "white": {
+      "value": "#ffffff",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:51",
+          "anchor": "#ffffff"
+        }
+      ]
+    },
+    "plan-check-green": {
+      "value": "#008A56",
+      "evidence": [
+        {
+          "cite": "src/components/pricing/PlanCard.jsx:8",
+          "anchor": "#008A56"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:191",
+          "anchor": "#008A56"
+        }
+      ]
+    },
+    "plan-cross-red": {
+      "value": "#ED614B",
+      "evidence": [
+        {
+          "cite": "src/components/pricing/PlanCard.jsx:19",
+          "anchor": "#ED614B"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:191",
+          "anchor": "#ED614B"
+        }
+      ]
+    }
+  }
+}

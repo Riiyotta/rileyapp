@@ -1,0 +1,41 @@
+{
+  "$schema": "riley-design-tokens/component/pill",
+  "blog-category": {
+    "radius": {
+      "ref": "tokens.00-foundation.radius.tokens.pill",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:84",
+          "anchor": "rounded-[40px]"
+        }
+      ]
+    },
+    "padding": {
+      "value": "6px 16px",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:84",
+          "anchor": "px-4 py-1.5"
+        }
+      ]
+    },
+    "text": {
+      "ref": "tokens.10-semantic.color-roles.roles.text.secondary",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:84",
+          "anchor": "text-slate-800"
+        }
+      ]
+    },
+    "hover": {
+      "ref": "tokens.10-semantic.motion-roles.roles.link-hover-opacity",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:84",
+          "anchor": "hover:opacity-80"
+        }
+      ]
+    }
+  }
+}

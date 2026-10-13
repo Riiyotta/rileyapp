@@ -1,0 +1,121 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "gradient-band",
+  "registryId": "section.gradient-band",
+  "version": "1.0.0",
+  "category": "feature",
+  "purpose": "Peach radial-gradient band: (home) feature cards + 'Why Riley Stands Out' comparison table; (pricing) the table only.",
+  "iaSectionIds": [
+    "product.feature-cards",
+    "conversion.comparison-table"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/GradientBand.jsx:1-12",
+      "anchor": "showFeatureCards = true"
+    }
+  ],
+  "variants": {
+    "feature-cards-and-table": "home (HomePage.jsx:26 `<GradientBand />`)",
+    "table-only": "pricing (PricingPage.jsx:19 `showFeatureCards={false}`)"
+  },
+  "contentContract": {
+    "schemaRef": {
+      "feature-cards-and-table": "#/definitions/node_gradient-band__feature-cards-and-table",
+      "table-only": "#/definitions/node_gradient-band__table-only"
+    },
+    "copyBudget": {
+      "feature-cards-and-table": {
+        "featureCards.eyebrow": 8,
+        "featureCards.heading": 9,
+        "featureCards.cards[].title": 6,
+        "featureCards.cards[].body": 36,
+        "featureCards.cta.label": 5,
+        "comparisonTable.eyebrow": 8,
+        "comparisonTable.heading": 5,
+        "comparisonTable.body": 27,
+        "comparisonTable.featureColumnLabel": 2,
+        "comparisonTable.columns[].label": 4,
+        "comparisonTable.rows[].label": 7,
+        "comparisonTable.cta.label": 5
+      },
+      "table-only": {
+        "comparisonTable.eyebrow": 8,
+        "comparisonTable.heading": 5,
+        "comparisonTable.body": 27,
+        "comparisonTable.featureColumnLabel": 2,
+        "comparisonTable.columns[].label": 4,
+        "comparisonTable.rows[].label": 7,
+        "comparisonTable.cta.label": 5
+      }
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "feature cards stack (row at ≥992)",
+          "band side padding 16px (32px)",
+          "table margin-top 24 (48)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/lower/FeatureCards.jsx:38",
+            "anchor": "lg:flex-row"
+          },
+          {
+            "cite": "CLONE_SPEC.md:352",
+            "anchor": "16px sides <992"
+          }
+        ]
+      },
+      {
+        "query": "≤960px",
+        "changes": [
+          "table header labels rotate -90deg (th 140px tall, 13px)",
+          "td padding 15px 10px, 14px text, check icons 15px",
+          "table scrolls horizontally inside its panel"
+        ],
+        "evidence": [
+          {
+            "cite": "src/styles/lower.css:17-25",
+            "anchor": "rotate(-90deg)"
+          },
+          {
+            "cite": "CLONE_SPEC.md:381",
+            "anchor": "≤960px"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:351-382",
+      "anchor": "GradientBand"
+    },
+    {
+      "cite": "CLONE_SPEC_PAGES_MARKETING.md:48",
+      "anchor": "**without FeatureCards**"
+    }
+  ],
+  "notes": [
+    "The IA (ia.json) lists product.feature-cards and conversion.comparison-table as two sections; this repo keeps the real wrapper component (GradientBand.jsx) as one node keyed by (section, variant) so the shared gradient wrapper and the pricing variant are enforced structurally.",
+    "Comparison columns name real third-party products (Google Search, Reddit, ChatGPT, Claude): comparative claims must not be fabricated for other brands."
+  ]
+}

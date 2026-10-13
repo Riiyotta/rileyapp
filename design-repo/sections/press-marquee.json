@@ -1,0 +1,49 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "press-marquee",
+  "registryId": "section.press-marquee",
+  "version": "1.0.0",
+  "category": "social-proof",
+  "purpose": "As-seen-in press strip: real media logos scrolling on a lilac band.",
+  "iaSectionIds": [
+    "proof.press-marquee"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/Hero.jsx:72-88",
+      "anchor": "function PressMarquee"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_press-marquee",
+    "copyBudget": {
+      "logos[].alt": 3
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "marquee-press-20s",
+    "motionRoles": [
+      "marquee-press"
+    ],
+    "reducedMotionFallback": "Stop the marquee; show the first logo row static with the edge mask kept.",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": false,
+    "rules": []
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:209-214",
+      "anchor": "PressMarquee"
+    }
+  ],
+  "notes": [
+    "Lives inside the home Hero wrapper; modelled as its own node because it has its own motion and a must-not-fabricate asset role."
+  ]
+}

@@ -1,0 +1,69 @@
+@font-face{font-family:sansRegular;src:url(/fonts/Cadiz-Regular.woff2) format("woff2");font-display:swap;font-weight:400}
+@font-face{font-family:sansRegularItalic;src:url(/fonts/Cadiz-RegularItalic.woff2) format("woff2");font-display:swap;font-weight:400}
+@font-face{font-family:sansBook;src:url(/fonts/Cadiz-Book.woff2) format("woff2");font-display:swap;font-weight:350}
+@font-face{font-family:sansBookItalic;src:url(/fonts/Cadiz-BookItalic.woff2) format("woff2");font-display:swap;font-weight:350}
+@font-face{font-family:sansSemibold;src:url(/fonts/Cadiz-SemiBold.woff2) format("woff2");font-display:swap;font-weight:600}
+@font-face{font-family:sansSemiboldItalic;src:url(/fonts/Cadiz-SemiBoldItalic.woff2) format("woff2");font-display:swap;font-weight:600}
+@font-face{font-family:sansBold;src:url(/fonts/Cadiz-Bold.woff2) format("woff2");font-display:swap;font-weight:700}
+@font-face{font-family:sansBoldItalic;src:url(/fonts/Cadiz-BoldItalic.woff2) format("woff2");font-display:swap;font-weight:700}
+@font-face{font-family:sansBlack;src:url(/fonts/Cadiz-Black.woff2) format("woff2");font-display:swap;font-weight:800}
+@font-face{font-family:sansBlackItalic;src:url(/fonts/Cadiz-BlackItalic.woff2) format("woff2");font-display:swap;font-weight:800}
+@font-face{font-family:"serif";src:url(/fonts/Recoleta-Regular.woff2) format("woff2");font-display:swap;font-weight:400}
+@font-face{font-family:"sansRegular Fallback";src:local("Arial");ascent-override:92.53%;descent-override:23.50%;line-gap-override:19.34%;size-adjust:103.42%}
+@font-face{font-family:"sansBold Fallback";src:local("Arial");ascent-override:91.58%;descent-override:23.25%;line-gap-override:19.14%;size-adjust:104.49%}
+@font-face{font-family:"sansSemibold Fallback";src:local("Arial");ascent-override:91.94%;descent-override:23.34%;line-gap-override:19.21%;size-adjust:104.09%}
+@font-face{font-family:"sansBook Fallback";src:local("Arial");ascent-override:92.87%;descent-override:23.58%;line-gap-override:19.41%;size-adjust:103.05%}
+@font-face{font-family:"serif Fallback";src:local("Arial");ascent-override:100.82%;descent-override:36.29%;line-gap-override:0.00%;size-adjust:99.19%}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: sansRegular, "sansRegular Fallback"; }
+  html { line-height: 1.5; }
+  body { background: #f9f5f1; color: #0a0a0a; font-size: 16px; }
+  /* Tailwind v4 preflight resets padding on every element; v3 leaves Chrome's 1px UA padding on th/td */
+  th, td { padding: 0; }
+}
+
+/* Bare (non-media) type utilities: the original defines these in its utilities layer, so they apply at every
+   width and the unlayered media rules below override them (e.g. desktop-h4 is 24/33.8 Cadiz below 992). */
+@layer utilities {
+  .desktop-h1{font-size:5rem;line-height:6rem}
+  .desktop-h2{font-size:3.75rem;line-height:4.875rem}
+  .desktop-h3{font-size:2.5rem;line-height:3rem}
+  .desktop-h4{font-size:1.5rem;line-height:2.1125rem}
+  .desktop-body{font-size:1.25rem;line-height:1.875rem}
+  .mobile-h1{font-size:2.5rem;line-height:3rem}
+  .mobile-h3{font-size:1.5rem;line-height:2.1125rem}
+  .mobile-h4{font-size:1rem;line-height:1.3rem}
+  .mobile-body{font-size:1rem;line-height:1.5rem}
+}
+
+/* Unlayered type rules — intentionally outside @layer so they beat utilities (matches original) */
+h1{font-family:"serif","serif Fallback"}
+@media (max-width:62rem){h1{font-size:2.5rem;line-height:3rem}}
+@media (min-width:62rem){h1{font-size:4rem;line-height:4.5rem}}
+@media (min-width:62rem){
+  .desktop-h1{font-size:5rem;line-height:6rem;font-family:"serif","serif Fallback"}
+  .desktop-h2{font-size:3.75rem;line-height:4.875rem;font-family:"serif","serif Fallback"}
+  .desktop-h3{font-size:2.5rem;line-height:3rem;font-family:"serif","serif Fallback"}
+  .desktop-h4{font-size:1.625rem;line-height:2.1125rem;font-family:"serif","serif Fallback"}
+  .desktop-body{font-size:1.25rem;line-height:1.875rem;font-family:sansRegular,"sansRegular Fallback"}
+}
+@media (max-width:62rem){
+  .mobile-h1{font-size:2.5rem;line-height:3rem;font-family:"serif","serif Fallback"}
+  .mobile-h2{font-size:1.625rem;line-height:2.1125rem;font-family:"serif","serif Fallback"}
+  .mobile-h3{font-size:1.25rem;line-height:2.1125rem;font-family:"serif","serif Fallback"}
+  .mobile-h4{font-size:1rem;line-height:1.3rem;font-family:"serif","serif Fallback"}
+  .mobile-body{font-size:1rem;line-height:1.5rem;font-family:sansRegular,"sansRegular Fallback"}
+}
+
+/* lg:desktop-* variants: size + line-height only (no family). Unlayered — Tailwind v3 would drop them inside @layer. */
+@media (min-width: 992px) {
+  .lg\:desktop-h2{font-size:3.75rem;line-height:4.875rem}
+  .lg\:desktop-h3{font-size:2.5rem;line-height:3rem}
+  .lg\:desktop-h4{font-size:1.5rem;line-height:2.1125rem}
+  .lg\:desktop-body{font-size:1.25rem;line-height:1.875rem}
+}

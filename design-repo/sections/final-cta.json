@@ -1,0 +1,72 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "final-cta",
+  "registryId": "section.final-cta",
+  "version": "1.0.0",
+  "category": "conversion",
+  "purpose": "Closing emotional CTA ('raising a generation of confident parents') with clouds and the mascot line-up.",
+  "iaSectionIds": [
+    "conversion.final-cta"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/FinalCta.jsx:4-21",
+      "anchor": "export default function FinalCta"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_final-cta",
+    "copyBudget": {
+      "heading": 10,
+      "cta.label": 6
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "padding 80px 32px 160px (224px 320px at ≥992)",
+          "H2 40/48 (60/78)",
+          "mascot strip bottom -72px (-56px)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/FinalCta.jsx:6",
+            "anchor": "lg:px-[20rem] lg:py-[14rem]"
+          },
+          {
+            "cite": "src/components/FinalCta.jsx:16",
+            "anchor": "bottom-[-72px]"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:423-427",
+      "anchor": "FinalCta"
+    },
+    {
+      "cite": "CLONE_SPEC_PAGES_MARKETING.md:50",
+      "anchor": "REUSE FinalCta"
+    }
+  ],
+  "notes": []
+}

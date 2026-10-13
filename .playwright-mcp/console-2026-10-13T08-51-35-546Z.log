@@ -1,0 +1,7 @@
+[  120070ms] [WARNING]   WARN  [Statsig] useExperiment hook failed to find a valid Statsig client for experiment 'hero_copy_test_july'. @ https://rileyapp.com/_next/static/chunks/6391-950bd417654fbe13.js:0
+[  120187ms] [WARNING] Clerk: The prop "afterSignInUrl" is deprecated and should be replaced with the new "fallbackRedirectUrl" or "forceRedirectUrl" props instead. Learn more: https://clerk.com/docs/guides/custom-redirects#redirect-url-props @ https://clerk.rileyapp.com/npm/@clerk/clerk-js@5/dist/clerk.browser.js:18
+[  120195ms] [WARNING]   WARN  [Statsig] Attempting to retrieve a StatsigClient but none was set. @ https://rileyapp.com/_next/static/chunks/6391-950bd417654fbe13.js:0
+[  120222ms] [LOG] groupName        → (empty) @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[  120222ms] [LOG] variant_id value → control @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[  120222ms] [LOG] full experiment  → {name: hero_copy_test_july, details: Object, ruleID: , __evaluation: null, value: Object} @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[  120222ms] [LOG] isAlt?           → false @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0

@@ -1,0 +1,98 @@
+{
+  "$schema": "riley-design-tokens/foundation/gradient",
+  "tokens": {
+    "features": {
+      "value": "radial-gradient(534.59% 131.83% at 43.09% 3.04%, #FF93AB 0%, #FF9C7F 2.14%, #FFA168 23.66%, #F9F5F1 65.12%)",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:32",
+          "anchor": "'features-gradient'"
+        },
+        {
+          "cite": "CLONE_SPEC.md:55",
+          "anchor": "534.59% 131.83%"
+        }
+      ]
+    },
+    "faq": {
+      "value": "radial-gradient(rgb(165,201,242) 0, #f9f5f1 70%)",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:33",
+          "anchor": "'faq-gradient'"
+        },
+        {
+          "cite": "src/styles/lower.css:29",
+          "anchor": "radial-gradient(rgb(165, 201, 242) 0, #f9f5f1 70%)"
+        }
+      ]
+    },
+    "pricing-radial": {
+      "value": "radial-gradient(45.01% 50.02% at 50% 52.71%, #ff914d 0, #f9f5f1 100%)",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:34",
+          "anchor": "'pricing-radial'"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:147",
+          "anchor": "45.01% 50.02%"
+        }
+      ]
+    },
+    "modal-worrier": {
+      "value": "radial-gradient(58.33% 52.53% at 50% 50%, #D7BEFC 0%, #FFF 100%)",
+      "evidence": [
+        {
+          "cite": "src/components/upper/superpowersData.js:6",
+          "anchor": "#D7BEFC_0%"
+        }
+      ]
+    },
+    "modal-guide": {
+      "value": "radial-gradient(64.92% 39.36% at 50.04% 52.53%, #4598E6 0%, #FFF 100%)",
+      "evidence": [
+        {
+          "cite": "src/components/upper/superpowersData.js:10",
+          "anchor": "#4598E6_0%"
+        }
+      ]
+    },
+    "modal-softie": {
+      "value": "radial-gradient(64.92% 39.36% at 50.04% 52.53%, #62D09E 0%, #FFF 100%)",
+      "evidence": [
+        {
+          "cite": "src/components/upper/superpowersData.js:14",
+          "anchor": "#62D09E_0%"
+        }
+      ]
+    },
+    "modal-spark": {
+      "value": "radial-gradient(58.33% 52.53% at 50% 50%, #E8899E 0%, #FFF 100%)",
+      "evidence": [
+        {
+          "cite": "src/components/upper/superpowersData.js:18",
+          "anchor": "#E8899E_0%"
+        }
+      ]
+    },
+    "modal-uplifter": {
+      "value": "radial-gradient(58.33% 52.53% at 50% 50%, #FFA552 0%, #FFF 100%)",
+      "evidence": [
+        {
+          "cite": "src/components/upper/superpowersData.js:22",
+          "anchor": "#FFA552_0%"
+        }
+      ]
+    },
+    "modal-explorer": {
+      "value": "radial-gradient(58.33% 52.53% at 50% 50%, #FFD55D 0%, #FFF 100%)",
+      "evidence": [
+        {
+          "cite": "src/components/upper/superpowersData.js:26",
+          "anchor": "#FFD55D_0%"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "plan-card",
+  "purpose": "Bordered white plan card: name, description + avatars, green tagline, feature list, price block. No shadow/hover.",
+  "composedOf": [
+    "Text",
+    "Avatar",
+    "CheckMark",
+    "Divider"
+  ],
+  "usedBySections": [
+    "pricing-hero"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/pricing/PlanCard.jsx:27-57",
+      "anchor": "export default function PlanCard"
+    }
+  ]
+}

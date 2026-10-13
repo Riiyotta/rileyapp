@@ -1,0 +1,2371 @@
+[
+  {
+    "d": 0,
+    "t": "section",
+    "c": "relative isolate w-full overflow-x-hidden",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "relative t0px r0px b0px l0px",
+      "d": "block",
+      "ov": "hidden auto"
+    }
+  },
+  {
+    "d": 1,
+    "t": "div",
+    "c": "bg-pricing-radial absolute inset-0 -z-40",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "bgi": "radial-gradient(45.01% 50.02% at 50% 52.71%, rgb(255, 145, 77) 0px, rgb(249, 245, 241) 100%)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "z": "-40",
+      "d": "block"
+    }
+  },
+  {
+    "d": 1,
+    "t": "div",
+    "c": "pointer-events-none absolute inset-0 -z-20 opacity-70",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "z": "-20",
+      "d": "block",
+      "op": "0.7"
+    }
+  },
+  {
+    "d": 2,
+    "t": "div",
+    "c": "absolute inset-0",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 3,
+    "t": "div",
+    "c": "",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "relative t0px r0px b0px l0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "st": "position: relative; overflow: hidden; width: 100%; height: 100%;"
+  },
+  {
+    "d": 4,
+    "t": "div",
+    "c": "",
+    "r": [
+      0,
+      -85.5,
+      1440,
+      1319.2
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "tf": "matrix(1, 0, 0, 1, 0, 0)",
+      "pos": "absolute t-219.859px r0px b0px l0px",
+      "d": "block"
+    },
+    "st": "position: absolute; inset: -219.859px 0px 0px; will-change: transform; transform: translateY(0%);"
+  },
+  {
+    "d": 5,
+    "t": "div",
+    "c": "absolute inset-0 h-full",
+    "r": [
+      0,
+      -85.5,
+      1440,
+      1319.2
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-slow absolute -right-40 top-10",
+    "r": [
+      2083.7,
+      -45.5,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatSlow 100s linear 0s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, 894.704, 0)",
+      "pos": "absolute t40px r-160px b1028.16px l1189px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      2083.7,
+      -45.5,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1074,
+    "vb": "0 0 411 251",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"411\" height=\"251\" viewBox=\"0 0 411 251\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M86.9421 250.537C86.9421 250.503 86.9154 250.476 86.8818 250.474C38.5478 247.972 0.126953 207.989 0.126953 159.033C0.126953 108.463 41.122 67.4679 91.69"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-slow cloud-alt absolute -right-40 top-10",
+    "r": [
+      718.7,
+      -45.5,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatSlow 100s linear -50s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, -470.296, 0)",
+      "pos": "absolute t40px r-160px b1028.16px l1189px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      718.7,
+      -45.5,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1074,
+    "vb": "0 0 411 251",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"411\" height=\"251\" viewBox=\"0 0 411 251\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M86.9421 250.537C86.9421 250.503 86.9154 250.476 86.8818 250.474C38.5478 247.972 0.126953 207.989 0.126953 159.033C0.126953 108.463 41.122 67.4679 91.69"
+  },
+  {
+    "d": 2,
+    "t": "div",
+    "c": "absolute inset-0",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 3,
+    "t": "div",
+    "c": "",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "relative t0px r0px b0px l0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "st": "position: relative; overflow: hidden; width: 100%; height: 100%;"
+  },
+  {
+    "d": 4,
+    "t": "div",
+    "c": "",
+    "r": [
+      0,
+      -250.4,
+      1440,
+      1484
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "tf": "matrix(1, 0, 0, 1, 0, 0)",
+      "pos": "absolute t-384.754px r0px b0px l0px",
+      "d": "block"
+    },
+    "st": "position: absolute; inset: -384.754px 0px 0px; will-change: transform; transform: translateY(0%);"
+  },
+  {
+    "d": 5,
+    "t": "div",
+    "c": "absolute inset-0 h-full",
+    "r": [
+      0,
+      -250.4,
+      1440,
+      1484
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-medium -left-30 top-30 absolute",
+    "r": [
+      1046.4,
+      -130.4,
+      592,
+      362
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatMedium 85s linear 0s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, 1166.42, 0)",
+      "pos": "absolute t120px r968px b1002.05px l-120px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      1046.4,
+      -130.4,
+      592,
+      362
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1092,
+    "vb": "0 0 592 362",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"592\" height=\"362\" viewBox=\"0 0 592 362\" fill=\"none\"><path opacity=\"1\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M125.109 361.134C125.109 361.085 125.071 361.045 125.022 361.043C55.3682 357.438 0 299.818 0 229.267C0 156.391 59.0779 97.313 131.954 97.313"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-medium cloud-alt -left-30 top-30 absolute",
+    "r": [
+      -318.6,
+      -130.4,
+      592,
+      362
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatMedium 85s linear -42.5s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, -198.584, 0)",
+      "pos": "absolute t120px r968px b1002.05px l-120px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      -318.6,
+      -130.4,
+      592,
+      362
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1092,
+    "vb": "0 0 592 362",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"592\" height=\"362\" viewBox=\"0 0 592 362\" fill=\"none\"><path opacity=\"1\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M125.109 361.134C125.109 361.085 125.071 361.045 125.022 361.043C55.3682 357.438 0 299.818 0 229.267C0 156.391 59.0779 97.313 131.954 97.313"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-medium -right-ten absolute top-1/2",
+    "r": [
+      1166.4,
+      491.7,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatMedium 85s linear 0s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, 1166.42, 0)",
+      "pos": "absolute t742.023px r1029px b491.023px l0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      1166.4,
+      491.7,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1062,
+    "vb": "0 0 411 251",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"411\" height=\"251\" viewBox=\"0 0 411 251\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M324.185 250.537C324.185 250.503 324.212 250.476 324.245 250.474C372.579 247.972 411 207.989 411 159.033C411 108.463 370.005 67.4679 319.435 67.4679C313"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-medium cloud-alt -right-ten absolute top-1/2",
+    "r": [
+      -198.6,
+      491.7,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatMedium 85s linear -42.5s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, -198.584, 0)",
+      "pos": "absolute t742.023px r1029px b491.023px l0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      -198.6,
+      491.7,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1062,
+    "vb": "0 0 411 251",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"411\" height=\"251\" viewBox=\"0 0 411 251\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M324.185 250.537C324.185 250.503 324.212 250.476 324.245 250.474C372.579 247.972 411 207.989 411 159.033C411 108.463 370.005 67.4679 319.435 67.4679C313"
+  },
+  {
+    "d": 2,
+    "t": "div",
+    "c": "absolute inset-0",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 3,
+    "t": "div",
+    "c": "",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "relative t0px r0px b0px l0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "st": "position: relative; overflow: hidden; width: 100%; height: 100%;"
+  },
+  {
+    "d": 4,
+    "t": "div",
+    "c": "",
+    "r": [
+      0,
+      -415.3,
+      1440,
+      1648.9
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "tf": "matrix(1, 0, 0, 1, 0, 0)",
+      "pos": "absolute t-549.648px r0px b0px l0px",
+      "d": "block"
+    },
+    "st": "position: absolute; inset: -549.648px 0px 0px; will-change: transform; transform: translateY(0%);"
+  },
+  {
+    "d": 5,
+    "t": "div",
+    "c": "absolute inset-0 h-full",
+    "r": [
+      0,
+      -415.3,
+      1440,
+      1648.9
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-fast -left-30 absolute bottom-20",
+    "r": [
+      -415.6,
+      902.7,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatFast 50s linear 0s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, -295.592, 0)",
+      "pos": "absolute t1317.95px r1149px b80px l-120px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      -415.6,
+      902.7,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1074,
+    "vb": "0 0 411 251",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"411\" height=\"251\" viewBox=\"0 0 411 251\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M86.9421 250.537C86.9421 250.503 86.9154 250.476 86.8818 250.474C38.5478 247.972 0.126953 207.989 0.126953 159.033C0.126953 108.463 41.122 67.4679 91.69"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-fast cloud-alt -left-30 absolute bottom-20",
+    "r": [
+      403.4,
+      902.7,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatFast 50s linear -15s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, 523.408, 0)",
+      "pos": "absolute t1317.95px r1149px b80px l-120px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      403.4,
+      902.7,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1074,
+    "vb": "0 0 411 251",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"411\" height=\"251\" viewBox=\"0 0 411 251\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M86.9421 250.537C86.9421 250.503 86.9154 250.476 86.8818 250.474C38.5478 247.972 0.126953 207.989 0.126953 159.033C0.126953 108.463 41.122 67.4679 91.69"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-fast bottom-ten absolute -right-40",
+    "r": [
+      893.4,
+      -415.3,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatFast 50s linear 0s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, -295.592, 0)",
+      "pos": "absolute t0px r-160px b1397.95px l1189px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      893.4,
+      -415.3,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1062,
+    "vb": "0 0 411 251",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"411\" height=\"251\" viewBox=\"0 0 411 251\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M324.185 250.537C324.185 250.503 324.212 250.476 324.245 250.474C372.579 247.972 411 207.989 411 159.033C411 108.463 370.005 67.4679 319.435 67.4679C313"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-fast cloud-alt bottom-ten absolute -right-40",
+    "r": [
+      1712.4,
+      -415.3,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatFast 50s linear -15s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, 523.408, 0)",
+      "pos": "absolute t0px r-160px b1397.95px l1189px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      1712.4,
+      -415.3,
+      411,
+      251
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1062,
+    "vb": "0 0 411 251",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"411\" height=\"251\" viewBox=\"0 0 411 251\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M324.185 250.537C324.185 250.503 324.212 250.476 324.245 250.474C372.579 247.972 411 207.989 411 159.033C411 108.463 370.005 67.4679 319.435 67.4679C313"
+  },
+  {
+    "d": 2,
+    "t": "div",
+    "c": "absolute inset-0",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 3,
+    "t": "div",
+    "c": "",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "relative t0px r0px b0px l0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "st": "position: relative; overflow: hidden; width: 100%; height: 100%;"
+  },
+  {
+    "d": 4,
+    "t": "div",
+    "c": "",
+    "r": [
+      144,
+      244.3,
+      1152,
+      879.4
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "tf": "matrix(0.8, 0, 0, 0.8, 0, 0)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "d": "block"
+    },
+    "st": "position: absolute; inset: 0px; will-change: transform; transform: translateY(0%) scale(0.8);"
+  },
+  {
+    "d": 5,
+    "t": "div",
+    "c": "absolute inset-0",
+    "r": [
+      144,
+      464.2,
+      1152,
+      879.4
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "tf": "matrix(1, 0, 0, 1, 0, 274.824)",
+      "pos": "absolute t0px r0px b0px l0px",
+      "d": "block"
+    },
+    "st": "transform: translateY(25%);"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-fast bottom-ten absolute -left-20",
+    "r": [
+      -156.5,
+      464.2,
+      473.6,
+      289.6
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatFast 50s linear 0s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, -295.592, 0)",
+      "pos": "absolute t0px r928px b737.297px l-80px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      -156.5,
+      464.2,
+      473.6,
+      289.6
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1095,
+    "vb": "0 0 592 362",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"592\" height=\"362\" viewBox=\"0 0 592 362\" fill=\"none\"><path opacity=\"1\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M125.109 361.483C125.109 361.435 125.071 361.395 125.022 361.392C55.3682 357.787 0 300.168 0 229.617C0 156.741 59.0779 97.6626 131.954 97.66"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "cloud-wrapper animate-float-fast cloud-alt bottom-ten absolute left-20",
+    "r": [
+      626.7,
+      464.2,
+      473.6,
+      289.6
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "an": "floatFast 50s linear -15s infinite normal",
+      "tf": "matrix(1, 0, 0, 1, 523.408, 0)",
+      "pos": "absolute t0px r768px b737.297px l80px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      626.7,
+      464.2,
+      473.6,
+      289.6
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1095,
+    "vb": "0 0 592 362",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"592\" height=\"362\" viewBox=\"0 0 592 362\" fill=\"none\"><path opacity=\"1\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M125.109 361.483C125.109 361.435 125.071 361.395 125.022 361.392C55.3682 357.787 0 300.168 0 229.617C0 156.741 59.0779 97.6626 131.954 97.66"
+  },
+  {
+    "d": 1,
+    "t": "div",
+    "c": "relative z-10",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "pos": "relative t0px r0px b0px l0px",
+      "z": "10",
+      "d": "block"
+    }
+  },
+  {
+    "d": 2,
+    "t": "div",
+    "c": "py-8 sm:py-12 lg:py-16",
+    "r": [
+      0,
+      134.4,
+      1440,
+      1099.3
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "p": "64px 0px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 3,
+    "t": "div",
+    "c": "flex flex-col items-center gap-2 mb-8 sm:mb-12 px-4",
+    "r": [
+      0,
+      198.4,
+      1440,
+      20.8
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "p": "0px 16px",
+      "m": "0px 0px 48px",
+      "g": "8px",
+      "d": "flex column ai:center jc:normal"
+    }
+  },
+  {
+    "d": 4,
+    "t": "p",
+    "c": "font-sans-regular text-text-primary mobile-h4 lg:text-[1.25rem] text-center",
+    "r": [
+      614.8,
+      198.4,
+      210.4,
+      20.8
+    ],
+    "s": {
+      "f": "sansRegular 20px/20.8px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block",
+      "ta": "center"
+    },
+    "txt": "Parenting Made Simple"
+  },
+  {
+    "d": 3,
+    "t": "div",
+    "c": "w-full max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-14",
+    "r": [
+      80,
+      267.2,
+      1280,
+      902.5
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "p": "0px 56px",
+      "m": "0px 80px",
+      "d": "block",
+      "mw": "1280px"
+    }
+  },
+  {
+    "d": 4,
+    "t": "div",
+    "c": "text-center mb-8 sm:mb-12",
+    "r": [
+      136,
+      267.2,
+      1168,
+      144
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 48px",
+      "d": "block",
+      "ta": "center"
+    }
+  },
+  {
+    "d": 5,
+    "t": "h1",
+    "c": "mobile-h1 lg:desktop-h1 text-text-primary font-serif mb-4",
+    "r": [
+      136,
+      267.2,
+      1168,
+      144
+    ],
+    "s": {
+      "f": "\"serif\" 64px/72px w400",
+      "c": "rgb(46, 42, 66)",
+      "m": "0px 0px 16px",
+      "d": "block",
+      "ta": "center"
+    },
+    "txt": "Expert Guidance, Tailored To Your Family"
+  },
+  {
+    "d": 6,
+    "t": "br",
+    "c": "",
+    "r": [
+      960.5,
+      259.7,
+      0,
+      87
+    ],
+    "s": {
+      "f": "\"serif\" 64px/72px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "inline",
+      "ta": "center"
+    }
+  },
+  {
+    "d": 4,
+    "t": "div",
+    "c": "grid md:grid-cols-2 gap-6 sm:gap-8 max-w-[56rem] mx-auto mb-8 sm:mb-12",
+    "r": [
+      272,
+      459.2,
+      896,
+      602.5
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 136px 48px",
+      "g": "32px",
+      "d": "grid",
+      "grid": "432px 432px",
+      "mw": "896px"
+    }
+  },
+  {
+    "d": 5,
+    "t": "div",
+    "c": "bg-white rounded-2xl sm:rounded-3xl border border-latte-125 p-6 sm:p-8",
+    "r": [
+      272,
+      459.2,
+      432,
+      602.5
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "bg": "rgb(255, 255, 255)",
+      "p": "32px",
+      "rad": "24px",
+      "bd": "1px solid rgb(199, 195, 192) / 1px solid rgb(199, 195, 192) / 1px solid rgb(199, 195, 192)",
+      "d": "block"
+    }
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "mb-6",
+    "r": [
+      305,
+      492.2,
+      366,
+      114.5
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 24px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "h3",
+    "c": "font-serif text-[28px] sm:text-[32px] mb-2 text-text-primary",
+    "r": [
+      305,
+      492.2,
+      366,
+      48
+    ],
+    "s": {
+      "f": "\"serif\" 32px/48px w400",
+      "c": "rgb(46, 42, 66)",
+      "m": "0px 0px 8px",
+      "d": "block"
+    },
+    "txt": "Riley Plus+"
+  },
+  {
+    "d": 7,
+    "t": "p",
+    "c": "text-text-primary/70 font-sans-regular mb-2 text-sm sm:text-base",
+    "r": [
+      305,
+      548.2,
+      366,
+      30.5
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklab(0.300559 0.0155957 -0.0401645 / 0.7)",
+      "m": "0px 0px 8px",
+      "d": "block"
+    },
+    "txt": "For families who parent as a team"
+  },
+  {
+    "d": 8,
+    "t": "span",
+    "c": "inline-flex items-center gap-0.5 ml-2",
+    "r": [
+      554.6,
+      548.2,
+      76,
+      24
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklab(0.300559 0.0155957 -0.0401645 / 0.7)",
+      "m": "0px 0px 0px 8px",
+      "g": "2px",
+      "d": "inline-flex row ai:center jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "img",
+    "c": "w-5 h-5 sm:w-6 sm:h-6",
+    "r": [
+      554.6,
+      548.2,
+      24,
+      24
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "rgba(0, 0, 0, 0)",
+      "d": "block",
+      "ov": "clip",
+      "mw": "100%"
+    },
+    "src": "https://rileyapp.com/_next/image?url=%2Fmascots%2Favatars%2Fpurple1.svg&w=32&q=75",
+    "nat": [
+      62,
+      61
+    ],
+    "alt": "Riley avatar",
+    "st": "color: transparent;"
+  },
+  {
+    "d": 9,
+    "t": "img",
+    "c": "w-5 h-5 sm:w-6 sm:h-6",
+    "r": [
+      580.6,
+      548.2,
+      24,
+      24
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "rgba(0, 0, 0, 0)",
+      "d": "block",
+      "ov": "clip",
+      "mw": "100%"
+    },
+    "src": "https://rileyapp.com/_next/image?url=%2Fmascots%2Favatars%2Fpurple2.svg&w=32&q=75",
+    "nat": [
+      60,
+      61
+    ],
+    "alt": "Riley avatar",
+    "st": "color: transparent;"
+  },
+  {
+    "d": 9,
+    "t": "img",
+    "c": "w-5 h-5 sm:w-6 sm:h-6",
+    "r": [
+      606.6,
+      548.2,
+      24,
+      24
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "rgba(0, 0, 0, 0)",
+      "d": "block",
+      "ov": "clip",
+      "mw": "100%"
+    },
+    "src": "https://rileyapp.com/_next/image?url=%2Fmascots%2Favatars%2Fpurple3.svg&w=32&q=75",
+    "nat": [
+      60,
+      61
+    ],
+    "alt": "Riley avatar",
+    "st": "color: transparent;"
+  },
+  {
+    "d": 7,
+    "t": "p",
+    "c": "text-sea-green-100 font-sans-semibold text-sm",
+    "r": [
+      305,
+      586.7,
+      366,
+      20
+    ],
+    "s": {
+      "f": "sansSemibold 14px/20px w400",
+      "c": "rgb(76, 166, 126)",
+      "d": "block"
+    },
+    "txt": "Try it free for 7 days"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "mb-6 sm:mb-8",
+    "r": [
+      305,
+      630.7,
+      366,
+      226
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 32px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "hr",
+    "c": "border-t border-latte-125 mb-4",
+    "r": [
+      305,
+      630.7,
+      366,
+      1
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 16px",
+      "bd": "1px solid rgb(199, 195, 192) / 0px solid rgb(199, 195, 192) / 0px solid rgb(199, 195, 192)",
+      "d": "block",
+      "ov": "hidden"
+    }
+  },
+  {
+    "d": 7,
+    "t": "ul",
+    "c": "space-y-2.5 sm:space-y-3",
+    "r": [
+      305,
+      647.7,
+      366,
+      192
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block"
+    }
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      305,
+      647.7,
+      366,
+      22
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      305,
+      649.7,
+      20,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1015,
+    "vb": "0 0 20 20",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M18.1633 6.28833L8.16328 16.2883C8.07618 16.3757 7.97269 16.4451 7.85873 16.4924C7.74478 16.5397 7.6226 16.5641 7.49922 16.5641C7.37583 16.5641 7.25365 16.5397 7.1397 "
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      337,
+      647.7,
+      189.8,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Unlimited Children & Tracking"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      305,
+      681.7,
+      366,
+      22
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      305,
+      683.7,
+      20,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1015,
+    "vb": "0 0 20 20",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M18.1633 6.28833L8.16328 16.2883C8.07618 16.3757 7.97269 16.4451 7.85873 16.4924C7.74478 16.5397 7.6226 16.5641 7.49922 16.5641C7.37583 16.5641 7.25365 16.5397 7.1397 "
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      337,
+      681.7,
+      223.3,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "3+ Caregivers with their own logins"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      305,
+      715.7,
+      366,
+      22
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      305,
+      717.7,
+      20,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1015,
+    "vb": "0 0 20 20",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M18.1633 6.28833L8.16328 16.2883C8.07618 16.3757 7.97269 16.4451 7.85873 16.4924C7.74478 16.5397 7.6226 16.5641 7.49922 16.5641C7.37583 16.5641 7.25365 16.5397 7.1397 "
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      337,
+      715.7,
+      101.1,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Unlimited Chats"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      305,
+      749.7,
+      366,
+      22
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      305,
+      751.7,
+      20,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1015,
+    "vb": "0 0 20 20",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M18.1633 6.28833L8.16328 16.2883C8.07618 16.3757 7.97269 16.4451 7.85873 16.4924C7.74478 16.5397 7.6226 16.5641 7.49922 16.5641C7.37583 16.5641 7.25365 16.5397 7.1397 "
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      337,
+      749.7,
+      109,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Tracking Insights"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      305,
+      783.7,
+      366,
+      22
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      305,
+      785.7,
+      20,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1015,
+    "vb": "0 0 20 20",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M18.1633 6.28833L8.16328 16.2883C8.07618 16.3757 7.97269 16.4451 7.85873 16.4924C7.74478 16.5397 7.6226 16.5641 7.49922 16.5641C7.37583 16.5641 7.25365 16.5397 7.1397 "
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      337,
+      783.7,
+      111.2,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Seamless Sharing"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      305,
+      817.7,
+      366,
+      22
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      305,
+      819.7,
+      20,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1015,
+    "vb": "0 0 20 20",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M18.1633 6.28833L8.16328 16.2883C8.07618 16.3757 7.97269 16.4451 7.85873 16.4924C7.74478 16.5397 7.6226 16.5641 7.49922 16.5641C7.37583 16.5641 7.25365 16.5397 7.1397 "
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      337,
+      817.7,
+      229,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Advanced Memory & Customization"
+  },
+  {
+    "d": 7,
+    "t": "hr",
+    "c": "border-t border-latte-125 mt-4",
+    "r": [
+      305,
+      855.7,
+      366,
+      1
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "16px 0px 0px",
+      "bd": "1px solid rgb(199, 195, 192) / 0px solid rgb(199, 195, 192) / 0px solid rgb(199, 195, 192)",
+      "d": "block",
+      "ov": "hidden"
+    }
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "mb-6",
+    "r": [
+      305,
+      888.7,
+      366,
+      116
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 24px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "p",
+    "c": "text-text-primary/70 font-sans-regular text-sm mb-2",
+    "r": [
+      305,
+      888.7,
+      366,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "oklab(0.300559 0.0155957 -0.0401645 / 0.7)",
+      "m": "0px 0px 8px",
+      "d": "block"
+    },
+    "txt": "Starting at"
+  },
+  {
+    "d": 7,
+    "t": "div",
+    "c": "font-serif text-[28px] sm:text-[32px] text-text-primary",
+    "r": [
+      305,
+      916.7,
+      366,
+      48
+    ],
+    "s": {
+      "f": "\"serif\" 32px/48px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "$9.99"
+  },
+  {
+    "d": 8,
+    "t": "span",
+    "c": "text-[14px] sm:text-[16px] text-text-primary/70",
+    "r": [
+      391.8,
+      934.7,
+      56.4,
+      22
+    ],
+    "s": {
+      "f": "\"serif\" 16px/24px w400",
+      "c": "oklab(0.300559 0.0155957 -0.0401645 / 0.7)",
+      "d": "inline"
+    },
+    "txt": "/ month"
+  },
+  {
+    "d": 7,
+    "t": "p",
+    "c": "text-text-primary/70 font-sans-regular text-sm",
+    "r": [
+      305,
+      964.7,
+      366,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "oklab(0.300559 0.0155957 -0.0401645 / 0.7)",
+      "d": "block"
+    },
+    "txt": "Billed monthly, quarterly or annually"
+  },
+  {
+    "d": 7,
+    "t": "p",
+    "c": "text-sea-green-100 font-sans-semibold text-sm",
+    "r": [
+      305,
+      984.7,
+      366,
+      20
+    ],
+    "s": {
+      "f": "sansSemibold 14px/20px w400",
+      "c": "rgb(76, 166, 126)",
+      "d": "block"
+    },
+    "txt": "Your first 7 days are free"
+  },
+  {
+    "d": 5,
+    "t": "div",
+    "c": "bg-white rounded-2xl sm:rounded-3xl border border-latte-125 p-6 sm:p-8",
+    "r": [
+      736,
+      459.2,
+      432,
+      602.5
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "bg": "rgb(255, 255, 255)",
+      "p": "32px",
+      "rad": "24px",
+      "bd": "1px solid rgb(199, 195, 192) / 1px solid rgb(199, 195, 192) / 1px solid rgb(199, 195, 192)",
+      "d": "block"
+    }
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "mb-6",
+    "r": [
+      769,
+      492.2,
+      366,
+      114.5
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 24px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "h3",
+    "c": "font-serif text-[28px] sm:text-[32px] mb-2 text-text-primary",
+    "r": [
+      769,
+      492.2,
+      366,
+      48
+    ],
+    "s": {
+      "f": "\"serif\" 32px/48px w400",
+      "c": "rgb(46, 42, 66)",
+      "m": "0px 0px 8px",
+      "d": "block"
+    },
+    "txt": "Riley Basic"
+  },
+  {
+    "d": 7,
+    "t": "p",
+    "c": "text-text-primary/70 font-sans-regular mb-2 text-sm sm:text-base",
+    "r": [
+      769,
+      548.2,
+      366,
+      30.5
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklab(0.300559 0.0155957 -0.0401645 / 0.7)",
+      "m": "0px 0px 8px",
+      "d": "block"
+    },
+    "txt": "For solo parenting or simpler setups"
+  },
+  {
+    "d": 8,
+    "t": "span",
+    "c": "inline-flex items-center ml-2",
+    "r": [
+      1036.3,
+      548.2,
+      24,
+      24
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklab(0.300559 0.0155957 -0.0401645 / 0.7)",
+      "m": "0px 0px 0px 8px",
+      "d": "inline-flex row ai:center jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "img",
+    "c": "w-5 h-5 sm:w-6 sm:h-6",
+    "r": [
+      1036.3,
+      548.2,
+      24,
+      24
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "rgba(0, 0, 0, 0)",
+      "d": "block",
+      "ov": "clip",
+      "mw": "100%"
+    },
+    "src": "https://rileyapp.com/_next/image?url=%2Fmascots%2Favatars%2Fpurple1.svg&w=32&q=75",
+    "nat": [
+      62,
+      61
+    ],
+    "alt": "Riley avatar",
+    "st": "color: transparent;"
+  },
+  {
+    "d": 7,
+    "t": "p",
+    "c": "text-sea-green-100 font-sans-semibold text-sm",
+    "r": [
+      769,
+      586.7,
+      366,
+      20
+    ],
+    "s": {
+      "f": "sansSemibold 14px/20px w400",
+      "c": "rgb(76, 166, 126)",
+      "d": "block"
+    },
+    "txt": "Always free"
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "mb-6 sm:mb-8",
+    "r": [
+      769,
+      630.7,
+      366,
+      231
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 32px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "hr",
+    "c": "border-t border-latte-125 mb-4",
+    "r": [
+      769,
+      630.7,
+      366,
+      1
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 16px",
+      "bd": "1px solid rgb(199, 195, 192) / 0px solid rgb(199, 195, 192) / 0px solid rgb(199, 195, 192)",
+      "d": "block",
+      "ov": "hidden"
+    }
+  },
+  {
+    "d": 7,
+    "t": "ul",
+    "c": "space-y-2.5 sm:space-y-3",
+    "r": [
+      769,
+      647.7,
+      366,
+      197
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block"
+    }
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      769,
+      647.7,
+      366,
+      22
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      769,
+      649.7,
+      20,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1015,
+    "vb": "0 0 20 20",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M18.1633 6.28833L8.16328 16.2883C8.07618 16.3757 7.97269 16.4451 7.85873 16.4924C7.74478 16.5397 7.6226 16.5641 7.49922 16.5641C7.37583 16.5641 7.25365 16.5397 7.1397 "
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      801,
+      647.7,
+      189.8,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Unlimited Children & Tracking"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      769,
+      681.7,
+      366,
+      23
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      769,
+      683.7,
+      20,
+      21
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1228,
+    "vb": "0 0 20 21",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"21\" viewBox=\"0 0 20 21\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M15.6255 3.83014C15.858 3.83014 16.0813 3.92258 16.2457 4.08698C16.41 4.25137 16.5025 4.47461 16.5025 4.70709C16.5024 4.93938 16.4099 5.16193 16.2457 5.32623L11.2838 1"
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      801,
+      681.7,
+      223.3,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "3+ Caregivers with their own logins"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      769,
+      716.7,
+      366,
+      23
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      769,
+      718.7,
+      20,
+      21
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1228,
+    "vb": "0 0 20 21",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"21\" viewBox=\"0 0 20 21\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M15.6255 3.83014C15.858 3.83014 16.0813 3.92258 16.2457 4.08698C16.41 4.25137 16.5025 4.47461 16.5025 4.70709C16.5024 4.93938 16.4099 5.16193 16.2457 5.32623L11.2838 1"
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      801,
+      716.7,
+      101.1,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Unlimited Chats"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      769,
+      751.7,
+      366,
+      23
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      769,
+      753.7,
+      20,
+      21
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1228,
+    "vb": "0 0 20 21",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"21\" viewBox=\"0 0 20 21\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M15.6255 3.83014C15.858 3.83014 16.0813 3.92258 16.2457 4.08698C16.41 4.25137 16.5025 4.47461 16.5025 4.70709C16.5024 4.93938 16.4099 5.16193 16.2457 5.32623L11.2838 1"
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      801,
+      751.7,
+      109,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Tracking Insights"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      769,
+      786.7,
+      366,
+      23
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 12px",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      769,
+      788.7,
+      20,
+      21
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1228,
+    "vb": "0 0 20 21",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"21\" viewBox=\"0 0 20 21\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M15.6255 3.83014C15.858 3.83014 16.0813 3.92258 16.2457 4.08698C16.41 4.25137 16.5025 4.47461 16.5025 4.70709C16.5024 4.93938 16.4099 5.16193 16.2457 5.32623L11.2838 1"
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      801,
+      786.7,
+      111.2,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Seamless Sharing"
+  },
+  {
+    "d": 8,
+    "t": "li",
+    "c": "flex items-start gap-2.5 sm:gap-3",
+    "r": [
+      769,
+      821.7,
+      366,
+      23
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "g": "12px",
+      "d": "flex row ai:flex-start jc:normal"
+    }
+  },
+  {
+    "d": 9,
+    "t": "svg",
+    "c": "mt-0.5 flex-shrink-0",
+    "r": [
+      769,
+      823.7,
+      20,
+      21
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "2px 0px 0px",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 1228,
+    "vb": "0 0 20 21",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"21\" viewBox=\"0 0 20 21\" fill=\"none\" class=\"mt-0.5 flex-shrink-0\"><path d=\"M15.6255 3.83014C15.858 3.83014 16.0813 3.92258 16.2457 4.08698C16.41 4.25137 16.5025 4.47461 16.5025 4.70709C16.5024 4.93938 16.4099 5.16193 16.2457 5.32623L11.2838 1"
+  },
+  {
+    "d": 9,
+    "t": "span",
+    "c": "font-sans-regular text-sm text-text-primary",
+    "r": [
+      801,
+      821.7,
+      229,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block"
+    },
+    "txt": "Advanced Memory & Customization"
+  },
+  {
+    "d": 7,
+    "t": "hr",
+    "c": "border-t border-latte-125 mt-4",
+    "r": [
+      769,
+      860.7,
+      366,
+      1
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "16px 0px 0px",
+      "bd": "1px solid rgb(199, 195, 192) / 0px solid rgb(199, 195, 192) / 0px solid rgb(199, 195, 192)",
+      "d": "block",
+      "ov": "hidden"
+    }
+  },
+  {
+    "d": 6,
+    "t": "div",
+    "c": "mb-6",
+    "r": [
+      769,
+      893.7,
+      366,
+      76
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "m": "0px 0px 24px",
+      "d": "block"
+    }
+  },
+  {
+    "d": 7,
+    "t": "div",
+    "c": "font-serif text-[28px] sm:text-[32px] text-text-primary mb-2",
+    "r": [
+      769,
+      893.7,
+      366,
+      48
+    ],
+    "s": {
+      "f": "\"serif\" 32px/48px w400",
+      "c": "rgb(46, 42, 66)",
+      "m": "0px 0px 8px",
+      "d": "block"
+    },
+    "txt": "Free"
+  },
+  {
+    "d": 7,
+    "t": "p",
+    "c": "text-text-primary/70 font-sans-regular text-sm flex items-center gap-2",
+    "r": [
+      769,
+      949.7,
+      366,
+      20
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "oklab(0.300559 0.0155957 -0.0401645 / 0.7)",
+      "g": "8px",
+      "d": "flex row ai:center jc:normal"
+    },
+    "txt": "Available on:"
+  },
+  {
+    "d": 8,
+    "t": "svg",
+    "c": "w-4 h-4 text-text-primary",
+    "r": [
+      859,
+      951.7,
+      16,
+      16
+    ],
+    "s": {
+      "f": "sansRegular 14px/20px w400",
+      "c": "rgb(46, 42, 66)",
+      "d": "block",
+      "ov": "hidden"
+    },
+    "svg": 640,
+    "vb": "0 0 24 24",
+    "svgs": "<svg class=\"w-4 h-4 text-text-primary\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6."
+  },
+  {
+    "d": 4,
+    "t": "div",
+    "c": "text-center px-4 sm:px-0",
+    "r": [
+      136,
+      1109.7,
+      1168,
+      60
+    ],
+    "s": {
+      "f": "sansRegular 16px/24px w400",
+      "c": "oklch(0.145 0 0)",
+      "d": "block",
+      "ta": "center"
+    }
+  },
+  {
+    "d": 5,
+    "t": "button",
+    "c": "button-primary font-sans-bold inline-flex w-full items-center justify-center\n      gap-3.5 whitespace-nowrap rounded-[2rem] px-8 py-4\n      transition-all duration-300\n      cursor-pointer\n      w-full sm:w-full max-w-[24rem] mx-auto min-h-[56px] text-base sm:text-lg",
+    "r": [
+      528,
+      1109.7,
+      384,
+      60
+    ],
+    "s": {
+      "f": "sansBold 18px/28px w400",
+      "c": "rgb(255, 255, 255)",
+      "bg": "rgb(89, 52, 197)",
+      "p": "16px 32px",
+      "g": "14px",
+      "rad": "32px",
+      "tr": "0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      "d": "inline-flex row ai:center jc:center",
+      "ta": "center",
+      "mw": "384px",
+      "minh": "56px",
+      "ws": "nowrap"
+    },
+    "st": "background-color: rgb(89, 52, 197); color: rgb(255, 255, 255);"
+  },
+  {
+    "d": 6,
+    "t": "span",
+    "c": "flex max-w-full items-center justify-center gap-2 px-5",
+    "r": [
+      605.1,
+      1125.7,
+      229.8,
+      28
+    ],
+    "s": {
+      "f": "sansBold 18px/28px w400",
+      "c": "rgb(255, 255, 255)",
+      "p": "0px 20px",
+      "g": "8px",
+      "d": "flex row ai:center jc:center",
+      "ta": "center",
+      "mw": "100%",
+      "ws": "nowrap"
+    },
+    "txt": "Get Started For Free"
+  },
+  {
+    "d": 7,
+    "t": "svg",
+    "c": "",
+    "r": [
+      798.9,
+      1131.2,
+      16,
+      17
+    ],
+    "s": {
+      "f": "sansBold 18px/28px w400",
+      "c": "rgb(255, 255, 255)",
+      "d": "block",
+      "ta": "center",
+      "ov": "hidden",
+      "ws": "nowrap"
+    },
+    "svg": 1136,
+    "vb": "0 0 16 17",
+    "svgs": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"17\" viewBox=\"0 0 16 17\" fill=\"none\"><path d=\"M9.00098 3.64331C9.18353 3.6434 9.35821 3.71637 9.4873 3.84546L13.9873 8.34546C14.0514 8.40942 14.103 8.48543 14.1377 8.56909C14.1722 8.65262 14.1896 8.74237 14.1895 8.83276C14.1893 8.92326 14.171"
+  }
+]

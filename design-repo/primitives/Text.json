@@ -1,0 +1,18 @@
+{
+  "$schema": "riley-design-tokens/primitive",
+  "id": "Text",
+  "purpose": "Typography primitive bound to a semantic typography role.",
+  "props": {
+    "role": "tokens.10-semantic.typography-roles.roles.*",
+    "text": "string with maxWords from the owning section"
+  },
+  "tokenRefs": [
+    "tokens.10-semantic.typography-roles"
+  ],
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:112-131",
+      "anchor": "Typography roles (computed)"
+    }
+  ]
+}

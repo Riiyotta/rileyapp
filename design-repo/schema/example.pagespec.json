@@ -1,0 +1,994 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "page": {
+    "route": "/",
+    "title": "Riley – Baby Tracker & Child Development Expert",
+    "template": "home",
+    "brandContext": "riley-clone",
+    "theme": "riley-light"
+  },
+  "nodes": [
+    {
+      "type": "announcement-bar",
+      "content": {
+        "message": "Try Riley risk free with our 7-day free trial!",
+        "link": {
+          "assetRole": "internal-route"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-header",
+      "variant": "hero-overlay",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/wordmark.svg",
+          "alt": "Riley logo"
+        },
+        "navItems": [
+          {
+            "label": "Blog"
+          },
+          {
+            "label": "What's New?"
+          }
+        ],
+        "cta": {
+          "label": "Get Started For Free",
+          "assetRole": "app-store-onelink"
+        },
+        "mobileCta": {
+          "label": "Try For $0",
+          "assetRole": "app-store-onelink"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "hero-home",
+      "content": {
+        "heading": "Panic Scrolling Stops Here. Meet Riley.",
+        "inlineMascot": {
+          "assetRole": "mascot-illustration",
+          "assetRef": "/assets/HeroRiley.svg"
+        },
+        "body": "Get instant, pediatrician-backed parenting support the moment you need it. Riley has award-winning, 24/7 advice tailored to your family with smart tracking and guidance. Parent confidently, with the only parenting app you'll ever need.",
+        "emphasis": [
+          "award-winning, 24/7 advice tailored to your family",
+          "the only parenting app you'll ever need."
+        ],
+        "cta": {
+          "label": "Get Started For Free",
+          "assetRole": "unspecified-destination"
+        },
+        "availability": {
+          "label": "Available on:",
+          "badge": {
+            "assetRole": "store-badge",
+            "assetRef": "/assets/icons/apple-logo.svg"
+          }
+        },
+        "illustration": {
+          "assetRole": "brand-illustration",
+          "assetRef": "/assets/HeroIllo.84fc0736.svg"
+        }
+      },
+      "motion": {
+        "pattern": "parallax-clouds",
+        "reducedMotionFallback": "Freeze cloud layers at parallax progress 0 (no translate/scale) and pause the horizontal cloud drift."
+      }
+    },
+    {
+      "type": "press-marquee",
+      "content": {
+        "logos": [
+          {
+            "assetRole": "press-logo",
+            "assetRef": "/assets/nbc.png",
+            "alt": "NBC logo"
+          },
+          {
+            "assetRole": "press-logo",
+            "assetRef": "/assets/axios.png",
+            "alt": "Axios logo"
+          },
+          {
+            "assetRole": "press-logo",
+            "assetRef": "/assets/bump-logo.png",
+            "alt": "Bump logo"
+          },
+          {
+            "assetRole": "press-logo",
+            "assetRef": "/assets/finsmes.png",
+            "alt": "Finsmes logo"
+          },
+          {
+            "assetRole": "press-logo",
+            "assetRef": "/assets/tc.png",
+            "alt": "TC logo"
+          },
+          {
+            "assetRole": "press-logo",
+            "assetRef": "/assets/glamour.png",
+            "alt": "Glamour logo"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "marquee-press-20s",
+        "reducedMotionFallback": "Stop the marquee; show the first logo row static with the edge mask kept."
+      }
+    },
+    {
+      "type": "personalization-marquee",
+      "content": {
+        "heading": "Parenting isn't one-size-fits-all. Your support shouldn't be, either.",
+        "families": [
+          {
+            "assetRole": "mascot-family-mark",
+            "assetRef": "/assets/softie-family.svg",
+            "alt": "Softie logo"
+          },
+          {
+            "assetRole": "mascot-family-mark",
+            "assetRef": "/assets/spark-family.svg",
+            "alt": "Spark logo"
+          },
+          {
+            "assetRole": "mascot-family-mark",
+            "assetRef": "/assets/uplifter-family.svg",
+            "alt": "Uplifter logo"
+          },
+          {
+            "assetRole": "mascot-family-mark",
+            "assetRef": "/assets/riley-family.svg",
+            "alt": "Riley logo"
+          },
+          {
+            "assetRole": "mascot-family-mark",
+            "assetRef": "/assets/worrier-family.svg",
+            "alt": "Worrier logo"
+          },
+          {
+            "assetRole": "mascot-family-mark",
+            "assetRef": "/assets/guide-family.svg",
+            "alt": "Guide logo"
+          }
+        ],
+        "body": "Riley learns and remembers what matters: your baby's growth stage, tracking logs, and past wins to give guidance that fits your family.",
+        "tagline": "Support that thinks, adapts, and grows with you."
+      },
+      "motion": {
+        "pattern": "marquee-family-50s-reverse",
+        "reducedMotionFallback": "Stop the marquee; show the first family row static."
+      }
+    },
+    {
+      "type": "superpowers-grid",
+      "content": {
+        "heading": "What Parenting Superpower Do You Need Today?",
+        "cards": [
+          {
+            "label": "Survive the newborn stage",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "/assets/bottle.svg"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "mascot-illustration",
+                "assetRef": "/assets/modal/mascots/worrier.svg"
+              },
+              "title": "Lost in the newborn phase fog?",
+              "subtitle": "You’re not alone. Riley can:",
+              "features": [
+                {
+                  "title": "Get advice just for you",
+                  "description": "Riley takes pediatrician-vetted advice and applies it to your family's unique situation."
+                },
+                {
+                  "title": "Keep track of everything",
+                  "description": "Easily track sleep, feedings, whatever, in the only app where your data is put to work."
+                },
+                {
+                  "title": "Provide 24/7 support",
+                  "description": "Expert-backed support all day and night for all those “is this normal?” moments."
+                },
+                {
+                  "title": "Predict naps and feeds",
+                  "description": "Riley's Golden Window™ helps you take the guesswork out of sleep and feeding."
+                }
+              ],
+              "cta": {
+                "label": "Get Started For Free",
+                "assetRole": "app-store-onelink"
+              }
+            }
+          },
+          {
+            "label": "Get help with naps and sleep",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "/assets/moon.svg"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "mascot-illustration",
+                "assetRef": "/assets/modal/mascots/guide.svg"
+              },
+              "title": "Tired of playing the nap guessing game?",
+              "subtitle": "We’ve been there! Riley can:",
+              "features": [
+                {
+                  "title": "Take the guesswork out",
+                  "description": "Predict your baby's ideal naptime and bedtime with Riley's Golden Window™."
+                },
+                {
+                  "title": "Solve regressions, fast",
+                  "description": "Riley helps you handle regressions with expert-backed support."
+                },
+                {
+                  "title": "Real-time adjustments",
+                  "description": "Riley learns your baby’s patterns and adjusts your support in real-time."
+                },
+                {
+                  "title": "Personalize routines",
+                  "description": "Create calm sleep routines that work for your family, now and in the long-term."
+                }
+              ],
+              "cta": {
+                "label": "Get Started For Free",
+                "assetRole": "app-store-onelink"
+              }
+            }
+          },
+          {
+            "label": "Support baby development",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "/assets/blocks.svg"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "mascot-illustration",
+                "assetRef": "/assets/modal/mascots/softie.svg"
+              },
+              "title": "Worried about milestones?",
+              "subtitle": "Yup, we've been there. Riley can:",
+              "features": [
+                {
+                  "title": "Track milestones",
+                  "description": "Track key milestones and prep you for what’s next for your little one."
+                },
+                {
+                  "title": "Help plan activities",
+                  "description": "Riley suggests age-appropriate, science-backed activities vetted by pediatricians."
+                },
+                {
+                  "title": "Guide development",
+                  "description": "Riley helps spot patterns and trends to help guide healthy development."
+                },
+                {
+                  "title": "No comparisons",
+                  "description": "Riley gives personalized, data-driven support. No one-size-fits-all advice here."
+                }
+              ],
+              "cta": {
+                "label": "Get Started For Free",
+                "assetRole": "app-store-onelink"
+              }
+            }
+          },
+          {
+            "label": "Navigating toddler tantrums",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "/assets/stubborn.svg"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "mascot-illustration",
+                "assetRef": "/assets/modal/mascots/spark.svg"
+              },
+              "title": "Tantrums testing your patience?",
+              "subtitle": "You’re not alone! Riley can:",
+              "features": [
+                {
+                  "title": "Decode the why",
+                  "description": "Riley learns from what you’ve shared to help navigate meltdowns."
+                },
+                {
+                  "title": "Match your needs",
+                  "description": "Riley suggests calming techniques that match your individual child’s needs."
+                },
+                {
+                  "title": "Learn from what works",
+                  "description": "Riley helps track behaviors to spot what works - and what doesn't! - for your family."
+                },
+                {
+                  "title": "Sanity reminders",
+                  "description": "Riley understands the science behind big toddler feelings - and guides you through it."
+                }
+              ],
+              "cta": {
+                "label": "Get Started For Free",
+                "assetRole": "app-store-onelink"
+              }
+            }
+          },
+          {
+            "label": "Starting solid foods",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "/assets/bowl.svg"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "mascot-illustration",
+                "assetRef": "/assets/modal/mascots/uplifter.svg"
+              },
+              "title": "Not sure how to start solids?",
+              "subtitle": "We know how that feels. Riley can:",
+              "features": [
+                {
+                  "title": "Guide you through it",
+                  "description": "Riley walks you through the what, when, and how of feeding."
+                },
+                {
+                  "title": "Personalized meal tips",
+                  "description": "Get meal tips based on your actual baby’s current routine."
+                },
+                {
+                  "title": "Track feedings",
+                  "description": "Riley helps you keep track of different foods, reactions, and preferences."
+                },
+                {
+                  "title": "Take the pressure off",
+                  "description": "Riley makes starting solids simpler, so you can focus on the joy, not the stress."
+                }
+              ],
+              "cta": {
+                "label": "Get Started For Free",
+                "assetRole": "app-store-onelink"
+              }
+            }
+          },
+          {
+            "label": "Build a routine",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "/assets/sailboat.svg"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "mascot-illustration",
+                "assetRef": "/assets/modal/mascots/explorer.svg"
+              },
+              "title": "Feeling like every day is chaos?",
+              "subtitle": "It's totally normal! Riley can:",
+              "features": [
+                {
+                  "title": "Personalize routines",
+                  "description": "Riley creates a routine around your baby’s actual sleep and feed patterns."
+                },
+                {
+                  "title": "Grow with you",
+                  "description": "Needs change quickly with littles! Riley is the only app that grows with your family."
+                },
+                {
+                  "title": "Proactively advise",
+                  "description": "Riley suggests age-appropriate activities based on your real-time data."
+                },
+                {
+                  "title": "Take the guesswork out",
+                  "description": "Get expert, pediatrician-backed advice for every “What now?” moment."
+                }
+              ],
+              "cta": {
+                "label": "Get Started For Free",
+                "assetRole": "app-store-onelink"
+              }
+            }
+          }
+        ],
+        "decorativeMascot": {
+          "assetRole": "mascot-illustration",
+          "assetRef": "/assets/mascot.svg"
+        }
+      },
+      "motion": {
+        "pattern": "click-opens-modal",
+        "reducedMotionFallback": "none-required: cards have no hover motion on the original; the modal opens with no entry animation."
+      }
+    },
+    {
+      "type": "featurette-carousel",
+      "content": {
+        "heading": "Here's How Real Users Talk to Riley:",
+        "slides": [
+          {
+            "rive": {
+              "assetRole": "rive-animation",
+              "assetRef": "/assets/animations/chat_module_meg.riv",
+              "artboard": "chat_module_meg",
+              "stateMachine": "meg_chat_SM"
+            },
+            "phoneShell": {
+              "assetRole": "brand-illustration",
+              "assetRef": "/assets/phonebg.svg"
+            },
+            "photo": {
+              "assetRole": "user-story-photo",
+              "assetRef": "/assets/meg.png",
+              "alt": "Feeding help"
+            }
+          },
+          {
+            "rive": {
+              "assetRole": "rive-animation",
+              "assetRef": "/assets/animations/chat_module_seb.riv",
+              "artboard": "chat_module_seb",
+              "stateMachine": "seb_chat_SM"
+            },
+            "phoneShell": {
+              "assetRole": "brand-illustration",
+              "assetRef": "/assets/phonebg.svg"
+            },
+            "photo": {
+              "assetRole": "user-story-photo",
+              "assetRef": "/assets/seb-and-daughter.png",
+              "alt": "Seb & daughter testimonial"
+            }
+          },
+          {
+            "rive": {
+              "assetRole": "rive-animation",
+              "assetRef": "/assets/animations/chat_module_naina.riv",
+              "artboard": "chat_module_naina",
+              "stateMachine": "naina_chat_SM"
+            },
+            "phoneShell": {
+              "assetRole": "brand-illustration",
+              "assetRef": "/assets/phonebg.svg"
+            },
+            "photo": {
+              "assetRole": "user-story-photo",
+              "assetRef": "/assets/naina.png",
+              "alt": "Milestone celebration"
+            }
+          }
+        ],
+        "background": {
+          "assetRole": "decorative-cloud",
+          "assetRef": "/assets/background-clouds.svg"
+        },
+        "cta": {
+          "label": "Talk to Riley",
+          "assetRole": "unspecified-destination"
+        }
+      },
+      "motion": {
+        "pattern": "embla-loop-with-rive",
+        "reducedMotionFallback": "Snap between slides with no embla easing; do not autoplay Rive (show the first frame)."
+      }
+    },
+    {
+      "type": "clinical-board",
+      "content": {
+        "eyebrow": "Our Clinical Advisory Board",
+        "heading": "Designed with Experts, for Real Families",
+        "body": "Our Clinical Advisory Board includes pediatricians, therapists, and specialists, who help us keep Riley grounded in real, evidence-based support.",
+        "advisors": [
+          {
+            "portrait": {
+              "assetRole": "advisor-portrait",
+              "assetRef": "/assets/lilly.png",
+              "alt": "Portrait of Dr. Lilly Jay"
+            },
+            "name": "Dr. Lilly Jay",
+            "credentials": "PsyD, PMH-C, Perinatal Health"
+          },
+          {
+            "portrait": {
+              "assetRole": "advisor-portrait",
+              "assetRef": "/assets/kate.png",
+              "alt": "Portrait of Dr. Kate Roche"
+            },
+            "name": "Dr. Kate Roche",
+            "credentials": "MD, Child Neurology"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "how-riley-works",
+      "content": {
+        "heading": "How Riley Works",
+        "items": [
+          {
+            "image": {
+              "assetRole": "mascot-family-mark",
+              "assetRef": "/assets/worrier-family.svg"
+            },
+            "title": "Built on science that matters",
+            "body": "When answering your questions, Riley draws from the latest child development research, expert-reviewed sources that are vetted by our Clinical Advisory Board."
+          },
+          {
+            "image": {
+              "assetRole": "mascot-family-mark",
+              "assetRef": "/assets/guide-family.svg"
+            },
+            "title": "Powered by tech that learns and grows with you",
+            "body": "Once you start using Riley, it doesn’t just log or respond to you, it safely remembers. From tracking to what’s worked in the past, Riley learns from you to offer relevant guidance."
+          },
+          {
+            "image": {
+              "assetRole": "mascot-family-mark",
+              "assetRef": "/assets/spark-family.svg"
+            },
+            "title": "Clarity without ignoring your individuality",
+            "body": "Every family is different, Riley gets that! You'll receive clear, science-backed guidance that respects your individual parenting style and real-life context."
+          }
+        ],
+        "cta": {
+          "label": "Get Started For Free",
+          "assetRole": "unspecified-destination"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "testimonials-carousel",
+      "content": {
+        "eyebrow": "Real Reviews, Real Families",
+        "heading": "Why Parents Love Riley",
+        "slides": [
+          {
+            "quote": "“10 days into having our newborn, we’ve already developed the habit of saying “Hm, not sure. Ask Riley” multiple times a day. Not sure what we’d do without having Riley to back our instincts.”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple1.svg"
+            },
+            "attribution": "Max L., Dad of Baby R (1 mo)"
+          },
+          {
+            "quote": "“Riley offers calm and reassurance while Google makes me spiral. With my second, it feels like we’re starting over and have forgotten everything about the newborn phase but Riley’s here for all my questions”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple2.svg"
+            },
+            "attribution": "Meg F., Mom of Baby A (5 mos) and Baby H (2 yrs)"
+          },
+          {
+            "quote": "“Compared to every other app, especially chat tools, Riley asks better questions and more relevant follow-ups based on my child’s age and the nuance of the moment - the end result is always more helpful.”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple3.svg"
+            },
+            "attribution": "Rebeckah R., Mom of Baby N. (7mo)"
+          },
+          {
+            "quote": "“Riley’s tracking and recommendations are smart and proactive.  I love that it’s personalized and remembers details about my family without me having to myself.”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple4.svg"
+            },
+            "attribution": "App Store Review"
+          },
+          {
+            "quote": "“I was traveling this week and *terrifyingly* my pump broke and I was panicking. Riley pulled through. Having a resource to text with at 1 am? 11/10.”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple5.svg"
+            },
+            "attribution": "R, Mom of Baby K. (5mo)"
+          }
+        ],
+        "cta": {
+          "label": "Join the club",
+          "assetRole": "unspecified-destination"
+        }
+      },
+      "motion": {
+        "pattern": "embla-loop",
+        "reducedMotionFallback": "Snap between slides with no embla easing."
+      }
+    },
+    {
+      "type": "gradient-band",
+      "variant": "feature-cards-and-table",
+      "content": {
+        "featureCards": {
+          "eyebrow": "Parenting is hard. Riley makes it easier.",
+          "heading": "One App for All Your Parenting Needs",
+          "cards": [
+            {
+              "tone": "apricot",
+              "illustration": {
+                "assetRole": "brand-illustration",
+                "assetRef": "/assets/chat.svg"
+              },
+              "title": "24/7 Personalized Support",
+              "body": "Real-time, science-backed advice tailored to your baby's needs and your parenting style—available whenever you need it (even at 3am)."
+            },
+            {
+              "tone": "violet-100",
+              "illustration": {
+                "assetRole": "brand-illustration",
+                "assetRef": "/assets/tracking.svg"
+              },
+              "title": "Smart, Predictive Tracking",
+              "body": "Riley doesn't just store your data, it learns and grows with you. Track sleep, feed, diapers, development and more to stay on top of what's next for your baby."
+            },
+            {
+              "tone": "marigold",
+              "illustration": {
+                "assetRole": "brand-illustration",
+                "assetRef": "/assets/sparks.svg"
+              },
+              "title": "Tips Tailored Just for You",
+              "body": "No more endless Googling. Riley gives you helpful tips made just for your family—so you can parent with a little more ease (and a lot less guesswork)."
+            }
+          ],
+          "cta": {
+            "label": "Get Started For Free",
+            "assetRole": "unspecified-destination"
+          }
+        },
+        "comparisonTable": {
+          "eyebrow": "Designed with Real Parents in Mind",
+          "heading": "Why Riley Stands Out",
+          "body": "See how Riley outshines other parenting tools with intelligent features and tailored advice. It’s the one-stop-shop for all your parenting needs!",
+          "featureColumnLabel": "Feature/Benefit",
+          "columns": [
+            {
+              "label": "Riley"
+            },
+            {
+              "label": "Google Search"
+            },
+            {
+              "label": "Reddit"
+            },
+            {
+              "label": "ChatGPT"
+            },
+            {
+              "label": "Claude"
+            },
+            {
+              "label": "Other Tracking Apps"
+            },
+            {
+              "label": "Podcasts, Books, & Blogs"
+            }
+          ],
+          "rows": [
+            {
+              "label": "24/7 Instant Answers",
+              "marks": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "Expert-Vetted, Science Backed Support",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                true
+              ]
+            },
+            {
+              "label": "Guidance Tailored to You & Your Family",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "Proactively Turns Tracking Into Tips",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "All-In-One Tracking & Support",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                true,
+                false
+              ]
+            }
+          ],
+          "cta": {
+            "label": "Join Riley—early, easy, free",
+            "assetRole": "unspecified-destination"
+          }
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "faq-clouds",
+      "content": {
+        "heading": "We’re Here to Make Things Clear",
+        "items": [
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/4.png"
+            },
+            "question": "How do I know I can trust Riley?",
+            "answer": "Riley's advice is grounded in the latest pediatric research and expert knowledge. We work closely with pediatricians, child development specialists, and parenting experts to ensure our information is accurate and up-to-date. Plus, Riley learns from your experiences, becoming more personalized and helpful over time."
+          },
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/5.png"
+            },
+            "question": "How is Riley different from ChatGPT or other parenting apps?",
+            "answer": "Riley isn’t just another chatbot. It learns from your baby’s age, symptoms, tracking history, and anything that's worked for your family in the past. Delivering expert-vetted advice that fits your family, not just “most families.”"
+          },
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/3.png"
+            },
+            "question": "What can’t I ask Riley?",
+            "answer": "Riley gives science-backed, personalized parenting support - but it’s not a doctor, therapist, or emergency service. It’s here for guidance on sleep, feeds, development, routines, and real-life questions - not for diagnosing medical conditions."
+          },
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/2.png"
+            },
+            "question": "Are you going to keep my kids’ data private?",
+            "answer": "Your family's privacy is our top priority. We use bank-level encryption to protect your data, and we never share your information with third parties. Riley's personalized advice is generated just for you, based on the information you choose to share. You're always in control of your data, and you can delete it at any time. Riley was built to support your parenting - not to profit from your info."
+          },
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/6.png"
+            },
+            "question": "Do I need to track everything for Riley to work?",
+            "answer": "Nope. Tracking helps tailor the experience, but Riley gives helpful, relevant support even if you skip a day - or a week."
+          }
+        ],
+        "itemCta": {
+          "label": "Learn More",
+          "assetRole": "internal-route"
+        },
+        "itemMascot": {
+          "assetRole": "mascot-illustration",
+          "assetRef": "/assets/riley-up.svg"
+        },
+        "clouds": [
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-1.svg"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-2.svg"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-3.svg"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-4.svg"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-5.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "faq-clouds-float-and-open",
+        "reducedMotionFallback": "Clouds static at clear-skies positions; open/close items without size/position transition; apply blur state instantly."
+      }
+    },
+    {
+      "type": "blog-teaser",
+      "content": {
+        "eyebrow": "Insightful Reads for Modern Parents",
+        "heading": "Explore the Riley Blog",
+        "categories": [
+          {
+            "label": "Development",
+            "tone": "development",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Feeding",
+            "tone": "neutral",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Health",
+            "tone": "health",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "News",
+            "tone": "neutral",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Pregnancy",
+            "tone": "neutral",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Sleep",
+            "tone": "sleep",
+            "assetRole": "internal-route"
+          }
+        ],
+        "posts": [
+          {
+            "cover": {
+              "assetRole": "blog-cover-photo",
+              "assetRef": "/assets/3dd009c0c3295127b2b277b3920acb6868836cd9-5760x3840.jpeg",
+              "alt": "Baby Witching Hour: What It Is, When and Why It Happens, and How to Manage It"
+            },
+            "title": "Baby Witching Hour: What It Is, When and Why It Happens, and How to Manage It",
+            "assetRole": "internal-route"
+          },
+          {
+            "cover": {
+              "assetRole": "blog-cover-photo",
+              "assetRef": "/assets/6ec23763ba2e30df4af542e28148a465ef27d13a-5744x3829.jpeg",
+              "alt": "Tired young mom holds her one month old baby"
+            },
+            "title": "1 Month Old Sleep Guide: Bedtime and Nap Schedules",
+            "assetRole": "internal-route"
+          },
+          {
+            "cover": {
+              "assetRole": "blog-cover-photo",
+              "assetRef": "/assets/8fe3a7b3af79c135ea300f1877f1dc795502b3a0-1600x1066.jpeg",
+              "alt": "A 16 month old baby sleeping."
+            },
+            "title": "16 Month Old Sleep Schedule: How Much Should a 16 Month Old Sleep?",
+            "assetRole": "internal-route"
+          }
+        ],
+        "cta": {
+          "label": "Explore the blog",
+          "assetRole": "app-store-onelink"
+        }
+      },
+      "motion": {
+        "pattern": "image-hover-scale",
+        "reducedMotionFallback": "No image scale on hover; pills keep instant opacity change."
+      }
+    },
+    {
+      "type": "final-cta",
+      "content": {
+        "heading": "We are raising a generation of confident parents.",
+        "cta": {
+          "label": "Get support that gets you",
+          "assetRole": "app-store-onelink"
+        },
+        "background": {
+          "assetRole": "decorative-cloud",
+          "assetRef": "/assets/background-clouds(1).svg"
+        },
+        "mascots": {
+          "assetRole": "mascot-illustration",
+          "assetRef": "/assets/mascots.svg"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Stay in the loop with Riley's newsletter.",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "newsletter-endpoint"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Blog",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Pricing",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Editorial Process",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy Policy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms of Service",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Support",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the App",
+          "badge": {
+            "assetRole": "store-badge",
+            "assetRef": "/assets/icons/app-store-badge.svg",
+            "alt": "Download on the App Store"
+          },
+          "assetRole": "app-store-onelink"
+        },
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/icons/footer-logo.svg"
+        },
+        "copyright": "© 2025 Riley"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

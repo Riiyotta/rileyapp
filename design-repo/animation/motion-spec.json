@@ -1,0 +1,366 @@
+{
+  "$schema": "riley-design-tokens/animation/motion-spec",
+  "version": "1.0.0",
+  "authority": "Live-measured animation-pass values (encoded in src/styles/upper.css, lower.css, component code) and the independent animation-QA corrections outrank CLONE_SPEC.md §14 where they differ.",
+  "noScrollReveal": {
+    "statement": "There are NO scroll-reveal / whileInView animations anywhere. No motion pattern below fades/slides sections in on scroll; a generator must not invent one (the schema's closed motion enums make it impossible).",
+    "evidence": [
+      {
+        "cite": "CLONE_SPEC.md:470",
+        "anchor": "No scroll-reveal or whileInView animations"
+      },
+      {
+        "cite": "CLONE_SPEC_PAGES_MARKETING.md:218",
+        "anchor": "No load or scroll-reveal animation"
+      }
+    ]
+  },
+  "reducedMotion": {
+    "statement": "The clone has no prefers-reduced-motion handling at all (grep of src/ and index.html: zero matches). Every reducedMotionFallback in this repo is PRESCRIPTIVE guidance for generated pages, not a measured behaviour."
+  },
+  "patterns": {
+    "static": {
+      "motionRoles": [
+        "button-state",
+        "link-hover-opacity"
+      ],
+      "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+      "sections": [
+        "announcement-bar",
+        "clinical-board",
+        "how-riley-works",
+        "gradient-band",
+        "final-cta",
+        "site-footer",
+        "not-found-block"
+      ]
+    },
+    "header-load-and-sticky": {
+      "motionRoles": [
+        "header-load-fade",
+        "nav-stagger",
+        "header-sticky",
+        "mobile-menu-slide",
+        "link-hover-opacity",
+        "button-state"
+      ],
+      "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide.",
+      "sections": [
+        "site-header"
+      ]
+    },
+    "parallax-clouds": {
+      "motionRoles": [
+        "hero-cloud-drift",
+        "scroll-parallax"
+      ],
+      "reducedMotionFallback": "Freeze cloud layers at parallax progress 0 (no translate/scale) and pause the horizontal cloud drift.",
+      "sections": [
+        "hero-home",
+        "pricing-hero"
+      ]
+    },
+    "marquee-press-20s": {
+      "motionRoles": [
+        "marquee-press"
+      ],
+      "reducedMotionFallback": "Stop the marquee; show the first logo row static with the edge mask kept.",
+      "sections": [
+        "press-marquee"
+      ]
+    },
+    "marquee-family-50s-reverse": {
+      "motionRoles": [
+        "marquee-family"
+      ],
+      "reducedMotionFallback": "Stop the marquee; show the first family row static.",
+      "sections": [
+        "personalization-marquee"
+      ]
+    },
+    "click-opens-modal": {
+      "motionRoles": [
+        "button-state"
+      ],
+      "reducedMotionFallback": "none-required: cards have no hover motion on the original; the modal opens with no entry animation.",
+      "sections": [
+        "superpowers-grid"
+      ]
+    },
+    "embla-loop-with-rive": {
+      "motionRoles": [
+        "embla-loop",
+        "rive-autoplay"
+      ],
+      "reducedMotionFallback": "Snap between slides with no embla easing; do not autoplay Rive (show the first frame).",
+      "sections": [
+        "featurette-carousel"
+      ]
+    },
+    "embla-loop": {
+      "motionRoles": [
+        "embla-loop"
+      ],
+      "reducedMotionFallback": "Snap between slides with no embla easing.",
+      "sections": [
+        "testimonials-carousel"
+      ]
+    },
+    "faq-clouds-float-and-open": {
+      "motionRoles": [
+        "faq-cloud-float",
+        "faq-clear-skies",
+        "faq-open"
+      ],
+      "reducedMotionFallback": "Clouds static at clear-skies positions; open/close items without size/position transition; apply blur state instantly.",
+      "sections": [
+        "faq-clouds"
+      ]
+    },
+    "image-hover-scale": {
+      "motionRoles": [
+        "image-hover-scale",
+        "link-hover-opacity"
+      ],
+      "reducedMotionFallback": "No image scale on hover; pills keep instant opacity change.",
+      "sections": [
+        "blog-teaser"
+      ]
+    }
+  },
+  "inventory": {
+    "M1": {
+      "what": "header fade on load",
+      "value": "opacity 0->1, 0.5s cubic-bezier(0,0,.58,1)",
+      "status": "measured (spec said easing UNVERIFIED)",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:34-42",
+          "anchor": "M1: framer {duration:.5}"
+        }
+      ]
+    },
+    "M1b": {
+      "what": "desktop nav container + 4 items",
+      "value": "container 0.3s cubic-bezier(.25,.1,.35,1); items 0.6s cubic-bezier(0,0,.58,1), y 20->0, delays 100/300/500/700ms",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:43-56",
+          "anchor": "M1b children"
+        },
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:9-10",
+          "anchor": "0.1 + i * 0.2"
+        }
+      ]
+    },
+    "M2": {
+      "what": "header becomes fixed",
+      "value": "clone scrollY > 54 (original measured >= 55 by animation-QA); `all` 300ms cubic-bezier(.4,0,.2,1); shadow-md + backdrop blur; 80px spacer",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:18-28",
+          "anchor": "window.scrollY > 54"
+        },
+        {
+          "cite": "CLONE_SPEC.md:452",
+          "anchor": "Header sticky"
+        }
+      ]
+    },
+    "M3": {
+      "what": "hero cloud horizontal drift",
+      "value": "translateX(-645px) -> calc(100vw + 645px); slow 100s / medium 85s / fast 50s linear infinite; alt delays -50s / -42.5s / -15s",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:16-32",
+          "anchor": "upper-float 100s linear infinite"
+        }
+      ]
+    },
+    "M3b": {
+      "what": "hero scroll parallax",
+      "value": "p = scrollY/964 @1440 (home), scrollY/1233.7 (/pricing); layers -20/-35/-50/-100%, layer 4 scale .8->1.2",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:454",
+          "anchor": "p = scrollY/964.3 @1440"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:67",
+          "anchor": "scrollY / 1233.7 @1440"
+        }
+      ]
+    },
+    "M4": {
+      "what": "press marquee",
+      "value": "20s linear infinite (~62.4px/s), 4 copies, edge mask",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/components/Hero.jsx:77",
+          "anchor": "[--duration:20s]"
+        },
+        {
+          "cite": "src/styles/upper.css:67-71",
+          "anchor": "press strip edge mask"
+        }
+      ]
+    },
+    "M5": {
+      "what": "family marquee",
+      "value": "50s linear infinite reverse (~26.2px/s), no mask",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/components/PersonalizationMarquee.jsx:24",
+          "anchor": "[--duration:50s]"
+        }
+      ]
+    },
+    "M6": {
+      "what": "featurette carousel",
+      "value": "ported embla {loop:true}: duration 25, friction .68, drag threshold 10px; no autoplay",
+      "status": "measured; drag follows pointer 1:1 and drags from anywhere incl. the Rive canvas on both; touch swipe matches the original at 390 (verified after fix)",
+      "evidence": [
+        {
+          "cite": "src/components/shared/useEmblaLoop.js:3-17",
+          "anchor": "BASE_FRICTION = 0.68"
+        }
+      ]
+    },
+    "M6b": {
+      "what": "Rive chat autoplay",
+      "value": "state machines meg_chat_SM / seb_chat_SM / naina_chat_SM, fit Cover, align Center",
+      "status": "inside .riv (not measurable)",
+      "evidence": [
+        {
+          "cite": "src/components/upper/RiveChat.jsx:8-15",
+          "anchor": "Fit.Cover"
+        }
+      ]
+    },
+    "M7": {
+      "what": "testimonials carousel",
+      "value": "same embla port, loop, no autoplay",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/components/Testimonials.jsx:54",
+          "anchor": "useEmblaLoop(SLIDES.length)"
+        }
+      ]
+    },
+    "M8": {
+      "what": "FAQ cloud float",
+      "value": "10s ease-in-out infinite alternate-reverse; delays -2/-4/-6/-8/-1s",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:68-86",
+          "anchor": "faq-clouds-floating 10s"
+        }
+      ]
+    },
+    "M8b": {
+      "what": "FAQ clear skies",
+      "value": "IntersectionObserver threshold 0.2 + 1000ms delay; clouds move to edges with 2.55s ease; fires once",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/components/FaqClouds.jsx:48-64",
+          "anchor": "threshold: 0.2"
+        },
+        {
+          "cite": "src/styles/lower.css:96-102",
+          "anchor": "clear skies"
+        }
+      ]
+    },
+    "M9": {
+      "what": "FAQ open",
+      "value": "item all .35s ease-in-out; plus icon .45s ease rotate 135deg; others blur 5px",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:40-51",
+          "anchor": "rotate(135deg)"
+        },
+        {
+          "cite": "src/styles/lower.css:104-107",
+          "anchor": "blur(5px)"
+        }
+      ]
+    },
+    "M10": {
+      "what": "primary button states",
+      "value": "#5934C5 -> hover #7A55FD -> pressed #5A20E1, all .3s cubic-bezier(.4,0,.2,1), JS inline style",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:4",
+          "anchor": "base: '#5934C5'"
+        }
+      ]
+    },
+    "M11": {
+      "what": "nav links / blog pills hover",
+      "value": "opacity .8 over .15s",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:464",
+          "anchor": "opacity 1 → .8"
+        }
+      ]
+    },
+    "M12": {
+      "what": "superpower card hover",
+      "value": "NONE on the original (animation-QA, live). CLONE_SPEC's bg #fff -> #f9fafb is superseded; cursor auto.",
+      "status": "corrected by QA",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:465",
+          "anchor": "Superpower cards"
+        }
+      ]
+    },
+    "M13": {
+      "what": "blog card image hover",
+      "value": "scale 1 -> 1.05, .3s cubic-bezier(.4,0,.2,1) (both original and clone animate the CSS `scale` property; transition-property transform,translate,scale,rotate)",
+      "status": "measured",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:58",
+          "anchor": "group-hover:[scale:1.05]"
+        }
+      ]
+    },
+    "M14": {
+      "what": "mobile menu open",
+      "value": "y 100% -> 0 over 0.25s cubic-bezier(0,0,.58,1); close instant",
+      "status": "APPROXIMATE: original is JS-driven ~264ms ease-out-like (within 0.08 normalised progress)",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:58-65",
+          "anchor": "upper-menu-up 0.25s"
+        }
+      ]
+    },
+    "M15": {
+      "what": "mobile Blog sub-links",
+      "value": "opacity 0->1, y -10->0 (framer default)",
+      "status": "UNVERIFIED (sub-link list empty in recon); not rendered by the clone",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:468",
+          "anchor": "Mobile Blog sub-links"
+        }
+      ]
+    }
+  }
+}

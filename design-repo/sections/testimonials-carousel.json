@@ -1,0 +1,76 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "testimonials-carousel",
+  "registryId": "section.testimonials-carousel",
+  "version": "1.0.0",
+  "category": "carousel",
+  "purpose": "Real parent reviews in a looping lilac carousel with mascot avatars.",
+  "iaSectionIds": [
+    "proof.testimonial-carousel"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/Testimonials.jsx:53-86",
+      "anchor": "export default function Testimonials"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_testimonials-carousel",
+    "copyBudget": {
+      "eyebrow": 5,
+      "heading": 5,
+      "slides[].quote": 44,
+      "slides[].attribution": 16,
+      "cta.label": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "embla-loop",
+    "motionRoles": [
+      "embla-loop"
+    ],
+    "reducedMotionFallback": "Snap between slides with no embla easing.",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "container padding 32px 0 (80px 280px at ≥992)",
+          "card padding 36px 56px (60px 160px)",
+          "quote switches to Cadiz 24/33.8 (Recoleta 26/33.8 at ≥992)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/Testimonials.jsx:58",
+            "anchor": "lg:px-[280px] lg:py-20"
+          },
+          {
+            "cite": "CLONE_SPEC.md:339",
+            "anchor": "Cadiz Regular 24px/33.8px <992"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:331-347",
+      "anchor": "Testimonials"
+    },
+    {
+      "cite": "CLONE_SPEC_PAGES_MARKETING.md:47",
+      "anchor": "REUSE Testimonials"
+    }
+  ],
+  "notes": [
+    "Quotes are real third-party statements: never fabricate or re-attribute (see contentPolicy in templates.json)."
+  ]
+}

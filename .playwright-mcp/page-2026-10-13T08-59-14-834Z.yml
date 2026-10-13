@@ -1,0 +1,59 @@
+- generic [active] [ref=f1e1]:
+  - alert [ref=f1e2]
+  - generic [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - text: By using this site, you accept cookies for analytics.
+      - link "Learn more" [ref=f1e5] [cursor=pointer]:
+        - /url: /privacy
+    - button "Accept cookies" [ref=f1e7] [cursor=pointer]: OK
+  - complementary "Promotional message" [ref=f1e9]:
+    - paragraph [ref=f1e12]:
+      - link "Try Riley risk free with our 7-day free trial!" [ref=f1e13] [cursor=pointer]:
+        - /url: https://rileyapp.com/pricing
+  - banner [ref=f1e14]:
+    - generic [ref=f1e15]:
+      - link [ref=f1e16] [cursor=pointer]:
+        - /url: https://rileyapp.com/
+        - img "Riley logo" [ref=f1e17]
+      - navigation [ref=f1e18]:
+        - generic [ref=f1e19]:
+          - link "Blog" [ref=f1e21] [cursor=pointer]:
+            - /url: https://rileyapp.com/blog
+          - button "What's New?" [ref=f1e23]
+        - button "Get Started For Free" [ref=f1e26] [cursor=pointer]
+  - generic [ref=f1e28]:
+    - heading "Oops! This page is playing peekaboo... and it's REALLY good at it." [level=3] [ref=f1e29]
+    - paragraph [ref=f1e30]: Looks like this link went on a nap and forgot to wake up.
+    - link "Go back ›" [ref=f1e31] [cursor=pointer]:
+      - /url: /
+      - text: Go back
+      - generic [ref=f1e32]: ›
+  - contentinfo [ref=f1e33]:
+    - generic [ref=f1e34]:
+      - generic [ref=f1e36]:
+        - paragraph [ref=f1e38]: Stay in the loop with Riley's newsletter.
+        - generic [ref=f1e39]:
+          - textbox "Enter your email" [ref=f1e40]:
+            - /placeholder: Email
+          - button "Sign up" [ref=f1e41]
+      - navigation [ref=f1e45]:
+        - generic [ref=f1e46]:
+          - generic [ref=f1e47]:
+            - link "Blog" [ref=f1e48] [cursor=pointer]:
+              - /url: https://rileyapp.com/blog
+            - link "Pricing" [ref=f1e49] [cursor=pointer]:
+              - /url: https://rileyapp.com/pricing
+            - link "Editorial Process" [ref=f1e50] [cursor=pointer]:
+              - /url: https://rileyapp.com/editorial-process
+          - generic [ref=f1e51]:
+            - link "Privacy Policy" [ref=f1e52] [cursor=pointer]:
+              - /url: https://rileyapp.com/privacy
+            - link "Terms of Service" [ref=f1e53] [cursor=pointer]:
+              - /url: https://rileyapp.com/tos
+            - link "Support" [ref=f1e54] [cursor=pointer]:
+              - /url: https://rileyapp.com/support
+      - generic [ref=f1e59]:
+        - paragraph [ref=f1e60]: Get the App
+        - link [ref=f1e61] [cursor=pointer]:
+          - /url: https://rileyapp.onelink.me/JNxh/ln83navr
+    - paragraph [ref=f1e95]: © 2025 Riley

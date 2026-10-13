@@ -1,0 +1,295 @@
+{
+  "$schema": "riley-design-tokens/semantic/typography-roles",
+  "breakpointSwitch": "desktop = ≥992px (lg), mobile = <992px; see tokens.00-foundation.breakpoint.tokens.lg",
+  "roles": {
+    "heading.hero": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.h1-desktop"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.h1-mobile"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:115",
+          "anchor": "Hero H1"
+        }
+      ]
+    },
+    "heading.section": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.desktop-h3"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.mobile-h2"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:116",
+          "anchor": "Section H2"
+        }
+      ]
+    },
+    "heading.big": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.desktop-h2"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.mobile-h1"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:117",
+          "anchor": "Big H2"
+        }
+      ]
+    },
+    "heading.faq": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.faq-h2"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.mobile-h1"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:118",
+          "anchor": "FAQ H2"
+        }
+      ],
+      "note": "mobile is 40px/52px Cadiz ≤960"
+    },
+    "eyebrow": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.desktop-body"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.mobile-body"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:119",
+          "anchor": "Eyebrow"
+        }
+      ]
+    },
+    "body.large": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.desktop-body"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.mobile-body"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:120",
+          "anchor": "Body large"
+        }
+      ]
+    },
+    "body.default": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.mobile-body"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.mobile-body"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:121",
+          "anchor": "| Body |"
+        }
+      ]
+    },
+    "card.title": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.lg-desktop-h4"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.mobile-h3"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:122",
+          "anchor": "Card title"
+        }
+      ]
+    },
+    "card.label-serif": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.desktop-h4"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.mobile-h4"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:123",
+          "anchor": "Superpower card label"
+        }
+      ]
+    },
+    "quote.testimonial": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.desktop-h4"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.desktop-h4"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:124",
+          "anchor": "Testimonial quote"
+        }
+      ]
+    },
+    "nav.link": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.sans-bold",
+          "size": "tokens.00-foundation.typography.scale.nav-link"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-semibold",
+          "size": "tokens.00-foundation.typography.scale.desktop-body"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:125",
+          "anchor": "Nav link"
+        }
+      ]
+    },
+    "button.label": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.sans-bold",
+          "size": "tokens.00-foundation.typography.scale.mobile-body"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-bold",
+          "size": "tokens.00-foundation.typography.scale.mobile-body"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:126",
+          "anchor": "| Button |"
+        }
+      ]
+    },
+    "blog.card-title": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.desktop-body"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.serif",
+          "size": "tokens.00-foundation.typography.scale.caption"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:127",
+          "anchor": "Blog card title"
+        }
+      ]
+    },
+    "blog.pill": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.sans-bold",
+          "size": "tokens.00-foundation.typography.scale.pill"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-bold",
+          "size": "tokens.00-foundation.typography.scale.pill"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:128",
+          "anchor": "Blog pill"
+        }
+      ]
+    },
+    "footer.link": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.sans-semibold",
+          "size": "tokens.00-foundation.typography.scale.mobile-body"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-semibold",
+          "size": "tokens.00-foundation.typography.scale.mobile-body"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:129",
+          "anchor": "Footer link"
+        }
+      ]
+    },
+    "caption": {
+      "ref": {
+        "desktop": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.caption"
+        },
+        "mobile": {
+          "family": "tokens.00-foundation.typography.families.sans-regular",
+          "size": "tokens.00-foundation.typography.scale.caption"
+        }
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:130",
+          "anchor": "Caption"
+        }
+      ]
+    }
+  }
+}

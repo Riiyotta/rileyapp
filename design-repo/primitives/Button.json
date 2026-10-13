@@ -1,0 +1,24 @@
+{
+  "$schema": "riley-design-tokens/primitive",
+  "id": "Button",
+  "purpose": "Primary purple pill CTA used for every conversion action.",
+  "props": {
+    "label": "string (per-section maxWords)",
+    "size": "enum[md, lg] (lg = pricing CTA 18/28, 60px tall at ≥640)",
+    "trailingIcon": "optional ui-icon (pricing arrow)",
+    "assetRole": "link role (app-store-onelink | internal-route | unspecified-destination); never an href in a PageSpec"
+  },
+  "tokenRefs": [
+    "tokens.20-component.button.primary"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/shared/Button.jsx:12-40",
+      "anchor": "export default function Button"
+    },
+    {
+      "cite": "CLONE_SPEC.md:133-138",
+      "anchor": "Primary button component"
+    }
+  ]
+}

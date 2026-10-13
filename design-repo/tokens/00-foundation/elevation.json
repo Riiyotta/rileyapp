@@ -1,0 +1,41 @@
+{
+  "$schema": "riley-design-tokens/foundation/elevation",
+  "tokens": {
+    "default": {
+      "value": "0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:37",
+          "anchor": "DEFAULT: '0 1px 3px 0 #0000001a"
+        }
+      ]
+    },
+    "sm": {
+      "value": "0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:38",
+          "anchor": "sm: '0 1px 3px 0 #0000001a"
+        }
+      ]
+    },
+    "md": {
+      "value": "0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:39",
+          "anchor": "md: '0 4px 6px -1px #0000001a"
+        }
+      ]
+    },
+    "2xl": {
+      "value": "0 25px 50px -12px #00000040",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:40",
+          "anchor": "'2xl': '0 25px 50px -12px #00000040'"
+        }
+      ]
+    }
+  }
+}

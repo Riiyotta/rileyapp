@@ -1,0 +1,326 @@
+{
+  "$schema": "riley-design-tokens/extraction/measured-values",
+  "note": "Citation ledger for build-time evidence OUTSIDE design-repo/. Paths are relative to the source project root (design-repo's parent). verify_all.py resolves every cite and checks the anchor text occurs in the cited range; when the source tree is absent (standalone copy) those checks degrade to a WARN.",
+  "sources": {
+    "CLONE_SPEC.md": "homepage recon (509 lines): §0 tokens, §1-13 sections, §14 motion, §15 heights, §16 gaps",
+    "CLONE_SPEC_PAGES_MARKETING.md": "/pricing + 404 template + 8 dead slugs",
+    "ASSET_MANIFEST.md": "asset provenance",
+    "tailwind.config.js / src/index.css / src/styles/*.css": "real tokens and type/motion rules",
+    "src/components/**, src/pages/**": "real section components and per-page section order",
+    "ia.json": "IA written concurrently at the project root (3 templates, 18 IA sections, 235 pending routes)"
+  },
+  "facts": [
+    {
+      "id": "framework",
+      "claim": "Clone is React 18 + Vite 5 + Tailwind v3 (+ @rive-app/react-canvas); original is Next.js + Tailwind v4 + framer-motion + embla + react-scroll-parallax + Rive",
+      "evidence": [
+        {
+          "cite": "package.json:12-21",
+          "anchor": "\"tailwindcss\": \"^3.4.10\""
+        },
+        {
+          "cite": "CLONE_SPEC.md:7",
+          "anchor": "**Tailwind v4**"
+        }
+      ]
+    },
+    {
+      "id": "home-order",
+      "claim": "Home section order",
+      "evidence": [
+        {
+          "cite": "src/pages/HomePage.jsx:18-30",
+          "anchor": "<FaqClouds />"
+        }
+      ]
+    },
+    {
+      "id": "pricing-order",
+      "claim": "Pricing section order; GradientBand without FeatureCards",
+      "evidence": [
+        {
+          "cite": "src/pages/PricingPage.jsx:14-23",
+          "anchor": "showFeatureCards={false}"
+        }
+      ]
+    },
+    {
+      "id": "dead-slugs",
+      "claim": "8 sitemap slugs are soft-404s live and in Wayback; same 404 template",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:11-27",
+          "anchor": "NEXT_HTTP_ERROR_FALLBACK;404"
+        }
+      ]
+    },
+    {
+      "id": "router-fallthrough",
+      "claim": "Unmatched paths (incl. the 8 dead slugs, which deliberately have no route) render NotFound",
+      "evidence": [
+        {
+          "cite": "src/App.jsx:6-16",
+          "anchor": "return <NotFound />"
+        }
+      ]
+    },
+    {
+      "id": "no-scroll-reveal",
+      "claim": "No scroll-reveal animations on the page",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:470",
+          "anchor": "No scroll-reveal"
+        }
+      ]
+    },
+    {
+      "id": "no-reduced-motion",
+      "claim": "Clone has no prefers-reduced-motion handling (grep of src/ + index.html returned nothing at build time) -> all reducedMotionFallback values are prescriptive",
+      "evidence": []
+    },
+    {
+      "id": "weight-quirk",
+      "claim": "Bold faces compute font-weight 400; unlayered rules beat utilities",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:92",
+          "anchor": "computed `font-weight` stays **400**"
+        },
+        {
+          "cite": "src/index.css:44",
+          "anchor": "Unlayered type rules"
+        }
+      ]
+    },
+    {
+      "id": "header-motion",
+      "claim": "Header fade 0.5s cubic-bezier(0,0,.58,1); nav container 0.3s cubic-bezier(.25,.1,.35,1); items 0.6s delays 100/300/500/700ms",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:34-56",
+          "anchor": "upper-nav-item-in 0.6s"
+        }
+      ]
+    },
+    {
+      "id": "sticky",
+      "claim": "Header fixed after scroll (clone > 54; QA measured original >= 55)",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:21",
+          "anchor": "window.scrollY > 54"
+        }
+      ]
+    },
+    {
+      "id": "marquees",
+      "claim": "Press 20s, family 50s reverse",
+      "evidence": [
+        {
+          "cite": "src/components/Hero.jsx:77",
+          "anchor": "[--duration:20s]"
+        },
+        {
+          "cite": "src/components/PersonalizationMarquee.jsx:24",
+          "anchor": "[--duration:50s]"
+        }
+      ]
+    },
+    {
+      "id": "embla",
+      "claim": "Embla port: duration 25, friction .68, drag threshold 10",
+      "evidence": [
+        {
+          "cite": "src/components/shared/useEmblaLoop.js:13-15",
+          "anchor": "DRAG_THRESHOLD = 10"
+        }
+      ]
+    },
+    {
+      "id": "faq-motion",
+      "claim": "FAQ clouds float 10s alternate-reverse; clear skies at 20% visibility + 1000ms; 2.55s ease",
+      "evidence": [
+        {
+          "cite": "src/components/FaqClouds.jsx:48-64",
+          "anchor": "setTimeout"
+        },
+        {
+          "cite": "src/styles/lower.css:79-80",
+          "anchor": "transition: 2.55s ease"
+        }
+      ]
+    },
+    {
+      "id": "newsletter-no-endpoint",
+      "claim": "Newsletter submit is prevented; no endpoint",
+      "evidence": [
+        {
+          "cite": "src/components/SiteFooter.jsx:30",
+          "anchor": "e.preventDefault()"
+        }
+      ]
+    },
+    {
+      "id": "onelinks",
+      "claim": "Live AppsFlyer onelinks used by CTAs",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:6",
+          "anchor": "rileyapp.onelink.me"
+        },
+        {
+          "cite": "src/components/SiteFooter.jsx:61",
+          "anchor": "ln83navr"
+        }
+      ]
+    },
+    {
+      "id": "purple-avatars",
+      "claim": "purple1-5.svg are mascot cloud faces (white circle + lilac cloud + eyes), not photos",
+      "evidence": [
+        {
+          "cite": "public/assets/purple1.svg:1-3",
+          "anchor": "#B5B8F0"
+        }
+      ]
+    },
+    {
+      "id": "blog-in-progress",
+      "claim": "Blog data being written concurrently: src/data/blogPosts.json had 221 entries at snapshot; ia.json counts 221 articles (brief said 231)",
+      "evidence": [
+        {
+          "cite": "ia.json:191",
+          "anchor": "All 221 articles."
+        }
+      ]
+    },
+    {
+      "id": "blog-landed-concurrently",
+      "claim": "During this build the blog/text/legal routes were added to the source router (routes.js renamed routes.jsx); excluded from this snapshot",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:11",
+          "anchor": "Dead sitemap slugs"
+        },
+        {
+          "cite": "src/pages/routes.jsx:22-26",
+          "anchor": "BlogArticlePage"
+        }
+      ]
+    },
+    {
+      "id": "pricing-reuses-clouds",
+      "claim": "PricingHero reuses HeroParallaxClouds (withBg false, opacity .7)",
+      "evidence": [
+        {
+          "cite": "src/components/pricing/PricingHero.jsx:81",
+          "anchor": "withBg={false}"
+        }
+      ]
+    }
+  ],
+  "qaCorrections": {
+    "source": "Independent animation-QA pass on the live original, relayed by the coordinating session (no on-disk artifact to cite). These supersede CLONE_SPEC.md §14 where they conflict.",
+    "items": [
+      "Superpower cards: no hover background change on the original; cursor auto (CLONE_SPEC M12 superseded).",
+      "Mobile menu open: original JS-driven ~264ms ease-out-like; clone 0.25s cubic-bezier(0,0,.58,1) is approximate (within 0.08 normalised progress).",
+      "Featurette carousel: pointer drag follows 1:1 from anywhere on both sites (an earlier 'no follow' reading was a headless frame-starvation artifact on the original); touch swipe matches at 390 after the clone fix.",
+      "Blog image hover: original and clone both transition the CSS `scale` property to 1.05 over 0.3s.",
+      "Header becomes fixed at scrollY >= 55 on the original (clone > 54)."
+    ]
+  },
+  "copyBudgets": {
+    "rule": "maxWords = longest real copy for the field (whitespace word count) + ~20-30% headroom.",
+    "observed": {
+      "hero-home.heading": 6,
+      "hero-home.body": 34,
+      "personalization-marquee.heading": 8,
+      "personalization-marquee.body": 22,
+      "superpowers-grid.cards[].modal.features[].description": 16,
+      "clinical-board.body": 19,
+      "how-riley-works.items[].title": 9,
+      "how-riley-works.items[].body": 32,
+      "testimonials-carousel.slides[].quote": 35,
+      "testimonials-carousel.slides[].attribution": 13,
+      "gradient-band.featureCards.cards[].body": 29,
+      "gradient-band.comparisonTable.body": 21,
+      "faq-clouds.items[].question": 10,
+      "faq-clouds.items[].answer": 69,
+      "blog-teaser.posts[].title": 16,
+      "not-found-block.heading": 12,
+      "not-found-block.body": 13,
+      "final-cta.heading": 8,
+      "pricing-hero.plans[].description": 7
+    }
+  },
+  "handCheckedCitations": [
+    {
+      "cite": "tailwind.config.js:9",
+      "anchor": "hover: '#7a55fd'",
+      "claim": "purple hover #7a55fd",
+      "result": "line is the purple scale incl. hover '#7a55fd' - correct content"
+    },
+    {
+      "cite": "src/styles/upper.css:41",
+      "anchor": "0.5s cubic-bezier(0, 0, 0.58, 1)",
+      "claim": "header fade 0.5s ease-out",
+      "result": "upper-fade-in 0.5s cubic-bezier(0, 0, 0.58, 1) - correct"
+    },
+    {
+      "cite": "src/styles/lower.css:35",
+      "anchor": "min-height: 1100px",
+      "claim": "faq min-height 1100 at <=960",
+      "result": "@media (max-width: 960px) .faq-clouds min-height 1100px - correct"
+    },
+    {
+      "cite": "src/pages/HomePage.jsx:15-33",
+      "anchor": "<SiteFooter />",
+      "claim": "home node order",
+      "result": "renders AnnouncementBar..SiteFooter in template order - correct"
+    },
+    {
+      "cite": "src/components/Hero.jsx:7-14",
+      "anchor": "/assets/glamour.png",
+      "claim": "press-logo files",
+      "result": "the 6 press PNGs nbc/axios/bump/finsmes/tc/glamour - correct"
+    },
+    {
+      "cite": "CLONE_SPEC_PAGES_MARKETING.md:15-24",
+      "anchor": "/give-the-gift",
+      "claim": "8 dead slugs",
+      "result": "table rows for exactly the 8 slugs + /pricing - correct"
+    },
+    {
+      "cite": "CLONE_SPEC.md:454",
+      "anchor": "scale 0.8→1.2",
+      "claim": "parallax ranges + progress formula",
+      "result": "M3b row: -20/-35/-50/-100%, scale .8-1.2, p=clamp(scrollY/...) - correct"
+    },
+    {
+      "cite": "src/components/shared/useEmblaLoop.js:13-15",
+      "anchor": "BASE_FRICTION = 0.68",
+      "claim": "embla 25 / .68 / 10px",
+      "result": "BASE_DURATION 25, BASE_FRICTION 0.68, DRAG_THRESHOLD 10 - correct"
+    },
+    {
+      "cite": "src/pages/PricingPage.jsx:19",
+      "anchor": "showFeatureCards={false}",
+      "claim": "gradient-band table-only on pricing",
+      "result": "<GradientBand showFeatureCards={false} /> - correct"
+    },
+    {
+      "cite": "CLONE_SPEC.md:118",
+      "anchor": "Recoleta 80px/104px",
+      "claim": "FAQ H2 role",
+      "result": "Recoleta 80/104 #0a0a0a; Cadiz 40/52 <=960 - correct"
+    },
+    {
+      "cite": "src/components/SiteFooter.jsx:30",
+      "anchor": "e.preventDefault()",
+      "claim": "newsletter has no endpoint",
+      "result": "onSubmit preventDefault - correct"
+    }
+  ],
+  "handCheckNote": "These 11 were read by eye against the cited lines (not just range/anchor) at build time; all describe the right content."
+}

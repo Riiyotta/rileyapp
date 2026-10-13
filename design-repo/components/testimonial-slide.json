@@ -1,0 +1,19 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "testimonial-slide",
+  "purpose": "Stars, quote, mascot avatar and attribution.",
+  "composedOf": [
+    "Icon",
+    "Avatar",
+    "Text"
+  ],
+  "usedBySections": [
+    "testimonials-carousel"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/Testimonials.jsx:34-51",
+      "anchor": "<figure"
+    }
+  ]
+}

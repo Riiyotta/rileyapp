@@ -1,0 +1,69 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "how-riley-works",
+  "registryId": "section.how-riley-works",
+  "version": "1.0.0",
+  "category": "feature",
+  "purpose": "Three pillars (science, learning tech, individuality) with family marks and a CTA.",
+  "iaSectionIds": [
+    "product.how-it-works"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/HowRileyWorks.jsx:22-46",
+      "anchor": "export default function HowRileyWorks"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_how-riley-works",
+    "copyBudget": {
+      "heading": 5,
+      "items[].title": 11,
+      "items[].body": 40,
+      "cta.label": 5
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "items stack (row at ≥992)",
+          "item titles switch to Recoleta 20/33.8 (Cadiz 24/33.8 at ≥992)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/HowRileyWorks.jsx:27",
+            "anchor": "lg:flex-row"
+          },
+          {
+            "cite": "CLONE_SPEC.md:321",
+            "anchor": "Recoleta 20/33.8 <992"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:313-327",
+      "anchor": "HowRileyWorks"
+    }
+  ],
+  "notes": []
+}

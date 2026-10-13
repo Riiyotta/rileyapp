@@ -1,0 +1,26 @@
+{
+  "$schema": "riley-design-tokens/llm/token-policy",
+  "enforcement": {
+    "machineChecked": [
+      "closed section/template/motion/assetRole enums (schema)",
+      "maxWords (semantic_validate.py)",
+      "asset role pinning + brandContext (semantic_validate.py)",
+      "policy category keys exist in token-catalog (verify_all.py token-policy)"
+    ],
+    "convention": [
+      "token references by canonical path",
+      "no raw hex/px in generated styling",
+      "layer preference"
+    ]
+  },
+  "overrides": "PageSpecs carry NO per-instance style/token-override field: styling is owned entirely by section/component contracts. There is therefore nothing token-related to validate at the PageSpec layer; adding such a field would need a new schema property + validator rule (deliberately not invented).",
+  "rawValueRestrictions": {
+    "color": "Never emit a raw hex/rgb; resolve through tokens.10-semantic.color-roles (all values exist in tailwind.config.js). No new colors.",
+    "gradient": "Only the 3 section gradients and 6 modal gradients in tokens.00-foundation.gradient.",
+    "typography": "Only Cadiz cuts (by family, never by font-weight — see weightQuirk) and Recoleta 'serif'. Keep the unlayered h1/desktop-*/mobile-* rules unlayered.",
+    "radius": "Only the measured radii (24/30/35/32/40/16/9999, faq 24 24 0 24).",
+    "elevation": "Only shadow default/sm/md/2xl.",
+    "motion": "Only the closed motion patterns; no scroll-reveal (none exists on the original).",
+    "breakpoint": "sm 640 / md 768 / lg 992 / xl 1280 / 2xl 1440 plus raw 960/961/639 queries for FAQ, table and blog scroller."
+  }
+}

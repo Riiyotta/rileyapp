@@ -1,0 +1,50 @@
+{
+  "$schema": "riley-design-tokens/component/table",
+  "comparison": {
+    "panel-background": {
+      "ref": "tokens.10-semantic.color-roles.roles.surface.page",
+      "evidence": [
+        {
+          "cite": "src/components/lower/ComparisonTable.jsx:38",
+          "anchor": "bg-latte-150"
+        }
+      ]
+    },
+    "cell-background": {
+      "ref": "tokens.10-semantic.color-roles.roles.surface.card",
+      "evidence": [
+        {
+          "cite": "src/components/lower/ComparisonTable.jsx:15",
+          "anchor": "bg-white"
+        }
+      ]
+    },
+    "cell-border": {
+      "value": "border-left 1px #000 + ::before 1px connector through the 16px row gap",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:14-16",
+          "anchor": "td:not(:first-child)::before"
+        }
+      ]
+    },
+    "row-gap": {
+      "value": "16px (border-spacing-y-4)",
+      "evidence": [
+        {
+          "cite": "src/components/lower/ComparisonTable.jsx:39",
+          "anchor": "border-spacing-y-4"
+        }
+      ]
+    },
+    "compact-at": {
+      "ref": "tokens.00-foundation.breakpoint.tokens.faq-table-max",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:17-25",
+          "anchor": "rotate(-90deg)"
+        }
+      ]
+    }
+  }
+}

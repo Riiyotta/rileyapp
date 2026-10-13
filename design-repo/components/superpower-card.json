@@ -1,0 +1,18 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "superpower-card",
+  "purpose": "White pill card (icon + serif label + arrow) acting as a button that opens the modal. No hover change on the original.",
+  "composedOf": [
+    "Icon",
+    "Text"
+  ],
+  "usedBySections": [
+    "superpowers-grid"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/Superpowers.jsx:24-37",
+      "anchor": "role=\"button\""
+    }
+  ]
+}

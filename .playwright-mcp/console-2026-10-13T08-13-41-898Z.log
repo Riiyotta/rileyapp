@@ -1,0 +1,29 @@
+[      45ms] [WARNING]   WARN  [Statsig] useExperiment hook failed to find a valid Statsig client for experiment 'hero_copy_test_july'. @ https://rileyapp.com/_next/static/chunks/6391-950bd417654fbe13.js:0
+[      71ms] [WARNING]   WARN  [Statsig] Attempting to retrieve a StatsigClient but none was set. @ https://rileyapp.com/_next/static/chunks/6391-950bd417654fbe13.js:0
+[      94ms] [LOG] groupName        → (empty) @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[      94ms] [LOG] variant_id value → control @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[      94ms] [LOG] full experiment  → {name: hero_copy_test_july, details: Object, ruleID: , __evaluation: null, value: Object} @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[      94ms] [LOG] isAlt?           → false @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[     191ms] [WARNING] Clerk: The prop "afterSignInUrl" is deprecated and should be replaced with the new "fallbackRedirectUrl" or "forceRedirectUrl" props instead. Learn more: https://clerk.com/docs/guides/custom-redirects#redirect-url-props @ https://clerk.rileyapp.com/npm/@clerk/clerk-js@5/dist/clerk.browser.js:18
+[   25301ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25301ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25301ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25302ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25303ms] [INFO] RudderStack ready @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25738ms] [ERROR] %c RS SDK %c DeviceModeDestinationsPlugin:: Failed to load integration SDK for destination "Google Tag Manager" - A timeout of 10000 ms occurred while trying to load the script with id "Google-Tag-Manager___2r6AQdH6XWYHAVuCjkpxM7TTKrK" from URL "https://cdn.rudderlabs.com/3.22.0/modern/js-integrations/GoogleTagManager.min.js" font-weight: bold; background: black; color: white; font-weight: normal; @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[   25740ms] [ERROR] %c RS SDK %c DeviceModeDestinationsPlugin:: Failed to load integration SDK for destination "Amplitude" - A timeout of 10000 ms occurred while trying to load the script with id "Amplitude___2znIEEaq0x9m9K6AzwLCVbsBrA2" from URL "https://cdn.rudderlabs.com/3.22.0/modern/js-integrations/Amplitude.min.js" font-weight: bold; background: black; color: white; font-weight: normal; @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0
+[  126701ms] [ERROR] Failed to load resource: the server responded with a status of 524 (<none>) @ https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwordmark.9c6f1ca2.svg&w=96&q=75:0
+[  127645ms] [ERROR] Failed to load resource: the server responded with a status of 524 (<none>) @ https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmascot.f7858b88.svg&w=256&q=75:0
+[  128233ms] [ERROR] Failed to load resource: the server responded with a status of 524 (<none>) @ https://rileyapp.com/_next/image?url=%2Fimages%2Fhomepage%2Ffeaturette%2Fseb-and-daughter.png&w=640&q=75:0

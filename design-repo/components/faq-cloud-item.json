@@ -1,0 +1,21 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "faq-cloud-item",
+  "purpose": "Absolutely positioned <details> card; opening centres it and blurs siblings.",
+  "composedOf": [
+    "Avatar",
+    "Icon",
+    "Text",
+    "Button",
+    "Image"
+  ],
+  "usedBySections": [
+    "faq-clouds"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/FaqClouds.jsx:79-95",
+      "anchor": "<details"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "clinical-board",
+  "registryId": "section.clinical-board",
+  "version": "1.0.0",
+  "category": "social-proof",
+  "purpose": "Credibility: the clinical advisory board with real clinician portraits and credentials.",
+  "iaSectionIds": [
+    "proof.clinical-board"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/ClinicalBoard.jsx:7-39",
+      "anchor": "export default function ClinicalBoard"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_clinical-board",
+    "copyBudget": {
+      "eyebrow": 5,
+      "heading": 8,
+      "body": 24,
+      "advisors[].portrait.alt": 6,
+      "advisors[].name": 4,
+      "advisors[].credentials": 6
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "advisor cards stack vertically (row at ≥992)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/ClinicalBoard.jsx:23",
+            "anchor": "lg:flex-row"
+          }
+        ]
+      },
+      {
+        "query": "<768px",
+        "changes": [
+          "section side padding 20px (96px at md+)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/ClinicalBoard.jsx:9",
+            "anchor": "max-md:px-5"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:298-309",
+      "anchor": "ClinicalBoard"
+    }
+  ],
+  "notes": []
+}

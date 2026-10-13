@@ -1,0 +1,6 @@
+/* Blog spec §2.3 / §2.8: search dropdown fades opacity 0 -> 1 on appear (framer on the original; ~0.2s, curve UNVERIFIED). */
+@keyframes blogSearchFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.blog-search-fade { animation: blogSearchFade 0.2s both; }

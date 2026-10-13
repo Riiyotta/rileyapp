@@ -1,0 +1,188 @@
+{
+  "$schema": "riley-design-tokens/semantic/motion-roles",
+  "noScrollReveal": "The page has NO scroll-reveal / whileInView animations (measured: computed styles identical before and after a full scroll). No role below may be used to fade/slide sections in on scroll.",
+  "noScrollRevealEvidence": [
+    {
+      "cite": "CLONE_SPEC.md:470",
+      "anchor": "No scroll-reveal or whileInView animations"
+    }
+  ],
+  "roles": {
+    "header-load-fade": {
+      "ref": "tokens.00-foundation.motion.duration.header-fade",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:40-42",
+          "anchor": ".upper-header-in"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.ease-out",
+      "spec": "M1"
+    },
+    "nav-stagger": {
+      "ref": "tokens.00-foundation.motion.duration.nav-item",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:48-56",
+          "anchor": "opacity 0->1 + y 20->0"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.ease-out",
+      "spec": "M1b"
+    },
+    "header-sticky": {
+      "ref": "tokens.00-foundation.motion.duration.base",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:42",
+          "anchor": "fixed top-0 right-0 left-0"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.standard",
+      "spec": "M2"
+    },
+    "mobile-menu-slide": {
+      "ref": "tokens.00-foundation.motion.duration.menu",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:59-65",
+          "anchor": "No exit animation on the original"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.ease-out",
+      "spec": "M14",
+      "fidelity": "approximate: original is JS-driven ~264ms ease-out-like; 0.25s cubic-bezier(0,0,.58,1) is within 0.08 normalised progress (animation-QA). Close is instant."
+    },
+    "hero-cloud-drift": {
+      "ref": "tokens.00-foundation.motion.duration.cloud-float-slow",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:16-32",
+          "anchor": "runtime-injected styles on original"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.linear",
+      "spec": "M3"
+    },
+    "scroll-parallax": {
+      "ref": "tokens.00-foundation.motion.parallax.progress-formula",
+      "evidence": [
+        {
+          "cite": "src/components/upper/HeroParallaxClouds.jsx:91-103",
+          "anchor": "layerTransform(layer, p)"
+        }
+      ],
+      "spec": "M3b"
+    },
+    "marquee-press": {
+      "ref": "tokens.00-foundation.motion.duration.press-marquee",
+      "evidence": [
+        {
+          "cite": "src/styles/upper.css:3-14",
+          "anchor": "upper-animate-marquee"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.linear",
+      "spec": "M4"
+    },
+    "marquee-family": {
+      "ref": "tokens.00-foundation.motion.duration.family-marquee",
+      "evidence": [
+        {
+          "cite": "src/components/PersonalizationMarquee.jsx:24",
+          "anchor": "[animation-direction:reverse]"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.linear",
+      "spec": "M5"
+    },
+    "embla-loop": {
+      "ref": "tokens.00-foundation.motion.embla.duration",
+      "evidence": [
+        {
+          "cite": "src/components/shared/useEmblaLoop.js:3-15",
+          "anchor": "Port of embla-carousel v8"
+        }
+      ],
+      "spec": "M6/M7"
+    },
+    "rive-autoplay": {
+      "ref": null,
+      "evidence": [
+        {
+          "cite": "src/components/upper/RiveChat.jsx:8-15",
+          "anchor": "autoplay: true"
+        }
+      ],
+      "spec": "M6b",
+      "note": "timing lives inside the .riv state machines (not measurable in DOM)"
+    },
+    "faq-cloud-float": {
+      "ref": "tokens.00-foundation.motion.duration.faq-cloud-float",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:68-81",
+          "anchor": "faq-clouds-floating"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.ease-in-out",
+      "spec": "M8"
+    },
+    "faq-clear-skies": {
+      "ref": "tokens.00-foundation.motion.duration.clear-skies",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:96-102",
+          "anchor": "clear skies"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.ease",
+      "spec": "M8b"
+    },
+    "faq-open": {
+      "ref": "tokens.00-foundation.motion.duration.faq-open",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:40-51",
+          "anchor": "[open]"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.ease-in-out",
+      "spec": "M9"
+    },
+    "button-state": {
+      "ref": "tokens.00-foundation.motion.duration.base",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:4",
+          "anchor": "base: '#5934C5', hover: '#7A55FD', active: '#5A20E1'"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.standard",
+      "spec": "M10"
+    },
+    "link-hover-opacity": {
+      "ref": "tokens.00-foundation.motion.duration.fast",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:464",
+          "anchor": "opacity 1 → .8"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.standard",
+      "spec": "M11"
+    },
+    "image-hover-scale": {
+      "ref": "tokens.00-foundation.motion.duration.base",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:58",
+          "anchor": "duration-300 group-hover:[scale:1.05]"
+        }
+      ],
+      "easing": "tokens.00-foundation.motion.easing.standard",
+      "spec": "M13",
+      "note": "original transitions the CSS `scale` property (0.3s cubic-bezier(.4,0,.2,1) -> 1.05); clone matches after the animation-fix pass"
+    }
+  }
+}

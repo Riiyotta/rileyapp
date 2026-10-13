@@ -1,0 +1,7 @@
+[   88900ms] [WARNING]   WARN  [Statsig] useExperiment hook failed to find a valid Statsig client for experiment 'hero_copy_test_july'. @ https://rileyapp.com/_next/static/chunks/6391-950bd417654fbe13.js:0
+[   88924ms] [WARNING]   WARN  [Statsig] Attempting to retrieve a StatsigClient but none was set. @ https://rileyapp.com/_next/static/chunks/6391-950bd417654fbe13.js:0
+[   88947ms] [LOG] groupName        → (empty) @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[   88947ms] [LOG] variant_id value → control @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[   88947ms] [LOG] full experiment  → {name: hero_copy_test_july, details: Object, ruleID: , __evaluation: null, value: Object} @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[   88947ms] [LOG] isAlt?           → false @ https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js:0
+[   89099ms] [WARNING] Clerk: The prop "afterSignInUrl" is deprecated and should be replaced with the new "fallbackRedirectUrl" or "forceRedirectUrl" props instead. Learn more: https://clerk.com/docs/guides/custom-redirects#redirect-url-props @ https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3:0

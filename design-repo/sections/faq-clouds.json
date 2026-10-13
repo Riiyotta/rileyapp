@@ -1,0 +1,91 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "faq-clouds",
+  "registryId": "section.faq-clouds",
+  "version": "1.0.0",
+  "category": "faq",
+  "purpose": "FAQ as floating question cards over drifting clouds that clear to the edges; an opened card centres and blurs the rest.",
+  "iaSectionIds": [
+    "support.faq-clouds"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/FaqClouds.jsx:43-106",
+      "anchor": "export default function FaqClouds"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_faq-clouds",
+    "copyBudget": {
+      "heading": 8,
+      "items[].question": 12,
+      "items[].answer": 80,
+      "itemCta.label": 3
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "faq-clouds-float-and-open",
+    "motionRoles": [
+      "faq-cloud-float",
+      "faq-clear-skies",
+      "faq-open"
+    ],
+    "reducedMotionFallback": "Clouds static at clear-skies positions; open/close items without size/position transition; apply blur state instantly.",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "≤960px",
+        "changes": [
+          "min-height 1100 (900)",
+          "H2 40px Cadiz with 16px padding (80/104 Recoleta)",
+          "items re-positioned to a stacked column (nth-child top/left table)",
+          "open item spans 90% width at left 5% instead of centring",
+          "clouds fade to opacity .05 after clear-skies"
+        ],
+        "evidence": [
+          {
+            "cite": "src/styles/lower.css:35",
+            "anchor": "min-height: 1100px"
+          },
+          {
+            "cite": "src/styles/lower.css:38",
+            "anchor": "font-size: 40px"
+          },
+          {
+            "cite": "src/styles/lower.css:48-50",
+            "anchor": "max-width: 90% !important"
+          },
+          {
+            "cite": "src/styles/lower.css:59-66",
+            "anchor": "max-width: 80%"
+          },
+          {
+            "cite": "src/styles/lower.css:93",
+            "anchor": "opacity: 0.05"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:386-404",
+      "anchor": "FaqClouds"
+    },
+    {
+      "cite": "CLONE_SPEC_PAGES_MARKETING.md:49",
+      "anchor": "REUSE FaqClouds"
+    }
+  ],
+  "notes": [
+    "CSS defines positions for 6 items (lower.css:53-58) but only 5 are used; maxItems 6 reflects the real position table."
+  ]
+}

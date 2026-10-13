@@ -1,0 +1,72 @@
+/* sections 1–6 (AnnouncementBar → ClinicalBoard) */
+
+/* ---------- §14 M4/M5 marquee (keyframes body from original CSS) ---------- */
+@keyframes upper-marquee {
+  0% { transform: translate(0); }
+  to { transform: translateX(calc(-100% - var(--gap))); }
+}
+.upper-animate-marquee {
+  /* longhands so a row's [animation-direction:reverse] (§3) is not reset */
+  animation-name: upper-marquee;
+  animation-duration: var(--duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* ---------- §14 M3 hero clouds (runtime-injected styles on original) ---------- */
+@keyframes upper-float {
+  0% { transform: translateX(-645px); }
+  100% { transform: translateX(calc(100vw + 645px)); }
+}
+.cloud-wrapper {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  transform-origin: center center;
+}
+.animate-float-slow { animation: upper-float 100s linear infinite; }
+.animate-float-medium { animation: upper-float 85s linear infinite; }
+.animate-float-fast { animation: upper-float 50s linear infinite; }
+.animate-float-slow.cloud-alt { animation-delay: -50s; }
+.animate-float-medium.cloud-alt { animation-delay: -42.5s; }
+.animate-float-fast.cloud-alt { animation-delay: -15s; }
+
+/* ---------- §14 M1 / M1b header load (measured on rileyapp.com by per-frame sampling) ---------- */
+/* M1: framer {duration:.5}, no ease -> framer's default "easeOut" = cubic-bezier(0,0,.58,1) */
+@keyframes upper-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.upper-header-in {
+  animation: upper-fade-in 0.5s cubic-bezier(0, 0, 0.58, 1) both;
+}
+/* M1b container: transition only has stagger keys, so framer's default opacity tween applies:
+   0.3s cubic-bezier(.25,.1,.35,1) (measured ~0.28s, 50% at ~0.8 opacity) */
+.upper-nav-in {
+  animation: upper-fade-in 0.3s cubic-bezier(0.25, 0.1, 0.35, 1) both;
+}
+/* M1b children: opacity 0->1 + y 20->0, 0.6s easeOut; start = container start + 0.1s + i*0.2s
+   (measured: item ends 0.70/0.90/1.10/1.30s after container start) */
+@keyframes upper-nav-item-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.upper-nav-item {
+  animation: upper-nav-item-in 0.6s cubic-bezier(0, 0, 0.58, 1) both;
+}
+
+/* ---------- §14 M14 mobile menu panel ---------- */
+/* framer {y:"100%"->0, duration:.25}, default ease easeOut (measured ~0.26s, 66% at mid-time).
+   No exit animation on the original: the panel unmounts immediately on close. */
+@keyframes upper-menu-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.upper-menu-enter { animation: upper-menu-up 0.25s cubic-bezier(0, 0, 0.58, 1) both; }
+
+/* ---------- §2.5 press strip edge mask ---------- */
+.upper-press-mask {
+  -webkit-mask: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+  mask: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+}
+

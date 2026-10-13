@@ -1,0 +1,17 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "newsletter-form",
+  "purpose": "Pill email field + purple 'Sign up' button; submit prevented (no endpoint).",
+  "composedOf": [
+    "Button"
+  ],
+  "usedBySections": [
+    "site-footer"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/SiteFooter.jsx:28-36",
+      "anchor": "e.preventDefault()"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "$schema": "riley-design-tokens/semantic/color-roles",
+  "roles": {
+    "text.primary": {
+      "ref": "tokens.00-foundation.color.tokens.text-primary",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:32",
+          "anchor": "almost all headings and body copy"
+        }
+      ]
+    },
+    "text.ink": {
+      "ref": "tokens.00-foundation.color.tokens.ink",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:118",
+          "anchor": "**#0a0a0a**"
+        }
+      ],
+      "note": "FAQ H2 and default body text"
+    },
+    "text.muted": {
+      "ref": "tokens.00-foundation.color.tokens.text-primary",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:236",
+          "anchor": "rgba(46,42,66,.7)"
+        }
+      ],
+      "alpha": 0.7
+    },
+    "text.secondary": {
+      "ref": "tokens.00-foundation.color.tokens.slate-800",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:46",
+          "anchor": "section-2 paragraph, clinical names, pill text"
+        }
+      ]
+    },
+    "text.prose": {
+      "ref": "tokens.00-foundation.color.tokens.gray-700",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:48",
+          "anchor": "announcement text, prose paragraphs"
+        }
+      ]
+    },
+    "text.prose-strong": {
+      "ref": "tokens.00-foundation.color.tokens.gray-900",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:49",
+          "anchor": "announcement link, prose `<strong>`"
+        }
+      ]
+    },
+    "text.on-brand": {
+      "ref": "tokens.00-foundation.color.tokens.white",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:24",
+          "anchor": "color: '#FFF'"
+        }
+      ]
+    },
+    "text.success": {
+      "ref": "tokens.00-foundation.color.tokens.sea-green-100",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:173",
+          "anchor": "**#4ca67e**"
+        }
+      ]
+    },
+    "text.link": {
+      "ref": "tokens.00-foundation.color.tokens.purple-100",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:33",
+          "anchor": "nav links, footer links"
+        }
+      ]
+    },
+    "surface.page": {
+      "ref": "tokens.00-foundation.color.tokens.latte-150",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:37",
+          "anchor": "page bg"
+        }
+      ]
+    },
+    "surface.subtle": {
+      "ref": "tokens.00-foundation.color.tokens.latte-100",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:38",
+          "anchor": "How Riley Works"
+        }
+      ]
+    },
+    "surface.card": {
+      "ref": "tokens.00-foundation.color.tokens.white",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:51",
+          "anchor": "cards"
+        }
+      ]
+    },
+    "surface.lilac": {
+      "ref": "tokens.00-foundation.color.tokens.violet-100",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:36",
+          "anchor": "announcement bar, press strip, superpower card"
+        }
+      ]
+    },
+    "surface.featurette": {
+      "ref": "tokens.00-foundation.color.tokens.tangerine",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:39",
+          "anchor": "featurette card bg"
+        }
+      ]
+    },
+    "surface.feature-apricot": {
+      "ref": "tokens.00-foundation.color.tokens.apricot",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:40",
+          "anchor": "feature card 1"
+        }
+      ]
+    },
+    "surface.feature-marigold": {
+      "ref": "tokens.00-foundation.color.tokens.marigold",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:41",
+          "anchor": "feature card 3"
+        }
+      ]
+    },
+    "action.primary": {
+      "ref": "tokens.00-foundation.color.tokens.purple-100",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:4",
+          "anchor": "base: '#5934C5'"
+        }
+      ]
+    },
+    "action.primary-hover": {
+      "ref": "tokens.00-foundation.color.tokens.purple-hover",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:4",
+          "anchor": "hover: '#7A55FD'"
+        }
+      ]
+    },
+    "action.primary-active": {
+      "ref": "tokens.00-foundation.color.tokens.purple-active",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:4",
+          "anchor": "active: '#5A20E1'"
+        }
+      ]
+    },
+    "action.primary-disabled": {
+      "ref": "tokens.00-foundation.color.tokens.purple-disabled",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:136",
+          "anchor": "Disabled state"
+        }
+      ]
+    },
+    "border.subtle": {
+      "ref": "tokens.00-foundation.color.tokens.latte-125",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:181",
+          "anchor": "border **1px solid #c7c3c0**"
+        }
+      ]
+    },
+    "border.divider": {
+      "ref": "tokens.00-foundation.color.tokens.gray-300",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:47",
+          "anchor": "header nav divider"
+        }
+      ]
+    },
+    "icon.star": {
+      "ref": "tokens.00-foundation.color.tokens.star",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:52",
+          "anchor": "testimonial stars"
+        }
+      ]
+    },
+    "status.included": {
+      "ref": "tokens.00-foundation.color.tokens.plan-check-green",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:191",
+          "anchor": "#008A56"
+        }
+      ]
+    },
+    "status.excluded": {
+      "ref": "tokens.00-foundation.color.tokens.plan-cross-red",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:191",
+          "anchor": "#ED614B"
+        }
+      ]
+    },
+    "pill.development": {
+      "ref": "tokens.00-foundation.color.tokens.pill-development",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:6",
+          "anchor": "bg-pill-development"
+        }
+      ]
+    },
+    "pill.neutral": {
+      "ref": "tokens.00-foundation.color.tokens.pill-neutral",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:7",
+          "anchor": "bg-pill-neutral"
+        }
+      ]
+    },
+    "pill.health": {
+      "ref": "tokens.00-foundation.color.tokens.pill-health",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:8",
+          "anchor": "bg-pill-health"
+        }
+      ]
+    },
+    "pill.sleep": {
+      "ref": "tokens.00-foundation.color.tokens.pill-sleep",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:11",
+          "anchor": "bg-pill-sleep"
+        }
+      ]
+    }
+  }
+}

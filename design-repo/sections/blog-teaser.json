@@ -1,0 +1,93 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "blog-teaser",
+  "registryId": "section.blog-teaser",
+  "version": "1.0.0",
+  "category": "content-teaser",
+  "purpose": "Category pills + three latest article cards inviting readers to the blog.",
+  "iaSectionIds": [
+    "content.blog-teaser"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/BlogTeaser.jsx:70-115",
+      "anchor": "export default function BlogTeaser"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_blog-teaser",
+    "copyBudget": {
+      "eyebrow": 6,
+      "heading": 5,
+      "categories[].label": 2,
+      "posts[].cover.alt": 16,
+      "posts[].title": 18,
+      "cta.label": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "image-hover-scale",
+    "motionRoles": [
+      "image-hover-scale",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "No image scale on hover; pills keep instant opacity change.",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "≤639px (JS matchMedia)",
+        "changes": [
+          "cards become a horizontal snap scroller, each card calc(50% - 4px) wide",
+          "category nav scrolls horizontally"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/BlogTeaser.jsx:93-102",
+            "anchor": "snap-x snap-mandatory"
+          },
+          {
+            "cite": "CLONE_SPEC.md:418",
+            "anchor": "≤639px"
+          }
+        ]
+      },
+      {
+        "query": "<992px",
+        "changes": [
+          "image aspect 3/4 (fixed 22rem height at ≥992)",
+          "card title 14/18.2 (20/26)",
+          "section padding 32px 16px (100px 36px)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/BlogTeaser.jsx:53",
+            "anchor": "aspect-[3/4]"
+          },
+          {
+            "cite": "src/components/BlogTeaser.jsx:62",
+            "anchor": "lg:text-[1.25rem]"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:408-419",
+      "anchor": "BlogTeaser"
+    }
+  ],
+  "notes": [
+    "Category and post links target /blog/* routes, which are EXCLUDED/pending in this snapshot (templates.json excludedRoutes).",
+    "The clone's 'Explore the blog' CTA points at the app-store onelink (BlogTeaser.jsx:111) — recorded as-is.",
+    "Animation-QA: the original transitions the CSS `scale` property to 1.05 over 0.3s; the clone now does the same (transition-[transform,translate,scale,rotate], group-hover:[scale:1.05])."
+  ]
+}

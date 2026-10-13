@@ -1,0 +1,237 @@
+- generic [active] [ref=f2e1]:
+  - alert [ref=f2e2]
+  - generic [ref=f2e3]:
+    - generic [ref=f2e4]:
+      - text: By using this site, you accept cookies for analytics.
+      - link "Learn more" [ref=f2e5] [cursor=pointer]:
+        - /url: /privacy
+    - button "Accept cookies" [ref=f2e7] [cursor=pointer]: OK
+  - complementary "Promotional message" [ref=f2e9]:
+    - paragraph [ref=f2e12]:
+      - link "Try Riley risk free with our 7-day free trial!" [ref=f2e13] [cursor=pointer]:
+        - /url: https://rileyapp.com/pricing
+  - generic [ref=f2e14]:
+    - banner [ref=f2e15]:
+      - generic [ref=f2e16]:
+        - link [ref=f2e17] [cursor=pointer]:
+          - /url: https://rileyapp.com/
+          - img "Riley logo" [ref=f2e18]
+        - navigation [ref=f2e19]:
+          - generic [ref=f2e20]:
+            - link "Blog" [ref=f2e22] [cursor=pointer]:
+              - /url: https://rileyapp.com/blog
+            - button "What's New?" [ref=f2e24]
+          - button "Get Started For Free" [ref=f2e27] [cursor=pointer]
+    - generic [ref=f2e32]:
+      - paragraph [ref=f2e34]: Parenting Made Simple
+      - generic [ref=f2e35]:
+        - heading "Expert Guidance, Tailored To Your Family" [level=1] [ref=f2e37]: Expert Guidance,Tailored To Your Family
+        - generic [ref=f2e38]:
+          - generic [ref=f2e39]:
+            - generic [ref=f2e40]:
+              - heading "Riley Plus+" [level=3] [ref=f2e41]
+              - paragraph [ref=f2e42]:
+                - text: For families who parent as a team
+                - generic [ref=f2e43]:
+                  - img "Riley avatar" [ref=f2e44]
+                  - img "Riley avatar" [ref=f2e45]
+                  - img "Riley avatar" [ref=f2e46]
+              - paragraph [ref=f2e47]: Try it free for 7 days
+            - generic [ref=f2e48]:
+              - separator [ref=f2e49]
+              - list [ref=f2e50]:
+                - listitem [ref=f2e51]:
+                  - generic [ref=f2e54]: Unlimited Children & Tracking
+                - listitem [ref=f2e55]:
+                  - generic [ref=f2e58]: 3+ Caregivers with their own logins
+                - listitem [ref=f2e59]:
+                  - generic [ref=f2e62]: Unlimited Chats
+                - listitem [ref=f2e63]:
+                  - generic [ref=f2e66]: Tracking Insights
+                - listitem [ref=f2e67]:
+                  - generic [ref=f2e70]: Seamless Sharing
+                - listitem [ref=f2e71]:
+                  - generic [ref=f2e74]: Advanced Memory & Customization
+              - separator [ref=f2e75]
+            - generic [ref=f2e76]:
+              - paragraph [ref=f2e77]: Starting at
+              - generic [ref=f2e78]: $9.99 / month
+              - paragraph [ref=f2e79]: Billed monthly, quarterly or annually
+              - paragraph [ref=f2e80]: Your first 7 days are free
+          - generic [ref=f2e81]:
+            - generic [ref=f2e82]:
+              - heading "Riley Basic" [level=3] [ref=f2e83]
+              - paragraph [ref=f2e84]:
+                - text: For solo parenting or simpler setups
+                - img "Riley avatar" [ref=f2e86]
+              - paragraph [ref=f2e87]: Always free
+            - generic [ref=f2e88]:
+              - separator [ref=f2e89]
+              - list [ref=f2e90]:
+                - listitem [ref=f2e91]:
+                  - generic [ref=f2e94]: Unlimited Children & Tracking
+                - listitem [ref=f2e95]:
+                  - generic [ref=f2e98]: 3+ Caregivers with their own logins
+                - listitem [ref=f2e99]:
+                  - generic [ref=f2e102]: Unlimited Chats
+                - listitem [ref=f2e103]:
+                  - generic [ref=f2e106]: Tracking Insights
+                - listitem [ref=f2e107]:
+                  - generic [ref=f2e110]: Seamless Sharing
+                - listitem [ref=f2e111]:
+                  - generic [ref=f2e114]: Advanced Memory & Customization
+              - separator [ref=f2e115]
+            - generic [ref=f2e116]:
+              - generic [ref=f2e117]: Free
+              - paragraph [ref=f2e118]: "Available on:"
+        - button "Get Started For Free" [ref=f2e122] [cursor=pointer]
+    - region [ref=f2e126]:
+      - generic [ref=f2e127]:
+        - generic [ref=f2e128]:
+          - paragraph [ref=f2e129]: Real Reviews, Real Families
+          - heading "Why Parents Love Riley" [level=2] [ref=f2e130]
+        - generic [ref=f2e133]:
+          - figure "Max L., Dad of Baby R (1 mo)" [ref=f2e134]:
+            - blockquote [ref=f2e141]: “10 days into having our newborn, we’ve already developed the habit of saying “Hm, not sure. Ask Riley” multiple times a day. Not sure what we’d do without having Riley to back our instincts.”
+          - figure "Meg F., Mom of Baby A (5 mos) and Baby H (2 yrs)" [ref=f2e144]:
+            - blockquote [ref=f2e151]: “Riley offers calm and reassurance while Google makes me spiral. With my second, it feels like we’re starting over and have forgotten everything about the newborn phase but Riley’s here for all my questions”
+          - figure "Rebeckah R., Mom of Baby N. (7mo)" [ref=f2e154]:
+            - blockquote [ref=f2e161]: “Compared to every other app, especially chat tools, Riley asks better questions and more relevant follow-ups based on my child’s age and the nuance of the moment - the end result is always more helpful.”
+          - figure "App Store Review" [ref=f2e164]:
+            - blockquote [ref=f2e171]: “Riley’s tracking and recommendations are smart and proactive. I love that it’s personalized and remembers details about my family without me having to myself.”
+          - figure "R, Mom of Baby K. (5mo)" [ref=f2e174]:
+            - blockquote [ref=f2e181]: “I was traveling this week and *terrifyingly* my pump broke and I was panicking. Riley pulled through. Having a resource to text with at 1 am? 11/10.”
+        - generic [ref=f2e184]:
+          - generic [ref=f2e185]:
+            - button "Previous testimonial" [ref=f2e186]
+            - button "Next testimonial" [ref=f2e189]
+          - button "Join the club" [ref=f2e192] [cursor=pointer]
+    - region "Why Parents Love Riley" [ref=f2e195]:
+      - generic [ref=f2e196]:
+        - paragraph [ref=f2e197]: Designed with Real Parents in Mind
+        - heading "Why Riley Stands Out" [level=2] [ref=f2e198]
+        - paragraph [ref=f2e201]:
+          - text: See how Riley outshines other parenting tools with
+          - strong [ref=f2e202]: intelligent features
+          - text: and
+          - strong [ref=f2e203]: tailored advice
+          - text: . It’s the
+          - strong [ref=f2e204]: one-stop-shop
+          - text: for all your parenting needs!
+      - table [ref=f2e207]:
+        - rowgroup [ref=f2e208]:
+          - row [ref=f2e209]:
+            - columnheader "Feature/Benefit" [ref=f2e210]
+            - columnheader "Riley" [ref=f2e211]
+            - columnheader "Google Search" [ref=f2e212]
+            - columnheader "Reddit" [ref=f2e213]
+            - columnheader "ChatGPT" [ref=f2e214]
+            - columnheader "Claude" [ref=f2e215]
+            - columnheader "Other Tracking Apps" [ref=f2e216]
+            - columnheader "Podcasts, Books, & Blogs" [ref=f2e217]
+        - rowgroup [ref=f2e218]:
+          - row [ref=f2e219]:
+            - cell "24/7 Instant Answers" [ref=f2e220]
+            - cell [ref=f2e221]
+            - cell [ref=f2e225]
+            - cell [ref=f2e229]
+            - cell [ref=f2e233]
+            - cell [ref=f2e237]
+            - cell [ref=f2e241]
+            - cell [ref=f2e245]
+          - row [ref=f2e249]:
+            - cell "Expert-Vetted, Science Backed Support" [ref=f2e250]
+            - cell [ref=f2e251]
+            - cell [ref=f2e255]
+            - cell [ref=f2e259]
+            - cell [ref=f2e263]
+            - cell [ref=f2e267]
+            - cell [ref=f2e271]
+            - cell [ref=f2e275]
+          - row [ref=f2e279]:
+            - cell "Guidance Tailored to You & Your Family" [ref=f2e280]
+            - cell [ref=f2e281]
+            - cell [ref=f2e285]
+            - cell [ref=f2e289]
+            - cell [ref=f2e293]
+            - cell [ref=f2e297]
+            - cell [ref=f2e301]
+            - cell [ref=f2e305]
+          - row [ref=f2e309]:
+            - cell "Proactively Turns Tracking Into Tips" [ref=f2e310]
+            - cell [ref=f2e311]
+            - cell [ref=f2e315]
+            - cell [ref=f2e319]
+            - cell [ref=f2e323]
+            - cell [ref=f2e327]
+            - cell [ref=f2e331]
+            - cell [ref=f2e335]
+          - row [ref=f2e339]:
+            - cell "All-In-One Tracking & Support" [ref=f2e340]
+            - cell [ref=f2e341]
+            - cell [ref=f2e345]
+            - cell [ref=f2e349]
+            - cell [ref=f2e353]
+            - cell [ref=f2e357]
+            - cell [ref=f2e361]
+            - cell [ref=f2e365]
+      - button "Join Riley—early, easy, free" [ref=f2e370] [cursor=pointer]
+    - region [ref=f2e372]:
+      - generic [ref=f2e373]:
+        - heading "We’re Here to Make Things Clear" [level=2] [ref=f2e375]
+        - generic [ref=f2e376]:
+          - group [ref=f2e377] [cursor=pointer]:
+            - generic "FAQ portrait How do I know I can trust Riley?" [ref=f2e378]:
+              - img "FAQ portrait" [ref=f2e379]
+              - generic [ref=f2e380]: How do I know I can trust Riley?
+          - group [ref=f2e383] [cursor=pointer]:
+            - generic "FAQ portrait How is Riley different from ChatGPT or other parenting apps?" [ref=f2e384]:
+              - img "FAQ portrait" [ref=f2e385]
+              - generic [ref=f2e386]: How is Riley different from ChatGPT or other parenting apps?
+          - group [ref=f2e389] [cursor=pointer]:
+            - generic "FAQ portrait What can’t I ask Riley?" [ref=f2e390]:
+              - img "FAQ portrait" [ref=f2e391]
+              - generic [ref=f2e392]: What can’t I ask Riley?
+          - group [ref=f2e395] [cursor=pointer]:
+            - generic "FAQ portrait Are you going to keep my kids’ data private?" [ref=f2e396]:
+              - img "FAQ portrait" [ref=f2e397]
+              - generic [ref=f2e398]: Are you going to keep my kids’ data private?
+          - group [ref=f2e401] [cursor=pointer]:
+            - generic "FAQ portrait Do I need to track everything for Riley to work?" [ref=f2e402]:
+              - img "FAQ portrait" [ref=f2e403]
+              - generic [ref=f2e404]: Do I need to track everything for Riley to work?
+    - generic [ref=f2e418]:
+      - img "Background decoration" [ref=f2e419]
+      - generic [ref=f2e420]:
+        - heading "We are raising a generation of confident parents." [level=2] [ref=f2e421]
+        - button "Get support that gets you" [ref=f2e423] [cursor=pointer]
+      - img "Mascots" [ref=f2e426]
+    - contentinfo [ref=f2e427]:
+      - generic [ref=f2e428]:
+        - generic [ref=f2e430]:
+          - paragraph [ref=f2e432]: Stay in the loop with Riley's newsletter.
+          - generic [ref=f2e433]:
+            - textbox "Enter your email" [ref=f2e434]:
+              - /placeholder: Email
+            - button "Sign up" [ref=f2e435]
+        - navigation [ref=f2e439]:
+          - generic [ref=f2e440]:
+            - generic [ref=f2e441]:
+              - link "Blog" [ref=f2e442] [cursor=pointer]:
+                - /url: https://rileyapp.com/blog
+              - link "Pricing" [ref=f2e443] [cursor=pointer]:
+                - /url: https://rileyapp.com/pricing
+              - link "Editorial Process" [ref=f2e444] [cursor=pointer]:
+                - /url: https://rileyapp.com/editorial-process
+            - generic [ref=f2e445]:
+              - link "Privacy Policy" [ref=f2e446] [cursor=pointer]:
+                - /url: https://rileyapp.com/privacy
+              - link "Terms of Service" [ref=f2e447] [cursor=pointer]:
+                - /url: https://rileyapp.com/tos
+              - link "Support" [ref=f2e448] [cursor=pointer]:
+                - /url: https://rileyapp.com/support
+        - generic [ref=f2e453]:
+          - paragraph [ref=f2e454]: Get the App
+          - link [ref=f2e455] [cursor=pointer]:
+            - /url: https://rileyapp.onelink.me/JNxh/ln83navr
+      - paragraph [ref=f2e489]: © 2025 Riley

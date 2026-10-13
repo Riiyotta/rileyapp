@@ -1,0 +1,70 @@
+{
+  "$schema": "riley-design-tokens/registry-manifest",
+  "repositoryId": "riley-clone-design-repo",
+  "repositoryVersion": "1.0.0",
+  "pageSpecVersion": "1.0.0",
+  "allowlistVersion": "1.0.0",
+  "versionFieldNote": "allowlistVersion is MACHINE-CHECKED (verify_all.py fails if it differs from tokens/llm/component-allowlist.json version). pageSpecVersion is MACHINE-CHECKED against the schema's pageSpecVersion const. repositoryVersion is DOCUMENTATION-ONLY (hand-maintained; nothing checks it).",
+  "status": "design-review-pending",
+  "productionApproved": false,
+  "defaultTheme": "riley-light",
+  "schemaValidatedThemes": [
+    "riley-light"
+  ],
+  "snapshotScope": "Built state only: templates home, pricing, not-found. Blog, author, category, article and text/legal pages are excluded/pending (templates/templates.json excludedRoutes).",
+  "sourceProject": {
+    "name": "Riley (rileyapp.com) clone",
+    "original": "Next.js + Tailwind v4 + framer-motion + embla-carousel + react-scroll-parallax + Rive",
+    "frameworkVersions": {
+      "react": "^18.3.1",
+      "react-dom": "^18.3.1",
+      "vite": "^5.4.0",
+      "tailwindcss": "^3.4.10",
+      "@rive-app/react-canvas": "^4.36.0"
+    },
+    "frameworkVersionsNote": "Machine-checked against ../package.json by verify_all.py when the source project is present.",
+    "git": "The source project is NOT a git repository at snapshot time, so the 'zip committed to git' check is N/A. If it becomes one, add design-repo.zip to .gitignore and check `git ls-files` before the first commit."
+  },
+  "counts": {
+    "tokens": {
+      "00-foundation": 117,
+      "10-semantic": 61,
+      "20-component": 49,
+      "30-layout": 17,
+      "total": 244
+    },
+    "primitives": 10,
+    "components": 16,
+    "sections": 17,
+    "templates": 3,
+    "routesMapped": 11,
+    "deadSlugRoutes": 8,
+    "routesExcludedPatterns": 9,
+    "assetRoles": 18,
+    "graphRules": 19,
+    "motionPatterns": 10
+  },
+  "entryPoints": {
+    "readme": "README.md",
+    "changelog": "CHANGELOG.md",
+    "schema": "schema/pagespec.schema.json",
+    "example": "schema/example.pagespec.json",
+    "schemaValidator": "schema/validate_schema.py",
+    "semanticValidator": "schema/semantic_validate.py",
+    "adversarialTests": "schema/tests/adversarial_test.py",
+    "verifyAll": "extraction/verify_all.py",
+    "measuredValues": "extraction/measured-values.json",
+    "templates": "templates/templates.json",
+    "compatibilityGraph": "compatibility/graph.json",
+    "assetRoles": "assets/asset-roles.json",
+    "assetReadme": "assets/README.md",
+    "motionSpec": "animation/motion-spec.json",
+    "allowlist": "tokens/llm/component-allowlist.json",
+    "tokenCatalog": "tokens/llm/token-catalog.json",
+    "tokenPolicy": "tokens/llm/token-policy.json",
+    "theme": "tokens/themes/riley-light.json",
+    "primitives": "primitives/",
+    "components": "components/",
+    "sections": "sections/"
+  }
+}

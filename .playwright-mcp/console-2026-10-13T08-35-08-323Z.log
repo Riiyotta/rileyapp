@@ -1,0 +1,1 @@
+[   51323ms] [WARNING]   WARN  [Statsig] useExperiment hook failed to find a valid Statsig client for experiment 'hero_copy_test_july'. @ https://rileyapp.com/_next/static/chunks/6391-950bd417654fbe13.js:0

@@ -1,0 +1,273 @@
+{
+  "$schema": "riley-design-tokens/foundation/typography",
+  "weightQuirk": "font-sans-bold / font-sans-semibold only swap the font FAMILY (each Cadiz cut is its own @font-face family), so the computed font-weight stays 400 while the bold face renders. <strong>/font-bold inside sansRegular text gets synthetic bold. Reproduce by family, never by font-weight.",
+  "weightQuirkEvidence": [
+    {
+      "cite": "CLONE_SPEC.md:92",
+      "anchor": "Weight quirk"
+    },
+    {
+      "cite": "src/index.css:7",
+      "anchor": "font-family:sansBold"
+    }
+  ],
+  "unlayeredRuleNote": "The h1 rule and the desktop-*/mobile-* media rules are deliberately UNLAYERED in src/index.css so they beat Tailwind utilities, exactly like the original. A generator must not 'fix' this by moving them into @layer.",
+  "unlayeredRuleEvidence": [
+    {
+      "cite": "src/index.css:44-61",
+      "anchor": "intentionally outside @layer"
+    },
+    {
+      "cite": "CLONE_SPEC.md:94",
+      "anchor": "Unlayered type rules"
+    }
+  ],
+  "families": {
+    "sans-regular": {
+      "value": "sansRegular, \"sansRegular Fallback\"",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:24",
+          "anchor": "'sans-regular'"
+        },
+        {
+          "cite": "src/index.css:1",
+          "anchor": "Cadiz-Regular.woff2"
+        }
+      ]
+    },
+    "sans-book": {
+      "value": "sansBook, \"sansBook Fallback\"",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:25",
+          "anchor": "'sans-book'"
+        },
+        {
+          "cite": "src/index.css:3",
+          "anchor": "Cadiz-Book.woff2"
+        }
+      ]
+    },
+    "sans-semibold": {
+      "value": "sansSemibold, \"sansSemibold Fallback\"",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:26",
+          "anchor": "'sans-semibold'"
+        },
+        {
+          "cite": "src/index.css:5",
+          "anchor": "Cadiz-SemiBold.woff2"
+        }
+      ]
+    },
+    "sans-bold": {
+      "value": "sansBold, \"sansBold Fallback\"",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:27",
+          "anchor": "'sans-bold'"
+        },
+        {
+          "cite": "src/index.css:7",
+          "anchor": "Cadiz-Bold.woff2"
+        }
+      ]
+    },
+    "sans-black": {
+      "value": "sansBlack",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:28",
+          "anchor": "'sans-black'"
+        },
+        {
+          "cite": "src/index.css:9",
+          "anchor": "Cadiz-Black.woff2"
+        }
+      ]
+    },
+    "serif": {
+      "value": "\"serif\", \"serif Fallback\"",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:29",
+          "anchor": "serif: ['\"serif\"'"
+        },
+        {
+          "cite": "src/index.css:11",
+          "anchor": "Recoleta-Regular.woff2"
+        }
+      ]
+    }
+  },
+  "scale": {
+    "h1-desktop": {
+      "value": "4rem/4.5rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:47",
+          "anchor": "h1{font-size:4rem;line-height:4.5rem}"
+        }
+      ],
+      "note": "64/72, unlayered h1 rule ≥992"
+    },
+    "h1-mobile": {
+      "value": "2.5rem/3rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:46",
+          "anchor": "h1{font-size:2.5rem;line-height:3rem}"
+        }
+      ],
+      "note": "40/48 <992"
+    },
+    "desktop-h1": {
+      "value": "5rem/6rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:49",
+          "anchor": ".desktop-h1{font-size:5rem;line-height:6rem"
+        }
+      ]
+    },
+    "desktop-h2": {
+      "value": "3.75rem/4.875rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:50",
+          "anchor": ".desktop-h2{font-size:3.75rem;line-height:4.875rem"
+        }
+      ]
+    },
+    "desktop-h3": {
+      "value": "2.5rem/3rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:51",
+          "anchor": ".desktop-h3{font-size:2.5rem;line-height:3rem"
+        }
+      ]
+    },
+    "desktop-h4": {
+      "value": "1.625rem/2.1125rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:52",
+          "anchor": ".desktop-h4{font-size:1.625rem;line-height:2.1125rem"
+        }
+      ]
+    },
+    "lg-desktop-h4": {
+      "value": "1.5rem/2.1125rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:67",
+          "anchor": ".lg\\:desktop-h4{font-size:1.5rem;line-height:2.1125rem}"
+        }
+      ],
+      "note": "lg: variant sets size only (no family) -> Cadiz 24/33.8 ≥992"
+    },
+    "desktop-body": {
+      "value": "1.25rem/1.875rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:53",
+          "anchor": ".desktop-body{font-size:1.25rem;line-height:1.875rem"
+        }
+      ]
+    },
+    "mobile-h1": {
+      "value": "2.5rem/3rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:56",
+          "anchor": ".mobile-h1{font-size:2.5rem;line-height:3rem"
+        }
+      ]
+    },
+    "mobile-h2": {
+      "value": "1.625rem/2.1125rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:57",
+          "anchor": ".mobile-h2{font-size:1.625rem;line-height:2.1125rem"
+        }
+      ]
+    },
+    "mobile-h3": {
+      "value": "1.25rem/2.1125rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:58",
+          "anchor": ".mobile-h3{font-size:1.25rem;line-height:2.1125rem"
+        }
+      ]
+    },
+    "mobile-h4": {
+      "value": "1rem/1.3rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:59",
+          "anchor": ".mobile-h4{font-size:1rem;line-height:1.3rem"
+        }
+      ]
+    },
+    "mobile-body": {
+      "value": "1rem/1.5rem",
+      "evidence": [
+        {
+          "cite": "src/index.css:60",
+          "anchor": ".mobile-body{font-size:1rem;line-height:1.5rem"
+        }
+      ]
+    },
+    "faq-h2": {
+      "value": "80px/1.3",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:37",
+          "anchor": "font-size: 80px; line-height: 1.3"
+        }
+      ],
+      "note": "40px below 961 (lower.css:38)"
+    },
+    "caption": {
+      "value": "0.875rem/1.225rem",
+      "evidence": [
+        {
+          "cite": "src/components/SiteFooter.jsx:71",
+          "anchor": "text-[0.875rem] leading-[1.225rem]"
+        }
+      ]
+    },
+    "pill": {
+      "value": "0.875rem/1.25rem",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:128",
+          "anchor": "Blog pill"
+        }
+      ]
+    },
+    "nav-link": {
+      "value": "1.125rem/1.5rem",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:125",
+          "anchor": "Nav link"
+        }
+      ]
+    },
+    "announcement": {
+      "value": "1rem/1.9rem, letter-spacing -0.01rem",
+      "evidence": [
+        {
+          "cite": "src/components/AnnouncementBar.jsx:10",
+          "anchor": "leading-[1.9rem] tracking-[-0.01rem]"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "superpowers-grid",
+  "registryId": "section.superpowers-grid",
+  "version": "1.0.0",
+  "category": "feature",
+  "purpose": "Self-segmentation: six 'superpower' cards, each opening a mascot modal with four ways Riley helps.",
+  "iaSectionIds": [
+    "product.superpowers-grid"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/Superpowers.jsx:6-45",
+      "anchor": "export default function Superpowers"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_superpowers-grid",
+    "copyBudget": {
+      "heading": 9,
+      "cards[].label": 7,
+      "cards[].modal.title": 9,
+      "cards[].modal.subtitle": 9,
+      "cards[].modal.features[].title": 6,
+      "cards[].modal.features[].description": 20,
+      "cards[].modal.cta.label": 5
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "click-opens-modal",
+    "motionRoles": [
+      "button-state"
+    ],
+    "reducedMotionFallback": "none-required: cards have no hover motion on the original; the modal opens with no entry animation.",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "grid collapses from 2 columns (462+462) to 1",
+          "card labels 16/20.8 Recoleta (24/33.8 at ≥992)",
+          "card padding 60px 16px 120px"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/Superpowers.jsx:22",
+            "anchor": "lg:grid-cols-2"
+          },
+          {
+            "cite": "CLONE_SPEC.md:248",
+            "anchor": "1 column below 992"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:240-272",
+      "anchor": "Superpowers"
+    }
+  ],
+  "notes": [
+    "Animation-QA (live original): NO hover background change on the cards and cursor stays auto. The clone's hover:bg-gray-50 and CLONE_SPEC M12 are superseded; do not generate a hover state."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "riley-design-tokens/primitive",
+  "id": "Divider",
+  "purpose": "Hairline separators: header nav divider (1x24 gray-300), footer column divider svg (lg+), plan-card hr (latte-125).",
+  "props": {
+    "variant": "enum[nav, footer, plan]"
+  },
+  "tokenRefs": [
+    "tokens.10-semantic.color-roles.roles.border.divider",
+    "tokens.10-semantic.color-roles.roles.border.subtle"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/upper/SiteHeader.jsx:81",
+      "anchor": "h-6 w-px bg-gray-300"
+    },
+    {
+      "cite": "src/components/SiteFooter.jsx:15-17",
+      "anchor": "footer-divider.svg"
+    }
+  ]
+}

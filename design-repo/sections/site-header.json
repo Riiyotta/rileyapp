@@ -1,0 +1,100 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "site-header",
+  "registryId": "section.site-header",
+  "version": "1.0.0",
+  "category": "shell",
+  "purpose": "Brand + primary navigation + always-visible app CTA; becomes fixed after a short scroll.",
+  "iaSectionIds": [
+    "chrome.site-header"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/upper/SiteHeader.jsx:12-149",
+      "anchor": "export default function SiteHeader"
+    }
+  ],
+  "variants": {
+    "hero-overlay": "rendered inside the home Hero wrapper over the parallax clouds (Hero.jsx:94-95)",
+    "standalone": "first child of the page wrapper on /pricing and the 404 template, on plain latte (CLONE_SPEC_PAGES_MARKETING.md:45)"
+  },
+  "contentContract": {
+    "schemaRef": "#/definitions/node_site-header",
+    "copyBudget": {
+      "logo.alt": 3,
+      "navItems[].label": 2,
+      "cta.label": 5,
+      "mobileCta.label": 3
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "header-load-and-sticky",
+    "motionRoles": [
+      "header-load-fade",
+      "nav-stagger",
+      "header-sticky",
+      "mobile-menu-slide",
+      "link-hover-opacity",
+      "button-state"
+    ],
+    "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide.",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "desktop nav (Blog, What's New?, divider, CTA) hidden",
+          "shows 'Try For $0' button (100x56) + hamburger",
+          "hamburger opens full-screen blurred mobile menu sliding up from y 100%, body scroll locked"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/upper/SiteHeader.jsx:61",
+            "anchor": "hidden flex-1 items-center justify-between lg:flex"
+          },
+          {
+            "cite": "src/components/upper/SiteHeader.jsx:89-105",
+            "anchor": "Try For $0"
+          },
+          {
+            "cite": "CLONE_SPEC.md:179-186",
+            "anchor": "Mobile menu"
+          }
+        ]
+      },
+      {
+        "query": "<768px",
+        "changes": [
+          "header padding 12px 16px (60px sides at md+)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/upper/SiteHeader.jsx:54",
+            "anchor": "px-4 py-3"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:165-177",
+      "anchor": "SiteHeader"
+    },
+    {
+      "cite": "CLONE_SPEC_PAGES_MARKETING.md:38",
+      "anchor": "REUSE SiteHeader"
+    }
+  ],
+  "notes": [
+    "Sticky threshold: clone uses scrollY > 54; animation-QA measured the original fixing at scrollY >= 55 (treat as ~54-55).",
+    "Mobile-menu slide is an approximation of the original JS-driven ~264ms open (within 0.08 normalised progress); close is instant."
+  ]
+}

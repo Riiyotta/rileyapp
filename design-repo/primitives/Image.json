@@ -1,0 +1,17 @@
+{
+  "$schema": "riley-design-tokens/primitive",
+  "id": "Image",
+  "purpose": "Content image bound to a closed assetRole (never a bare src).",
+  "props": {
+    "assetRole": "closed enum (assets/asset-roles.json)",
+    "assetRef": "registered file for reuse/no-fabricate roles",
+    "alt": "string"
+  },
+  "tokenRefs": [],
+  "evidence": [
+    {
+      "cite": "src/components/ClinicalBoard.jsx:26",
+      "anchor": "aspect-[0.99] w-[362px]"
+    }
+  ]
+}

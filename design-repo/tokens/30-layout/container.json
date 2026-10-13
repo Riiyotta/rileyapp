@@ -1,0 +1,75 @@
+{
+  "$schema": "riley-design-tokens/layout/container",
+  "note": "There is no single global container; widths are per section (CLONE_SPEC §0.1).",
+  "noGlobalContainerEvidence": [
+    {
+      "cite": "CLONE_SPEC.md:21",
+      "anchor": "There is no single global container"
+    }
+  ],
+  "tokens": {
+    "page-max": {
+      "value": "90rem (1440px)",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:21",
+          "anchor": "`max-w-[90rem]` = **1440px**"
+        }
+      ]
+    },
+    "hero-max": {
+      "value": "80rem (1280px)",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:21",
+          "anchor": "`max-w-[80rem]` = 1280px"
+        }
+      ]
+    },
+    "pricing-grid-max": {
+      "value": "56rem (896px)",
+      "evidence": [
+        {
+          "cite": "src/components/pricing/PricingHero.jsx:96",
+          "anchor": "max-w-[56rem]"
+        }
+      ]
+    },
+    "table-max": {
+      "value": "72rem (1152px)",
+      "evidence": [
+        {
+          "cite": "src/components/lower/ComparisonTable.jsx:37",
+          "anchor": "max-w-6xl"
+        }
+      ]
+    },
+    "faq-heading-max": {
+      "value": "50rem (800px)",
+      "evidence": [
+        {
+          "cite": "src/components/FaqClouds.jsx:75",
+          "anchor": "max-w-[50rem]"
+        }
+      ]
+    },
+    "cta-wrapper-default": {
+      "value": "14rem (224px)",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:137",
+          "anchor": "max-w-[14rem]"
+        }
+      ]
+    },
+    "blog-card": {
+      "value": "18rem (288px)",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:51",
+          "anchor": "max-w-[18rem]"
+        }
+      ]
+    }
+  }
+}

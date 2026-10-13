@@ -1,0 +1,174 @@
+{
+  "$schema": "riley-design-tokens/component/card",
+  "superpower": {
+    "background": {
+      "ref": "tokens.10-semantic.color-roles.roles.surface.card",
+      "evidence": [
+        {
+          "cite": "src/components/Superpowers.jsx:30",
+          "anchor": "bg-white"
+        }
+      ]
+    },
+    "hover": {
+      "value": "none on the original (animation-QA, measured live); CLONE_SPEC §4.1/M12 claim of a gray-50 hover is superseded",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:465",
+          "anchor": "Superpower cards"
+        }
+      ]
+    },
+    "cursor": {
+      "value": "auto (not pointer), per animation-QA on the original",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:249",
+          "anchor": "article[role=button]"
+        }
+      ]
+    },
+    "shadow": {
+      "ref": "tokens.00-foundation.elevation.tokens.default",
+      "evidence": [
+        {
+          "cite": "src/components/Superpowers.jsx:30",
+          "anchor": "shadow"
+        }
+      ]
+    },
+    "radius": {
+      "ref": "tokens.00-foundation.radius.tokens.card",
+      "evidence": [
+        {
+          "cite": "src/components/Superpowers.jsx:30",
+          "anchor": "rounded-3xl"
+        }
+      ]
+    }
+  },
+  "feature": {
+    "tones": {
+      "value": [
+        "apricot",
+        "violet-100",
+        "marigold"
+      ],
+      "evidence": [
+        {
+          "cite": "src/components/lower/FeatureCards.jsx:6-22",
+          "anchor": "bg-apricot"
+        }
+      ]
+    },
+    "radius": {
+      "ref": "tokens.00-foundation.radius.tokens.card",
+      "evidence": [
+        {
+          "cite": "src/components/lower/FeatureCards.jsx:40",
+          "anchor": "rounded-3xl"
+        }
+      ]
+    },
+    "maxHeight": {
+      "value": "25rem",
+      "evidence": [
+        {
+          "cite": "src/components/lower/FeatureCards.jsx:40",
+          "anchor": "max-h-[25rem]"
+        }
+      ]
+    }
+  },
+  "plan": {
+    "background": {
+      "ref": "tokens.10-semantic.color-roles.roles.surface.card",
+      "evidence": [
+        {
+          "cite": "src/components/pricing/PlanCard.jsx:29",
+          "anchor": "bg-white"
+        }
+      ]
+    },
+    "border": {
+      "ref": "tokens.10-semantic.color-roles.roles.border.subtle",
+      "evidence": [
+        {
+          "cite": "src/components/pricing/PlanCard.jsx:29",
+          "anchor": "border-latte-125"
+        }
+      ]
+    },
+    "radius": {
+      "value": "24px ≥640 / 16px <640",
+      "evidence": [
+        {
+          "cite": "src/components/pricing/PlanCard.jsx:29",
+          "anchor": "rounded-2xl border border-latte-125 bg-white p-6 sm:rounded-3xl"
+        }
+      ]
+    },
+    "shadow": {
+      "value": "none",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:181",
+          "anchor": "No shadow, no hover state"
+        }
+      ]
+    }
+  },
+  "faq-item": {
+    "radius": {
+      "ref": "tokens.00-foundation.radius.tokens.faq-item",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:40",
+          "anchor": "border-bottom-right-radius: 0"
+        }
+      ]
+    },
+    "shadow": {
+      "ref": "tokens.00-foundation.elevation.tokens.md",
+      "evidence": [
+        {
+          "cite": "src/components/FaqClouds.jsx:79",
+          "anchor": "shadow-md"
+        }
+      ]
+    },
+    "width": {
+      "value": "295px closed / 350px (capped 320) open",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:40",
+          "anchor": "width: 295px"
+        },
+        {
+          "cite": "src/styles/lower.css:44",
+          "anchor": "width: 350px"
+        }
+      ]
+    }
+  },
+  "testimonial-panel": {
+    "background": {
+      "ref": "tokens.10-semantic.color-roles.roles.surface.lilac",
+      "evidence": [
+        {
+          "cite": "src/components/Testimonials.jsx:63",
+          "anchor": "bg-violet-100"
+        }
+      ]
+    },
+    "radius": {
+      "ref": "tokens.00-foundation.radius.tokens.card",
+      "evidence": [
+        {
+          "cite": "src/components/Testimonials.jsx:63",
+          "anchor": "rounded-3xl"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.DS_Store
+__pycache__/
+# Generated from design-repo/ — rebuild with the zip command in design-repo/README.md; never commit alongside the folder
+design-repo.zip

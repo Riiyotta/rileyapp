@@ -1,0 +1,2 @@
+[     244ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5460/node_modules/.vite/deps/chunk-C36PYZS3.js?v=b7631e28:21548
+[     397ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5460/favicon.ico:0

@@ -1,0 +1,24 @@
+{
+  "$schema": "riley-design-tokens/llm/token-catalog",
+  "note": "What a generator may reference, by full canonical path (tokens.<layer>.<file>.<group>.<key>). Prefer 20-component > 10-semantic > 00-foundation.",
+  "categories": {
+    "color": "tokens.00-foundation.color",
+    "gradient": "tokens.00-foundation.gradient",
+    "typography": "tokens.00-foundation.typography",
+    "breakpoint": "tokens.00-foundation.breakpoint",
+    "radius": "tokens.00-foundation.radius",
+    "elevation": "tokens.00-foundation.elevation",
+    "motion": "tokens.00-foundation.motion",
+    "color-roles": "tokens.10-semantic.color-roles",
+    "typography-roles": "tokens.10-semantic.typography-roles",
+    "motion-roles": "tokens.10-semantic.motion-roles",
+    "button": "tokens.20-component.button",
+    "card": "tokens.20-component.card",
+    "pill": "tokens.20-component.pill",
+    "table": "tokens.20-component.table",
+    "nav": "tokens.20-component.nav",
+    "container": "tokens.30-layout.container",
+    "section-spacing": "tokens.30-layout.section-spacing",
+    "theme": "tokens.themes.riley-light"
+  }
+}

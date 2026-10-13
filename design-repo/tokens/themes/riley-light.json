@@ -1,0 +1,46 @@
+{
+  "$schema": "riley-design-tokens/theme",
+  "id": "riley-light",
+  "note": "The only measured theme. No dark mode exists on the original or the clone; do not add one without a measurement pass.",
+  "resolutionOrder": [
+    "00-foundation",
+    "themes/riley-light (no overrides)",
+    "10-semantic",
+    "20-component"
+  ],
+  "colorRoles": {
+    "text.primary": "#2e2a42",
+    "text.ink": "#0a0a0a",
+    "text.muted": {
+      "base": "#2e2a42",
+      "alpha": 0.7,
+      "css": "rgba(46,42,66,.7)"
+    },
+    "text.secondary": "#1d293d",
+    "text.prose": "#364153",
+    "text.prose-strong": "#101828",
+    "text.on-brand": "#ffffff",
+    "text.success": "#4ca67e",
+    "text.link": "#5934c5",
+    "surface.page": "#f9f5f1",
+    "surface.subtle": "#fcfbfa",
+    "surface.card": "#ffffff",
+    "surface.lilac": "#d7befc",
+    "surface.featurette": "#ff914d",
+    "surface.feature-apricot": "#ffa552",
+    "surface.feature-marigold": "#ffd55d",
+    "action.primary": "#5934c5",
+    "action.primary-hover": "#7a55fd",
+    "action.primary-active": "#5a20e1",
+    "action.primary-disabled": "rgb(208,183,243)",
+    "border.subtle": "#c7c3c0",
+    "border.divider": "#d1d5dc",
+    "icon.star": "#ffdd7d",
+    "status.included": "#008A56",
+    "status.excluded": "#ED614B",
+    "pill.development": "#ffd6a7",
+    "pill.neutral": "#f1f5f9",
+    "pill.health": "#ffc9c9",
+    "pill.sleep": "#e7e5e4"
+  }
+}

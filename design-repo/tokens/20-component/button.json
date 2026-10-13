@@ -1,0 +1,157 @@
+{
+  "$schema": "riley-design-tokens/component/button",
+  "primary": {
+    "background": {
+      "ref": "tokens.10-semantic.color-roles.roles.action.primary",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:24",
+          "anchor": "backgroundColor: palette[state]"
+        }
+      ]
+    },
+    "background-hover": {
+      "ref": "tokens.10-semantic.color-roles.roles.action.primary-hover",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:136",
+          "anchor": "on `mouseenter` **#7A55FD**"
+        }
+      ]
+    },
+    "background-active": {
+      "ref": "tokens.10-semantic.color-roles.roles.action.primary-active",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:136",
+          "anchor": "on `mousedown` **#5A20E1**"
+        }
+      ]
+    },
+    "background-disabled": {
+      "ref": "tokens.10-semantic.color-roles.roles.action.primary-disabled",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:136",
+          "anchor": "Disabled state"
+        }
+      ]
+    },
+    "text": {
+      "ref": "tokens.10-semantic.color-roles.roles.text.on-brand",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:24",
+          "anchor": "color: '#FFF'"
+        }
+      ]
+    },
+    "radius": {
+      "ref": "tokens.00-foundation.radius.tokens.button",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:23",
+          "anchor": "rounded-[2rem]"
+        }
+      ]
+    },
+    "padding": {
+      "value": "16px 32px (+ inner span 0 20px)",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:135",
+          "anchor": "padding 16px 32px"
+        }
+      ]
+    },
+    "height": {
+      "value": "56px (60px for size lg at ≥640)",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:135",
+          "anchor": "height **56px**"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:69",
+          "anchor": "384x**60**"
+        }
+      ]
+    },
+    "gap": {
+      "value": "14px",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:23",
+          "anchor": "gap-3.5"
+        }
+      ]
+    },
+    "transition": {
+      "ref": "tokens.10-semantic.motion-roles.roles.button-state",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:23",
+          "anchor": "transition-all duration-300"
+        }
+      ]
+    },
+    "stateModel": {
+      "value": "JS inline style: pressed ? active : hovered ? hover : base",
+      "evidence": [
+        {
+          "cite": "src/components/shared/Button.jsx:15-18",
+          "anchor": "pressed ? 'active' : hovered ? 'hover' : 'base'"
+        }
+      ]
+    }
+  },
+  "newsletter-submit": {
+    "background": {
+      "ref": "tokens.10-semantic.color-roles.roles.action.primary",
+      "evidence": [
+        {
+          "cite": "src/components/SiteFooter.jsx:33",
+          "anchor": "bg-purple-100"
+        }
+      ]
+    },
+    "radius": {
+      "value": "78.641px",
+      "evidence": [
+        {
+          "cite": "src/components/SiteFooter.jsx:33",
+          "anchor": "rounded-[78.641px]"
+        }
+      ]
+    },
+    "hover": {
+      "value": "none",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:436",
+          "anchor": "No hover style"
+        }
+      ]
+    }
+  },
+  "round-arrow": {
+    "background": {
+      "value": "rgba(255,255,255,.3) + backdrop-filter blur(8px)",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:293",
+          "anchor": "bg rgba(255,255,255,.3)"
+        }
+      ]
+    },
+    "size": {
+      "value": "29x29, padding 8px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:293",
+          "anchor": "29x29, padding 8"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "riley-design-tokens/primitive",
+  "id": "RoundArrowButton",
+  "purpose": "Translucent round prev/next carousel control.",
+  "props": {
+    "direction": "enum[prev, next]",
+    "ariaLabel": "string"
+  },
+  "tokenRefs": [
+    "tokens.20-component.button.round-arrow"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/Featurette.jsx:90-95",
+      "anchor": "bg-white/30 p-2 backdrop-blur"
+    },
+    {
+      "cite": "src/components/Testimonials.jsx:74-79",
+      "anchor": "Previous testimonial"
+    }
+  ]
+}

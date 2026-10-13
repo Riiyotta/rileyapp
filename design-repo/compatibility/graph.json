@@ -1,0 +1,172 @@
+{
+  "$schema": "riley-design-tokens/compatibility/graph",
+  "version": "1.0.0",
+  "enforcementNote": "Every rule id below has exactly one implementation in schema/semantic_validate.py (RULE_IMPLS). The validator reads `severity` and `exceptions` from THIS file at runtime, and refuses to run if the id sets differ — prose and code cannot silently diverge on ids, severities or exceptions. Each rule was checked against templates/templates.json node lists when written (see `checkedAgainstTemplates`).",
+  "categories": {
+    "announcement-bar": "shell",
+    "site-header": "shell",
+    "hero-home": "hero",
+    "press-marquee": "social-proof",
+    "personalization-marquee": "social-proof",
+    "superpowers-grid": "feature",
+    "featurette-carousel": "carousel",
+    "clinical-board": "social-proof",
+    "how-riley-works": "feature",
+    "testimonials-carousel": "carousel",
+    "gradient-band": "feature",
+    "faq-clouds": "faq",
+    "blog-teaser": "content-teaser",
+    "final-cta": "conversion",
+    "site-footer": "shell",
+    "pricing-hero": "hero",
+    "not-found-block": "error"
+  },
+  "rules": [
+    {
+      "id": "TEMPLATE_NODE_SEQUENCE",
+      "severity": "error",
+      "statement": "nodes[] must match the declared template's node list in order, keyed on (section, variant), honouring required/repeatable. This is what forbids gradient-band 'table-only' on home, 'feature-cards-and-table' on pricing, and site-header 'standalone' on home.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "all 3 templates pass with zero findings (adversarial controls)"
+    },
+    {
+      "id": "ONE_PER_PAGE",
+      "severity": "error",
+      "statement": "A section with constraints.onePerPage (all 17) may appear at most once per page.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "no template repeats a section (verified)"
+    },
+    {
+      "id": "ANNOUNCEMENT_FIRST",
+      "severity": "error",
+      "statement": "announcement-bar, when present, is node 0.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "index 0 in home, pricing, not-found"
+    },
+    {
+      "id": "HEADER_SECOND",
+      "severity": "error",
+      "statement": "site-header is node 1 (immediately after announcement-bar).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "index 1 in all 3"
+    },
+    {
+      "id": "FOOTER_LAST",
+      "severity": "error",
+      "statement": "site-footer is the last node.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "last in all 3"
+    },
+    {
+      "id": "HEADER_VARIANT_BINDING",
+      "severity": "error",
+      "statement": "site-header variant is 'hero-overlay' if and only if the next node is hero-home (the header renders inside the home Hero wrapper, Hero.jsx:94-95); otherwise 'standalone'.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "home: hero-overlay -> hero-home; pricing/not-found: standalone"
+    },
+    {
+      "id": "PRESS_FOLLOWS_HERO",
+      "severity": "error",
+      "statement": "press-marquee, when present, immediately follows hero-home (it lives inside the Hero wrapper).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "home index 2 -> 3"
+    },
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "statement": "Exactly one hero-category section (hero-home | pricing-hero) per page, except on hero-less templates listed in exceptions.",
+      "exceptions": [
+        {
+          "template": "not-found",
+          "reason": "The 404 template has no hero; not-found-block takes the hero slot (NotFound.jsx:19-45)."
+        }
+      ],
+      "checkedAgainstTemplates": "home 1, pricing 1, not-found 0 (exception)"
+    },
+    {
+      "id": "FINAL_CTA_PRECEDES_FOOTER",
+      "severity": "error",
+      "statement": "final-cta, when present, immediately precedes site-footer.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "home/pricing: final-cta -> site-footer; not-found has no final-cta (rule n/a)"
+    },
+    {
+      "id": "NO_ADJACENT_CAROUSELS",
+      "severity": "warn",
+      "statement": "featurette-carousel and testimonials-carousel should not be adjacent (inferred rhythm guidance: on home they are separated by clinical-board and how-riley-works).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "home indices 6 and 9 (not adjacent)"
+    },
+    {
+      "id": "ADJACENT_MARQUEES",
+      "severity": "warn",
+      "statement": "Two marquee sections should not be adjacent, except the observed press -> family pair on home.",
+      "exceptions": [
+        {
+          "pair": [
+            "press-marquee",
+            "personalization-marquee"
+          ],
+          "reason": "Observed on the real homepage (Hero.jsx PressMarquee is the last child of Hero, followed by PersonalizationMarquee at HomePage.jsx:20)."
+        }
+      ],
+      "checkedAgainstTemplates": "home 3 -> 4 is the excepted pair"
+    },
+    {
+      "id": "MOTION_BUDGET_INFINITE_LOOPS",
+      "severity": "warn",
+      "statement": "At most 2 infinite marquee sections per page (home has exactly 2).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "home 2, pricing 0, not-found 0"
+    },
+    {
+      "id": "ROUTE_TEMPLATE_BINDING",
+      "severity": "error",
+      "statement": "If page.route is a mapped route, page.template must equal its mapped template (dead sitemap slugs -> not-found only). Routes matching templates.json excludedRoutes are rejected (not built in this snapshot). Unknown new routes are allowed.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "/ home, /pricing pricing, 8 dead slugs not-found"
+    },
+    {
+      "id": "BRAND_CONTEXT_ASSET_POLICY",
+      "severity": "error",
+      "statement": "When page.brandContext is 'other-brand', no node may use an assetRole whose generationPolicy is must-reuse-exact, must-not-fabricate or must-not-reuse-live-endpoint.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "every template contains at least one such role, so none can be rendered verbatim for another brand"
+    },
+    {
+      "id": "REGISTERED_ASSET_REF",
+      "severity": "error",
+      "statement": "For must-reuse-exact and must-not-fabricate roles, assetRef must be one of the role's registered files (assets/asset-roles.json); 'generated:' refs are only allowed for may-generate-new roles.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "MAX_WORDS",
+      "severity": "error",
+      "statement": "Every string with x-maxWords in the schema must not exceed it (whitespace word count).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "COMPARISON_MATRIX_SHAPE",
+      "severity": "error",
+      "statement": "In gradient-band.comparisonTable every row.marks length equals columns length.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "example: 5 rows x 7 marks, 7 columns"
+    },
+    {
+      "id": "REDUCED_MOTION_FALLBACK",
+      "severity": "error",
+      "statement": "Every node.motion carries the section's const reducedMotionFallback (belt-and-braces with the schema).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "ASSET_ROLE_PINNING",
+      "severity": "error",
+      "statement": "assets/asset-roles.json: every real-world-weighted role keeps its pinned generationPolicy (PINNED_POLICIES in semantic_validate.py), and the role set equals the schema assetRole enums.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (registry-level)"
+    }
+  ]
+}

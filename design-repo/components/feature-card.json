@@ -1,0 +1,18 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "feature-card",
+  "purpose": "Tinted card (apricot/violet/marigold) with illustration, title, body.",
+  "composedOf": [
+    "Image",
+    "Text"
+  ],
+  "usedBySections": [
+    "gradient-band"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/lower/FeatureCards.jsx:39-46",
+      "anchor": "max-h-[25rem]"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "marquee",
+  "purpose": "Infinite horizontal marquee: 4 identical rows translating -(100% + gap) over --duration.",
+  "composedOf": [
+    "Image"
+  ],
+  "usedBySections": [
+    "press-marquee",
+    "personalization-marquee"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/upper/Marquee.jsx:1-18",
+      "anchor": "4 identical rows"
+    }
+  ]
+}

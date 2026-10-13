@@ -1,0 +1,490 @@
+{
+  "$schema": "riley-design-tokens/templates",
+  "version": "1.0.0",
+  "nodeOrderNote": "Every node in every template is required and non-repeatable: the clone has exactly one real composition per page shape and no evidence of optional sections. A PageSpec must reproduce the node list in order, keyed on (section, variant).",
+  "templates": {
+    "home": {
+      "purpose": "Homepage: full product story from promise to proof to conversion.",
+      "iaTemplateId": "template.home",
+      "evidence": [
+        {
+          "cite": "src/pages/HomePage.jsx:15-33",
+          "anchor": "<GradientBand />"
+        },
+        {
+          "cite": "CLONE_SPEC.md:141",
+          "anchor": "(`FeatureCards`, `ComparisonTable`)"
+        },
+        {
+          "cite": "src/components/Hero.jsx:90-101",
+          "anchor": "<PressMarquee />"
+        }
+      ],
+      "nodes": [
+        {
+          "section": "announcement-bar",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-header",
+          "required": true,
+          "repeatable": false,
+          "variant": "hero-overlay"
+        },
+        {
+          "section": "hero-home",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "press-marquee",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "personalization-marquee",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "superpowers-grid",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "featurette-carousel",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "clinical-board",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "how-riley-works",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "testimonials-carousel",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "gradient-band",
+          "required": true,
+          "repeatable": false,
+          "variant": "feature-cards-and-table"
+        },
+        {
+          "section": "faq-clouds",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog-teaser",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "final-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-footer",
+          "required": true,
+          "repeatable": false
+        }
+      ]
+    },
+    "pricing": {
+      "purpose": "Pricing: plan comparison first, then proof, comparison table, FAQ and closing CTA.",
+      "iaTemplateId": "template.pricing",
+      "evidence": [
+        {
+          "cite": "src/pages/PricingPage.jsx:11-26",
+          "anchor": "showFeatureCards={false}"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:42-53",
+          "anchor": "### 1.2 /pricing"
+        }
+      ],
+      "nodes": [
+        {
+          "section": "announcement-bar",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-header",
+          "required": true,
+          "repeatable": false,
+          "variant": "standalone"
+        },
+        {
+          "section": "pricing-hero",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "testimonials-carousel",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "gradient-band",
+          "required": true,
+          "repeatable": false,
+          "variant": "table-only"
+        },
+        {
+          "section": "faq-clouds",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "final-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-footer",
+          "required": true,
+          "repeatable": false
+        }
+      ]
+    },
+    "not-found": {
+      "purpose": "Shared 404 ('peekaboo') for unknown paths AND the 8 dead sitemap slugs.",
+      "iaTemplateId": "template.not-found",
+      "evidence": [
+        {
+          "cite": "src/pages/NotFound.jsx:19-45",
+          "anchor": "<SiteFooter />"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:35-40",
+          "anchor": "### 1.1"
+        }
+      ],
+      "nodes": [
+        {
+          "section": "announcement-bar",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-header",
+          "required": true,
+          "repeatable": false,
+          "variant": "standalone"
+        },
+        {
+          "section": "not-found-block",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-footer",
+          "required": true,
+          "repeatable": false
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "path": "/",
+      "template": "home",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:13",
+          "anchor": "'/': HomePage"
+        }
+      ]
+    },
+    {
+      "path": "/pricing",
+      "template": "pricing",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:14",
+          "anchor": "'/pricing': PricingPage"
+        }
+      ]
+    },
+    {
+      "path": "/baby-tracker",
+      "template": "not-found",
+      "deadSlug": true,
+      "note": "In the live sitemap but a soft-404 on the original (HTTP 200 + NEXT_HTTP_ERROR_FALLBACK;404) and in Wayback 2025. Maps to the not-found template. Must NOT be recreated as a landing page.",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:15-24",
+          "anchor": "/baby-tracker"
+        }
+      ]
+    },
+    {
+      "path": "/sleep-tracker",
+      "template": "not-found",
+      "deadSlug": true,
+      "note": "In the live sitemap but a soft-404 on the original (HTTP 200 + NEXT_HTTP_ERROR_FALLBACK;404) and in Wayback 2025. Maps to the not-found template. Must NOT be recreated as a landing page.",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:15-24",
+          "anchor": "/sleep-tracker"
+        }
+      ]
+    },
+    {
+      "path": "/sleep-training",
+      "template": "not-found",
+      "deadSlug": true,
+      "note": "In the live sitemap but a soft-404 on the original (HTTP 200 + NEXT_HTTP_ERROR_FALLBACK;404) and in Wayback 2025. Maps to the not-found template. Must NOT be recreated as a landing page.",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:15-24",
+          "anchor": "/sleep-training"
+        }
+      ]
+    },
+    {
+      "path": "/sleep-regression",
+      "template": "not-found",
+      "deadSlug": true,
+      "note": "In the live sitemap but a soft-404 on the original (HTTP 200 + NEXT_HTTP_ERROR_FALLBACK;404) and in Wayback 2025. Maps to the not-found template. Must NOT be recreated as a landing page.",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:15-24",
+          "anchor": "/sleep-regression"
+        }
+      ]
+    },
+    {
+      "path": "/all-in-one",
+      "template": "not-found",
+      "deadSlug": true,
+      "note": "In the live sitemap but a soft-404 on the original (HTTP 200 + NEXT_HTTP_ERROR_FALLBACK;404) and in Wayback 2025. Maps to the not-found template. Must NOT be recreated as a landing page.",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:15-24",
+          "anchor": "/all-in-one"
+        }
+      ]
+    },
+    {
+      "path": "/your-babys-sleep-simplified",
+      "template": "not-found",
+      "deadSlug": true,
+      "note": "In the live sitemap but a soft-404 on the original (HTTP 200 + NEXT_HTTP_ERROR_FALLBACK;404) and in Wayback 2025. Maps to the not-found template. Must NOT be recreated as a landing page.",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:15-24",
+          "anchor": "/your-babys-sleep-simplified"
+        }
+      ]
+    },
+    {
+      "path": "/product-hunt",
+      "template": "not-found",
+      "deadSlug": true,
+      "note": "In the live sitemap but a soft-404 on the original (HTTP 200 + NEXT_HTTP_ERROR_FALLBACK;404) and in Wayback 2025. Maps to the not-found template. Must NOT be recreated as a landing page.",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:15-24",
+          "anchor": "/product-hunt"
+        }
+      ]
+    },
+    {
+      "path": "/give-the-gift",
+      "template": "not-found",
+      "deadSlug": true,
+      "note": "In the live sitemap but a soft-404 on the original (HTTP 200 + NEXT_HTTP_ERROR_FALLBACK;404) and in Wayback 2025. Maps to the not-found template. Must NOT be recreated as a landing page.",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:15-24",
+          "anchor": "/give-the-gift"
+        }
+      ]
+    },
+    {
+      "path": "*",
+      "template": "not-found",
+      "catchAll": true,
+      "note": "Any unmatched path renders NotFound (App.jsx falls through).",
+      "evidence": [
+        {
+          "cite": "src/App.jsx:14",
+          "anchor": "return <NotFound />"
+        }
+      ]
+    }
+  ],
+  "deadSlugPolicy": {
+    "statement": "Dead sitemap slugs map to 'not-found' and may never be bound to a landing/home/pricing template (enforced: graph rule ROUTE_TEMPLATE_BINDING).",
+    "evidence": [
+      {
+        "cite": "CLONE_SPEC_PAGES_MARKETING.md:29",
+        "anchor": "do not create 8 separate landing pages"
+      },
+      {
+        "cite": "CLONE_SPEC_PAGES_MARKETING.md:61",
+        "anchor": "No shared \"landing hero template\" is needed"
+      }
+    ]
+  },
+  "excludedRoutes": {
+    "statement": "Snapshot scope = home, pricing, not-found. These routes exist on the live site (or are linked from built pages) but are NOT modelled in this snapshot, so no template is invented for them and a PageSpec targeting one is rejected. NOTE: while this snapshot was being built, a concurrent build agent landed blog/text/legal pages in src/ (src/pages/routes.jsx). They stay excluded here until a design-repo rebuild models them; verify_all.py WARNs (does not fail) for every source route that is built but excluded.",
+    "routes": [
+      {
+        "pattern": "/blog",
+        "status": "pending",
+        "reason": "Blog index: not modelled in this snapshot. BUILT CONCURRENTLY in source after this snapshot was scoped (src/pages/BlogIndexPage.jsx, CLONE_SPEC_PAGES_BLOG.md) - re-run the design-repo build to add a template.",
+        "evidence": [
+          {
+            "cite": "src/pages/routes.jsx:15",
+            "anchor": "'/blog': BlogIndexPage"
+          },
+          {
+            "cite": "src/components/upper/SiteHeader.jsx:7",
+            "anchor": "BLOG_HREF"
+          }
+        ]
+      },
+      {
+        "pattern": "/blog/{category}",
+        "status": "pending",
+        "count": 6,
+        "reason": "Category pages (development, feeding, health, news, pregnancy, sleep): not modelled; built concurrently in source (BlogCategoryPage.jsx).",
+        "evidence": [
+          {
+            "cite": "src/pages/routes.jsx:23",
+            "anchor": "BlogCategoryPage"
+          },
+          {
+            "cite": "src/components/BlogTeaser.jsx:5-12",
+            "anchor": "slug: 'development'"
+          }
+        ]
+      },
+      {
+        "pattern": "/blog/author/{slug}",
+        "status": "pending",
+        "count": 3,
+        "reason": "Author pages listed in the IA's pending groups; not built and not routed in source.",
+        "evidence": [
+          {
+            "cite": "ia.json:15",
+            "anchor": "/blog/author/{slug}"
+          }
+        ]
+      },
+      {
+        "pattern": "/blog/{category}/{slug}",
+        "status": "pending",
+        "reason": "Article pages: not modelled. Built concurrently in source (BlogArticlePage.jsx; src/data/blogPosts.json had 221 entries at snapshot, the brief quoted 231). Article bodies are placeholder text in the clone.",
+        "evidence": [
+          {
+            "cite": "src/pages/routes.jsx:25",
+            "anchor": "BlogArticlePage"
+          }
+        ]
+      },
+      {
+        "pattern": "/editorial-process",
+        "status": "pending",
+        "reason": "Text page: not modelled; built concurrently in source (TextPage.jsx), copy placeholder.",
+        "evidence": [
+          {
+            "cite": "src/pages/routes.jsx:16",
+            "anchor": "'/editorial-process': TextPage"
+          },
+          {
+            "cite": "src/components/SiteFooter.jsx:6",
+            "anchor": "/editorial-process"
+          }
+        ]
+      },
+      {
+        "pattern": "/tos",
+        "status": "pending",
+        "reason": "Legal page: not modelled; built concurrently in source (LegalPage.jsx), legal text placeholder.",
+        "evidence": [
+          {
+            "cite": "src/pages/routes.jsx:17",
+            "anchor": "'/tos'"
+          },
+          {
+            "cite": "src/components/SiteFooter.jsx:10",
+            "anchor": "/tos"
+          }
+        ]
+      },
+      {
+        "pattern": "/privacy",
+        "status": "pending",
+        "reason": "Legal page: not modelled; built concurrently in source (LegalPage.jsx), legal text placeholder.",
+        "evidence": [
+          {
+            "cite": "src/pages/routes.jsx:18",
+            "anchor": "'/privacy'"
+          },
+          {
+            "cite": "src/components/SiteFooter.jsx:9",
+            "anchor": "/privacy"
+          }
+        ]
+      },
+      {
+        "pattern": "/cookies",
+        "status": "pending",
+        "reason": "Legal page: not modelled; built concurrently in source (LegalPage.jsx), legal text placeholder.",
+        "evidence": [
+          {
+            "cite": "src/pages/routes.jsx:19",
+            "anchor": "'/cookies'"
+          },
+          {
+            "cite": "ia.json:245",
+            "anchor": "/cookies"
+          }
+        ]
+      },
+      {
+        "pattern": "/support",
+        "status": "unverified",
+        "reason": "Linked from the footer but neither specced nor built; live status UNVERIFIED (absent from the IA).",
+        "evidence": [
+          {
+            "cite": "src/components/SiteFooter.jsx:11",
+            "anchor": "/support"
+          }
+        ]
+      }
+    ]
+  },
+  "unmodelledGlobalOverlays": [
+    {
+      "component": "CookieConsent",
+      "iaSectionId": "chrome.cookie-consent",
+      "note": "Landed concurrently with the blog build: App.jsx now renders a fixed cookie-consent bar on EVERY route (incl. home/pricing/404). It is an out-of-flow overlay, not a section node, and is not modelled in this snapshot.",
+      "evidence": [
+        {
+          "cite": "src/App.jsx:1-24",
+          "anchor": "<CookieConsent />"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "longFormText": "Blog article bodies and legal/text-page copy are intentionally PLACEHOLDER in the clone (long-form text is not copied). Never treat any long-form body as real Riley copy.",
+    "realStatements": "Testimonial quotes/attributions, clinician names/credentials, plan prices/features, press logos and competitor comparison marks are real-world claims: reuse verbatim only in brandContext 'riley-clone'; never fabricate them for any brand.",
+    "shortUiCopy": "Short UI copy in schema/example.pagespec.json is taken verbatim from the built components."
+  }
+}

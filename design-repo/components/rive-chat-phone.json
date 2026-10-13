@@ -1,0 +1,21 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "rive-chat-phone",
+  "purpose": "Phone shell svg + Rive canvas autoplaying a chat state machine.",
+  "composedOf": [
+    "Image"
+  ],
+  "usedBySections": [
+    "featurette-carousel"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/upper/RiveChat.jsx:8-22",
+      "anchor": "useRive"
+    },
+    {
+      "cite": "src/components/Featurette.jsx:59-73",
+      "anchor": "phonebg.svg"
+    }
+  ]
+}

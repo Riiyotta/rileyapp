@@ -1,0 +1,19 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "superpower-modal",
+  "purpose": "Mascot-gradient dialog with 4 help cards and a sticky CTA; no entry animation.",
+  "composedOf": [
+    "Image",
+    "Text",
+    "Button"
+  ],
+  "usedBySections": [
+    "superpowers-grid"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/upper/SuperpowerModal.jsx:7-78",
+      "anchor": "no entry animation"
+    }
+  ]
+}

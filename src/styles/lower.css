@@ -1,0 +1,111 @@
+/* sections 7–13 (HowRileyWorks → SiteFooter) */
+
+/* ---------- shared: Tailwind-typography "prose" subset used by §9.2 and §10 ---------- */
+.lower-prose p { margin: 20px 0; font-size: 16px; line-height: 28px; color: #364153; }
+.lower-prose strong { font-weight: 600; color: #101828; }
+
+/* ---------- §8 Testimonials carousel (M7) ---------- */
+/* motion is JS-driven (embla port, shared/useEmblaLoop.js) — no CSS transition on the track */
+.testimonials-viewport { touch-action: pan-y; }
+
+/* ---------- §9.2 ComparisonTable (WhyRileyStandsOut module) ---------- */
+.why-riley-stands-out tr:last-child td::before { display: none; }
+.why-riley-stands-out td { position: relative; }
+.why-riley-stands-out td:not(:first-child)::before {
+  content: ""; left: -1px; width: 1px; background: #000; top: 100%; height: 1rem; display: block; position: absolute;
+}
+@media (max-width: 960px) {
+  .why-riley-stands-out td { padding: 15px 10px; max-width: 100px; font-size: 14px !important; }
+  .why-riley-stands-out td img { width: 15px; height: auto; }
+  .why-riley-stands-out th { height: 140px; text-align: left; position: relative; vertical-align: bottom; }
+  .why-riley-stands-out th span {
+    position: absolute !important; transform: rotate(-90deg) translate(14px, 20px); white-space: nowrap;
+    left: 0; transform-origin: center left; font-size: 13px;
+  }
+}
+
+/* ---------- §10 FaqClouds module ---------- */
+.faq-clouds {
+  background: radial-gradient(rgb(165, 201, 242) 0, #f9f5f1 70%) no-repeat;
+  background-size: 200% 100%;
+  background-position: 50%;
+  transition: 0.3s ease;
+  position: relative;
+}
+@media (max-width: 960px) { .faq-clouds { min-height: 1100px; } }
+
+.faq-clouds h2 { position: relative; z-index: 1; transition: 0.3s ease; font-size: 80px; line-height: 1.3; }
+@media (max-width: 960px) { .faq-clouds h2 { font-size: 40px; padding: 0 1rem; } }
+
+.faq-clouds-item { position: absolute; z-index: 1; width: 295px; border-bottom-right-radius: 0; transition: all 0.35s ease-in-out; }
+.faq-clouds-item summary { gap: 1rem; display: flex; align-items: center; }
+.faq-clouds-item summary::-webkit-details-marker { display: none; }
+.faq-clouds-item summary .faq-plus { margin-left: auto; flex: 0 0 19px; transition: 0.45s ease; display: block; }
+.faq-clouds-item[open] { width: 350px; z-index: 100; }
+@media (min-width: 961px) {
+  .faq-clouds-item[open] { top: 50% !important; left: 50% !important; transform: translate(-50%, -50%); }
+}
+@media (max-width: 960px) {
+  .faq-clouds-item[open] { width: 100% !important; left: 5% !important; max-width: 90% !important; }
+}
+.faq-clouds-item[open] summary .faq-plus { transform: rotate(135deg); }
+
+.faq-clouds-item:nth-child(1) { top: 27%; left: 12%; }
+.faq-clouds-item:nth-child(2) { top: 13%; left: 35%; }
+.faq-clouds-item:nth-child(3) { top: 24%; left: 61%; }
+.faq-clouds-item:nth-child(4) { top: 63%; left: 61%; }
+.faq-clouds-item:nth-child(5) { top: 72%; left: 30%; }
+.faq-clouds-item:nth-child(6) { top: 60%; left: 7%; }
+@media (max-width: 960px) {
+  .faq-clouds-item:nth-child(1) { top: 5%; left: 20%; max-width: 80%; }
+  .faq-clouds-item:nth-child(2) { top: 16%; left: 5%; max-width: 90%; }
+  .faq-clouds-item:nth-child(3) { top: 28%; left: 15%; max-width: 80%; }
+  .faq-clouds-item:nth-child(4) { top: 75%; left: 7%; max-width: 90%; }
+  .faq-clouds-item:nth-child(5) { top: 63%; left: 20%; max-width: 90%; }
+  .faq-clouds-item:nth-child(6) { top: 74%; left: 15%; max-width: 80%; }
+}
+
+/* M8: floating background clouds */
+@keyframes faq-clouds-floating {
+  0% { transform: translate(0); }
+  20% { transform: translate(6px, -4px); }
+  40% { transform: translate(-5px, 8px); }
+  60% { transform: translate(8px, 5px); }
+  80% { transform: translate(-6px, -6px); }
+  to { transform: translate(0); }
+}
+.faq-clouds-bg { position: absolute; width: 100%; height: 100%; overflow: hidden; }
+.faq-clouds-bg > img {
+  position: absolute; max-width: none; transition: 2.55s ease; will-change: top, left;
+  animation: faq-clouds-floating 10s ease-in-out infinite alternate-reverse;
+}
+.faq-clouds-bg > img:nth-child(1) { top: 30%; left: 20%; animation-delay: -2s; }
+.faq-clouds-bg > img:nth-child(2) { top: 60%; left: 44%; animation-delay: -4s; }
+.faq-clouds-bg > img:nth-child(3) { top: 18%; left: 55%; animation-delay: -6s; }
+.faq-clouds-bg > img:nth-child(4) { top: 69%; left: 15%; animation-delay: -8s; }
+.faq-clouds-bg > img:nth-child(5) { top: 31%; left: 65%; animation-delay: -1s; }
+@media (max-width: 960px) {
+  .faq-clouds-bg > img:nth-child(1) { left: -50%; }
+  .faq-clouds-bg > img:nth-child(2) { left: -50%; }
+  .faq-clouds-bg > img:nth-child(3) { top: 30%; left: 70%; }
+  .faq-clouds-bg > img:nth-child(4) { top: 75%; left: 10%; }
+  .faq-clouds-bg > img:nth-child(5) { top: 50%; }
+  .faq-clouds-bg.clear-skies > img { opacity: 0.05; }
+}
+
+/* M8b: clear skies (clouds slide to the edges) */
+.faq-clouds-bg.clear-skies > img:nth-child(1) { top: 0; left: -5%; }
+.faq-clouds-bg.clear-skies > img:nth-child(2) { top: 70%; left: -5%; }
+.faq-clouds-bg.clear-skies > img:nth-child(3) { top: 10%; left: 80%; }
+.faq-clouds-bg.clear-skies > img:nth-child(4) { top: 32%; left: -10%; }
+@media (max-width: 960px) { .faq-clouds-bg.clear-skies > img:nth-child(4) { left: 94%; } }
+.faq-clouds-bg.clear-skies > img:nth-child(5) { top: 51%; left: 90%; }
+
+/* M9: blurred state while an item is open */
+.faq-clouds.blurred .faq-clouds-bg { filter: blur(5px); transition: filter 0.3s ease; pointer-events: none; }
+.faq-clouds.blurred details:not([open]) { filter: blur(5px); pointer-events: none; }
+.faq-clouds.blurred h2 { filter: blur(5px); opacity: 0.3; transition: 0.3s ease; }
+
+/* ---------- §11 BlogTeaser mobile scroller ---------- */
+.blog-scroller { scrollbar-width: thin; }
+.blog-nav { scrollbar-width: thin; scrollbar-color: transparent transparent; }

@@ -1,0 +1,71 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "not-found-block",
+  "registryId": "section.not-found-block",
+  "version": "1.0.0",
+  "category": "error",
+  "purpose": "'Oops! This page is playing peekaboo' 404 block, shared by every dead sitemap slug and unknown path.",
+  "iaSectionIds": [
+    "error.not-found"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/pages/NotFound.jsx:23-42",
+      "anchor": "min-h-[500px]"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_not-found-block",
+    "copyBudget": {
+      "heading": 14,
+      "body": 15,
+      "backLink.label": 3
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<1280px (below xl)",
+        "changes": [
+          "min-height 500 (850 at ≥1280)",
+          "h3 36/40 (60/60)",
+          "p 16/24 (20/28)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/pages/NotFound.jsx:23",
+            "anchor": "xl:min-h-[850px]"
+          },
+          {
+            "cite": "src/pages/NotFound.jsx:24",
+            "anchor": "text-4xl font-medium text-text-primary xl:text-6xl"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC_PAGES_MARKETING.md:74-121",
+      "anchor": "NEW `NotFoundPage`"
+    }
+  ],
+  "notes": [
+    "Live quirks preserved: the 'Go back' link classes are undefined on the original so it inherits #0a0a0a with no hover; motion: none (CLONE_SPEC_PAGES_MARKETING.md §2.5)."
+  ]
+}

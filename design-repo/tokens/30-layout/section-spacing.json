@@ -1,0 +1,126 @@
+{
+  "$schema": "riley-design-tokens/layout/section-spacing",
+  "note": "Measured per-section padding (desktop ≥992 / mobile <992). Not a scale: the original uses one-off values per section.",
+  "tokens": {
+    "superpowers-card": {
+      "value": {
+        "desktop": "80px 224px 120px",
+        "mobile": "60px 16px 120px (768) / 60px 20px 96px (390)"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:245-246",
+          "anchor": "padding 80px 224px 120px"
+        }
+      ]
+    },
+    "featurette": {
+      "value": {
+        "desktop": "80px 44px",
+        "mobile": "80px 20px"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:277",
+          "anchor": "padding 80px 44px"
+        }
+      ]
+    },
+    "clinical-board": {
+      "value": {
+        "desktop": "64px 96px",
+        "mobile": "64px 20px"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:299",
+          "anchor": "padding **64px 96px**"
+        }
+      ]
+    },
+    "how-riley-works": {
+      "value": {
+        "desktop": "80px (80px 16px at 2xl)",
+        "mobile": "80px 20px"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:314",
+          "anchor": "padding 80px 16px @1440"
+        }
+      ]
+    },
+    "testimonials": {
+      "value": {
+        "desktop": "80px 280px",
+        "mobile": "32px 0 (390: 20px sides)"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:333",
+          "anchor": "padding **80px 280px**"
+        }
+      ]
+    },
+    "gradient-band": {
+      "value": {
+        "desktop": "44px 32px",
+        "mobile": "44px 16px"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:352",
+          "anchor": "Padding **44px 32px**"
+        }
+      ]
+    },
+    "blog-teaser": {
+      "value": {
+        "desktop": "100px 36px",
+        "mobile": "32px 16px"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:409",
+          "anchor": "padding **100px 36px**"
+        }
+      ]
+    },
+    "final-cta": {
+      "value": {
+        "desktop": "224px 320px",
+        "mobile": "80px 32px 160px"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:424",
+          "anchor": "padding **224px 320px**"
+        }
+      ]
+    },
+    "site-footer": {
+      "value": {
+        "desktop": "88px 60px",
+        "mobile": "48px 32px"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:432",
+          "anchor": "padding **88px 60px**"
+        }
+      ]
+    },
+    "pricing-hero": {
+      "value": {
+        "desktop": "64px vertical, content px 56",
+        "mobile": "48px (768) / 32px (390)"
+      },
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:154",
+          "anchor": "Vertical padding"
+        }
+      ]
+    }
+  }
+}

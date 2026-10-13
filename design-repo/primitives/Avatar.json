@@ -1,0 +1,22 @@
+{
+  "$schema": "riley-design-tokens/primitive",
+  "id": "Avatar",
+  "purpose": "Circular image: testimonial mascot avatar (64), FAQ portrait (40), plan avatar (24/20).",
+  "props": {
+    "size": "enum[64, 40, 24]",
+    "media": "assetRole mascot-avatar | lifestyle-photo"
+  },
+  "tokenRefs": [
+    "tokens.00-foundation.radius.tokens.round"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/Testimonials.jsx:46",
+      "anchor": "h-16 w-16 rounded-full"
+    },
+    {
+      "cite": "src/components/FaqClouds.jsx:81",
+      "anchor": "h-10 w-10 rounded-full"
+    }
+  ]
+}

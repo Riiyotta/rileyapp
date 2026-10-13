@@ -1,0 +1,251 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e2]
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - text: By using this site, you accept cookies for analytics.
+      - link "Learn more" [ref=e5] [cursor=pointer]:
+        - /url: /privacy
+    - button "Accept cookies" [ref=e7] [cursor=pointer]: OK
+  - complementary "Promotional message" [ref=e9]:
+    - paragraph [ref=e12]:
+      - link "Try Riley risk free with our 7-day free trial!" [ref=e13] [cursor=pointer]:
+        - /url: https://rileyapp.com/pricing
+  - banner [ref=e14]:
+    - generic [ref=e15]:
+      - link [ref=e16] [cursor=pointer]:
+        - /url: https://rileyapp.com/
+        - img "Riley logo" [ref=e17]
+      - navigation [ref=e18]:
+        - generic [ref=e19]:
+          - link "Blog" [ref=e21] [cursor=pointer]:
+            - /url: https://rileyapp.com/blog
+          - button "What's New?" [ref=e24]
+        - button "Get Started For Free" [ref=e27] [cursor=pointer]
+  - generic [ref=e29]:
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - img "Riley Mascot" [ref=e33]
+        - generic [ref=e35]:
+          - heading "Riley Articles" [level=1] [ref=e36]
+          - heading "Helpful articles with all the information you need to raise happy, healthy children!" [level=3] [ref=e37]
+        - img "Book icon" [ref=e38]
+      - searchbox "Search blog article..." [ref=e42]
+      - generic [ref=e43]:
+        - navigation [ref=e46]:
+          - list [ref=e47]:
+            - listitem [ref=e48]:
+              - link "All" [ref=e49] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e51]:
+              - link "Feeding" [ref=e52] [cursor=pointer]:
+                - /url: /blog/feeding
+            - listitem [ref=e53]:
+              - link "Pregnancy" [ref=e54] [cursor=pointer]:
+                - /url: /blog/pregnancy
+            - listitem [ref=e55]:
+              - link "Sleep" [ref=e56] [cursor=pointer]:
+                - /url: /blog/sleep
+            - listitem [ref=e57]:
+              - link "Health" [ref=e58] [cursor=pointer]:
+                - /url: /blog/health
+            - listitem [ref=e59]:
+              - link "Development" [ref=e60] [cursor=pointer]:
+                - /url: /blog/development
+            - listitem [ref=e61]:
+              - link "News" [ref=e62] [cursor=pointer]:
+                - /url: /blog/news
+            - listitem [ref=e63]:
+              - link "Authors" [ref=e64] [cursor=pointer]:
+                - /url: /blog/authors
+        - generic [ref=e65]:
+          - 'link "News icon Behind Riley From 3 AM Panic to Parenting Revolution: How Riley Was Born Amanda DeLuca''s profile Amanda DeLuca Founder & CEO of Riley, Certified Pediatric Sleep Consultant Discover the inspiring journey behind Riley, a revolutionary app empowering new parents with personalized support. Read more Riley founder & CEO, Amanda DeLuca, stands and smiles with her daughter" [ref=e68] [cursor=pointer]':
+            - /url: /blog/news/why-we-built-riley
+            - generic [ref=e69]:
+              - generic [ref=e70]:
+                - generic [ref=e71]:
+                  - img "News icon" [ref=e72]
+                  - generic [ref=e73]: Behind Riley
+                - 'heading "From 3 AM Panic to Parenting Revolution: How Riley Was Born" [level=2] [ref=e74]'
+              - generic [ref=e75]:
+                - img "Amanda DeLuca's profile" [ref=e76]
+                - generic [ref=e77]:
+                  - paragraph [ref=e78]: Amanda DeLuca
+                  - generic [ref=e79]: Founder & CEO of Riley, Certified Pediatric Sleep Consultant
+              - paragraph [ref=e80]: Discover the inspiring journey behind Riley, a revolutionary app empowering new parents with personalized support.
+              - generic [ref=e81]: Read more
+            - img "Riley founder & CEO, Amanda DeLuca, stands and smiles with her daughter" [ref=e87]
+          - generic [ref=e88]:
+            - 'link "A screenshot of Golden Window™. 8 Apr 2025 4 min read Introducing Golden Window™: AI-Powered Sleep Scheduling for Your Child Discover Golden Window™, an AI-powered sleep solution that optimizes your child''s sleep schedule by analyzing their unique rhythms. Say goodbye to bedtime battles and hello to peaceful evenings with personalized nap times, nighttime sleep schedules, and wake windows tailored to your child''s needs. By Sam Fore Certified Pediatric Sleep Consultant News icon Product feature" [ref=e91] [cursor=pointer]':
+              - /url: /blog/news/introducing-golden-window
+              - img "A screenshot of Golden Window™." [ref=e93]
+              - generic [ref=e94]:
+                - generic [ref=e95]:
+                  - generic [ref=e96]:
+                    - paragraph [ref=e97]: 8 Apr 2025
+                    - paragraph [ref=e98]: 4 min read
+                  - 'heading "Introducing Golden Window™: AI-Powered Sleep Scheduling for Your Child" [level=2] [ref=e99]'
+                - paragraph [ref=e100]: Discover Golden Window™, an AI-powered sleep solution that optimizes your child's sleep schedule by analyzing their unique rhythms. Say goodbye to bedtime battles and hello to peaceful evenings with personalized nap times, nighttime sleep schedules, and wake windows tailored to your child's needs.
+                - generic [ref=e101]:
+                  - generic [ref=e102]:
+                    - generic [ref=e103]: By
+                    - link "Sam Fore" [ref=e104]:
+                      - /url: /blog/author/sam-fore
+                  - generic [ref=e105]: Certified Pediatric Sleep Consultant
+                - generic [ref=e106]:
+                  - img "News icon" [ref=e107]
+                  - generic [ref=e108]: Product feature
+            - 'link "Welcoming Dr. Lilly Jay 28 May 2025 Welcoming Dr. Lilly Jay to Riley''s Clinical Advisory Board: Supporting Families Through Every Stage of Their Journey Riley proudly announces that Dr. Lilly Jay, a licensed clinical psychologist specializing in infertility, medically complex pregnancies, and perinatal loss, has joined our Clinical Advisory Board to enhance our support for families navigating life''s most challenging and beautiful moments. By Sam Fore Certified Pediatric Sleep Consultant News icon Behind Riley" [ref=e111] [cursor=pointer]':
+              - /url: /blog/news/welcome-dr-lilly-jay
+              - img "Welcoming Dr. Lilly Jay" [ref=e113]
+              - generic [ref=e114]:
+                - generic [ref=e115]:
+                  - paragraph [ref=e117]: 28 May 2025
+                  - 'heading "Welcoming Dr. Lilly Jay to Riley''s Clinical Advisory Board: Supporting Families Through Every Stage of Their Journey" [level=2] [ref=e118]'
+                - paragraph [ref=e119]: Riley proudly announces that Dr. Lilly Jay, a licensed clinical psychologist specializing in infertility, medically complex pregnancies, and perinatal loss, has joined our Clinical Advisory Board to enhance our support for families navigating life's most challenging and beautiful moments.
+                - generic [ref=e120]:
+                  - generic [ref=e121]:
+                    - generic [ref=e122]: By
+                    - link "Sam Fore" [ref=e123]:
+                      - /url: /blog/author/sam-fore
+                  - generic [ref=e124]: Certified Pediatric Sleep Consultant
+                - generic [ref=e125]:
+                  - img "News icon" [ref=e126]
+                  - generic [ref=e127]: Behind Riley
+            - link "When Do Babies Smile, Laugh, and Connect? Your Complete Guide to Early Social Milestones When Do Babies Smile, Laugh, and Connect? Your Complete Guide to Early Social Milestones Discover when babies first smile, laugh, and connect with parents. Learn key developmental milestones, signs of social engagement, and how to encourage your baby's emotional growth from 0-12 months. By Sam Fore Certified Pediatric Sleep Consultant Development icon Milestones" [ref=e130] [cursor=pointer]:
+              - /url: /blog/development/when-do-babies-smile-laugh-and-connect
+              - img "When Do Babies Smile, Laugh, and Connect? Your Complete Guide to Early Social Milestones" [ref=e132]
+              - generic [ref=e133]:
+                - heading "When Do Babies Smile, Laugh, and Connect? Your Complete Guide to Early Social Milestones" [level=2] [ref=e135]
+                - paragraph [ref=e136]: Discover when babies first smile, laugh, and connect with parents. Learn key developmental milestones, signs of social engagement, and how to encourage your baby's emotional growth from 0-12 months.
+                - generic [ref=e137]:
+                  - generic [ref=e138]:
+                    - generic [ref=e139]: By
+                    - generic [ref=e140]: Sam Fore
+                  - generic [ref=e141]: Certified Pediatric Sleep Consultant
+                - generic [ref=e142]:
+                  - img "Development icon" [ref=e143]
+                  - generic [ref=e144]: Milestones
+            - 'link "Your Baby''s Lungs: Development and Viability in the Third Trimester 2 Oct 2025 Your Baby''s Lungs: Development and Viability in the Third Trimester Learn about fetal lung development in the third trimester, when babies'' lungs mature for breathing, and viability milestones. Expert insights on lung maturation, surfactant production, and respiratory development. By Sam Fore Certified Pediatric Sleep Consultant Pregnancy icon Baby''s Development" [ref=e147] [cursor=pointer]':
+              - /url: /blog/pregnancy/your-babys-lungs-development-and-viability-in-the-third-trimester
+              - 'img "Your Baby''s Lungs: Development and Viability in the Third Trimester" [ref=e149]'
+              - generic [ref=e150]:
+                - generic [ref=e151]:
+                  - paragraph [ref=e153]: 2 Oct 2025
+                  - 'heading "Your Baby''s Lungs: Development and Viability in the Third Trimester" [level=2] [ref=e154]'
+                - paragraph [ref=e155]: Learn about fetal lung development in the third trimester, when babies' lungs mature for breathing, and viability milestones. Expert insights on lung maturation, surfactant production, and respiratory development.
+                - generic [ref=e156]:
+                  - generic [ref=e157]:
+                    - generic [ref=e158]: By
+                    - generic [ref=e159]: Sam Fore
+                  - generic [ref=e160]: Certified Pediatric Sleep Consultant
+                - generic [ref=e161]:
+                  - img "Pregnancy icon" [ref=e162]
+                  - generic [ref=e163]: Baby's Development
+            - 'link "Baby Blues vs. Postpartum Depression: Understanding the Difference 2 Oct 2025 Baby Blues vs. Postpartum Depression: Understanding the Difference Learn the key differences between baby blues and postpartum depression. Discover symptoms, duration, treatment options, and when to seek professional help for new mothers. By Sam Fore Certified Pediatric Sleep Consultant Pregnancy icon Real Talk" [ref=e166] [cursor=pointer]':
+              - /url: /blog/pregnancy/baby-blues-vs-postpartum-depression
+              - 'img "Baby Blues vs. Postpartum Depression: Understanding the Difference" [ref=e168]'
+              - generic [ref=e169]:
+                - generic [ref=e170]:
+                  - paragraph [ref=e172]: 2 Oct 2025
+                  - 'heading "Baby Blues vs. Postpartum Depression: Understanding the Difference" [level=2] [ref=e173]'
+                - paragraph [ref=e174]: Learn the key differences between baby blues and postpartum depression. Discover symptoms, duration, treatment options, and when to seek professional help for new mothers.
+                - generic [ref=e175]:
+                  - generic [ref=e176]:
+                    - generic [ref=e177]: By
+                    - generic [ref=e178]: Sam Fore
+                  - generic [ref=e179]: Certified Pediatric Sleep Consultant
+                - generic [ref=e180]:
+                  - img "Pregnancy icon" [ref=e181]
+                  - generic [ref=e182]: Real Talk
+            - 'link "What Is Combo Feeding: A Complete Guide to Mixed Feeding Your Baby 2 Oct 2025 What Is Combo Feeding: A Complete Guide to Mixed Feeding Your Baby Learn what combo feeding is, its benefits, and how to successfully combine breastfeeding and formula feeding. Expert tips for mixed feeding schedules and common challenges. By Sam Fore Certified Pediatric Sleep Consultant Feeding icon Formula" [ref=e185] [cursor=pointer]':
+              - /url: /blog/feeding/what-is-combo-feeding-a-complete-guide-to-mixed-feeding-your-baby
+              - 'img "What Is Combo Feeding: A Complete Guide to Mixed Feeding Your Baby" [ref=e187]'
+              - generic [ref=e188]:
+                - generic [ref=e189]:
+                  - paragraph [ref=e191]: 2 Oct 2025
+                  - 'heading "What Is Combo Feeding: A Complete Guide to Mixed Feeding Your Baby" [level=2] [ref=e192]'
+                - paragraph [ref=e193]: Learn what combo feeding is, its benefits, and how to successfully combine breastfeeding and formula feeding. Expert tips for mixed feeding schedules and common challenges.
+                - generic [ref=e194]:
+                  - generic [ref=e195]:
+                    - generic [ref=e196]: By
+                    - generic [ref=e197]: Sam Fore
+                  - generic [ref=e198]: Certified Pediatric Sleep Consultant
+                - generic [ref=e199]:
+                  - img "Feeding icon" [ref=e200]
+                  - generic [ref=e201]: Formula
+            - 'link "2.5 Year Old / 30 Month Old Development Milestones: What to Expect 2 Oct 2025 2.5 Year Old / 30 Month Old Development Milestones: What to Expect Discover essential 2.5 year old development milestones including physical, speech, and social skills. Learn what 30 month old toddlers should be doing and when to seek help. By Sam Fore Certified Pediatric Sleep Consultant Development icon Milestones" [ref=e204] [cursor=pointer]':
+              - /url: /blog/development/2-5-year-old-30-month-old-development-milestones
+              - 'img "2.5 Year Old / 30 Month Old Development Milestones: What to Expect" [ref=e206]'
+              - generic [ref=e207]:
+                - generic [ref=e208]:
+                  - paragraph [ref=e210]: 2 Oct 2025
+                  - 'heading "2.5 Year Old / 30 Month Old Development Milestones: What to Expect" [level=2] [ref=e211]'
+                - paragraph [ref=e212]: Discover essential 2.5 year old development milestones including physical, speech, and social skills. Learn what 30 month old toddlers should be doing and when to seek help.
+                - generic [ref=e213]:
+                  - generic [ref=e214]:
+                    - generic [ref=e215]: By
+                    - generic [ref=e216]: Sam Fore
+                  - generic [ref=e217]: Certified Pediatric Sleep Consultant
+                - generic [ref=e218]:
+                  - img "Development icon" [ref=e219]
+                  - generic [ref=e220]: Milestones
+            - 'link "2 Year Old / 24 Month Old Development Milestones: Complete Guide for Parents 2 Oct 2025 2 Year Old / 24 Month Old Development Milestones: Complete Guide for Parents Discover essential 2 year old development milestones including physical, speech, and social skills. Expert guide with checklists, red flags, and tips for 24-month-old toddlers. By Sam Fore Certified Pediatric Sleep Consultant Development icon Milestones" [ref=e223] [cursor=pointer]':
+              - /url: /blog/development/2-year-old-24-month-old-development-milestones
+              - 'img "2 Year Old / 24 Month Old Development Milestones: Complete Guide for Parents" [ref=e225]'
+              - generic [ref=e226]:
+                - generic [ref=e227]:
+                  - paragraph [ref=e229]: 2 Oct 2025
+                  - 'heading "2 Year Old / 24 Month Old Development Milestones: Complete Guide for Parents" [level=2] [ref=e230]'
+                - paragraph [ref=e231]: Discover essential 2 year old development milestones including physical, speech, and social skills. Expert guide with checklists, red flags, and tips for 24-month-old toddlers.
+                - generic [ref=e232]:
+                  - generic [ref=e233]:
+                    - generic [ref=e234]: By
+                    - generic [ref=e235]: Sam Fore
+                  - generic [ref=e236]: Certified Pediatric Sleep Consultant
+                - generic [ref=e237]:
+                  - img "Development icon" [ref=e238]
+                  - generic [ref=e239]: Milestones
+    - generic [ref=e240]:
+      - link "Prev" [disabled]:
+        - /url: "#"
+      - generic [ref=e241]:
+        - generic [ref=e242]: Page
+        - button "1" [ref=e243]
+        - generic [ref=e244]: of 37
+      - link "Next" [ref=e245] [cursor=pointer]:
+        - /url: /blog?page=2
+  - generic [ref=e249]:
+    - img "Background decoration" [ref=e250]
+    - generic [ref=e251]:
+      - heading "We are raising a generation of confident parents." [level=2] [ref=e252]
+      - button "Get support that gets you" [ref=e254] [cursor=pointer]
+    - img "Mascots" [ref=e257]
+  - contentinfo [ref=e258]:
+    - generic [ref=e259]:
+      - generic [ref=e261]:
+        - paragraph [ref=e263]: Stay in the loop with Riley's newsletter.
+        - generic [ref=e264]:
+          - textbox "Enter your email" [ref=e265]:
+            - /placeholder: Email
+          - button "Sign up" [ref=e266]
+      - navigation [ref=e270]:
+        - generic [ref=e271]:
+          - generic [ref=e272]:
+            - link "Blog" [ref=e273] [cursor=pointer]:
+              - /url: https://rileyapp.com/blog
+            - link "Pricing" [ref=e274] [cursor=pointer]:
+              - /url: https://rileyapp.com/pricing
+            - link "Editorial Process" [ref=e275] [cursor=pointer]:
+              - /url: https://rileyapp.com/editorial-process
+          - generic [ref=e276]:
+            - link "Privacy Policy" [ref=e277] [cursor=pointer]:
+              - /url: https://rileyapp.com/privacy
+            - link "Terms of Service" [ref=e278] [cursor=pointer]:
+              - /url: https://rileyapp.com/tos
+            - link "Support" [ref=e279] [cursor=pointer]:
+              - /url: https://rileyapp.com/support
+      - generic [ref=e284]:
+        - paragraph [ref=e285]: Get the App
+        - link [ref=e286] [cursor=pointer]:
+          - /url: https://rileyapp.onelink.me/JNxh/ln83navr
+    - paragraph [ref=e320]: © 2025 Riley

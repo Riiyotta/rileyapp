@@ -1,0 +1,19 @@
+{
+  "$schema": "riley-design-tokens/primitive",
+  "id": "Icon",
+  "purpose": "Inline pictogram/UI glyph (card arrow, plus, carousel arrows, stars, checks).",
+  "props": {
+    "media": "assetRole ui-icon | store-badge"
+  },
+  "tokenRefs": [],
+  "evidence": [
+    {
+      "cite": "src/components/Superpowers.jsx:36",
+      "anchor": "card-arrow.svg"
+    },
+    {
+      "cite": "src/components/FaqClouds.jsx:83",
+      "anchor": "faq-plus.svg"
+    }
+  ]
+}

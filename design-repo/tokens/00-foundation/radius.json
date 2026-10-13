@@ -1,0 +1,86 @@
+{
+  "$schema": "riley-design-tokens/foundation/radius",
+  "tokens": {
+    "card": {
+      "value": "24px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:64",
+          "anchor": "24px (`rounded-3xl`)"
+        }
+      ]
+    },
+    "featurette-card": {
+      "value": "30px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:64",
+          "anchor": "30px featurette card"
+        }
+      ]
+    },
+    "blog-image": {
+      "value": "35px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:64",
+          "anchor": "35px blog image"
+        }
+      ]
+    },
+    "button": {
+      "value": "32px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:64",
+          "anchor": "32px buttons"
+        }
+      ]
+    },
+    "pill": {
+      "value": "40px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:64",
+          "anchor": "40px blog pills"
+        }
+      ]
+    },
+    "table": {
+      "value": "16px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:64",
+          "anchor": "16px table panel/cells"
+        }
+      ]
+    },
+    "round": {
+      "value": "9999px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:64",
+          "anchor": "9999px avatars/round buttons"
+        }
+      ]
+    },
+    "faq-item": {
+      "value": "24px 24px 0 24px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:390",
+          "anchor": "24px 24px 0 24px"
+        }
+      ]
+    },
+    "plan-card-mobile": {
+      "value": "16px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_MARKETING.md:181",
+          "anchor": "**16** (<640)"
+        }
+      ]
+    }
+  }
+}

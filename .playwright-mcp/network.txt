@@ -1,0 +1,179 @@
+1. [GET] https://rileyapp.com/ => [200] OK
+2. [GET] https://rileyapp.com/_next/static/media/099e556d489a07c0-s.p.woff2 => [200] OK
+3. [GET] https://rileyapp.com/_next/static/media/21e981d7c49f3a54-s.p.woff2 => [200] OK
+4. [GET] https://rileyapp.com/_next/static/media/3665f82e521e4c2c-s.p.woff2 => [200] OK
+5. [GET] https://rileyapp.com/_next/static/media/445937849f5b9b72-s.p.woff2 => [200] OK
+6. [GET] https://rileyapp.com/_next/static/media/4a3aef181986093c-s.p.woff2 => [200] OK
+7. [GET] https://rileyapp.com/_next/static/media/70b85aac0364cf97-s.p.woff2 => [200] OK
+8. [GET] https://rileyapp.com/_next/static/media/9991ff847b152bd7-s.p.woff2 => [200] OK
+9. [GET] https://rileyapp.com/_next/static/media/a038179073b22d98-s.p.woff2 => [200] OK
+10. [GET] https://rileyapp.com/_next/static/media/cd6e05420753477e-s.p.woff2 => [200] OK
+11. [GET] https://rileyapp.com/_next/static/media/d84e7a84fb22f8cf-s.p.woff2 => [200] OK
+12. [GET] https://rileyapp.com/_next/static/media/e50b6ebb6bce841c-s.p.woff2 => [200] OK
+13. [GET] https://rileyapp.com/_next/static/css/9c5156364f99a9e4.css => [200] OK
+14. [GET] https://rileyapp.com/_next/static/css/0c1d15e5760a5192.css => [200] OK
+15. [GET] https://rileyapp.com/_next/static/css/a238d1e9732c9fed.css => [200] OK
+16. [GET] https://rileyapp.com/_next/static/chunks/webpack-2fef99cd2ea5cff6.js => [200] OK
+17. [GET] https://rileyapp.com/_next/static/chunks/4bd1b696-9909f507f95988b8.js => [200] OK
+18. [GET] https://rileyapp.com/_next/static/chunks/5964-051b61df2111a0cd.js => [200] OK
+19. [GET] https://rileyapp.com/_next/static/chunks/main-app-7bd318ff7dcde053.js => [200] OK
+20. [GET] https://rileyapp.com/_next/static/chunks/9da6db1e-bf40f59f19796e67.js => [200] OK
+21. [GET] https://rileyapp.com/_next/static/chunks/44917a20-bd5de83b49bd0372.js => [200] OK
+22. [GET] https://rileyapp.com/_next/static/chunks/1325-e6f8a7b2ea15c887.js => [200] OK
+23. [GET] https://rileyapp.com/_next/static/chunks/4212-be5eb622cbdffc70.js => [200] OK
+24. [GET] https://rileyapp.com/_next/static/chunks/3045-3fb2539904780f6f.js => [200] OK
+25. [GET] https://rileyapp.com/_next/static/chunks/6874-bf14f6d1ebc153cc.js => [200] OK
+26. [GET] https://rileyapp.com/_next/static/chunks/6964-55fa911538636505.js => [200] OK
+27. [GET] https://rileyapp.com/_next/static/chunks/6391-950bd417654fbe13.js => [200] OK
+28. [GET] https://rileyapp.com/_next/static/chunks/8207-478332b00af94dd9.js => [200] OK
+29. [GET] https://rileyapp.com/_next/static/chunks/1521-18a8401e57934753.js => [200] OK
+30. [GET] https://rileyapp.com/_next/static/chunks/3034-f09cfdec50e8abfe.js => [200] OK
+31. [GET] https://rileyapp.com/_next/static/chunks/5666-056df25003c33b59.js => [200] OK
+32. [GET] https://rileyapp.com/_next/static/chunks/2015-1c1b5f86b4d71afb.js => [200] OK
+33. [GET] https://rileyapp.com/_next/static/chunks/355-56edeea34938e484.js => [200] OK
+34. [GET] https://rileyapp.com/_next/static/chunks/3407-f14cd29437fa420d.js => [200] OK
+35. [GET] https://rileyapp.com/_next/static/chunks/1683-53263765ec1e4235.js => [200] OK
+36. [GET] https://rileyapp.com/_next/static/chunks/6433-3696581bc69ac42c.js => [200] OK
+37. [GET] https://rileyapp.com/_next/static/chunks/app/(home)/page-e052ecc595378b39.js => [200] OK
+38. [GET] https://rileyapp.com/_next/static/chunks/app/%5B...slug%5D/page-26e7a532b520848d.js => [200] OK
+39. [GET] https://rileyapp.com/_next/static/chunks/1657-e9f0315044786ec1.js => [200] OK
+40. [GET] https://rileyapp.com/_next/static/chunks/8946-715a5e3f4ae7f97c.js => [200] OK
+41. [GET] https://rileyapp.com/_next/static/chunks/3074-3bbf919285236a96.js => [200] OK
+42. [GET] https://rileyapp.com/_next/static/chunks/7488-352aac3e8b4a7620.js => [200] OK
+43. [GET] https://rileyapp.com/_next/static/chunks/app/layout-e8c22889d372d875.js => [200] OK
+44. [GET] https://clerk.rileyapp.com/npm/@clerk/clerk-js@5/dist/clerk.browser.js => [307] Temporary Redirect
+45. [GET] https://clerk.rileyapp.com/npm/@clerk/clerk-js@5.128.0/dist/clerk.browser.js => [200] OK
+46. [GET] blob:https://rileyapp.com/503ff438-4c03-412f-a3b3-b0e2494c52da => [200] OK
+47. [GET] https://clerk.rileyapp.com/v1/environment?__clerk_api_version=2025-11-10&_clerk_js_version=5.128.0 => [200] OK
+48. [GET] https://clerk.rileyapp.com/v1/client?__clerk_api_version=2025-11-10&_clerk_js_version=5.128.0 => [200] OK
+49. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwordmark.9c6f1ca2.svg&w=96&q=75 => [524] <none>
+50. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FHeroRiley.7fe0f1f7.svg&w=384&q=75 => [200] OK
+51. [GET] https://rileyapp.com/_next/static/media/HeroIllo.84fc0736.svg => [200] OK
+52. [GET] https://rileyapp.com/_next/image?url=%2Ficons%2Fbottle.svg&w=48&q=75 => [200] OK
+53. [GET] https://rileyapp.com/_next/image?url=%2Ficons%2Fmoon.svg&w=48&q=75 => [200] OK
+54. [GET] https://rileyapp.com/_next/image?url=%2Ficons%2Fblocks.svg&w=48&q=75 => [200] OK
+55. [GET] https://rileyapp.com/_next/image?url=%2Ficons%2Fstubborn.svg&w=48&q=75 => [200] OK
+56. [GET] https://rileyapp.com/_next/image?url=%2Ficons%2Fbowl.svg&w=48&q=75 => [200] OK
+57. [GET] https://rileyapp.com/_next/image?url=%2Ficons%2Fsailboat.svg&w=48&q=75 => [200] OK
+58. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmascot.f7858b88.svg&w=256&q=75 => [524] <none>
+59. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fphonebg.f9a0e650.svg&w=640&q=75 => [200] OK
+60. [GET] https://rileyapp.com/_next/image?url=%2Fimages%2Fhomepage%2Ffeaturette%2Fmeg.png&w=640&q=75 => [200] OK
+61. [GET] https://rileyapp.com/_next/image?url=%2Fimages%2Fhomepage%2Ffeaturette%2Fseb-and-daughter.png&w=640&q=75 => [524] <none>
+62. [GET] https://rileyapp.com/_next/image?url=%2Fimages%2Fhomepage%2Ffeaturette%2Fnaina.png&w=640&q=75 => [200] OK
+63. [GET] https://rileyapp.com/_next/image?url=%2Fmascots%2Fworrier-family.svg&w=256&q=75 => [200] OK
+64. [GET] https://rileyapp.com/_next/image?url=%2Fmascots%2Fguide-family.svg&w=256&q=75 => [200] OK
+65. [GET] https://rileyapp.com/_next/image?url=%2Fmascots%2Fspark-family.svg&w=256&q=75 => [200] OK
+66. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Friley-up.80680fc4.svg&w=128&q=75 => [200] OK
+67. [GET] https://a.storyblok.com/f/337915/500x500/9d4720225d/4.png => [200] OK
+68. [GET] https://a.storyblok.com/f/337915/500x500/32a85a66a6/5.png => [200] OK
+69. [GET] https://rileyapp.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fantwkw01%2Fdevelopment%2F3dd009c0c3295127b2b277b3920acb6868836cd9-5760x3840.jpg&w=384&q=75 => [200] OK
+70. [GET] https://rileyapp.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fantwkw01%2Fdevelopment%2F6ec23763ba2e30df4af542e28148a465ef27d13a-5744x3829.jpg&w=384&q=75 => [200] OK
+71. [GET] https://rileyapp.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fantwkw01%2Fdevelopment%2F8fe3a7b3af79c135ea300f1877f1dc795502b3a0-1600x1066.jpg&w=384&q=75 => [200] OK
+72. [GET] https://a.storyblok.com/f/337915/500x500/e171a6cbd4/3.png => [200] OK
+73. [GET] https://a.storyblok.com/f/337915/500x500/b31d202732/2.png => [200] OK
+74. [GET] https://a.storyblok.com/f/337915/500x500/99af8a8991/6.png => [200] OK
+75. [GET] https://us-assets.i.posthog.com/array/phc_ypJ5PpEXKLnbSqyaU0OqbygVcEFiT4BKyWmnDSBWnA9/config.js => [200] OK
+76. [POST] https://us.i.posthog.com/flags/?v=2&config=true&ip=0&_=1791875581619&ver=1.258.3&compression=base64 => [200] OK
+77. [POST] https://us.i.posthog.com/e/?ip=0&_=1791875581637&ver=1.258.3&compression=gzip-js => [200] OK
+78. [GET] https://rileyapp.com/_next/static/chunks/479a7878.1a8a25de365d2000.js => [200] OK
+79. [GET] https://rileyapp.com/api/get-blog-categories => [200] OK
+80. [GET] https://unpkg.com/@rive-app/webgl2@2.30.4/rive.wasm => [200] OK
+81. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnbc.d05d499b.png&w=128&q=75 => [200] OK
+82. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Faxios.3f8939b8.png&w=128&q=75 => [200] OK
+83. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbump-logo.f34c9e6e.png&w=128&q=75 => [200] OK
+84. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffinsmes.98719778.png&w=128&q=75 => [200] OK
+85. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftc.510556fc.png&w=128&q=75 => [200] OK
+86. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fglamour.185eac21.png&w=128&q=75 => [200] OK
+87. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Friley-family.6d0aa8c6.svg&w=256&q=75 => [524] <none>
+88. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fworrier-family.182e6fb5.svg&w=256&q=75 => [524] <none>
+89. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fguide-family.efff6cb9.svg&w=256&q=75 => [524] <none>
+90. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsoftie-family.15413882.svg&w=256&q=75 => [524] <none>
+91. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fspark-family.9eb35df7.svg&w=256&q=75 => [524] <none>
+92. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fuplifter-family.75241f7d.svg&w=256&q=75 => [524] <none>
+93. [GET] https://rileyapp.com/blog?_rsc=tujbn => [200] OK
+94. [GET] blob:https://rileyapp.com/811723cc-58ba-4b9d-aaca-2fe3866d2648 => [200] OK
+95. [GET] https://clerk.rileyapp.com/npm/@clerk/clerk-js@5.128.0/dist/framework_clerk.browser_70f75e_5.128.0.js => [200] OK
+96. [GET] https://clerk.rileyapp.com/npm/@clerk/clerk-js@5.128.0/dist/vendors_clerk.browser_70f75e_5.128.0.js => [200] OK
+97. [GET] https://clerk.rileyapp.com/npm/@clerk/clerk-js@5.128.0/dist/ui-common_clerk.browser_70f75e_5.128.0.js => [200] OK
+98. [GET] https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.258.3 => [200] OK
+99. [GET] https://us-assets.i.posthog.com/static/dead-clicks-autocapture.js?v=1.258.3 => [200] OK
+100. [GET] https://us-assets.i.posthog.com/static/surveys.js?v=1.258.3 => [200] OK
+101. [GET] https://us-assets.i.posthog.com/static/web-vitals.js?v=1.258.3 => [200] OK
+102. [GET] https://clerk.rileyapp.com/npm/@clerk/clerk-js@5.128.0/dist/subscriptionDetails_clerk.browser_70f75e_5.128.0.js => [200] OK
+103. [GET] https://rileyapp.com/animations/featurette/chat_module_meg.riv => [200] OK
+104. [GET] https://rileyapp.com/animations/featurette/chat_module_seb.riv => [200] OK
+105. [GET] https://rileyapp.com/animations/featurette/chat_module_naina.riv => [200] OK
+106. [GET] blob:https://rileyapp.com/c6579747-3c2f-48f6-bfb0-3ffa0d751d7f => [200] OK
+107. [GET] blob:https://rileyapp.com/489d5df6-89b6-410c-8cb0-eddda4a889e6 => [200] OK
+108. [GET] blob:https://rileyapp.com/0f10d105-ad50-462e-97c9-566cd09fd438 => [200] OK
+109. [GET] https://api.rudderstack.com/sourceConfig/?p=npm&v=3.22.0&build=modern&writeKey=2oUbE8eptONL0a35sWHE6W6mHNQ&lockIntegrationsVersion=true&lockPluginsVersion=true => [200] OK
+110. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins.js => [200] OK
+111. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-remote-DeviceModeDestinations.min.js => [200] OK
+112. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-remote-GoogleLinker.min.js => [200] OK
+113. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-remote-XhrQueue.min.js => [200] OK
+114. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-remote-StorageMigrator.min.js => [200] OK
+115. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-remote-NativeDestinationQueue.min.js => [200] OK
+116. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-remote-ExternalAnonymousId.min.js => [200] OK
+117. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-remote-StorageEncryption.min.js => [200] OK
+118. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-common.min.js => [200] OK
+119. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-deviceModeDestinations.min.js => [200] OK
+120. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-legacyEncryptionUtils.min.js => [200] OK
+121. [GET] https://cdn.rudderlabs.com/3.22.0/modern/plugins/rsa-plugins-RetryQueue.min.js => [200] OK
+122. [POST] https://tryrileyaxrdxj.dataplane.rudderstack.com/v1/page => [200] OK
+123. [GET] https://cdn.rudderlabs.com/3.22.0/modern/js-integrations/GoogleTagManager.min.js => [200] OK
+124. [GET] https://cdn.rudderlabs.com/3.22.0/modern/js-integrations/Amplitude.min.js => [200] OK
+125. [GET] https://cdn.amplitude.com/libs/analytics-browser-1.9.1-min.js.gz => [200] OK
+126. [GET] https://www.googletagmanager.com/gtm.js?id=GTM-TJXNX9TJ&gtm_cookies_win=x => [200] OK
+127. [GET] https://www.googletagmanager.com/gtag/js?id=G-R361V20NHL&cx=c&gtm=4e6a91 => [200] OK
+128. [GET] https://connect.facebook.net/en_US/fbevents.js => [200] OK
+129. [GET] https://analytics.ahrefs.com/analytics.js => [200] OK
+130. [GET] https://websdk.appsflyer.com/?st=banners& => [200] OK
+131. [POST] https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=1&ae=g&auid=1377532880.1791875590&dt=Riley%20%E2%80%93%20Baby%20Tracker%20%26%20Child%20Development%20Expert&en=page_view&dl=https%3A%2F%2Frileyapp.com%2F&scrsrc=www.googletagmanager.com&rnd=1323005444.1791875590&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He6a91v9199058681za200zd9199058681xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938466~115938468~118897920~118897930~120385422~120469145~120469153~121046263~121046271~121246026~121246034~123235077&tft=1791875589742&tfd=14390&fmt=8 => [200] OK
+132. [GET] https://ad.doubleclick.net/ccm/s/collect?auid=1377532880.1791875590&gtm=45He6a91v9199058681za200zd9199058681xeaxf1&fmt=3 => [FAILED] net::ERR_BLOCKED_BY_ORB
+133. [POST] https://analytics.ahrefs.com/api/event => [200] OK
+134. [GET] https://googleads.g.doubleclick.net/pagead/viewthroughconversion/16595028046/?random=1791875590146&cv=11&fst=1791875590146&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6a91v9170283131za20ozb9199058681zd9199058681xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&u_w=1440&u_h=900&url=https%3A%2F%2Frileyapp.com%2F&rcb=16&frm=0&tiba=Riley%20%E2%80%93%20Baby%20Tracker%20%26%20Child%20Development%20Expert&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1377532880.1791875590&uaa=arm&uab=64&uafvl=Chromium%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0&uamb=0&uam=&uap=macOS&uapv=27.0.1&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=4 => [200] OK
+135. [POST] https://www.google.com/rmkt/collect/16595028046/?random=1791875590146&cv=11&fst=1791875590146&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6a91v9170283131za20ozb9199058681zd9199058681xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&u_w=1440&u_h=900&url=https%3A%2F%2Frileyapp.com%2F&rcb=16&frm=0&tiba=Riley%20%E2%80%93%20Baby%20Tracker%20%26%20Child%20Development%20Expert&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1377532880.1791875590&uaa=arm&uab=64&uafvl=Chromium%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0&uamb=0&uam=&uap=macOS&uapv=27.0.1&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5 => [200] OK
+136. [GET] https://www.google.co.in/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&ngs=1&ibt=1&tid=G-R361V20NHL&cid=1758460464.1791875590&gtm=45je6a91v9170283131za20ozb9199058681zd9199058681xf1&rcb=16&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&z=841003340 => [200] OK
+137. [POST] https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=0&auid=1377532880.1791875590&dt=Riley%20%E2%80%93%20Baby%20Tracker%20%26%20Child%20Development%20Expert&tid=AW-16595028046&en=page_view&dl=https%3A%2F%2Frileyapp.com%2F&scrsrc=www.googletagmanager.com&rnd=1323005444.1791875590&navt=n&npa=0&gtm=45je6a91v9170283131za20ozb9199058681zd9199058681xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&tft=1791875590167&tfd=14815&tids=AW-16595028046&fmt=8 => [200] OK
+138. [POST] https://www.google.com/g/collect?v=2&tid=G-R361V20NHL&gtm=45je6a91v9170283131za20ozb9199058681zd9199058681xf1&_p=1791875589258&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAACAC&cid=1758460464.1791875590&frm=0&ibt=1&ngs=1&pscdl=noapi&rcb=16&sr=1440x900&uaa=arm&uab=64&uafvl=Chromium%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0&uam=&uamb=0&uap=macOS&uapv=27.0.1&uaw=0&ul=en-gb&_s=1&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&sid=1791875590&sct=1&seg=0&dl=https%3A%2F%2Frileyapp.com%2F&dt=Riley%20%E2%80%93%20Baby%20Tracker%20%26%20Child%20Development%20Expert&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=14792&gaf=1 => [204] No Content
+139. [GET] https://connect.facebook.net/signals/config/3523398077951022?v=2.9.419&r=stable&domain=rileyapp.com&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C274%2C273%2C272%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C324%2C325%2C326%2C323%2C339%2C361%2C248%2C237%2C70%2C238%2C236%2C364%2C355%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189 => [200] OK
+140. [POST] https://api2.amplitude.com/2/httpapi => [200] OK
+141. [GET] https://www.google.com/pagead/1p-user-list/16595028046/?random=1791875590146&cv=11&fst=1791874800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6a91v9170283131za20ozb9199058681zd9199058681xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&u_w=1440&u_h=900&url=https%3A%2F%2Frileyapp.com%2F&rcb=16&frm=0&tiba=Riley%20%E2%80%93%20Baby%20Tracker%20%26%20Child%20Development%20Expert&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1377532880.1791875590&uaa=arm&uab=64&uafvl=Chromium%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0&uamb=0&uam=&uap=macOS&uapv=27.0.1&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS1AEAQM4h3GuUuJukQhFKV-_7nqadPqJFBhWoJg3gqYdW8qy6lMpvEpu3OKbxtHXeFoCrnZAIcJltmxikvR_G9ZWyuDtcH78Y8PHNBqAB1gtLf5AyAox3AbjD0q_b8pSIx68f7IA4xU9o8q4rSQ_jR375MeWwehb3WpppLEbwF6o0gHDP-A5USVQD3uMRWQdqFpHQTwta4I5IOGkmalfPzniTCL6Y7tRReQ-91DQrs7cnfYbdsaLEb6tMdHaVkrpbPglsglqXeEAVSizk4tuYyFXucR1Phw&random=1347980666&rmt_tld=0&ipr=y => [200] OK
+142. [GET] https://www.google.co.in/pagead/1p-user-list/16595028046/?random=1791875590146&cv=11&fst=1791874800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6a91v9170283131za20ozb9199058681zd9199058681xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&u_w=1440&u_h=900&url=https%3A%2F%2Frileyapp.com%2F&rcb=16&frm=0&tiba=Riley%20%E2%80%93%20Baby%20Tracker%20%26%20Child%20Development%20Expert&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1377532880.1791875590&uaa=arm&uab=64&uafvl=Chromium%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0&uamb=0&uam=&uap=macOS&uapv=27.0.1&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS1AEAQM4h3GuUuJukQhFKV-_7nqadPqJFBhWoJg3gqYdW8qy6lMpvEpu3OKbxtHXeFoCrnZAIcJltmxikvR_G9ZWyuDtcH78Y8PHNBqAB1gtLf5AyAox3AbjD0q_b8pSIx68f7IA4xU9o8q4rSQ_jR375MeWwehb3WpppLEbwF6o0gHDP-A5USVQD3uMRWQdqFpHQTwta4I5IOGkmalfPzniTCL6Y7tRReQ-91DQrs7cnfYbdsaLEb6tMdHaVkrpbPglsglqXeEAVSizk4tuYyFXucR1Phw&random=1347980666&rmt_tld=1&ipr=y => [200] OK
+143. [GET] https://www.facebook.com/tr/?id=3523398077951022&ev=PageView&dl=https%3A%2F%2Frileyapp.com%2F&rl=&if=false&ts=1791875590855&iw=false&sw=1440&sh=900&v=2.9.419&r=stable&a=tmSimo-GTM-WebTemplate&ec=0&o=4126&aems=0%3B0&fbp=fb.1.1791875590849.560945702456333115&ler=empty&cdl=API_unavailable&pmd[title]=Riley%20%E2%80%93%20Baby%20Tracker%20%26%20Child%20Development%20Expert&pmd[locale]=en_US&pmd[description]=Riley%20learns%20and%20grows%20with%20your%20family%2C%20offering%20personalized%2C%20data-backed%20guidance%20so%20you%27re%20ready%20for%20anything%20life%E2%80%94or%20your%20kids%E2%80%94throw%20your%20way.&pmd[keywords]=baby%20tracker%2Cchild%20development%2Cparenting%20app%2Cnewborn%20milestones%2CRiley&plt=3317&iss=1&imft=1&tz=330&it=1791875590249&coo=false&tm=1&expv2[0]=pl1&expv2[1]=el3&expv2[2]=bc1&expv2[3]=ra2&expv2[4]=rp2&expv2[5]=ct3&expv2[6]=hf0&expv2[7]=sd1&expv2[8]=sp1&expv2[9]=ek1&expv2[10]=pc1&expv2[11]=gs1&expv2[12]=zs1&expv2[13]=cp1&expv2[14]=es1&expv2[15]=ac1&expv2[16]=so1&expv2[17]=wc1&expv2[18]=la1&expv2[19]=sf1&expv2[20]=da1&expv2[21]=io1&expv2[22]=ae1&expv2[23]=sx1&expv2[24]=if1&expv2[25]=fd1&expv2[26]=bg1&expv2[27]=mg1&expv2[28]=kl1&expv2[29]=sg1&expv2[30]=mk1&expv2[31]=sn1&expv2[32]=ec1&expv2[33]=mp1&expv2[34]=ps1&expv2[35]=fx1&expv2[36]=vt1&expv2[37]=dp1&expv2[38]=fw1&expv2[39]=cn1&expv2[40]=tz1&expv2[41]=pe1&expv2[42]=ee1&expv2[43]=bu1&expv2[44]=ta1&expv2[45]=mt0&expv2[46]=ot1&expv2[47]=hv1&expv2[48]=ep1&expv2[49]=rh0&expv2[50]=ah0&rqm=GET => [200] OK
+144. [POST] https://us.i.posthog.com/i/v0/e/?ip=0&_=1791875591542&ver=1.258.3&compression=gzip-js => [200] OK
+145. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbackground-clouds.29b46e22.svg&w=1920&q=75
+146. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flilly.e941c573.png&w=384&q=75
+147. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fkate.a02b9b6f.png&w=384&q=75
+148. [GET] https://rileyapp.com/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F337915%2F62x61%2Fcce72fffa2%2Fpurple1.svg&w=64&q=75 => [200] OK
+149. [GET] https://rileyapp.com/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F337915%2F60x61%2F687c2b883a%2Fpurple2.svg&w=64&q=75 => [200] OK
+150. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fchat.8b820a89.svg&w=384&q=75
+151. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftracking.f65b62b2.svg&w=384&q=75
+152. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsparks.372f2bdd.svg&w=384&q=75
+153. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbackground-clouds.0c94200b.svg&w=1920&q=75 => [524] <none>
+154. [GET] https://rileyapp.com/blog/development?_rsc=tujbn
+155. [GET] https://rileyapp.com/blog/feeding?_rsc=tujbn
+156. [GET] https://rileyapp.com/blog/health?_rsc=tujbn
+157. [GET] https://rileyapp.com/blog/news?_rsc=tujbn
+158. [GET] https://rileyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmascots.ad5f2082.svg&w=828&q=75 => [524] <none>
+159. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875640616&ver=1.258.3&compression=gzip-js => [200] OK
+160. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875644687&ver=1.258.3&compression=gzip-js => [200] OK
+161. [POST] https://www.google.com/g/collect?v=2&tid=G-R361V20NHL&gtm=45je6a91v9170283131za20gzb9199058681zd9199058681xf1&_p=1791875589258&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAACQC&ae=a&cid=1758460464.1791875590&frm=0&ibt=1&ngs=1&pscdl=noapi&rcb=16&sr=1440x900&uaa=arm&uab=64&uafvl=Chromium%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0&uam=&uamb=0&uap=macOS&uapv=27.0.1&uaw=0&ul=en-gb&_s=2&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&sid=1791875590&sct=1&seg=1&dl=https%3A%2F%2Frileyapp.com%2F&dt=Riley%20%E2%80%93%20Baby%20Tracker%20%26%20Child%20Development%20Expert&en=scroll&epn.percent_scrolled=90&_et=50513&tfd=70310&gaf=1 => [204] No Content
+162. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875648009&ver=1.258.3&compression=gzip-js => [200] OK
+163. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875656182&ver=1.258.3&compression=gzip-js => [200] OK
+164. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875680111&ver=1.258.3&compression=gzip-js => [200] OK
+165. [POST] https://us.i.posthog.com/i/v0/e/?ip=0&_=1791875680114&ver=1.258.3&compression=gzip-js => [200] OK
+166. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875712113&ver=1.258.3&compression=gzip-js => [200] OK
+167. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875718030&ver=1.258.3&compression=gzip-js => [200] OK
+168. [POST] https://us.i.posthog.com/i/v0/e/?ip=0&_=1791875725389&ver=1.258.3&compression=gzip-js => [200] OK
+169. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875725393&ver=1.258.3&compression=gzip-js => [200] OK
+170. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875729303&ver=1.258.3&compression=gzip-js => [200] OK
+171. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875747672&ver=1.258.3&compression=gzip-js => [200] OK
+172. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875755470&ver=1.258.3&compression=gzip-js => [200] OK
+173. [GET] https://rileyapp.com/_next/static/chunks/5157-1a2a68c4def94c32.js
+174. [GET] https://rileyapp.com/_next/static/chunks/5398-da4bc399362bfdeb.js
+175. [GET] https://rileyapp.com/_next/static/chunks/6519-34b55655fefb92bc.js
+176. [GET] https://rileyapp.com/_next/static/chunks/app/blog/page-774096d035f564c3.js
+177. [GET] https://rileyapp.com/blog/pregnancy?_rsc=tujbn
+178. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875837720&ver=1.258.3&compression=gzip-js => [200] OK
+179. [POST] https://us.i.posthog.com/s/?ip=0&_=1791875841263&ver=1.258.3&compression=gzip-js => [200] OK

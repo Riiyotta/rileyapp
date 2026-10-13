@@ -1,0 +1,70 @@
+{
+  "$schema": "riley-design-tokens/component/nav",
+  "header": {
+    "height": {
+      "value": "80px",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:166",
+          "anchor": "Height 80px"
+        }
+      ]
+    },
+    "padding": {
+      "value": "12px 16px; md: 12px 60px",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:54",
+          "anchor": "px-4 py-3"
+        }
+      ]
+    },
+    "link-color": {
+      "ref": "tokens.10-semantic.color-roles.roles.text.link",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:65",
+          "anchor": "text-purple-100"
+        }
+      ]
+    },
+    "divider": {
+      "ref": "tokens.10-semantic.color-roles.roles.border.divider",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:81",
+          "anchor": "bg-gray-300"
+        }
+      ]
+    },
+    "sticky-shadow": {
+      "ref": "tokens.00-foundation.elevation.tokens.md",
+      "evidence": [
+        {
+          "cite": "src/components/upper/SiteHeader.jsx:42",
+          "anchor": "shadow-md"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "link-color": {
+      "ref": "tokens.10-semantic.color-roles.roles.text.link",
+      "evidence": [
+        {
+          "cite": "src/components/SiteFooter.jsx:47",
+          "anchor": "text-purple-100"
+        }
+      ]
+    },
+    "link-hover": {
+      "value": "none",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC.md:438",
+          "anchor": "no hover"
+        }
+      ]
+    }
+  }
+}

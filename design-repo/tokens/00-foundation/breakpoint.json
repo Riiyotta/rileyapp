@@ -1,0 +1,84 @@
+{
+  "$schema": "riley-design-tokens/foundation/breakpoint",
+  "tokens": {
+    "sm": {
+      "value": "640px",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:5",
+          "anchor": "sm: '640px'"
+        }
+      ]
+    },
+    "md": {
+      "value": "768px",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:5",
+          "anchor": "md: '768px'"
+        }
+      ]
+    },
+    "lg": {
+      "value": "992px",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:5",
+          "anchor": "lg: '992px'"
+        }
+      ],
+      "note": "the main desktop/mobile switch (62rem)"
+    },
+    "xl": {
+      "value": "1280px",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:5",
+          "anchor": "xl: '1280px'"
+        }
+      ]
+    },
+    "2xl": {
+      "value": "1440px",
+      "evidence": [
+        {
+          "cite": "tailwind.config.js:5",
+          "anchor": "'2xl': '1440px'"
+        }
+      ]
+    },
+    "faq-table-max": {
+      "value": "960px",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:17",
+          "anchor": "@media (max-width: 960px)"
+        },
+        {
+          "cite": "CLONE_SPEC.md:25",
+          "anchor": "(max-width:960px)"
+        }
+      ],
+      "note": "raw query in FAQ + comparison-table modules"
+    },
+    "faq-open-min": {
+      "value": "961px",
+      "evidence": [
+        {
+          "cite": "src/styles/lower.css:45",
+          "anchor": "@media (min-width: 961px)"
+        }
+      ]
+    },
+    "blog-scroller-max": {
+      "value": "639px",
+      "evidence": [
+        {
+          "cite": "src/components/BlogTeaser.jsx:35",
+          "anchor": "(max-width: 639px)"
+        }
+      ],
+      "note": "JS matchMedia"
+    }
+  }
+}

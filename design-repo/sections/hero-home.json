@@ -1,0 +1,98 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "hero-home",
+  "registryId": "section.hero-home",
+  "version": "1.0.0",
+  "category": "hero",
+  "purpose": "Homepage hero: the 'Panic Scrolling Stops Here' promise, value prop and primary app CTA over drifting parallax clouds.",
+  "iaSectionIds": [
+    "hero.home-parallax"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/Hero.jsx:16-70",
+      "anchor": "function HeroContent"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_hero-home",
+    "copyBudget": {
+      "heading": 8,
+      "body": 42,
+      "emphasis[]": 9,
+      "cta.label": 5,
+      "availability.label": 3
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "parallax-clouds",
+    "motionRoles": [
+      "hero-cloud-drift",
+      "scroll-parallax"
+    ],
+    "reducedMotionFallback": "Freeze cloud layers at parallax progress 0 (no translate/scale) and pause the horizontal cloud drift.",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "column layout: text first, illustration below",
+          "mascot image shown above the H1 (92.8x101.2) instead of inline",
+          "H1 40/48 centered (64/72 left-aligned at ≥992)",
+          "illustration CSS `scale` 2.5 (scale 2 + `translate` -4rem at ≥992; transform none, as on the original)",
+          "CTA group margin-bottom 112px"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/Hero.jsx:22",
+            "anchor": "lg:hidden"
+          },
+          {
+            "cite": "src/components/Hero.jsx:64",
+            "anchor": "[scale:2.5]"
+          },
+          {
+            "cite": "CLONE_SPEC.md:194-195",
+            "anchor": "Mobile-only mascot"
+          }
+        ]
+      },
+      {
+        "query": "<768px",
+        "changes": [
+          "gap 48 between columns, left column gap 24 + 16px side padding",
+          "illustration max-width 400 (640 at md+)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/Hero.jsx:19",
+            "anchor": "max-md:gap-6 max-md:px-4"
+          },
+          {
+            "cite": "CLONE_SPEC.md:205",
+            "anchor": "<768 max-w 400"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:188-207",
+      "anchor": "HeroContent"
+    },
+    {
+      "cite": "CLONE_SPEC.md:216-226",
+      "anchor": "Hero parallax clouds"
+    }
+  ],
+  "notes": []
+}

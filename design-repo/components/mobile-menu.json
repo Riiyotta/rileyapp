@@ -1,0 +1,18 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "mobile-menu",
+  "purpose": "<992 full-screen blurred menu portal sliding up; body scroll locked.",
+  "composedOf": [
+    "TextLink",
+    "Button"
+  ],
+  "usedBySections": [
+    "site-header"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/upper/SiteHeader.jsx:110-146",
+      "anchor": "createPortal"
+    }
+  ]
+}

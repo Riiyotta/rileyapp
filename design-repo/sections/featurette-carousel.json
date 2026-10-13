@@ -1,0 +1,71 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "featurette-carousel",
+  "registryId": "section.featurette-carousel",
+  "version": "1.0.0",
+  "category": "carousel",
+  "purpose": "'Here's how real users talk to Riley' — looping carousel pairing a Rive chat phone with a real user photo.",
+  "iaSectionIds": [
+    "product.chat-featurette"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/Featurette.jsx:32-104",
+      "anchor": "export default function Featurette"
+    }
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_featurette-carousel",
+    "copyBudget": {
+      "heading": 9,
+      "slides[].photo.alt": 5,
+      "cta.label": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field (word count, whitespace split) + ~20-30% headroom; real counts in extraction/measured-values.json copyBudgets"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "embla-loop-with-rive",
+    "motionRoles": [
+      "embla-loop",
+      "rive-autoplay"
+    ],
+    "reducedMotionFallback": "Snap between slides with no embla easing; do not autoplay Rive (show the first frame).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "user photo stacks ABOVE the phone (order swap)",
+          "slide gap 24 (40 at ≥992)",
+          "phone column left offset -28px (-44px at ≥992)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/Featurette.jsx:59",
+            "anchor": "order-2"
+          },
+          {
+            "cite": "CLONE_SPEC.md:287",
+            "anchor": "Below 992 the image sits **above** the phone"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC.md:276-294",
+      "anchor": "Featurette"
+    }
+  ],
+  "notes": [
+    "Animation-fix pass (supersedes earlier QA note): on the original the carousel follows the pointer 1:1 and drags from anywhere, including the Rive canvas (plain embla, watchDrag default). The earlier 'slow drag does not follow' reading was a headless-timing artifact: the original's three Rive canvases drop it to ~12fps under scripted input. Touch swipe works on both; the clone's earlier touch failure (a data-embla-skip-drag guard the original never reads) is fixed."
+  ]
+}
