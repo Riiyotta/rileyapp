@@ -2,6 +2,9 @@
 
 ## 1.0.1 — re-sync after the animation-fix pass
 
+- Source project is now a git repo: README and manifest packaging notes updated; `design-repo.zip`
+  is gitignored and confirmed untracked via `git ls-files`.
+
 - Featurette: drag/touch claims corrected in sections/featurette-carousel.json, animation/motion-spec.json
   (M6), extraction/measured-values.json and README. The original drags 1:1 from anywhere; the earlier
   "slow drag does not follow" reading was a headless frame-starvation artifact. Clone touch swipe fixed.

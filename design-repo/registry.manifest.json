@@ -23,7 +23,7 @@
       "@rive-app/react-canvas": "^4.36.0"
     },
     "frameworkVersionsNote": "Machine-checked against ../package.json by verify_all.py when the source project is present.",
-    "git": "The source project is NOT a git repository at snapshot time, so the 'zip committed to git' check is N/A. If it becomes one, add design-repo.zip to .gitignore and check `git ls-files` before the first commit."
+    "git": "The source project is a git repository. design-repo.zip is listed in its .gitignore and is not tracked (checked with `git ls-files`); regenerate the zip locally, never commit it."
   },
   "counts": {
     "tokens": {

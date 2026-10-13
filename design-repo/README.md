@@ -140,8 +140,8 @@ runs every internal check.
 
 Build `design-repo.zip` last, from the parent folder, with the CLI:
 `zip -r -X design-repo.zip design-repo -x '*.DS_Store' -x '__MACOSX/*' -x '*/__pycache__/*'`.
-The source project is **not a git repository**, so the "zip committed to git" check is N/A. If
-it becomes one, add `design-repo.zip` to `.gitignore` and confirm with `git ls-files`.
+The source project is a git repository (private remote). `design-repo.zip` is listed in its
+`.gitignore` and is not tracked — confirm with `git ls-files | grep design-repo.zip` (prints nothing).
 
 ## Known gaps
 
