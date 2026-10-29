@@ -358,6 +358,164 @@
           "anchor": "#ED614B"
         }
       ]
+    },
+    "category-sleep": {
+      "value": "#EACDFF",
+      "evidence": [
+        {
+          "cite": "src/components/blog/categories.js:3",
+          "anchor": "sleep: { title: 'Sleep', bg: '#EACDFF'"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "category-feeding": {
+      "value": "#FFEAA7",
+      "evidence": [
+        {
+          "cite": "src/components/blog/categories.js:4",
+          "anchor": "bg: '#FFEAA7'"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "category-development": {
+      "value": "#E0FFE0",
+      "evidence": [
+        {
+          "cite": "src/components/blog/categories.js:5",
+          "anchor": "bg: '#E0FFE0'"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "category-news": {
+      "value": "#CFF6FF",
+      "evidence": [
+        {
+          "cite": "src/components/blog/categories.js:6",
+          "anchor": "bg: '#CFF6FF'"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "category-health": {
+      "value": "#FFC7C3",
+      "evidence": [
+        {
+          "cite": "src/components/blog/categories.js:7",
+          "anchor": "bg: '#FFC7C3'"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "category-pregnancy": {
+      "value": "#8DE8B2",
+      "evidence": [
+        {
+          "cite": "src/components/blog/categories.js:8",
+          "anchor": "bg: '#8DE8B2'"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "gray-200": {
+      "value": "#e5e7eb",
+      "evidence": [
+        {
+          "cite": "src/components/blog/categories.js:12",
+          "anchor": "bg: '#e5e7eb'"
+        },
+        {
+          "cite": "src/components/blog/BlogCategoryTabs.jsx:9",
+          "anchor": "border-[#e5e7eb]"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "neutral-200": {
+      "value": "#e5e5e5",
+      "evidence": [
+        {
+          "cite": "src/components/blog/BlogPagination.jsx:2",
+          "anchor": "border-[#e5e5e5]"
+        },
+        {
+          "cite": "src/components/blog/BlogSearch.jsx:55",
+          "anchor": "border-[#e5e5e5]"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "gray-400": {
+      "value": "#99a1af",
+      "evidence": [
+        {
+          "cite": "src/components/article/ArticleBreadcrumbs.jsx:10",
+          "anchor": "color=\"#99a1af\""
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "gray-500": {
+      "value": "#6a7282",
+      "evidence": [
+        {
+          "cite": "src/components/blog/BlogCategoryTabs.jsx:17",
+          "anchor": "text-[#6a7282]"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "toc-track": {
+      "value": "#D9D9D9",
+      "evidence": [
+        {
+          "cite": "src/components/article/ArticleToc.jsx:26",
+          "anchor": "bg-[#D9D9D9]"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "promo-violet": {
+      "value": "#7B63F5",
+      "evidence": [
+        {
+          "cite": "src/components/article/PromoUnit.jsx:5",
+          "anchor": "base: '#7B63F5'"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "promo-yellow": {
+      "value": "#FFDF78",
+      "evidence": [
+        {
+          "cite": "src/components/article/PromoUnit.jsx:12",
+          "anchor": "#FFDF78 5.6%"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "promo-mint": {
+      "value": "#D2F2D2",
+      "evidence": [
+        {
+          "cite": "src/components/article/PromoUnit.jsx:12",
+          "anchor": "#D2F2D2 72.1%"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
+    },
+    "cookie-surface": {
+      "value": "rgba(255,255,255,.9)",
+      "evidence": [
+        {
+          "cite": "src/components/blog/CookieConsent.jsx:29",
+          "anchor": "background: 'rgba(255,255,255,.9)'"
+        }
+      ],
+      "addedIn": "2.0.0 (blog/article/text/legal families)"
     }
   }
 }

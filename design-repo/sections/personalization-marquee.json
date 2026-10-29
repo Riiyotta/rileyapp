@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "personalization-marquee",
   "registryId": "section.personalization-marquee",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "social-proof",
   "purpose": "Explains personalisation by parenting style with the six family character marks scrolling in reverse.",
   "iaSectionIds": [
@@ -13,6 +13,21 @@
       "cite": "src/components/PersonalizationMarquee.jsx:13-42",
       "anchor": "export default function PersonalizationMarquee"
     }
+  ],
+  "source": {
+    "id": "src:PersonalizationMarquee@15",
+    "tag": "section",
+    "file": "src/components/PersonalizationMarquee.jsx",
+    "lines": "15-42"
+  },
+  "semantic": {
+    "id": "personalization-marquee",
+    "category": "FEATURES"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

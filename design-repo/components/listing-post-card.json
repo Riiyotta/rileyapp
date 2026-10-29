@@ -1,0 +1,19 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "listing-post-card",
+  "purpose": "Listing card (wide/normal) with date, title, clamped excerpt, byline and category tag.",
+  "composedOf": [
+    "Image",
+    "Text",
+    "CategoryPill"
+  ],
+  "usedBySections": [
+    "blog-post-grid"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/blog/BlogPostCard.jsx:8",
+      "anchor": "export default function BlogPostCard"
+    }
+  ]
+}

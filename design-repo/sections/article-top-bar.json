@@ -1,0 +1,76 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "article-top-bar",
+  "registryId": "section.article-top-bar",
+  "version": "2.0.0",
+  "category": "navigation",
+  "purpose": "Back link to the blog plus a 400px search field (desktop); full-width search only below 992px.",
+  "iaSectionIds": [
+    "article.top-bar"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/article/ArticleTopBar.jsx:4-21",
+      "anchor": "export default function ArticleTopBar"
+    }
+  ],
+  "source": {
+    "id": "src:ArticleTopBar@7",
+    "tag": "div",
+    "file": "src/components/article/ArticleTopBar.jsx",
+    "lines": "7-21"
+  },
+  "semantic": {
+    "id": "article-top-bar",
+    "category": "NAVIGATION"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "internal-route"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_article-top-bar",
+    "copyBudget": {
+      "backLabel": 2,
+      "searchPlaceholder": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "search-dropdown-fade",
+    "motionRoles": [
+      "search-dropdown-fade",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "Show the results dropdown instantly (no 0.2s fade).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "Back link hidden; search full width with 20px sides"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/article/ArticleTopBar.jsx:16",
+            "anchor": "w-full items-center px-5 lg:hidden"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC_PAGES_BLOG.md:339",
+      "anchor": "### 3.2 ArticleTopBar"
+    }
+  ],
+  "notes": []
+}

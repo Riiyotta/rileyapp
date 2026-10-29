@@ -1,13 +1,13 @@
 {
   "$schema": "riley-design-tokens/assets/asset-roles",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "generationPolicies": {
-    "may-generate-new": "A generator may create a new asset for this role (in-style, token colors).",
-    "must-reuse-exact": "Proprietary Riley IP. Only the registered files may be used, and only when brandContext is 'riley-clone'. Output for any other brand must not reproduce or imitate it.",
-    "must-not-fabricate": "Real-world-weighted (real people, real trademarks, real articles). Never generate a substitute; only registered files, only in 'riley-clone'; never reproduce in output for any other brand.",
+    "may-generate-new": "A generator may create a new asset for this role (in-style, token colors); in generation mode only with generated:/user-supplied:/placeholder: refs.",
+    "must-reuse-exact": "Proprietary Riley IP. Only the registered files, only in mode 'clone'. Output in mode 'generation' must not reproduce or imitate it.",
+    "must-not-fabricate": "Real-world-weighted (real people, children, real trademarks, real articles, health evidence). Never generate a substitute; only registered files, only in mode 'clone'.",
     "must-not-reuse-live-endpoint": "A live URL/endpoint. PageSpecs carry the role, never the URL; generated output must not embed the live Riley endpoint."
   },
-  "pinnedNote": "Every role whose weight is not generic-* is PINNED to its generationPolicy by code (schema/semantic_validate.py PINNED_POLICIES) — verify_all.py fails if this file re-pins one, even to another valid policy.",
+  "pinnedNote": "generationPolicy of every real-world-weighted role AND availability of EVERY role are pinned in code (PINNED_POLICIES / PINNED_AVAILABILITY in schema/semantic_validate.py, re-pinned independently in extraction/verify_all.py). Editing this file alone cannot loosen a role.",
   "roles": {
     "brand-wordmark": {
       "kind": "file",
@@ -27,7 +27,13 @@
           "anchor": "/assets/icons/footer-logo.svg"
         }
       ],
-      "guidance": "Riley's own wordmark. Reuse the exact file only when rendering THIS Riley clone. Generated output for any other brand must not reproduce, trace, recolor or imitate it."
+      "guidance": "Riley's own wordmark. Reuse the exact file only when rendering THIS Riley clone. Generated output for any other brand must not reproduce, trace, recolor or imitate it.",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "placeholder-brand-mark",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Clone mode only (faithful reconstruction of this Riley clone). In generation mode this role is rejected by GENERATION_MODE_ASSET; use one of generationSafeSubstitutes."
     },
     "mascot-illustration": {
       "kind": "file",
@@ -43,7 +49,9 @@
         "/assets/modal/mascots/softie.svg",
         "/assets/modal/mascots/spark.svg",
         "/assets/modal/mascots/uplifter.svg",
-        "/assets/modal/mascots/explorer.svg"
+        "/assets/modal/mascots/explorer.svg",
+        "/assets/blog/icons/blogmascot.svg",
+        "/assets/blog/icons/editor-mascot.svg"
       ],
       "usageSites": [
         {
@@ -65,9 +73,23 @@
         {
           "cite": "src/components/upper/superpowersData.js:5",
           "anchor": "/assets/modal/mascots/worrier.svg"
+        },
+        {
+          "cite": "src/components/blog/BlogIndexHero.jsx:5",
+          "anchor": "blogmascot.svg"
+        },
+        {
+          "cite": "src/components/article/EditorNote.jsx:6",
+          "anchor": "editor-mascot.svg"
         }
       ],
-      "guidance": "Proprietary Riley cloud characters (Riley, Worrier, Guide, Softie, Spark, Uplifter, Explorer). Reuse exact files only inside this clone; never generate new poses, and never reproduce or imitate the characters for another brand."
+      "guidance": "Proprietary Riley cloud characters (Riley, Worrier, Guide, Softie, Spark, Uplifter, Explorer). Reuse exact files only inside this clone; never generate new poses, and never reproduce or imitate the characters for another brand.",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "generated-illustration",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Clone mode only (faithful reconstruction of this Riley clone). In generation mode this role is rejected by GENERATION_MODE_ASSET; use one of generationSafeSubstitutes."
     },
     "mascot-family-mark": {
       "kind": "file",
@@ -91,7 +113,13 @@
           "anchor": "worrier-family.svg"
         }
       ],
-      "guidance": "Parenting-style family character marks. Same policy as mascot-illustration."
+      "guidance": "Parenting-style family character marks. Same policy as mascot-illustration.",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "generated-illustration",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Clone mode only (faithful reconstruction of this Riley clone). In generation mode this role is rejected by GENERATION_MODE_ASSET; use one of generationSafeSubstitutes."
     },
     "mascot-avatar": {
       "kind": "file",
@@ -114,7 +142,13 @@
           "anchor": "Riley avatar"
         }
       ],
-      "guidance": "Mascot-style cloud avatars (checked: purple1.svg is a lilac cloud face, NOT a photo of the reviewer). They stand in for real reviewers; never replace with a generated human face implying a real person said the quote."
+      "guidance": "Mascot-style cloud avatars (checked: purple1.svg is a lilac cloud face, NOT a photo of the reviewer). They stand in for real reviewers; never replace with a generated human face implying a real person said the quote.",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "fictional-person-avatar",
+        "generated-illustration"
+      ],
+      "generatedModeGuidance": "Clone mode only (faithful reconstruction of this Riley clone). In generation mode this role is rejected by GENERATION_MODE_ASSET; use one of generationSafeSubstitutes."
     },
     "brand-illustration": {
       "kind": "file",
@@ -126,7 +160,9 @@
         "/assets/chat.svg",
         "/assets/tracking.svg",
         "/assets/sparks.svg",
-        "/assets/phonebg.svg"
+        "/assets/phonebg.svg",
+        "/assets/blog/icons/books.svg",
+        "/assets/blog/icons/3dglasses.svg"
       ],
       "usageSites": [
         {
@@ -144,9 +180,23 @@
         {
           "cite": "src/components/Featurette.jsx:64",
           "anchor": "/assets/phonebg.svg"
+        },
+        {
+          "cite": "src/components/blog/BlogIndexHero.jsx:14",
+          "anchor": "books.svg"
+        },
+        {
+          "cite": "src/components/article/RelatedPosts.jsx:12",
+          "anchor": "3dglasses.svg"
         }
       ],
-      "guidance": "Riley's bespoke illustrations (hero scene, 404 worrier scene, feature-card art, phone shell). Reuse exact inside the clone; other brands must commission/generate their own art and must not imitate these."
+      "guidance": "Riley's bespoke illustrations (hero scene, 404 worrier scene, feature-card art, phone shell). Reuse exact inside the clone; other brands must commission/generate their own art and must not imitate these.",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "generated-illustration",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Clone mode only (faithful reconstruction of this Riley clone). In generation mode this role is rejected by GENERATION_MODE_ASSET; use one of generationSafeSubstitutes."
     },
     "rive-animation": {
       "kind": "file",
@@ -163,7 +213,12 @@
           "anchor": "chat_module_meg.riv"
         }
       ],
-      "guidance": "Rive chat animations (byte-identical files; each slide picks artboard + state machine). Content is canvas-rendered Riley product UI and not measurable in the DOM. Reuse exact; never re-author or fabricate a chat transcript in its place."
+      "guidance": "Rive chat animations (byte-identical files; each slide picks artboard + state machine). Content is canvas-rendered Riley product UI and not measurable in the DOM. Reuse exact; never re-author or fabricate a chat transcript in its place.",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "placeholder-screenshot"
+      ],
+      "generatedModeGuidance": "Clone mode only (faithful reconstruction of this Riley clone). In generation mode this role is rejected by GENERATION_MODE_ASSET; use one of generationSafeSubstitutes."
     },
     "press-logo": {
       "kind": "file",
@@ -183,7 +238,12 @@
           "anchor": "/assets/nbc.png"
         }
       ],
-      "guidance": "Real third-party media trademarks (NBC, Axios, The Bump, FinSMEs, TechCrunch, Glamour). Never generate, redraw or add press logos; never reproduce these in generated output (they assert real coverage of Riley). Other brands must supply their own verified, licensed coverage logos."
+      "guidance": "Real third-party media trademarks (NBC, Axios, The Bump, FinSMEs, TechCrunch, Glamour). Never generate, redraw or add press logos; never reproduce these in generated output (they assert real coverage of Riley). Other brands must supply their own verified, licensed coverage logos.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "placeholder-logo"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
     },
     "advisor-portrait": {
       "kind": "file",
@@ -199,7 +259,12 @@
           "anchor": "/assets/lilly.png"
         }
       ],
-      "guidance": "Photos of real named clinicians (Dr. Lilly Jay, Dr. Kate Roche). Never fabricate a clinician portrait, name or credential; never reuse these likenesses outside this clone."
+      "guidance": "Photos of real named clinicians (Dr. Lilly Jay, Dr. Kate Roche). Never fabricate a clinician portrait, name or credential; never reuse these likenesses outside this clone.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "fictional-person-avatar"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
     },
     "user-story-photo": {
       "kind": "file",
@@ -216,7 +281,13 @@
           "anchor": "/assets/meg.png"
         }
       ],
-      "guidance": "Photos of real users paired with their chat stories. Never fabricate a user photo or story; never reuse outside this clone."
+      "guidance": "Photos of real users paired with their chat stories. Never fabricate a user photo or story; never reuse outside this clone.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "fictional-person-avatar",
+        "generated-illustration"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
     },
     "lifestyle-photo": {
       "kind": "file",
@@ -235,7 +306,13 @@
           "anchor": "/assets/4.png"
         }
       ],
-      "guidance": "Licensed photographs of real people (checked: 2.png shows a parent feeding a baby) used as FAQ portraits. Do not reproduce outside this clone; other brands must source their own licensed imagery (no AI faces passed off as customers)."
+      "guidance": "Licensed photographs of real people (checked: 2.png shows a parent feeding a baby) used as FAQ portraits. Do not reproduce outside this clone; other brands must source their own licensed imagery (no AI faces passed off as customers).",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "generated-illustration",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
     },
     "blog-cover-photo": {
       "kind": "file",
@@ -252,7 +329,13 @@
           "anchor": "3dd009c0c3295127b2b277b3920acb6868836cd9-5760x3840.jpeg"
         }
       ],
-      "guidance": "Cover photos of real Riley articles (Sanity CDN). A cover belongs to a real article; never pair it with an invented title and never reuse outside this clone."
+      "guidance": "Cover photos of real Riley articles (Sanity CDN). A cover belongs to a real article; never pair it with an invented title and never reuse outside this clone.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "generated-illustration",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
     },
     "store-badge": {
       "kind": "file",
@@ -273,7 +356,12 @@
           "anchor": "/assets/icons/apple-logo.svg"
         }
       ],
-      "guidance": "Apple trademarks (App Store badge, Apple glyph). Use only Apple's official artwork per Apple's marketing guidelines; never redraw or generate a store badge."
+      "guidance": "Apple trademarks (App Store badge, Apple glyph). Use only Apple's official artwork per Apple's marketing guidelines; never redraw or generate a store badge.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
     },
     "decorative-cloud": {
       "kind": "file",
@@ -306,7 +394,10 @@
           "anchor": "background-clouds(1).svg"
         }
       ],
-      "guidance": "Faceless decorative cloud shapes. May be generated new (soft white/gradient cloud blobs); must not include faces/eyes (that turns them into Riley mascots)."
+      "guidance": "Faceless decorative cloud shapes. May be generated new (soft white/gradient cloud blobs); must not include faces/eyes (that turns them into Riley mascots).",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
     },
     "ui-icon": {
       "kind": "file",
@@ -350,7 +441,24 @@
         "/assets/modal/icons/octopus.svg",
         "/assets/modal/icons/puzzle.svg",
         "/assets/modal/icons/rocket.svg",
-        "/assets/modal/icons/ruler.svg"
+        "/assets/modal/icons/ruler.svg",
+        "/assets/blog/icons/back-arrow.svg",
+        "/assets/blog/icons/breadcrumb-chevron.svg",
+        "/assets/blog/icons/check.svg",
+        "/assets/blog/icons/copy-link.svg",
+        "/assets/blog/icons/download.svg",
+        "/assets/blog/icons/pagination-next.svg",
+        "/assets/blog/icons/pagination-prev.svg",
+        "/assets/blog/icons/read-more-chevron.svg",
+        "/assets/blog/icons/search.svg",
+        "/assets/blog/icons/sources-minus.svg",
+        "/assets/blog/icons/sources-plus.svg",
+        "/assets/blog/icons/moon.svg",
+        "/assets/blog/icons/bowl.svg",
+        "/assets/blog/icons/duck.svg",
+        "/assets/blog/icons/lightbulb.svg",
+        "/assets/blog/icons/first-aid.svg",
+        "/assets/blog/icons/octopus.svg"
       ],
       "usageSites": [
         {
@@ -364,9 +472,20 @@
         {
           "cite": "src/components/lower/ComparisonTable.jsx:19",
           "anchor": "table-check-filled.svg"
+        },
+        {
+          "cite": "src/components/blog/categories.js:3",
+          "anchor": "/assets/blog/icons/moon.svg"
+        },
+        {
+          "cite": "src/components/blog/BlogSearch.jsx:39",
+          "anchor": "/assets/blog/icons/search.svg"
         }
       ],
-      "guidance": "Generic UI/pictogram icons. May be generated new in the same flat purple/latte style; keep stroke/fill colors on tokens."
+      "guidance": "Generic UI/pictogram icons. May be generated new in the same flat purple/latte style; keep stroke/fill colors on tokens.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
     },
     "app-store-onelink": {
       "kind": "endpoint",
@@ -386,7 +505,12 @@
           "anchor": "rileyapp.onelink.me/JNxh/ln83navr"
         }
       ],
-      "guidance": "Live Riley AppsFlyer OneLink attribution URLs. A PageSpec never carries an href (schema has no href field); the renderer resolves this role. Generated output must not embed these live URLs for any page other than this clone."
+      "guidance": "Live Riley AppsFlyer OneLink attribution URLs. A PageSpec never carries an href (schema has no href field); the renderer resolves this role. Generated output must not embed these live URLs for any page other than this clone.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "placeholder-url"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
     },
     "newsletter-endpoint": {
       "kind": "endpoint",
@@ -399,7 +523,12 @@
           "anchor": "onSubmit={(e) => e.preventDefault()}"
         }
       ],
-      "guidance": "The clone's newsletter form has NO real endpoint: submit is prevented. Generated output must not wire it to Riley's real newsletter provider or any live endpoint; leave it unwired or point it at the consuming brand's own endpoint."
+      "guidance": "The clone's newsletter form has NO real endpoint: submit is prevented. Generated output must not wire it to Riley's real newsletter provider or any live endpoint; leave it unwired or point it at the consuming brand's own endpoint.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "placeholder-url"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
     },
     "internal-route": {
       "kind": "endpoint",
@@ -407,7 +536,14 @@
       "weight": "generic-ui",
       "endpoints": [
         "/",
-        "/pricing"
+        "/pricing",
+        "/blog",
+        "/blog/{category}",
+        "/blog/{category}/{slug}",
+        "/editorial-process",
+        "/tos",
+        "/privacy",
+        "/cookies"
       ],
       "usageSites": [
         {
@@ -419,7 +555,10 @@
           "anchor": "rileyapp.com/pricing"
         }
       ],
-      "guidance": "Same-site navigation. Targets must be mapped routes (templates.json routes) — pending/excluded routes are allowed as link targets only where the source already links them (blog, footer text pages)."
+      "guidance": "Same-site navigation. Targets must be mapped routes (templates.json routes) — pending/excluded routes are allowed as link targets only where the source already links them (blog, footer text pages).",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
     },
     "unspecified-destination": {
       "kind": "endpoint",
@@ -432,7 +571,432 @@
           "anchor": "Destination UNVERIFIED"
         }
       ],
-      "guidance": "CTAs whose destination is UNVERIFIED in recon (CLONE_SPEC §0.6). The generator may choose a destination for its own brand; never assume a Riley live URL."
+      "guidance": "CTAs whose destination is UNVERIFIED in recon (CLONE_SPEC §0.6). The generator may choose a destination for its own brand; never assume a Riley live URL.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
+    },
+    "article-cover-photo": {
+      "kind": "file",
+      "generationPolicy": "must-not-fabricate",
+      "weight": "licensed-editorial-photo",
+      "files": [
+        "/assets/blog/1-month-old-development-milestones.jpg",
+        "/assets/blog/1-month-old-sleep-guide.jpg",
+        "/assets/blog/1-to-0-nap-transition.jpg",
+        "/assets/blog/10-month-old-development-milestones.jpg",
+        "/assets/blog/10-month-old-sleep-schedule.jpg",
+        "/assets/blog/10-month-sleep-regression.jpg",
+        "/assets/blog/11-month-old-development-milestones.jpg",
+        "/assets/blog/11-month-old-sleep-schedule.jpg",
+        "/assets/blog/12-month-old-development-milestones.jpg",
+        "/assets/blog/12-month-old-sleep-schedule.jpg",
+        "/assets/blog/12-month-sleep-regression.jpg",
+        "/assets/blog/13-month-old-sleep-schedule.jpg",
+        "/assets/blog/14-month-old-sleep-schedule.jpg",
+        "/assets/blog/15-month-old-development-milestones.jpg",
+        "/assets/blog/15-month-old-sleep-schedule.jpg",
+        "/assets/blog/15-toddler-friendly-fathers-day-activities.jpg",
+        "/assets/blog/16-month-old-sleep-schedule.jpg",
+        "/assets/blog/17-month-old-sleep-schedule.jpg",
+        "/assets/blog/18-month-old-development-milestones.jpg",
+        "/assets/blog/18-month-old-sleep-schedule.jpg",
+        "/assets/blog/18-month-sleep-regression.jpg",
+        "/assets/blog/19-month-old-sleep-schedule.jpg",
+        "/assets/blog/2-5-year-old-30-month-old-development-milestones.jpg",
+        "/assets/blog/2-month-old-baby-development-milestones.jpg",
+        "/assets/blog/2-month-old-sleep-schedule.jpg",
+        "/assets/blog/2-to-1-nap-transition.jpg",
+        "/assets/blog/2-year-old-24-month-old-development-milestones.jpg",
+        "/assets/blog/2-year-old-sleep-regression.jpg",
+        "/assets/blog/20-month-old-sleep-schedule.jpg",
+        "/assets/blog/21-month-old-sleep-schedule.jpg",
+        "/assets/blog/22-month-old-sleep-schedule.jpg",
+        "/assets/blog/23-month-old-sleep-schedule.jpg",
+        "/assets/blog/24-month-old-2-year-old-sleep-schedule.jpg",
+        "/assets/blog/3-day-potty-training-method.jpg",
+        "/assets/blog/3-month-old-development-milestones.jpg",
+        "/assets/blog/3-month-old-sleep-schedule.jpg",
+        "/assets/blog/3-month-sleep-regression.jpg",
+        "/assets/blog/3-to-2-nap-transition.jpg",
+        "/assets/blog/3-year-old-toddler-sleep-schedule.jpg",
+        "/assets/blog/30-month-old-sleep-schedule.jpg",
+        "/assets/blog/4-month-old-baby-development-milestones.jpg",
+        "/assets/blog/4-month-old-sleep-schedule.jpg",
+        "/assets/blog/4-month-sleep-regression-why-it-happens-and-what-you-can-do-about-it.jpg",
+        "/assets/blog/4-to-3-nap-transition.jpg",
+        "/assets/blog/4-year-old-sleep-schedule.jpg",
+        "/assets/blog/5-month-old-development-milestones.jpg",
+        "/assets/blog/5-month-old-sleep-schedule.jpg",
+        "/assets/blog/5-month-sleep-regression.jpg",
+        "/assets/blog/6-month-old-development-milestones.jpg",
+        "/assets/blog/6-month-old-feeding-schedule.jpg",
+        "/assets/blog/6-month-old-sleep-schedule.jpg",
+        "/assets/blog/6-month-sleep-regression.jpg",
+        "/assets/blog/7-month-old-development-milestones.jpg",
+        "/assets/blog/7-month-old-sleep-schedule.jpg",
+        "/assets/blog/8-month-old-development-milestones.jpg",
+        "/assets/blog/8-month-old-sleep-schedule.jpg",
+        "/assets/blog/8-month-sleep-regression.jpg",
+        "/assets/blog/9-month-old-development-milestones.jpg",
+        "/assets/blog/9-month-old-sleep-schedule.jpg",
+        "/assets/blog/adhd-and-potty-training.jpg",
+        "/assets/blog/all-about-sleep-regressions.jpg",
+        "/assets/blog/baby-blues-vs-postpartum-depression.jpg",
+        "/assets/blog/baby-burping-techniques-for-better-sleep.jpg",
+        "/assets/blog/baby-feeding-schedules.jpg",
+        "/assets/blog/baby-gas-pain-at-night.jpg",
+        "/assets/blog/baby-gas-relief-tips.jpg",
+        "/assets/blog/baby-hunger-cues.jpg",
+        "/assets/blog/baby-milestones-by-month.jpg",
+        "/assets/blog/baby-safe-sleep-what-to-know-about-the-safe-to-sleep-campaign.jpg",
+        "/assets/blog/baby-sleep-cues.jpg",
+        "/assets/blog/baby-sleep-regression-ages.jpg",
+        "/assets/blog/baby-sleep-schedule-guide-month-by-month-sleep-charts.jpg",
+        "/assets/blog/baby-sleep-training-methods.jpg",
+        "/assets/blog/baby-sleep-transitions-by-age.jpg",
+        "/assets/blog/baby-sleep-while-traveling.jpg",
+        "/assets/blog/baby-taking-short-naps.jpg",
+        "/assets/blog/baby-wake-windows-by-age.jpg",
+        "/assets/blog/baby-walking-timeline-whats-normal-and-whats-not.jpg",
+        "/assets/blog/baby-witching-hour.jpg",
+        "/assets/blog/back-to-school-sleep-schedule-for-children.jpg",
+        "/assets/blog/bassinet-to-crib-transition.jpg",
+        "/assets/blog/bottle-transitions-for-babies.jpg",
+        "/assets/blog/braxton-hicks-vs-real-labor.jpg",
+        "/assets/blog/can-babies-sleep-on-their-side.jpg",
+        "/assets/blog/car-seat-installation.jpg",
+        "/assets/blog/childcare-planning-questions-to-ask-and-when-to-start-looking.jpg",
+        "/assets/blog/cluster-feeding-explained.jpg",
+        "/assets/blog/connection-between-cognitive-leaps-and-sleep-regressions.jpg",
+        "/assets/blog/contact-naps.jpg",
+        "/assets/blog/core-sleep-for-children.jpg",
+        "/assets/blog/creating-your-birth-plan.jpg",
+        "/assets/blog/crib-to-toddler-bed-transition.jpg",
+        "/assets/blog/daylight-savings-spring-forward.jpg",
+        "/assets/blog/developmental-delays-vs-late-bloomers.jpg",
+        "/assets/blog/early-morning-waking.jpg",
+        "/assets/blog/fading-sleep-training.jpg",
+        "/assets/blog/fall-back-how-to-adjust-baby-sleep-for-daylight-saving-2024.jpg",
+        "/assets/blog/ferber-method-guide.jpg",
+        "/assets/blog/fine-motor-development-milestones-by-age.jpg",
+        "/assets/blog/from-overwhelmed-to-confident-your-parenting-transformation-journey.jpg",
+        "/assets/blog/gentle-sleep-training-techniques.jpg",
+        "/assets/blog/good-bedtime-routine-looks-like.jpg",
+        "/assets/blog/gross-motor-skills-by-age.jpg",
+        "/assets/blog/guide-to-vaccination-timing-for-newborns-and-infants.jpg",
+        "/assets/blog/halloween-safety-tips-for-parents.jpg",
+        "/assets/blog/hepatitis-b-vaccine-for-newborns.jpg",
+        "/assets/blog/hospital-bag-essentials-what-to-pack-for-labor-and-recovery.jpg",
+        "/assets/blog/how-do-sleep-disruptions-affect-language-development-in-children.jpg",
+        "/assets/blog/how-long-does-4-month-sleep-regression-last.jpg",
+        "/assets/blog/how-long-should-newborn-naps-be.jpg",
+        "/assets/blog/how-many-naps-does-your-child-need.jpg",
+        "/assets/blog/how-riley-works.png",
+        "/assets/blog/how-to-get-twins-on-the-same-sleep-schedule.jpg",
+        "/assets/blog/how-to-play-with-your-newborn.jpg",
+        "/assets/blog/how-to-prepare-your-child-for-a-new-baby.jpg",
+        "/assets/blog/how-to-put-a-baby-to-sleep.jpg",
+        "/assets/blog/how-to-stop-bedtime-resistance.jpg",
+        "/assets/blog/how-to-swaddle-your-baby.jpg",
+        "/assets/blog/how-to-transition-baby-to-their-own-room.jpg",
+        "/assets/blog/how-to-transition-from-contact-naps-to-crib.jpg",
+        "/assets/blog/introducing-golden-window.png",
+        "/assets/blog/introducing-riley-together.png",
+        "/assets/blog/introducing-the-new-riley.jpg",
+        "/assets/blog/is-it-okay-for-baby-to-sleep-on-their-stomach.jpg",
+        "/assets/blog/kick-counts-monitoring-your-babys-movement-in-the-third-trimester.jpg",
+        "/assets/blog/language-development-in-babies.jpg",
+        "/assets/blog/major-developmental-milestones-and-their-impact-on-sleep.jpg",
+        "/assets/blog/managing-shortness-of-breath-in-late-pregnancy.jpg",
+        "/assets/blog/maternity-leave-planning-what-to-do-before-baby-arrives.jpg",
+        "/assets/blog/month-by-month-baby-milestones-is-your-baby-on-track.png",
+        "/assets/blog/motor-skills-development-and-sleep-patterns.jpg",
+        "/assets/blog/naked-potty-training-method.jpg",
+        "/assets/blog/nap-duration-guidelines-for-your-child.jpg",
+        "/assets/blog/natural-remedies-for-third-trimester-acid-reflux.jpg",
+        "/assets/blog/newborn-baby-development-what-to-expect-in-the-first-month.jpg",
+        "/assets/blog/newborn-basics-feeding-sleeping.jpg",
+        "/assets/blog/newborn-developmental-milestones.jpg",
+        "/assets/blog/newborn-sleep-environment.jpg",
+        "/assets/blog/newborn-wont-sleep-unless-held.jpg",
+        "/assets/blog/night-feedings-when-and-how-to-wean.jpg",
+        "/assets/blog/night-time-potty-training.jpg",
+        "/assets/blog/night-weaning-when-and-how-to-stop-nighttime-feeding.jpg",
+        "/assets/blog/nightmares-vs-night-terrors-in-children.jpg",
+        "/assets/blog/normal-infant-sleep-patterns.jpg",
+        "/assets/blog/nursery-setup-essential-items-vs-nice-to-haves.jpg",
+        "/assets/blog/one-month-old-wake-windows.jpg",
+        "/assets/blog/overtired-baby-signs.jpg",
+        "/assets/blog/pacifiers-and-sleep.jpg",
+        "/assets/blog/partners-guide-to-supporting-mom-in-the-third-trimester.jpg",
+        "/assets/blog/postpartum-mental-health-support.jpg",
+        "/assets/blog/potty-training-boys.jpg",
+        "/assets/blog/potty-training-girls.jpg",
+        "/assets/blog/potty-training-reward-ideas.jpg",
+        "/assets/blog/preeclampsia-warning-signs-every-pregnant-woman-should-know.jpg",
+        "/assets/blog/products-i-loved-as-a-first-time-mom.jpg",
+        "/assets/blog/rem-sleep-in-children.jpg",
+        "/assets/blog/riley-public-beta-announcement.png",
+        "/assets/blog/riley-voice-mode.png",
+        "/assets/blog/rileys-memory-system.jpg",
+        "/assets/blog/safe-baby-sleeping-positions.jpg",
+        "/assets/blog/safe-exercise-in-the-third-trimester.jpg",
+        "/assets/blog/seasonal-sleep-adjustments.jpg",
+        "/assets/blog/separation-anxiety-in-children.jpg",
+        "/assets/blog/signs-your-child-is-ready-for-potty-training.jpg",
+        "/assets/blog/sleep-cues-decoding-your-1-month-olds-sleep-language.jpg",
+        "/assets/blog/sleep-during-illness.jpg",
+        "/assets/blog/sleep-during-teething.jpg",
+        "/assets/blog/sleep-environment-for-your-child.jpg",
+        "/assets/blog/sleep-sacks-guide.jpg",
+        "/assets/blog/sleep-training-for-1-year-old-toddlers.jpg",
+        "/assets/blog/sleep-training-for-10-month-old-babies.jpg",
+        "/assets/blog/sleep-training-for-11-month-old-babies.jpg",
+        "/assets/blog/sleep-training-for-2-year-old-toddlers.jpg",
+        "/assets/blog/sleep-training-for-3-to-4-year-olds.jpg",
+        "/assets/blog/sleep-training-for-4-month-old-babies.jpg",
+        "/assets/blog/sleep-training-for-5-month-old-babies.jpg",
+        "/assets/blog/sleep-training-for-6-month-old-babies.jpg",
+        "/assets/blog/sleep-training-for-7-month-old-babies.jpg",
+        "/assets/blog/sleep-training-for-9-month-old-babies.jpg",
+        "/assets/blog/sleep-training-for-different-temperaments.jpg",
+        "/assets/blog/sleep-training-for-naps.jpg",
+        "/assets/blog/sleep-training-methods-compared.jpg",
+        "/assets/blog/sleep-training-while-room-sharing.jpg",
+        "/assets/blog/swollen-feet-and-ankles-in-pregnancy.jpg",
+        "/assets/blog/the-complete-guide-to-crib-safety.jpg",
+        "/assets/blog/the-complete-guide-to-your-first-24-hours-after-delivery.jpg",
+        "/assets/blog/the-cry-it-out-method.jpg",
+        "/assets/blog/the-ultimate-guide-to-free-baby-tracker-apps.jpg",
+        "/assets/blog/third-trimester-fetal-development.jpg",
+        "/assets/blog/third-trimester-sleep-survival-guide.jpg",
+        "/assets/blog/toddler-regressing-in-potty-training.jpg",
+        "/assets/blog/tummy-time-milestones-and-tips.jpg",
+        "/assets/blog/two-month-old-wake-windows.jpg",
+        "/assets/blog/understanding-and-managing-toddler-tantrums.jpg",
+        "/assets/blog/understanding-baby-growth-charts.jpg",
+        "/assets/blog/understanding-fevers-in-children.jpg",
+        "/assets/blog/understanding-group-b-strep-and-meningitis-risk-in-newborns.jpg",
+        "/assets/blog/understanding-rsv-polio-dtap-vaccines.jpg",
+        "/assets/blog/vitamin-k-for-babies.jpg",
+        "/assets/blog/wake-windows-vs-clock-schedule.jpg",
+        "/assets/blog/welcome-dr-kate-roche.png",
+        "/assets/blog/welcome-dr-lilly-jay.png",
+        "/assets/blog/what-is-combo-feeding-a-complete-guide-to-mixed-feeding-your-baby.jpg",
+        "/assets/blog/what-is-dream-feeding.jpg",
+        "/assets/blog/what-is-newborn-day-night-confusion.jpg",
+        "/assets/blog/when-baby-drops-understanding-lightening-and-engagement.jpg",
+        "/assets/blog/when-do-babies-smile-laugh-and-connect.jpg",
+        "/assets/blog/when-do-babies-start-crawling.jpg",
+        "/assets/blog/when-do-babies-start-dreaming.jpg",
+        "/assets/blog/when-do-babies-start-sitting-up.jpg",
+        "/assets/blog/when-do-babies-start-sleeping-through-the-night.jpg",
+        "/assets/blog/when-should-a-baby-start-talking.jpg",
+        "/assets/blog/when-to-start-sleep-training.jpg",
+        "/assets/blog/when-to-stop-swaddling-baby-guide.jpg",
+        "/assets/blog/when-to-wake-from-naps.jpg",
+        "/assets/blog/white-noise-for-sleep.jpg",
+        "/assets/blog/why-is-my-baby-crying-in-their-sleep.jpg",
+        "/assets/blog/why-we-built-riley.jpg",
+        "/assets/blog/why-your-baby-wakes-when-put-down.jpg",
+        "/assets/blog/your-babys-first-year-the-complete-development-guide.jpg",
+        "/assets/blog/your-babys-lungs-development-and-viability-in-the-third-trimester.jpg"
+      ],
+      "usageSites": [
+        {
+          "cite": "src/components/article/ArticleHeader.jsx:56",
+          "anchor": "<img src={post.image}"
+        },
+        {
+          "cite": "src/components/blog/BlogPostCard.jsx:15",
+          "anchor": "src={post.image}"
+        }
+      ],
+      "guidance": "Cover photos of real Riley articles (downloaded from the original's image CDN; many show real babies and parents). A cover belongs to its real article: never pair it with another title, never generate a look-alike, never reuse outside this clone.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "generated-illustration",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
+    },
+    "author-avatar": {
+      "kind": "file",
+      "generationPolicy": "must-not-fabricate",
+      "weight": "real-person-likeness",
+      "files": [
+        "/assets/blog/authors/amanda-deluca.png",
+        "/assets/blog/authors/girish-gupta.png",
+        "/assets/blog/authors/kate-roche.png",
+        "/assets/blog/authors/sam-fore.png"
+      ],
+      "usageSites": [
+        {
+          "cite": "src/components/article/AuthorByline.jsx:5",
+          "anchor": "rounded-full"
+        },
+        {
+          "cite": "src/components/blog/BlogFeaturedCard.jsx:13",
+          "anchor": "src={post.authorImage}"
+        }
+      ],
+      "guidance": "Photos of the real article authors and the real medical reviewer. Never fabricate an author/reviewer portrait, name or credential; never reuse these likenesses outside this clone.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "fictional-person-avatar"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
+    },
+    "social-share-mark": {
+      "kind": "file",
+      "generationPolicy": "must-not-fabricate",
+      "weight": "third-party-trademark",
+      "files": [
+        "/assets/blog/icons/share-facebook.svg",
+        "/assets/blog/icons/share-instagram.svg",
+        "/assets/blog/icons/share-x.svg"
+      ],
+      "usageSites": [
+        {
+          "cite": "src/components/article/ShareButtons.jsx:42",
+          "anchor": "/assets/blog/icons/share-facebook.svg"
+        }
+      ],
+      "guidance": "Facebook, Instagram and X marks. Use only the platforms' official artwork under their brand guidelines; never redraw or generate a platform mark.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
+    },
+    "policy-embed": {
+      "kind": "endpoint",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "weight": "live-endpoint",
+      "endpoints": [
+        "termly-embed:1b687b5a-20d7-48f3-be50-cae504edce40",
+        "termly-embed:8c6a0cc4-5004-4ad9-a563-ee70e8d1d3a6",
+        "termly-embed:eb7f04dc-b468-448d-8d88-24933fb4f3cb"
+      ],
+      "usageSites": [
+        {
+          "cite": "src/pages/LegalPage.jsx:8",
+          "anchor": "const POLICY_UUIDS"
+        }
+      ],
+      "guidance": "Riley's third-party policy-embed ids (terms, privacy, cookies). On the original the embed is blocked by its own CSP so the legal body renders empty; the clone renders the same empty slot. Generated pages must never reference these ids or the policy vendor's endpoints for another brand: the operator supplies its own legal text.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "placeholder-url"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
+    },
+    "source-citation": {
+      "kind": "endpoint",
+      "generationPolicy": "must-not-fabricate",
+      "weight": "health-claim-evidence",
+      "endpoints": [],
+      "usageSites": [
+        {
+          "cite": "src/components/article/SourcesAccordion.jsx:9",
+          "anchor": "{s.citation}"
+        }
+      ],
+      "guidance": "Article source citations (medical/health references). The clone shows placeholder citations only. Generated pages must never invent a medical citation or a study: sources are operator-supplied, or the section is omitted.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "placeholder-url"
+      ],
+      "generatedModeGuidance": "Real-world-weighted (real people, children, third-party marks, live endpoints, health evidence). Allowed only in clone mode with the registered files/endpoints; in generation mode it is rejected and must be replaced by a generationSafeSubstitutes role."
+    },
+    "placeholder-brand-mark": {
+      "kind": "generated",
+      "generationPolicy": "may-generate-new",
+      "weight": "generation-safe-substitute",
+      "files": [],
+      "usageSites": [],
+      "guidance": "A neutral placeholder wordmark/logo for a fictional or operator brand (text mark or generated: shape). Never derived from the Riley wordmark.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
+    },
+    "user-supplied-asset": {
+      "kind": "operator",
+      "generationPolicy": "may-generate-new",
+      "weight": "generation-safe-substitute",
+      "files": [],
+      "usageSites": [],
+      "guidance": "Any asset the operator supplies and licenses (their own logo, store badges obtained from the store's official artwork, their own photos). Referenced as user-supplied:<id>.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
+    },
+    "generated-illustration": {
+      "kind": "generated",
+      "generationPolicy": "may-generate-new",
+      "weight": "generation-safe-substitute",
+      "files": [],
+      "usageSites": [],
+      "guidance": "A newly generated illustration in the token palette. Must not trace, recolor or imitate Riley mascots/characters.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
+    },
+    "placeholder-screenshot": {
+      "kind": "generated",
+      "generationPolicy": "may-generate-new",
+      "weight": "generation-safe-substitute",
+      "files": [],
+      "usageSites": [],
+      "guidance": "A grey placeholder or generated mock of the operator's own product UI; never a Riley screen, chat transcript or Rive file.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
+    },
+    "fictional-person-avatar": {
+      "kind": "generated",
+      "generationPolicy": "may-generate-new",
+      "weight": "generation-safe-substitute",
+      "files": [],
+      "usageSites": [],
+      "guidance": "Avatar of a clearly fictional person (generated illustration or initials). Never a photo of a real person, never a child photo, never implied to be a real customer or clinician.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
+    },
+    "placeholder-logo": {
+      "kind": "generated",
+      "generationPolicy": "may-generate-new",
+      "weight": "generation-safe-substitute",
+      "files": [],
+      "usageSites": [],
+      "guidance": "A placeholder company/press/partner logo (generic shape + fictional name). Never a real outlet, partner or customer mark.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
+    },
+    "placeholder-url": {
+      "kind": "url",
+      "generationPolicy": "may-generate-new",
+      "weight": "generation-safe-substitute",
+      "files": [],
+      "usageSites": [],
+      "guidance": "A link target on a reserved test domain only (*.example or *.invalid, RFC 2606). Never a Riley, store, OneLink, CDN or policy-vendor URL.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
+    },
+    "original-copy": {
+      "kind": "text",
+      "generationPolicy": "may-generate-new",
+      "weight": "generation-safe-substitute",
+      "files": [],
+      "usageSites": [],
+      "guidance": "Copy written for the generated page. Must not reuse Riley headings, taglines, testimonials, article text, prices, promo codes or health/development claims.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Usable in generation mode, but only with a generated:, user-supplied: or placeholder: assetRef (or a placeholder href): files under /assets/ are Riley source files and are rejected by GENERATION_MODE_ASSET in generation mode."
     }
   },
   "unassignedFiles": {
@@ -441,8 +1005,7 @@
       "/assets/HeroRiley(1).svg": "byte-identical duplicate of HeroRiley.svg; not referenced in src (ASSET_MANIFEST.md:50)",
       "/assets/guide-family(1).svg": "byte-identical duplicate; not referenced",
       "/assets/spark-family(1).svg": "byte-identical duplicate; not referenced",
-      "/assets/worrier-family(1).svg": "byte-identical duplicate; not referenced",
-      "/assets/blog/": "blog article imagery written concurrently by the blog recon agent; blog scope is pending/excluded in this snapshot"
+      "/assets/worrier-family(1).svg": "byte-identical duplicate; not referenced"
     },
     "evidence": [
       {
@@ -450,5 +1013,10 @@
         "anchor": "byte-identical duplicates"
       }
     ]
+  },
+  "availabilityValues": {
+    "clone-only": "Riley-owned IP: usable only when PageSpec.mode = clone.",
+    "generation-safe": "May be used when PageSpec.mode = generation (never with a Riley source file).",
+    "blocked-for-generation": "Third-party or real-world-weighted: clone mode only, never in generation mode; never a generation substitute."
   }
 }

@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "site-header",
   "registryId": "section.site-header",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "shell",
   "purpose": "Brand + primary navigation + always-visible app CTA; becomes fixed after a short scroll.",
   "iaSectionIds": [
@@ -13,6 +13,22 @@
       "cite": "src/components/upper/SiteHeader.jsx:12-149",
       "anchor": "export default function SiteHeader"
     }
+  ],
+  "source": {
+    "id": "src:SiteHeader@51",
+    "tag": "div",
+    "file": "src/components/upper/SiteHeader.jsx",
+    "lines": "51-149"
+  },
+  "semantic": {
+    "id": "site-header",
+    "category": "SHELL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "placeholder-brand-mark",
+    "placeholder-url",
+    "user-supplied-asset"
   ],
   "variants": {
     "hero-overlay": "rendered inside the home Hero wrapper over the parallax clouds (Hero.jsx:94-95)",

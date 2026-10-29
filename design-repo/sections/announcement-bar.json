@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "announcement-bar",
   "registryId": "section.announcement-bar",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "shell",
   "purpose": "Site-wide promo strip pushing the 7-day free trial; first thing on every page at desktop widths.",
   "iaSectionIds": [
@@ -13,6 +13,20 @@
       "cite": "src/components/AnnouncementBar.jsx:1-20",
       "anchor": "hidden below 992px"
     }
+  ],
+  "source": {
+    "id": "src:AnnouncementBar@4",
+    "tag": "div",
+    "file": "src/components/AnnouncementBar.jsx",
+    "lines": "4-20"
+  },
+  "semantic": {
+    "id": "announcement-bar",
+    "category": "SHELL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "internal-route"
   ],
   "variants": {},
   "contentContract": {

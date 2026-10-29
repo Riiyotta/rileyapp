@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "final-cta",
   "registryId": "section.final-cta",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "conversion",
   "purpose": "Closing emotional CTA ('raising a generation of confident parents') with clouds and the mascot line-up.",
   "iaSectionIds": [
@@ -13,6 +13,23 @@
       "cite": "src/components/FinalCta.jsx:4-21",
       "anchor": "export default function FinalCta"
     }
+  ],
+  "source": {
+    "id": "src:FinalCta@6",
+    "tag": "section",
+    "file": "src/components/FinalCta.jsx",
+    "lines": "6-21"
+  },
+  "semantic": {
+    "id": "final-cta",
+    "category": "CONVERSION"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "decorative-cloud",
+    "generated-illustration",
+    "placeholder-url",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

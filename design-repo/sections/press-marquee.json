@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "press-marquee",
   "registryId": "section.press-marquee",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "social-proof",
   "purpose": "As-seen-in press strip: real media logos scrolling on a lilac band.",
   "iaSectionIds": [
@@ -13,6 +13,20 @@
       "cite": "src/components/Hero.jsx:72-88",
       "anchor": "function PressMarquee"
     }
+  ],
+  "source": {
+    "id": "src:Hero@74",
+    "tag": "div",
+    "file": "src/components/Hero.jsx",
+    "lines": "74-88"
+  },
+  "semantic": {
+    "id": "press-marquee",
+    "category": "PROOF"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "placeholder-logo"
   ],
   "variants": {},
   "contentContract": {

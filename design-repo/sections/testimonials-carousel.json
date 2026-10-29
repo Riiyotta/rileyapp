@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "testimonials-carousel",
   "registryId": "section.testimonials-carousel",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "carousel",
   "purpose": "Real parent reviews in a looping lilac carousel with mascot avatars.",
   "iaSectionIds": [
@@ -13,6 +13,23 @@
       "cite": "src/components/Testimonials.jsx:53-86",
       "anchor": "export default function Testimonials"
     }
+  ],
+  "source": {
+    "id": "src:Testimonials@57",
+    "tag": "section",
+    "file": "src/components/Testimonials.jsx",
+    "lines": "57-86"
+  },
+  "semantic": {
+    "id": "testimonials-carousel",
+    "category": "PROOF"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "fictional-person-avatar",
+    "generated-illustration",
+    "placeholder-url",
+    "unspecified-destination"
   ],
   "variants": {},
   "contentContract": {

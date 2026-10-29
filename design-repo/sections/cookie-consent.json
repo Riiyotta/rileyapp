@@ -1,0 +1,66 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "cookie-consent",
+  "registryId": "section.cookie-consent",
+  "version": "2.0.0",
+  "category": "utility",
+  "purpose": "Fixed bottom-right translucent cookie notice with a 'Learn more' link to /privacy and an OK button; hidden for a year once accepted.",
+  "iaSectionIds": [
+    "chrome.cookie-consent"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/blog/CookieConsent.jsx:8-70",
+      "anchor": "export default function CookieConsent"
+    }
+  ],
+  "source": {
+    "id": "src:CookieConsent@16",
+    "tag": "div",
+    "file": "src/components/blog/CookieConsent.jsx",
+    "lines": "16-70"
+  },
+  "semantic": {
+    "id": "cookie-consent",
+    "category": "UTILITY"
+  },
+  "retrievalEligible": false,
+  "retrievalReason": "Runtime consent overlay (fixed, out of flow, dismissible); it is site chrome mounted once globally, not page content, and must never be retrieved as a page section.",
+  "generatedAssetRoles": [
+    "internal-route"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_cookie-consent",
+    "copyBudget": {
+      "message": 10,
+      "learnMore.label": 3,
+      "acceptLabel": 2
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": false,
+    "rules": []
+  },
+  "evidence": [
+    {
+      "cite": "src/components/blog/CookieConsent.jsx:3",
+      "anchor": "react-cookie-consent markup"
+    }
+  ],
+  "notes": [],
+  "placement": "global-overlay"
+}

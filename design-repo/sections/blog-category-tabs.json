@@ -1,0 +1,75 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "blog-category-tabs",
+  "registryId": "section.blog-category-tabs",
+  "version": "2.0.0",
+  "category": "navigation",
+  "purpose": "Tab row: All, six categories and Authors; active tab bold, inactive grey; underline bar transparent (undefined colour on the original).",
+  "iaSectionIds": [
+    "blog.category-tabs"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/blog/BlogCategoryTabs.jsx:5-30",
+      "anchor": "export default function BlogCategoryTabs"
+    }
+  ],
+  "source": {
+    "id": "src:BlogCategoryTabs@7",
+    "tag": "div",
+    "file": "src/components/blog/BlogCategoryTabs.jsx",
+    "lines": "7-30"
+  },
+  "semantic": {
+    "id": "blog-category-tabs",
+    "category": "NAVIGATION"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "internal-route"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_blog-category-tabs",
+    "copyBudget": {
+      "tabs[].label": 2
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<768px",
+        "changes": [
+          "row scrolls horizontally, left-aligned (centred at md+)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/blog/BlogCategoryTabs.jsx:9",
+            "anchor": "overflow-x-auto whitespace-nowrap"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "src/components/blog/categories.js:17",
+      "anchor": "export const BLOG_TABS"
+    }
+  ],
+  "notes": []
+}

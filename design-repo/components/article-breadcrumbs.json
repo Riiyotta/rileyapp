@@ -1,0 +1,19 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "article-breadcrumbs",
+  "purpose": "Pill breadcrumb trail Blog > Category > current (category-tinted pill); 'Blog' crumb hidden below 992px.",
+  "composedOf": [
+    "TextLink",
+    "Icon",
+    "CategoryPill"
+  ],
+  "usedBySections": [
+    "article-header"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/article/ArticleBreadcrumbs.jsx:13",
+      "anchor": "export default function ArticleBreadcrumbs"
+    }
+  ]
+}

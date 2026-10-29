@@ -1,0 +1,319 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "page": {
+    "route": "/how-we-write",
+    "title": "How we write",
+    "template": "text-page",
+    "mode": "generation",
+    "theme": "riley-light",
+    "brand": {
+      "name": "Brightburrow",
+      "mark": {
+        "assetRole": "placeholder-brand-mark",
+        "assetRef": "generated:brightburrow-wordmark"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "type": "announcement-bar",
+      "content": {
+        "message": "New: shared shopping lists are here",
+        "link": {
+          "assetRole": "internal-route"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-header",
+      "variant": "standalone",
+      "content": {
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "generated:placeholder-brand-mark-771",
+          "alt": "Brightburrow"
+        },
+        "navItems": [
+          {
+            "label": "Journal"
+          },
+          {
+            "label": "Plans"
+          }
+        ],
+        "cta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "mobileCta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "text-page-header",
+      "content": {
+        "heading": "How we write our guides",
+        "intro": "Every Brightburrow guide is drafted, checked by a second editor and refreshed when our product changes."
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Drafting",
+        "items": [
+          {
+            "label": "Open the planner",
+            "text": "Shared lists that stay in sync"
+          },
+          {
+            "label": "See how it works",
+            "text": "Shared lists that stay in sync"
+          },
+          {
+            "label": "Browse ideas",
+            "text": "Weekly planning in five minutes"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Second read",
+        "items": [
+          {
+            "label": "Browse ideas",
+            "text": "Rainy afternoon craft ideas"
+          },
+          {
+            "label": "Start a free plan",
+            "text": "Rainy afternoon craft ideas"
+          },
+          {
+            "label": "Open the planner",
+            "text": "A tidier morning routine"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Product check",
+        "items": [
+          {
+            "label": "Open the planner",
+            "text": "Rainy afternoon craft ideas"
+          },
+          {
+            "label": "See how it works",
+            "text": "Rainy afternoon craft ideas"
+          },
+          {
+            "label": "Browse ideas",
+            "text": "A tidier morning routine"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Publishing",
+        "items": [
+          {
+            "label": "See how it works",
+            "text": "A tidier morning routine"
+          },
+          {
+            "label": "Open the planner",
+            "text": "A tidier morning routine"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Refreshing",
+        "items": [
+          {
+            "label": "Start a free plan",
+            "text": "A tidier morning routine"
+          },
+          {
+            "label": "Browse ideas",
+            "text": "A tidier morning routine"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "House style",
+        "items": [
+          {
+            "text": "Rainy afternoon craft ideas"
+          },
+          {
+            "text": "Rainy afternoon craft ideas"
+          },
+          {
+            "text": "A tidier morning routine"
+          },
+          {
+            "text": "A tidier morning routine"
+          },
+          {
+            "text": "Weekly planning in five minutes"
+          },
+          {
+            "text": "Weekly planning in five minutes"
+          },
+          {
+            "text": "Shared lists that stay in sync"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-closing",
+      "content": {
+        "text": "A tidier morning routine",
+        "links": [
+          {
+            "label": "Open the planner",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "See how it works",
+            "assetRole": "unspecified-destination"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Get the Brightburrow letter",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Journal",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Plans",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "How we write",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Help",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the app",
+          "badge": {
+            "assetRole": "user-supplied-asset",
+            "assetRef": "user-supplied:user-supplied-asset-790",
+            "alt": "Illustration of a tidy kitchen noticeboard"
+          },
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "generated:placeholder-brand-mark-716"
+        },
+        "copyright": "Next"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "We use cookies to understand how the site is used.",
+        "learnMore": {
+          "label": "Read more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

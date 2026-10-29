@@ -1,0 +1,19 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "category-tag",
+  "purpose": "Category pill with icon and category tint (small / large).",
+  "composedOf": [
+    "CategoryPill",
+    "Icon"
+  ],
+  "usedBySections": [
+    "blog-featured-banner",
+    "blog-post-grid"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/blog/CategoryTag.jsx:6",
+      "anchor": "export default function CategoryTag"
+    }
+  ]
+}

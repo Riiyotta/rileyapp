@@ -1,0 +1,88 @@
+{
+  "$schema": "riley-design-tokens/policy/design-policy",
+  "policyId": "consumer-parenting-app-web",
+  "policyVersion": "1.0.0",
+  "commonIrVersion": "0.5",
+  "title": "Consumer parenting app (iOS app + marketing/editorial site) web-generation policy",
+  "classification": {
+    "productCategory": "consumer-app",
+    "productDomain": "parenting-and-child-development",
+    "marketModel": "direct-to-consumer mobile app (App Store) with a free tier and a family subscription",
+    "isSaaS": false,
+    "surfaces": [
+      "marketing-site",
+      "pricing",
+      "editorial-blog",
+      "article",
+      "text-page",
+      "legal",
+      "error"
+    ],
+    "audiences": [
+      "parents and caregivers",
+      "expecting parents"
+    ]
+  },
+  "classificationEvidence": {
+    "consumerAppSignals": [
+      {
+        "claim": "every primary CTA is an App Store download via an attribution OneLink",
+        "cite": "src/components/upper/SiteHeader.jsx:6",
+        "anchor": "const ONELINK = 'https://rileyapp.onelink.me/JNxh/nativeappstorebutton'"
+      },
+      {
+        "claim": "footer ships an official 'Download on the App Store' badge",
+        "cite": "src/components/SiteFooter.jsx:62",
+        "anchor": "alt=\"Download on the App Store\""
+      },
+      {
+        "claim": "pricing is a consumer family subscription (one paid plan from $9.99/month, one free plan), not B2B tiers or seats",
+        "cite": "src/components/pricing/PricingHero.jsx:52",
+        "anchor": "$9.99 <span"
+      },
+      {
+        "claim": "the paid plan is framed for households ('families who parent as a team', caregiver logins), not organisations",
+        "cite": "src/components/pricing/PricingHero.jsx:44",
+        "anchor": "description: 'For families who parent as a team'"
+      },
+      {
+        "claim": "audience is parents (reviews by mums and dads of babies)",
+        "cite": "src/components/Testimonials.jsx:10",
+        "anchor": "name: 'Max L., Dad of Baby R (1 mo)'"
+      },
+      {
+        "claim": "the editorial blog covers sleep, feeding, development, health, pregnancy",
+        "cite": "src/components/blog/categories.js:2",
+        "anchor": "export const CATEGORIES = {"
+      }
+    ],
+    "saasSignalsAbsent": "grep of src/components and src/pages (2026-10-29): no 'enterprise', no book/request-a-demo, no dashboard, no integrations, no per-seat/per-user pricing, no sign-in route. The comparison table compares the app with consumer alternatives (search, forums, chatbots, books), not B2B tools."
+  },
+  "notBoundTo": {
+    "n0-saas-design-constraints-common": "Explicitly NOT applied. That policy assumes a B2B SaaS product (pricing tiers for teams, dashboards, feature matrices against vendors, integrations, demo funnels). Riley is a direct-to-consumer parenting app distributed through the App Store; its site is marketing + editorial content for parents. Binding to the SaaS policy would require a recorded architecture decision, which has not been made."
+  },
+  "generationRules": [
+    "Pages are drawn only from the 8 templates (7 families) and 36 section contracts in this repo; no new section types.",
+    "No B2B constructs: no seat/tier pricing tables, vendor feature matrices, integrations grids, dashboards, demo-request or changelog sections. The only pricing construct is pricing-hero (max 2 consumer plans) and the only comparison construct is the gradient-band comparison table, both because the clone really has them; their prices, plan names and competitor names are operator-supplied in generation mode (GENERATION_MODE_CLAIM / GENERATION_MODE_CUSTOMER).",
+    "App-store download CTAs: in generation mode store badges are operator-supplied official artwork (role user-supplied-asset) and links are placeholder-url (.example/.invalid) until the operator wires its own store listing; Riley's OneLink, App Store marks and 'Download on the' wording are rejected (GENERATION_MODE_STORE).",
+    "Child and parent imagery is must-not-fabricate: no real photos (lifestyle, user stories, article covers, author/clinician portraits) in generation mode; use generated illustrations or fictional avatars, never photorealistic children presented as real (GENERATION_MODE_PERSON / GENERATION_MODE_ASSET).",
+    "Health and development claims are must-not-fabricate: no clinical/medical endorsements, efficacy claims, SIDS/safety claims, statistics or invented citations in generation mode (GENERATION_MODE_CLAIM, policy list in schema/leakage-patterns.json). Article sources are operator-supplied or left empty.",
+    "Proof is never invented: clinician names/credentials, testimonials and ratings must be operator-verified; generation examples use bracketed placeholders, and rating/review-count wording is rejected (GENERATION_MODE_RATING).",
+    "Legal pages: no policy text is generated; the policy-embed slot points at an operator-supplied URL (GENERATION_MODE_EMBED).",
+    "Riley brand, mascots, illustrations, Rive chat screens, copy (5-word shingles), people and URLs never appear in generation mode (GENERATION_MODE_BRAND / _ASSET / _SCREENSHOT / _COPY / _URL)."
+  ],
+  "enforcedBy": [
+    "policy/design-policy.json",
+    "schema/pagespec.schema.json",
+    "schema/semantic_validate.py",
+    "schema/textnorm.py",
+    "schema/leakage-patterns.json",
+    "assets/asset-roles.json",
+    "compatibility/graph.json"
+  ],
+  "approval": {
+    "policyDecision": "defined-pending-architecture-review",
+    "architectureDecisionRecorded": false,
+    "note": "Classification and rules are defined here by an agent (agent attestation, not a human sign-off). A human architecture owner must ratify the non-SaaS binding before it replaces any shared common policy; licensing of real assets and medical-content review remain open."
+  }
+}

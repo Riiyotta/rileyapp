@@ -1,0 +1,18 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "editor-note",
+  "purpose": "Transparent note box: editor mascot + 'Editor's Note' heading and paragraphs.",
+  "composedOf": [
+    "Image",
+    "Text"
+  ],
+  "usedBySections": [
+    "article-chapter"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/article/EditorNote.jsx:2",
+      "anchor": "export default function EditorNote"
+    }
+  ]
+}

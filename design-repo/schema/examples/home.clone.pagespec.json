@@ -1,10 +1,10 @@
 {
-  "pageSpecVersion": "1.0.0",
+  "pageSpecVersion": "2.0.0",
   "page": {
     "route": "/",
     "title": "Riley – Baby Tracker & Child Development Expert",
     "template": "home",
-    "brandContext": "riley-clone",
+    "mode": "clone",
     "theme": "riley-light"
   },
   "nodes": [
@@ -984,6 +984,23 @@
           "assetRef": "/assets/icons/footer-logo.svg"
         },
         "copyright": "© 2025 Riley"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "By using this site, you accept cookies for analytics.",
+        "learnMore": {
+          "label": "Learn more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
       },
       "motion": {
         "pattern": "static",

@@ -1,0 +1,522 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "page": {
+    "route": "/plans",
+    "title": "Brightburrow plans",
+    "template": "pricing",
+    "mode": "generation",
+    "theme": "riley-light",
+    "brand": {
+      "name": "Brightburrow",
+      "mark": {
+        "assetRole": "placeholder-brand-mark",
+        "assetRef": "generated:brightburrow-wordmark"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "type": "announcement-bar",
+      "content": {
+        "message": "New: shared shopping lists are here",
+        "link": {
+          "assetRole": "internal-route"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-header",
+      "variant": "standalone",
+      "content": {
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "generated:placeholder-brand-mark-771",
+          "alt": "Brightburrow"
+        },
+        "navItems": [
+          {
+            "label": "Journal"
+          },
+          {
+            "label": "Plans"
+          }
+        ],
+        "cta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "mobileCta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "pricing-hero",
+      "content": {
+        "eyebrow": "Made for busy households",
+        "heading": "Questions answered before bedtime",
+        "plans": [
+          {
+            "name": "Household",
+            "description": "Weekly planning in five minutes",
+            "avatars": [
+              {
+                "assetRole": "fictional-person-avatar",
+                "assetRef": "generated:fictional-person-avatar-60"
+              },
+              {
+                "assetRole": "fictional-person-avatar",
+                "assetRef": "generated:fictional-person-avatar-218"
+              },
+              {
+                "assetRole": "fictional-person-avatar",
+                "assetRef": "generated:fictional-person-avatar-137"
+              }
+            ],
+            "tagline": "Rainy afternoon craft ideas",
+            "features": [
+              {
+                "label": "See how it works",
+                "included": true
+              },
+              {
+                "label": "Open the planner",
+                "included": true
+              },
+              {
+                "label": "Start a free plan",
+                "included": true
+              },
+              {
+                "label": "Browse ideas",
+                "included": true
+              },
+              {
+                "label": "Open the planner",
+                "included": true
+              },
+              {
+                "label": "See how it works",
+                "included": true
+              }
+            ],
+            "price": {
+              "amount": "$X.XX",
+              "notes": [
+                "Operator sets pricing"
+              ]
+            }
+          },
+          {
+            "name": "Starter",
+            "description": "A tidier morning routine",
+            "avatars": [
+              {
+                "assetRole": "fictional-person-avatar",
+                "assetRef": "generated:fictional-person-avatar-358"
+              }
+            ],
+            "tagline": "Rainy afternoon craft ideas",
+            "features": [
+              {
+                "label": "Open the planner",
+                "included": true
+              },
+              {
+                "label": "See how it works",
+                "included": false
+              },
+              {
+                "label": "Browse ideas",
+                "included": false
+              },
+              {
+                "label": "Start a free plan",
+                "included": false
+              },
+              {
+                "label": "See how it works",
+                "included": false
+              },
+              {
+                "label": "Open the planner",
+                "included": false
+              }
+            ],
+            "price": {
+              "amount": "Free",
+              "notes": [
+                "Operator sets pricing"
+              ]
+            }
+          }
+        ],
+        "cta": {
+          "label": "Open the planner",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        }
+      },
+      "motion": {
+        "pattern": "parallax-clouds",
+        "reducedMotionFallback": "Freeze cloud layers at parallax progress 0 (no translate/scale) and pause the horizontal cloud drift."
+      }
+    },
+    {
+      "type": "testimonials-carousel",
+      "content": {
+        "eyebrow": "Made for busy households",
+        "heading": "Questions answered before bedtime",
+        "slides": [
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-541"
+            },
+            "attribution": "[Sample attribution — operator supplies a verified quote]"
+          },
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-344"
+            },
+            "attribution": "[Sample attribution — operator supplies a verified quote]"
+          },
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-639"
+            },
+            "attribution": "[Sample attribution — operator supplies a verified quote]"
+          },
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-762"
+            },
+            "attribution": "Journal"
+          },
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-489"
+            },
+            "attribution": "[Sample attribution — operator supplies a verified quote]"
+          }
+        ],
+        "cta": {
+          "label": "Open the planner",
+          "assetRole": "unspecified-destination"
+        }
+      },
+      "motion": {
+        "pattern": "embla-loop",
+        "reducedMotionFallback": "Snap between slides with no embla easing."
+      }
+    },
+    {
+      "type": "gradient-band",
+      "variant": "table-only",
+      "content": {
+        "comparisonTable": {
+          "eyebrow": "Ideas worth bookmarking",
+          "heading": "Questions answered before bedtime",
+          "body": "Short, practical reading for parents juggling work, school runs and the occasional rainy-day project.",
+          "featureColumnLabel": "Get started",
+          "columns": [
+            {
+              "label": "Browse ideas"
+            },
+            {
+              "label": "Start a free plan"
+            },
+            {
+              "label": "Open the planner"
+            },
+            {
+              "label": "See how it works"
+            },
+            {
+              "label": "Start a free plan"
+            },
+            {
+              "label": "Browse ideas"
+            },
+            {
+              "label": "See how it works"
+            }
+          ],
+          "rows": [
+            {
+              "label": "Open the planner",
+              "marks": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "See how it works",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                true
+              ]
+            },
+            {
+              "label": "Browse ideas",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "Start a free plan",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "See how it works",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                true,
+                false
+              ]
+            }
+          ],
+          "cta": {
+            "label": "Start a free plan",
+            "assetRole": "unspecified-destination"
+          }
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "faq-clouds",
+      "content": {
+        "heading": "Everything your household shares in one place",
+        "items": [
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-143"
+            },
+            "question": "Can I share a list with my partner?",
+            "answer": "Yes. Invite anyone in your household and edits show up for everyone within a few seconds."
+          },
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-760"
+            },
+            "question": "Can I share a list with my partner?",
+            "answer": "Lists stay readable without a connection and sync again once you are back online."
+          },
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-240"
+            },
+            "question": "Does it work offline?",
+            "answer": "Yes. Invite anyone in your household and edits show up for everyone within a few seconds."
+          },
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-399"
+            },
+            "question": "How do I export my calendar?",
+            "answer": "Lists stay readable without a connection and sync again once you are back online."
+          },
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-896"
+            },
+            "question": "Can I share a list with my partner?",
+            "answer": "Yes. Invite anyone in your household and edits show up for everyone within a few seconds."
+          }
+        ],
+        "itemCta": {
+          "label": "Open the planner",
+          "assetRole": "internal-route"
+        },
+        "itemMascot": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-273"
+        },
+        "clouds": [
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-117"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-804"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-895"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-694"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-993"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "faq-clouds-float-and-open",
+        "reducedMotionFallback": "Clouds static at clear-skies positions; open/close items without size/position transition; apply blur state instantly."
+      }
+    },
+    {
+      "type": "final-cta",
+      "content": {
+        "heading": "Notes from the Brightburrow kitchen table",
+        "cta": {
+          "label": "See how it works",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "background": {
+          "assetRole": "decorative-cloud",
+          "assetRef": "generated:decorative-cloud-71"
+        },
+        "mascots": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-115"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Get the Brightburrow letter",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Journal",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Plans",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "How we write",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Help",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the app",
+          "badge": {
+            "assetRole": "user-supplied-asset",
+            "assetRef": "user-supplied:user-supplied-asset-226",
+            "alt": "Illustration of a tidy kitchen noticeboard"
+          },
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "generated:placeholder-brand-mark-933"
+        },
+        "copyright": "Get started"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "We use cookies to understand how the site is used.",
+        "learnMore": {
+          "label": "Read more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

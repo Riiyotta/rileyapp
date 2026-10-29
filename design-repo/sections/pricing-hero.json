@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "pricing-hero",
   "registryId": "section.pricing-hero",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "hero",
   "purpose": "Pricing hero: two plan cards (Plus+ / Basic) over the tangerine radial with the shared parallax clouds at 70% opacity.",
   "iaSectionIds": [
@@ -13,6 +13,22 @@
       "cite": "src/components/pricing/PricingHero.jsx:77-111",
       "anchor": "export default function PricingHero"
     }
+  ],
+  "source": {
+    "id": "src:PricingHero@79",
+    "tag": "section",
+    "file": "src/components/pricing/PricingHero.jsx",
+    "lines": "79-111"
+  },
+  "semantic": {
+    "id": "pricing-hero",
+    "category": "HERO"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "fictional-person-avatar",
+    "generated-illustration",
+    "placeholder-url"
   ],
   "variants": {},
   "contentContract": {

@@ -1,0 +1,77 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "article-share-row",
+  "registryId": "section.article-share-row",
+  "version": "2.0.0",
+  "category": "share",
+  "purpose": "'Share this article:' bordered row with copy-link button and platform share icons.",
+  "iaSectionIds": [
+    "article.share-row"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/article/ShareButtons.jsx:66-74",
+      "anchor": "if (variant === 'bottom') {"
+    }
+  ],
+  "source": {
+    "id": "src:ShareButtons@68",
+    "tag": "div",
+    "file": "src/components/article/ShareButtons.jsx",
+    "lines": "68-74"
+  },
+  "semantic": {
+    "id": "article-share-row",
+    "category": "NAVIGATION"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "user-supplied-asset"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_article-share-row",
+    "copyBudget": {
+      "label": 4,
+      "share.copyLabel": 2,
+      "share.platforms[].label": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "640-767px",
+        "changes": [
+          "row stacks vertically with 32px gap"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/article/ShareButtons.jsx:68",
+            "anchor": "sm:max-md:flex-col sm:max-md:gap-8"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC_PAGES_BLOG.md:427",
+      "anchor": "### 3.8 ShareButtons"
+    }
+  ],
+  "notes": []
+}

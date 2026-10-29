@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Draft-07 structural check of schema/example.pagespec.json (sibling-repo convention).
+"""Draft-07 structural check of every schema/examples/*.pagespec.json (and the section-contract schema).
 
 Usage: python3 schema/validate_schema.py [pagespec.json ...]
 Checks the schema itself (check_schema) and prints every Draft7Validator error.
 Semantic rules (template sequence, maxWords, routes, asset policy) live in
 schema/semantic_validate.py. Root derived from __file__.
 """
+import glob
 import json
 import os
 import sys
@@ -21,7 +22,9 @@ def main(argv):
     Draft7Validator.check_schema(schema)
     v = Draft7Validator(schema)
     bad = 0
-    for p in argv or [os.path.join(ROOT, "schema/example.pagespec.json")]:
+    with open(os.path.join(ROOT, "schema/section-contract.schema.json")) as f:
+        Draft7Validator.check_schema(json.load(f))
+    for p in argv or sorted(glob.glob(os.path.join(ROOT, "schema/examples/*.pagespec.json"))):
         with open(p) as f:
             errs = list(v.iter_errors(json.load(f)))
         print(f"Draft7Validator {os.path.basename(p)}: {len(errs)} error(s)")

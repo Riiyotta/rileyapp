@@ -1,18 +1,19 @@
-section,category,templates,routes,Homepage,Pricing,404 (dead landing slugs),Blog index,Blog category,Blog article,Editorial process,Legal policy
-chrome.site-header,CHROME,8,242,x,x,x,x,x,x,x,x
-chrome.site-footer,CHROME,8,242,x,x,x,x,x,x,x,x
-chrome.cookie-consent,CHROME,8,242,x,x,x,x,x,x,x,x
+section,category,templates,routes,Homepage,Pricing,404 (dead landing slugs + unbuilt links),Blog index,Blog category,Blog article,Editorial process,Legal policy
+chrome.site-header,CHROME,8,248,x,x,x,x,x,x,x,x
+chrome.site-footer,CHROME,8,248,x,x,x,x,x,x,x,x
+chrome.cookie-consent,CHROME,8,248,x,x,x,x,x,x,x,x
 conversion.final-cta,CONVERSION,5,230,x,x,,x,x,x,,
 article.top-bar,ARTICLE,1,221,,,,,,x,,
 article.breadcrumbs,ARTICLE,1,221,,,,,,x,,
 article.header,ARTICLE,1,221,,,,,,x,,
 article.toc,ARTICLE,1,221,,,,,,x,,
-article.body,ARTICLE,1,221,,,,,,x,,
 article.sources,ARTICLE,1,221,,,,,,x,,
 article.share-row,ARTICLE,1,221,,,,,,x,,
 article.related-posts,ARTICLE,1,221,,,,,,x,,
-chrome.announcement-bar,CHROME,6,15,x,x,x,x,,,x,x
-error.not-found,ERROR,1,8,,,x,,,,,
+article.intro,ARTICLE,1,221,,,,,,x,,
+article.chapter,ARTICLE,1,221,,,,,,x,,
+chrome.announcement-bar,CHROME,6,21,x,x,x,x,,,x,x
+error.not-found,ERROR,1,14,,,x,,,,,
 blog.index-hero,BLOG,2,7,,,,x,x,,,
 blog.search,BLOG,2,7,,,,x,x,,,
 blog.category-tabs,BLOG,2,7,,,,x,x,,,
@@ -33,5 +34,7 @@ product.how-it-works,PRODUCT,1,1,x,,,,,,,
 product.feature-cards,PRODUCT,1,1,x,,,,,,,
 content.blog-teaser,CONTENT,1,1,x,,,,,,,
 hero.pricing-plans,HERO,1,1,,x,,,,,,
-legal.editorial-prose,LEGAL,1,1,,,,,,,x,
-ROUTE COUNT,,,242,1,1,8,1,6,221,1,3
+text.header,TEXT,1,1,,,,,,,x,
+text.chapter,TEXT,1,1,,,,,,,x,
+text.closing,TEXT,1,1,,,,,,,x,
+ROUTE COUNT,,,248,1,1,14,1,6,221,1,3

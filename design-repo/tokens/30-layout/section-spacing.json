@@ -121,6 +121,66 @@
           "anchor": "Vertical padding"
         }
       ]
+    },
+    "blog-listing": {
+      "value": {
+        "desktop": "0 64px (lg:px-16), content top margin 80px, column gap 80px",
+        "mobile": "0 16px (768: 32px), column gap 16px"
+      },
+      "evidence": [
+        {
+          "cite": "src/pages/BlogIndexPage.jsx:58",
+          "anchor": "px-4 md:px-8 lg:px-16"
+        },
+        {
+          "cite": "src/pages/BlogIndexPage.jsx:59",
+          "anchor": "mt-[5rem] flex w-full max-w-[90rem]"
+        }
+      ]
+    },
+    "article-column": {
+      "value": {
+        "desktop": "body row padding 88px (xl) / 44px (lg), TOC|prose gap 88px, header padding 208px (xl)",
+        "mobile": "20px sides, prose gap 40px"
+      },
+      "evidence": [
+        {
+          "cite": "src/pages/BlogArticlePage.jsx:62",
+          "anchor": "xl:px-[5.5rem]"
+        },
+        {
+          "cite": "src/components/article/ArticleHeader.jsx:33",
+          "anchor": "xl:px-[13rem]"
+        }
+      ]
+    },
+    "article-blocks": {
+      "value": {
+        "desktop": "p 16px 0, h2 16px 0 32px, h3 32px 0 16px, ul 8px 0 20px",
+        "mobile": "p 20px 0, h2 48px 0 24px, h3 32px 0 12px, ul 20px 0"
+      },
+      "evidence": [
+        {
+          "cite": "src/styles/article.css:95",
+          "anchor": ".ab-p { margin: 16px 0; }"
+        },
+        {
+          "cite": "src/styles/article.css:19",
+          "anchor": "margin: 48px 0 24px;"
+        }
+      ]
+    },
+    "text-page-prose": {
+      "value": {
+        "desktop": "no horizontal padding (original quirk), max-width 1440, top margin 32px; h3 32px 0 12px",
+        "mobile": "same (text runs edge to edge)"
+      },
+      "evidence": [
+        {
+          "cite": "src/pages/TextPage.jsx:23",
+          "anchor": "tp-prose mx-auto mt-8 max-w-[90rem]"
+        }
+      ]
     }
   }
 }

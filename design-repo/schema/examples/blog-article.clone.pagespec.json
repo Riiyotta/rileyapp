@@ -1,0 +1,495 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "page": {
+    "route": "/blog/sleep/baby-witching-hour",
+    "title": "Baby Witching Hour: What It Is, When and Why It Happens, and How to Manage It | Riley",
+    "template": "blog-article",
+    "mode": "clone",
+    "theme": "riley-light"
+  },
+  "nodes": [
+    {
+      "type": "site-header",
+      "variant": "standalone",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/wordmark.svg",
+          "alt": "Riley logo"
+        },
+        "navItems": [
+          {
+            "label": "Blog"
+          },
+          {
+            "label": "What's New?"
+          }
+        ],
+        "cta": {
+          "label": "Get Started For Free",
+          "assetRole": "app-store-onelink"
+        },
+        "mobileCta": {
+          "label": "Try For $0",
+          "assetRole": "app-store-onelink"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "article-top-bar",
+      "content": {
+        "backLabel": "Back",
+        "back": {
+          "assetRole": "internal-route"
+        },
+        "searchPlaceholder": "Search blog article..."
+      },
+      "motion": {
+        "pattern": "search-dropdown-fade",
+        "reducedMotionFallback": "Show the results dropdown instantly (no 0.2s fade)."
+      }
+    },
+    {
+      "type": "article-header",
+      "content": {
+        "breadcrumbs": {
+          "rootLabel": "Blog",
+          "categoryLabel": "Sleep",
+          "currentLabel": "Baby Witching Hour: What It Is, When and Why It Happens, and How to Manage It",
+          "tone": "sleep"
+        },
+        "title": "Baby Witching Hour: What It Is, When and Why It Happens, and How to Manage It",
+        "description": "Discover expert strategies to manage your newborn's fussy evening period, known as the \"baby witching hour,\" with practical tips for new parents.",
+        "bylines": [
+          {
+            "label": "Written by:",
+            "name": "Amanda DeLuca",
+            "title": "Founder & CEO of Riley, Certified Pediatric Sleep Consultant",
+            "avatar": {
+              "assetRole": "author-avatar",
+              "assetRef": "/assets/blog/authors/amanda-deluca.png",
+              "alt": "Amanda DeLuca"
+            }
+          }
+        ],
+        "cover": {
+          "assetRole": "article-cover-photo",
+          "assetRef": "/assets/blog/baby-witching-hour.jpg",
+          "alt": ""
+        },
+        "share": {
+          "copyLabel": "Copy link",
+          "platforms": [
+            {
+              "label": "Share on Facebook",
+              "icon": {
+                "assetRole": "social-share-mark",
+                "assetRef": "/assets/blog/icons/share-facebook.svg"
+              }
+            },
+            {
+              "label": "Share on X",
+              "icon": {
+                "assetRole": "social-share-mark",
+                "assetRef": "/assets/blog/icons/share-x.svg"
+              }
+            },
+            {
+              "label": "Share on Instagram",
+              "icon": {
+                "assetRole": "social-share-mark",
+                "assetRef": "/assets/blog/icons/share-instagram.svg"
+              }
+            }
+          ]
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-toc",
+      "content": {
+        "heading": "In this article:",
+        "entries": [
+          {
+            "label": "Placeholder section one"
+          },
+          {
+            "label": "Placeholder section two"
+          },
+          {
+            "label": "Placeholder section three"
+          },
+          {
+            "label": "Read the original"
+          }
+        ],
+        "share": {
+          "copyLabel": "Copy link",
+          "platforms": [
+            {
+              "label": "Share on Facebook",
+              "icon": {
+                "assetRole": "social-share-mark",
+                "assetRef": "/assets/blog/icons/share-facebook.svg"
+              }
+            },
+            {
+              "label": "Share on X",
+              "icon": {
+                "assetRole": "social-share-mark",
+                "assetRef": "/assets/blog/icons/share-x.svg"
+              }
+            },
+            {
+              "label": "Share on Instagram",
+              "icon": {
+                "assetRole": "social-share-mark",
+                "assetRef": "/assets/blog/icons/share-instagram.svg"
+              }
+            }
+          ]
+        }
+      },
+      "motion": {
+        "pattern": "sticky-aside",
+        "reducedMotionFallback": "none-required: sticky positioning only (no animated transition; the progress fill stays at height 0 as on the original)."
+      }
+    },
+    {
+      "type": "article-intro",
+      "content": {
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Placeholder paragraph — the full article is on rileyapp.com. This text stands in for the introduction.",
+            "citations": [
+              1
+            ]
+          },
+          {
+            "kind": "promo",
+            "text": "Placeholder promo copy — download Riley now using code RILEYBLOG20 to get 20% off.",
+            "cta": {
+              "label": "Get Started",
+              "assetRole": "unspecified-destination"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-chapter",
+      "content": {
+        "heading": "Placeholder section one",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Placeholder paragraph — the full article is on rileyapp.com. It includes bold placeholder text, italic placeholder text and an inline link to more Sleep articles."
+          },
+          {
+            "kind": "subheading",
+            "text": "Placeholder subsection"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Placeholder paragraph — the full article is on rileyapp.com. A short placeholder lead-in for the list below.",
+            "citations": [
+              2
+            ]
+          },
+          {
+            "kind": "list",
+            "text": "Placeholder list",
+            "items": [
+              {
+                "text": "Placeholder item: first-level bullet text."
+              },
+              {
+                "text": "Placeholder bullet with nested items.",
+                "children": [
+                  {
+                    "text": "Second-level placeholder bullet."
+                  },
+                  {
+                    "text": "Another second-level placeholder bullet."
+                  }
+                ]
+              },
+              {
+                "text": "Final first-level placeholder bullet."
+              }
+            ]
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-chapter",
+      "content": {
+        "heading": "Placeholder section two",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Placeholder paragraph — the full article is on rileyapp.com. Placeholder copy introducing an inline image."
+          },
+          {
+            "kind": "image",
+            "text": "Inline image",
+            "image": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/baby-witching-hour.jpg",
+              "alt": ""
+            }
+          },
+          {
+            "kind": "editor-note",
+            "text": "Placeholder editor’s note — the original note, where one exists, is on rileyapp.com."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-chapter",
+      "content": {
+        "heading": "Placeholder section three",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Placeholder paragraph — the full article is on rileyapp.com. Placeholder copy introducing a downloadable image.",
+            "citations": [
+              3
+            ]
+          },
+          {
+            "kind": "downloadable-image",
+            "text": "Downloadable image",
+            "image": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/baby-witching-hour.jpg",
+              "alt": ""
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-chapter",
+      "content": {
+        "heading": "Read the original",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Read the full article on rileyapp.com."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-sources",
+      "content": {
+        "summaryLabel": "3 sources cited",
+        "sources": [
+          {
+            "citation": "Placeholder Author (2024). Placeholder source title 1.",
+            "link": {
+              "assetRole": "source-citation"
+            }
+          },
+          {
+            "citation": "Placeholder Author (2024). Placeholder source title 2.",
+            "link": {
+              "assetRole": "source-citation"
+            }
+          },
+          {
+            "citation": "Placeholder Author (2024). Placeholder source title 3.",
+            "link": {
+              "assetRole": "source-citation"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-share-row",
+      "content": {
+        "label": "Share this article:",
+        "share": {
+          "copyLabel": "Copy link",
+          "platforms": [
+            {
+              "label": "Share on Facebook",
+              "icon": {
+                "assetRole": "social-share-mark",
+                "assetRef": "/assets/blog/icons/share-facebook.svg"
+              }
+            },
+            {
+              "label": "Share on X",
+              "icon": {
+                "assetRole": "social-share-mark",
+                "assetRef": "/assets/blog/icons/share-x.svg"
+              }
+            },
+            {
+              "label": "Share on Instagram",
+              "icon": {
+                "assetRole": "social-share-mark",
+                "assetRef": "/assets/blog/icons/share-instagram.svg"
+              }
+            }
+          ]
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-related-posts",
+      "content": {
+        "heading": "You'll also love these posts:",
+        "seeAllLabel": "See All >",
+        "illustration": {
+          "assetRole": "brand-illustration",
+          "assetRef": "/assets/blog/icons/3dglasses.svg"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "final-cta",
+      "content": {
+        "heading": "We are raising a generation of confident parents.",
+        "cta": {
+          "label": "Get support that gets you",
+          "assetRole": "app-store-onelink"
+        },
+        "background": {
+          "assetRole": "decorative-cloud",
+          "assetRef": "/assets/background-clouds(1).svg"
+        },
+        "mascots": {
+          "assetRole": "mascot-illustration",
+          "assetRef": "/assets/mascots.svg"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Stay in the loop with Riley's newsletter.",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "newsletter-endpoint"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Blog",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Pricing",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Editorial Process",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy Policy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms of Service",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Support",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the App",
+          "badge": {
+            "assetRole": "store-badge",
+            "assetRef": "/assets/icons/app-store-badge.svg",
+            "alt": "Download on the App Store"
+          },
+          "assetRole": "app-store-onelink"
+        },
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/icons/footer-logo.svg"
+        },
+        "copyright": "© 2025 Riley"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "By using this site, you accept cookies for analytics.",
+        "learnMore": {
+          "label": "Learn more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

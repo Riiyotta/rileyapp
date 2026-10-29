@@ -1,0 +1,92 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "blog-post-grid",
+  "registryId": "section.blog-post-grid",
+  "version": "2.0.0",
+  "category": "editorial",
+  "purpose": "Grid of post cards (first card wide, rest normal): date/read time, title, clamped excerpt, 'By' author + title, category tag.",
+  "iaSectionIds": [
+    "blog.post-grid"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/blog/BlogPostCard.jsx:8-52",
+      "anchor": "export default function BlogPostCard"
+    }
+  ],
+  "source": {
+    "id": "src:BlogPostCard@12",
+    "tag": "div",
+    "file": "src/components/blog/BlogPostCard.jsx",
+    "lines": "12-52"
+  },
+  "semantic": {
+    "id": "blog-post-grid",
+    "category": "EDITORIAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "internal-route",
+    "user-supplied-asset"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_blog-post-grid",
+    "copyBudget": {
+      "cards[].category.label": 2,
+      "cards[].title": 22,
+      "cards[].excerpt": 52,
+      "cards[].byline.prefix": 1,
+      "cards[].byline.name": 4,
+      "cards[].byline.title": 12,
+      "cards[].cover.alt": 46,
+      "cards[].date": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "single column (3 columns, first card spans 2, at >=992)",
+          "card image 192 tall (256 at >=992)",
+          "card padding 24 (40 at md+)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/pages/BlogIndexPage.jsx:67",
+            "anchor": "lg:grid-cols-3"
+          },
+          {
+            "cite": "src/components/blog/BlogPostCard.jsx:15",
+            "anchor": "h-48 w-full object-cover lg:h-[16rem]"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "src/pages/BlogIndexPage.jsx:16",
+      "anchor": "const PAGE_SIZE = 6"
+    }
+  ],
+  "notes": [
+    "Optional node: empty on /blog/health and /blog/pregnancy (no placement cards; category pages list no paginated posts)."
+  ]
+}

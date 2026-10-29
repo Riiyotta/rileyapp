@@ -1,0 +1,20 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "featured-post-card",
+  "purpose": "Featured post banner (horizontal >=992, stacked below).",
+  "composedOf": [
+    "Image",
+    "Text",
+    "Avatar",
+    "CategoryPill"
+  ],
+  "usedBySections": [
+    "blog-featured-banner"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/blog/BlogFeaturedCard.jsx:22",
+      "anchor": "export default function BlogFeaturedCard"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "clinical-board",
   "registryId": "section.clinical-board",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "social-proof",
   "purpose": "Credibility: the clinical advisory board with real clinician portraits and credentials.",
   "iaSectionIds": [
@@ -13,6 +13,20 @@
       "cite": "src/components/ClinicalBoard.jsx:7-39",
       "anchor": "export default function ClinicalBoard"
     }
+  ],
+  "source": {
+    "id": "src:ClinicalBoard@9",
+    "tag": "section",
+    "file": "src/components/ClinicalBoard.jsx",
+    "lines": "9-39"
+  },
+  "semantic": {
+    "id": "clinical-board",
+    "category": "PROOF"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "fictional-person-avatar"
   ],
   "variants": {},
   "contentContract": {

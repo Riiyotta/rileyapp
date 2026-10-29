@@ -1,0 +1,18 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "promo-unit",
+  "purpose": "Yellow-to-mint gradient card with centred copy and a violet 'Get Started' button.",
+  "composedOf": [
+    "Text",
+    "Button"
+  ],
+  "usedBySections": [
+    "article-intro"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/article/PromoUnit.jsx:7",
+      "anchor": "export default function PromoUnit"
+    }
+  ]
+}

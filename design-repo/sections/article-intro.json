@@ -1,0 +1,83 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "article-intro",
+  "registryId": "section.article-intro",
+  "version": "2.0.0",
+  "category": "editorial",
+  "purpose": "Article lead-in: the blocks before the first H2 (opening paragraph(s) with citation superscripts, optional promo unit).",
+  "iaSectionIds": [
+    "article.intro"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/article/ArticleBody.jsx:95-103",
+      "anchor": "export default function ArticleBody"
+    }
+  ],
+  "source": {
+    "id": "src:ArticleBody@97",
+    "tag": "div",
+    "file": "src/components/article/ArticleBody.jsx",
+    "lines": "97-103"
+  },
+  "semantic": {
+    "id": "article-intro",
+    "category": "EDITORIAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "unspecified-destination",
+    "user-supplied-asset"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_article-intro",
+    "copyBudget": {
+      "blocks[].text": 80,
+      "blocks[].items[].text": 40,
+      "blocks[].items[].children[].text": 40,
+      "blocks[].image.alt": 46,
+      "blocks[].cta.label": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "blocks stack with a 40px gap; first paragraph top margin 0; promo unit padding 20 (100 at >=1280)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/styles/article.css:87",
+            "anchor": ".ab-body > .ab-p:first-child { margin-top: 0; }"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC_PAGES_BLOG.md:393",
+      "anchor": "### 3.6 ArticleBody"
+    }
+  ],
+  "notes": [
+    "Chapter split: the body is one rich-text column on the original; this repo splits it at real H2 boundaries (article-intro + article-chapter x N). Body copy is PLACEHOLDER in the clone (content policy)."
+  ]
+}

@@ -81,6 +81,51 @@
           "anchor": "**16** (<640)"
         }
       ]
+    },
+    "search-field": {
+      "value": "80px (rounded-[5rem])",
+      "evidence": [
+        {
+          "cite": "src/components/blog/BlogSearch.jsx:37",
+          "anchor": "rounded-[5rem] ${widthClass}"
+        }
+      ]
+    },
+    "pagination-pill": {
+      "value": "100px (rounded-[6.25rem])",
+      "evidence": [
+        {
+          "cite": "src/components/blog/BlogPagination.jsx:2",
+          "anchor": "rounded-[6.25rem]"
+        }
+      ]
+    },
+    "editor-note": {
+      "value": "14px",
+      "evidence": [
+        {
+          "cite": "src/components/article/EditorNote.jsx:4",
+          "anchor": "rounded-[14px]"
+        }
+      ]
+    },
+    "article-image": {
+      "value": "10px",
+      "evidence": [
+        {
+          "cite": "src/styles/article.css:72",
+          "anchor": "border-radius: 10px;"
+        }
+      ]
+    },
+    "cookie-bar-top": {
+      "value": "30px 30px 0 0",
+      "evidence": [
+        {
+          "cite": "src/components/blog/CookieConsent.jsx:33",
+          "anchor": "borderTopLeftRadius: 30"
+        }
+      ]
     }
   }
 }

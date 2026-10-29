@@ -41,6 +41,20 @@
     "pill.development": "#ffd6a7",
     "pill.neutral": "#f1f5f9",
     "pill.health": "#ffc9c9",
-    "pill.sleep": "#e7e5e4"
+    "pill.sleep": "#e7e5e4",
+    "pill.category-sleep": "#EACDFF",
+    "pill.category-feeding": "#FFEAA7",
+    "pill.category-development": "#E0FFE0",
+    "pill.category-news": "#CFF6FF",
+    "pill.category-health": "#FFC7C3",
+    "pill.category-pregnancy": "#8DE8B2",
+    "pill.category-default": "#e5e7eb",
+    "border.tab": "#e5e7eb",
+    "border.control": "#e5e5e5",
+    "text.tab-inactive": "#6a7282",
+    "icon.breadcrumb": "#99a1af",
+    "toc.track": "#D9D9D9",
+    "action.promo": "#7B63F5",
+    "surface.cookie": "rgba(255,255,255,.9)"
   }
 }

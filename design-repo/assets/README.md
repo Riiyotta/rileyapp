@@ -1,52 +1,59 @@
 # Asset roles
 
-`assets/asset-roles.json` is a closed enum of 18 roles. They are derived from the real JSX
-usage sites (`usageSites` cites), and the same set is wired through the schema (each media or
-link field allows only its own roles), the allowlist (`assetRoles`), and the example PageSpec.
-PageSpec media is `{assetRole, assetRef, alt?}`. Links are `{label, assetRole}` and never carry
-an href.
+`assets/asset-roles.json` is a closed enum of 31 roles derived from real usage sites (`usageSites`
+cites) and wired through the schema (each media/link field allows only its own roles plus their generation-safe
+substitutes), the allowlist and the examples. Media is `{assetRole, assetRef, alt?}`; links are
+`{label, assetRole}`; only `placeholder-url` objects carry an `href`, on `.example` / `.invalid` hosts.
 
-| role | policy | weight | what |
-|---|---|---|---|
-| brand-wordmark | must-reuse-exact | proprietary brand mark | wordmark.svg, footer-logo.svg |
-| mascot-illustration | must-reuse-exact | character IP | HeroRiley, mascot, riley-up, mascots, modal/mascots/* |
-| mascot-family-mark | must-reuse-exact | character IP | *-family.svg |
-| mascot-avatar | must-reuse-exact | character IP | purple1–5.svg (mascot cloud faces, not photos) |
-| brand-illustration | must-reuse-exact | artwork | HeroIllo, 404 background, chat/tracking/sparks, phonebg |
-| rive-animation | must-reuse-exact | artwork | animations/*.riv |
-| press-logo | must-not-fabricate | third-party trademark | nbc, axios, bump-logo, finsmes, tc, glamour |
-| advisor-portrait | must-not-fabricate | real likeness | lilly.png, kate.png |
-| user-story-photo | must-not-fabricate | real likeness | meg, seb-and-daughter, naina |
-| lifestyle-photo | must-not-fabricate | real likeness | FAQ portraits 2–6.png |
-| blog-cover-photo | must-not-fabricate | licensed editorial | 3 blog cover jpegs |
-| store-badge | must-not-fabricate | third-party trademark | App Store badge, Apple glyphs |
-| app-store-onelink | must-not-reuse-live-endpoint | live endpoint | rileyapp.onelink.me links |
-| newsletter-endpoint | must-not-reuse-live-endpoint | live endpoint | footer form (no real endpoint; submit prevented) |
-| decorative-cloud | may-generate-new | generic | hero/faq/background clouds (no faces) |
-| ui-icon | may-generate-new | generic | arrows, checks, stars, pictograms |
-| internal-route | may-generate-new | generic | same-site links |
-| unspecified-destination | may-generate-new | generic | CTAs whose destination is UNVERIFIED |
+| role | availability | generationPolicy | generation-safe substitutes | weight |
+|---|---|---|---|---|
+| brand-wordmark | clone-only | must-reuse-exact | placeholder-brand-mark, user-supplied-asset | proprietary-brand-mark |
+| mascot-illustration | clone-only | must-reuse-exact | generated-illustration, user-supplied-asset | proprietary-character-ip |
+| mascot-family-mark | clone-only | must-reuse-exact | generated-illustration, user-supplied-asset | proprietary-character-ip |
+| mascot-avatar | clone-only | must-reuse-exact | fictional-person-avatar, generated-illustration | proprietary-character-ip |
+| brand-illustration | clone-only | must-reuse-exact | generated-illustration, user-supplied-asset | proprietary-artwork |
+| rive-animation | clone-only | must-reuse-exact | placeholder-screenshot | proprietary-artwork |
+| press-logo | blocked-for-generation | must-not-fabricate | placeholder-logo | third-party-trademark |
+| advisor-portrait | blocked-for-generation | must-not-fabricate | fictional-person-avatar | real-person-likeness |
+| user-story-photo | blocked-for-generation | must-not-fabricate | fictional-person-avatar, generated-illustration | real-person-likeness |
+| lifestyle-photo | blocked-for-generation | must-not-fabricate | generated-illustration, user-supplied-asset | real-person-likeness |
+| blog-cover-photo | blocked-for-generation | must-not-fabricate | generated-illustration, user-supplied-asset | licensed-editorial-photo |
+| store-badge | blocked-for-generation | must-not-fabricate | user-supplied-asset | third-party-trademark |
+| decorative-cloud | generation-safe | may-generate-new | - | generic-decoration |
+| ui-icon | generation-safe | may-generate-new | - | generic-ui |
+| app-store-onelink | blocked-for-generation | must-not-reuse-live-endpoint | placeholder-url | live-endpoint |
+| newsletter-endpoint | blocked-for-generation | must-not-reuse-live-endpoint | placeholder-url | live-endpoint |
+| internal-route | generation-safe | may-generate-new | - | generic-ui |
+| unspecified-destination | generation-safe | may-generate-new | - | generic-ui |
+| article-cover-photo | blocked-for-generation | must-not-fabricate | generated-illustration, user-supplied-asset | licensed-editorial-photo |
+| author-avatar | blocked-for-generation | must-not-fabricate | fictional-person-avatar | real-person-likeness |
+| social-share-mark | blocked-for-generation | must-not-fabricate | user-supplied-asset | third-party-trademark |
+| policy-embed | blocked-for-generation | must-not-reuse-live-endpoint | placeholder-url | live-endpoint |
+| source-citation | blocked-for-generation | must-not-fabricate | placeholder-url | health-claim-evidence |
+| placeholder-brand-mark | generation-safe | may-generate-new | - | generation-safe-substitute |
+| user-supplied-asset | generation-safe | may-generate-new | - | generation-safe-substitute |
+| generated-illustration | generation-safe | may-generate-new | - | generation-safe-substitute |
+| placeholder-screenshot | generation-safe | may-generate-new | - | generation-safe-substitute |
+| fictional-person-avatar | generation-safe | may-generate-new | - | generation-safe-substitute |
+| placeholder-logo | generation-safe | may-generate-new | - | generation-safe-substitute |
+| placeholder-url | generation-safe | may-generate-new | - | generation-safe-substitute |
+| original-copy | generation-safe | may-generate-new | - | generation-safe-substitute |
 
-## Licensing rules (Riley is a real live company)
+## Rules (Riley is a real, live company; much imagery shows real babies and parents)
 
-- **must-reuse-exact.** This is proprietary Riley IP. Only registered files are allowed, and
-  only when `page.brandContext` is `riley-clone`. Output for any other brand must not
-  reproduce or imitate the wordmark, the mascot characters, or the illustrations.
-- **must-not-fabricate.** These carry real-world weight: real people, real trademarks and real
-  articles. Never generate a substitute (no AI clinicians, customers, press logos or store
-  badges). Use registered files only, and only in `riley-clone`.
-- **must-not-reuse-live-endpoint.** PageSpecs carry the role, never the URL. Generated output
-  must not embed Riley's live onelinks or wire the newsletter to any live endpoint.
+- **clone-only** (Riley-owned IP: wordmark, mascots, illustrations, Rive screens): registered files, `mode: clone` only.
+- **blocked-for-generation** (real people and children, third-party marks, App Store badge, live endpoints, policy
+  embeds, health citations): registered files/endpoints in `mode: clone` only; never in `mode: generation`, never a
+  substitute.
+- **generation-safe**: usable in `mode: generation`, but only with `generated:`, `user-supplied:` or `placeholder:`
+  refs — `/assets/...` files are Riley source files and are rejected there (`GENERATION_MODE_ASSET`).
+- A real logo/wordmark is never `must-reuse-exact` in generation mode: `brand-wordmark` is `clone-only`, and the
+  validators refuse a `must-reuse-exact` role that is `generation-safe`.
 
 ## Enforcement
 
-- **Pinned values.** The 14 non-generic roles are pinned to their policy in code
-  (`schema/semantic_validate.py` `PINNED_POLICIES`). `extraction/verify_all.py` fails if the
-  registry re-pins one, even to another valid policy value (proven by the adversarial and
-  drift tests).
-- **Registered refs.** `REGISTERED_ASSET_REF` rejects unregistered or `generated:` refs for
-  reuse and no-fabricate roles.
-- **Brand context.** `BRAND_CONTEXT_ASSET_POLICY` rejects restricted roles on `other-brand`
-  pages.
-- **File coverage.** Every file in the source `public/assets/` either has a role or a stated
-  reason in `unassignedFiles`: four byte-identical duplicates, plus `blog/` (pending scope).
+- `PINNED_POLICIES` and `PINNED_AVAILABILITY` in `schema/semantic_validate.py`, re-pinned independently in
+  `extraction/verify_all.py`; editing the registry alone (even to another valid value) fails (`prove_drift.py`).
+- `REGISTERED_ASSET_REF` (clone), `GENERATION_MODE_*` (generation), `PLACEHOLDER_HREF_ROLE` (hrefs).
+- Every file in the source `public/assets/` has a role or a stated reason in `unassignedFiles` (byte-identical
+  duplicates and blog covers not referenced by any post).

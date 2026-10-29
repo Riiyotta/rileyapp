@@ -1,0 +1,87 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "blog-featured-banner",
+  "registryId": "section.blog-featured-banner",
+  "version": "2.0.0",
+  "category": "editorial",
+  "purpose": "One featured post as a large banner: category tag, title, author row, excerpt, Read more, cover image.",
+  "iaSectionIds": [
+    "blog.featured-banner"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/blog/BlogFeaturedCard.jsx:22-62",
+      "anchor": "export default function BlogFeaturedCard"
+    }
+  ],
+  "source": {
+    "id": "src:BlogFeaturedCard@25",
+    "tag": "div",
+    "file": "src/components/blog/BlogFeaturedCard.jsx",
+    "lines": "25-62"
+  },
+  "semantic": {
+    "id": "blog-featured-banner",
+    "category": "EDITORIAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "fictional-person-avatar",
+    "generated-illustration",
+    "internal-route",
+    "user-supplied-asset"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_blog-featured-banner",
+    "copyBudget": {
+      "category.label": 2,
+      "title": 22,
+      "author.name": 4,
+      "author.title": 12,
+      "author.avatar.alt": 3,
+      "excerpt": 52,
+      "cover.alt": 46,
+      "readMoreLabel": 3
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "stacked card: image (max-h 448) on top, then text; title 24/32 (30/36 at >=992)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/blog/BlogFeaturedCard.jsx:44",
+            "anchor": "lg:hidden"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "src/pages/BlogIndexPage.jsx:20",
+      "anchor": "const FEATURED = {"
+    }
+  ],
+  "notes": [
+    "Optional node: /blog/health and /blog/pregnancy have no featured set and render no banner (measured)."
+  ]
+}

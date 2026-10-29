@@ -1,5 +1,36 @@
 # Changelog
 
+## 2.0.0 — reconcile with the latest clone; clone/generation modes; non-SaaS policy binding
+
+Review items (Situation B; each verified against the real repo first):
+- Re-extraction from the latest runnable clone (`npm ci` + `vite build` OK): routes enumerated from
+  `src/pages/routes.jsx` + `src/data/blogPosts.json`; 249 routes mapped exactly once, `excludedRoutes` now empty.
+- New families: blog listing (`blog-index`, `blog-category`), article (`blog-article`), text page (`text-page`),
+  legal (`legal`). Author pages did NOT reproduce as a page family: the clone links to them but never built them,
+  so `/blog/authors`, `/blog/author/*`, `/blog/reviewer/kate-roche` and `/support` map to `not-found` (`unbuiltLink`).
+- 19 new section contracts (36 total), 10 new components; article split at H2 (intro + chapters + meta + related),
+  editorial page split at H3; legal stays an empty embed slot because the clone renders no legal text.
+- Measured section heights at 1440 (+768/390) from the built clone (`extraction/measure_sections.mjs`); typography
+  recheck at 3 viewports; new tokens for blog/article colours, type steps, radii and spacing (all cited).
+- Compatibility graph: 41 rules (was 19) incl. generation-mode, token, retrieval and article rules.
+- PageSpec 2.0.0: required closed `page.mode` (`clone` | `generation`) replaces `brandContext`; optional `page.brand`,
+  `node.style` (token refs) and `overlays`; examples moved to `schema/examples/` (8 clone, 7 generated).
+- Leakage registry `schema/leakage-patterns.json` built by `extraction/build_leakage_patterns.py` (brand, persons,
+  press/competitors, claims, domains, embed ids, store marks, ratings, 5-word shingle hashes).
+- Asset roles: three-way availability + substitutes + guidance; 8 generation-safe roles + 5 new source roles
+  (article covers, author avatars, social marks, policy embed, source citations); `PINNED_AVAILABILITY` in both validators.
+- Baseline R7/R8/R9/R10: `source`/`semantic` split (`build_provenance.py`), closed `schema/section-contract.schema.json`,
+  `retrievalEligible` pins, `wrapper_gate.py` + whitelist, generated token catalog + token policy rules.
+- Non-SaaS policy: `policy/design-policy.json` (`consumer-parenting-app-web`, isSaaS false, notBoundTo the SaaS
+  common policy, consumer-app generation rules); manifest `category: consumer-app` + `designPolicy` with a
+  recomputed `contentHash`.
+- `extraction/prove_drift.py` (new): every pin, gate and parity check proven against a scratch copy.
+- Root IA (`ia.json`, `IA.md`, `matrix.csv`) reconciled: article body / editorial prose sections replaced by the
+  decomposed ones; unbuilt links mapped to the 404 template; `node validate.mjs` reconciles.
+
+Honesty: no human reviewed the pinned patterns, roles or policy (agent attestation, not a human sign-off);
+leakage detection is string-based; live-vs-clone visual parity was not measured.
+
 ## 1.0.1 — re-sync after the animation-fix pass
 
 - Source project is now a git repo: README and manifest packaging notes updated; `design-repo.zip`

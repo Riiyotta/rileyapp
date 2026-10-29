@@ -1,0 +1,64 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "text-page-closing",
+  "registryId": "section.text-page-closing",
+  "version": "2.0.0",
+  "category": "editorial",
+  "purpose": "Closing paragraph of a text page with inline links (support form, full page).",
+  "iaSectionIds": [
+    "text.closing"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/pages/TextPage.jsx:46-54",
+      "anchor": "<p className=\"tp-closing\">"
+    }
+  ],
+  "source": {
+    "id": "src:TextPage@46",
+    "tag": "p",
+    "file": "src/pages/TextPage.jsx",
+    "lines": "46-54"
+  },
+  "semantic": {
+    "id": "text-page-closing",
+    "category": "EDITORIAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "internal-route",
+    "unspecified-destination"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_text-page-closing",
+    "copyBudget": {
+      "text": 40,
+      "links[].label": 8
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": false,
+    "rules": []
+  },
+  "evidence": [
+    {
+      "cite": "src/styles/article.css:127",
+      "anchor": ".tp-prose .tp-closing { margin: 20px 0 0; }"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "article-toc",
+  "registryId": "section.article-toc",
+  "version": "2.0.0",
+  "category": "navigation",
+  "purpose": "'In this article' table of contents: sticky 256px side column with a grey track at >=992px, a bordered inline box below; compact share row.",
+  "iaSectionIds": [
+    "article.toc"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/article/ArticleToc.jsx:21-37",
+      "anchor": "export function ArticleTocDesktop"
+    }
+  ],
+  "source": {
+    "id": "src:ArticleToc@23",
+    "tag": "div",
+    "file": "src/components/article/ArticleToc.jsx",
+    "lines": "23-37"
+  },
+  "semantic": {
+    "id": "article-toc",
+    "category": "NAVIGATION"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "user-supplied-asset"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_article-toc",
+    "copyBudget": {
+      "heading": 4,
+      "entries[].label": 12,
+      "share.copyLabel": 2,
+      "share.platforms[].label": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "sticky-aside",
+    "motionRoles": [
+      "sticky-aside"
+    ],
+    "reducedMotionFallback": "none-required: sticky positioning only (no animated transition; the progress fill stays at height 0 as on the original).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "inline bordered box with 'In this article:' label above the body (no sticky aside)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/article/ArticleToc.jsx:39",
+            "anchor": "export function ArticleTocMobile"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC_PAGES_BLOG.md:380",
+      "anchor": "### 3.5 ArticleToc"
+    }
+  ],
+  "notes": []
+}

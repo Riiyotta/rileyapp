@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "not-found-block",
   "registryId": "section.not-found-block",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "error",
   "purpose": "'Oops! This page is playing peekaboo' 404 block, shared by every dead sitemap slug and unknown path.",
   "iaSectionIds": [
@@ -13,6 +13,22 @@
       "cite": "src/pages/NotFound.jsx:23-42",
       "anchor": "min-h-[500px]"
     }
+  ],
+  "source": {
+    "id": "src:NotFound@23",
+    "tag": "div",
+    "file": "src/pages/NotFound.jsx",
+    "lines": "23-42"
+  },
+  "semantic": {
+    "id": "not-found-block",
+    "category": "ERROR"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "internal-route",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

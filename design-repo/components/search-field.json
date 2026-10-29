@@ -1,0 +1,19 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "search-field",
+  "purpose": "Rounded search input with leading icon and a fading results dropdown.",
+  "composedOf": [
+    "Icon",
+    "Text"
+  ],
+  "usedBySections": [
+    "blog-search",
+    "article-top-bar"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/blog/BlogSearch.jsx:26",
+      "anchor": "export default function BlogSearch"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "riley-design-tokens/animation/motion-spec",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "authority": "Live-measured animation-pass values (encoded in src/styles/upper.css, lower.css, component code) and the independent animation-QA corrections outrank CLONE_SPEC.md §14 where they differ.",
   "noScrollReveal": {
     "statement": "There are NO scroll-reveal / whileInView animations anywhere. No motion pattern below fades/slides sections in on scroll; a generator must not invent one (the schema's closed motion enums make it impossible).",
@@ -32,7 +32,23 @@
         "gradient-band",
         "final-cta",
         "site-footer",
-        "not-found-block"
+        "not-found-block",
+        "blog-index-hero",
+        "blog-category-tabs",
+        "blog-featured-banner",
+        "blog-post-grid",
+        "blog-pagination",
+        "article-header",
+        "article-intro",
+        "article-chapter",
+        "article-sources",
+        "article-share-row",
+        "article-related-posts",
+        "text-page-header",
+        "text-page-chapter",
+        "text-page-closing",
+        "legal-policy-embed",
+        "cookie-consent"
       ]
     },
     "header-load-and-sticky": {
@@ -125,6 +141,38 @@
       "reducedMotionFallback": "No image scale on hover; pills keep instant opacity change.",
       "sections": [
         "blog-teaser"
+      ]
+    },
+    "search-dropdown-fade": {
+      "motionRoles": [
+        "search-dropdown-fade",
+        "link-hover-opacity"
+      ],
+      "reducedMotionFallback": "Show the results dropdown instantly (no 0.2s fade).",
+      "sections": [
+        "blog-search",
+        "article-top-bar"
+      ],
+      "evidence": [
+        {
+          "cite": "src/styles/blog.css:6",
+          "anchor": "animation: blogSearchFade 0.2s both"
+        }
+      ]
+    },
+    "sticky-aside": {
+      "motionRoles": [
+        "sticky-aside"
+      ],
+      "reducedMotionFallback": "none-required: sticky positioning only (no animated transition; the progress fill stays at height 0 as on the original).",
+      "sections": [
+        "article-toc"
+      ],
+      "evidence": [
+        {
+          "cite": "src/components/article/ArticleToc.jsx:23",
+          "anchor": "sticky top-20 hidden h-screen"
+        }
       ]
     }
   },
@@ -359,6 +407,39 @@
         {
           "cite": "CLONE_SPEC.md:468",
           "anchor": "Mobile Blog sub-links"
+        }
+      ]
+    },
+    "M16": {
+      "what": "blog search results dropdown",
+      "value": "fade-in 0.2s (both)",
+      "status": "measured in clone CSS (Blog spec §2.3)",
+      "evidence": [
+        {
+          "cite": "src/styles/blog.css:6",
+          "anchor": "animation: blogSearchFade 0.2s both"
+        }
+      ]
+    },
+    "M17": {
+      "what": "article TOC",
+      "value": "sticky top 80 (nav top 20); progress fill undefined on the original -> transparent, height 0",
+      "status": "measured (Blog spec §3.5)",
+      "evidence": [
+        {
+          "cite": "src/components/article/ArticleToc.jsx:5",
+          "anchor": "progress fill's bg"
+        }
+      ]
+    },
+    "M18": {
+      "what": "blog cards / featured banner hover",
+      "value": "none visible (transition-all 300ms on the title, no property changes)",
+      "status": "measured (Blog spec hover table)",
+      "evidence": [
+        {
+          "cite": "CLONE_SPEC_PAGES_BLOG.md:309",
+          "anchor": "| Card author link, page-number button | hover | none visible"
         }
       ]
     }

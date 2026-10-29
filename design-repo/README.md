@@ -1,151 +1,138 @@
-# Riley clone — design-repo
+# Riley clone — design-repo (2.0.0)
 
-An AI-ready, machine-validated design system for the Riley (rileyapp.com) clone. It lets a
-generator compose new on-brand page specs (PageSpecs) without inventing colors, copy
-budgets, sections, motion, or asset semantics. It is a **snapshot of the built clone**
-(templates `home`, `pricing` and `not-found`), not a living mirror of the source project.
+An AI-ready, machine-validated design system for the Riley (rileyapp.com) clone: tokens, primitives, components,
+36 section contracts, 8 templates in 7 families, a closed PageSpec schema with a semantic validator, adversarial and
+drift proofs. It is a **snapshot of the latest runnable clone** (git `2495803`), not a living mirror.
 
-- **Status:** `design-review-pending`, `productionApproved: false` (see `registry.manifest.json`)
-- **Theme:** `riley-light` only. No dark mode exists on the original or the clone.
-- **Source project:** React 18.3 + Vite 5.4 + Tailwind 3.4 + `@rive-app/react-canvas` 4.36 clone of a
-  Next.js + Tailwind v4 + framer-motion + embla + react-scroll-parallax + Rive original.
-  The versions are machine-checked against `../package.json` by `extraction/verify_all.py`.
+- **Status:** `design-review-pending`, `productionApproved: false`. Nothing here has been reviewed by a human.
+- **Category / policy:** `consumer-app`, bound to the non-SaaS policy `policy/design-policy.json`
+  (`consumer-parenting-app-web` 1.0.0, Common IR 0.5, `isSaaS: false`, explicitly **not** bound to
+  `n0-saas-design-constraints-common`). Decision state: `defined-pending-architecture-review` — an agent wrote the
+  classification (agent attestation, not a human sign-off).
+- **Theme:** `riley-light` only (no dark mode exists on the original or the clone).
+- **Source stack (documentation only):** React 18 + Vite 5 + Tailwind 3 clone of a Next.js original; versions are
+  machine-checked against `../package.json`.
 
 ## Counts (recomputed from disk by `extraction/verify_all.py`)
 
 | what | count |
 |---|---|
-| tokens: 00-foundation / 10-semantic / 20-component / 30-layout | 117 / 61 / 49 / 17 (total 244) |
-| primitives (`primitives/*.json`, PascalCase) | 10 |
-| components (`components/*.json`) | 16 |
-| sections (`sections/*.json`) | 17 |
-| templates (`templates/templates.json`) | 3 (home, pricing, not-found) |
-| routes mapped | 11 (`/`, `/pricing`, 8 dead sitemap slugs, `*` catch-all) |
-| excluded / pending route patterns | 9 |
-| asset roles (closed enum) | 18 (14 pinned) |
-| compatibility-graph rules | 19 |
-| motion patterns (closed enum) | 10 |
+| tokens 00-foundation / 10-semantic / 20-component / 30-layout | 147 / 77 / 49 / 21 (total 294; catalog 294) |
+| primitives / components / sections | 10 / 26 / 36 |
+| templates (families) | 8 (7) |
+| routes mapped (incl. `*`) | 249 (221 articles, 8 dead slugs, 6 unbuilt links) |
+| excluded routes | 0 |
+| asset roles | 31 |
+| compatibility-graph rules | 41 |
+| motion patterns | 12 |
+| example PageSpecs (clone / generated) | 8 / 7 |
 
-<!-- counts:{"tokens":{"00-foundation":117,"10-semantic":61,"20-component":49,"30-layout":17,"total":244},"primitives":10,"components":16,"sections":17,"templates":3,"routesMapped":11,"deadSlugRoutes":8,"routesExcludedPatterns":9,"assetRoles":18,"graphRules":19,"motionPatterns":10} -->
+<!-- counts:{"tokens":{"00-foundation":147,"10-semantic":77,"20-component":49,"30-layout":21,"total":294},"catalogTokens":294,"primitives":10,"components":26,"sections":36,"templates":8,"templateFamilies":7,"routesMapped":249,"articleRoutes":221,"deadSlugRoutes":8,"unbuiltLinkRoutes":6,"routesExcludedPatterns":0,"assetRoles":31,"graphRules":41,"motionPatterns":12,"examples":{"clone":8,"generated":7}} -->
 
-## Layout
-
-```
-design-repo/
-  README.md · CHANGELOG.md · registry.manifest.json
-  tokens/00-foundation/   color, gradient, typography, breakpoint, radius, elevation, motion
-  tokens/10-semantic/     color-roles, typography-roles, motion-roles
-  tokens/20-component/    button, card, pill, table, nav
-  tokens/30-layout/       container, section-spacing
-  tokens/themes/          riley-light (semantic -> foundation, resolved)
-  tokens/llm/             component-allowlist, token-catalog, token-policy
-  primitives/             Button, TextLink, CategoryPill, Avatar, Icon, Image, Text, RoundArrowButton, CheckMark, Divider
-  components/             marquee, parallax-cloud-stack, embla-loop-carousel, superpower-card, ... (16)
-  sections/               17 section contracts (content budget, constraints, motion, structured responsive, evidence)
-  templates/templates.json  3 templates as {section, required, repeatable, variant} nodes + routes + exclusions + content policy
-  compatibility/graph.json  19 rules, each with severity error|warn and named exceptions
-  animation/motion-spec.json  closed motion patterns, M1-M15 inventory, QA corrections
-  assets/asset-roles.json + assets/README.md  closed asset-role enum with generation/licensing policy
-  schema/pagespec.schema.json  draft-07, closed enums, additionalProperties:false everywhere
-  schema/example.pagespec.json the full home page with real short UI copy
-  schema/validate_schema.py    Draft7Validator run
-  schema/semantic_validate.py  everything JSON Schema cannot express (one function per graph rule)
-  schema/tests/adversarial_test.py  controls + mutations
-  extraction/measured-values.json   citation ledger (build-time evidence outside this folder)
-  extraction/verify_all.py          drift-proof repo checks
-```
-
-## Commands (run from this folder; requires Python 3.9+ and `jsonschema`)
+## Commands (run from this folder; Python 3.9+ with `jsonschema`)
 
 ```bash
-python3 schema/validate_schema.py          # Draft7Validator on the example -> 0 errors
-python3 schema/semantic_validate.py        # schema + 19 graph rules on the example (or pass PageSpec paths)
-python3 schema/tests/adversarial_test.py   # 6 controls pass, 30 mutations rejected
-python3 extraction/verify_all.py           # repo-level drift checks (see its docstring)
+python3 schema/validate_schema.py              # Draft-07 on every schema/examples/*.pagespec.json
+python3 schema/semantic_validate.py            # schema + all graph rules on every example (or pass paths)
+python3 schema/tests/adversarial_test.py       # controls pass; every PageSpec / registry / gate mutation rejected
+python3 extraction/verify_all.py               # repo-level checks (see its docstring)
+python3 extraction/prove_drift.py --scratch DIR   # each pin/gate/parity check proven to catch drift in a scratch copy
+python3 extraction/wrapper_gate.py             # R9 gate alone
+python3 extraction/build_provenance.py --check        # R7 source{} re-derived from implementedBy
+python3 extraction/build_leakage_patterns.py --check  # generation-mode patterns re-derived from the real source
+python3 extraction/build_token_catalog.py --check     # catalog re-derived from the token files
+python3 extraction/policy_hash.py              # contentHash of the files the policy is enforced by
 ```
 
-Every script derives the repo root from `__file__`, so they run unchanged from any copy.
-When the folder is shipped alone, with no sibling source project, `verify_all.py` turns the
-citation, route-source, asset-file, IA and version cross-checks into **WARN** lines. It still
-runs every internal check.
+Re-measuring section heights (optional; needs the source project, Node and a global Playwright):
+`npm ci && npx vite build --outDir <scratch> && npx vite preview --outDir <scratch> --port <port>`, then
+`NODE_PATH="$(npm root -g)" RILEY_BASE_URL=http://localhost:<port> node design-repo/extraction/measure_sections.mjs`.
 
-## How a generator uses it
+Every script derives the repo root from `__file__`. Shipped alone (no sibling source project), `verify_all.py`
+turns citation, provenance, route-source, leakage-rebuild, asset-file, IA and version cross-checks into WARN lines
+and still runs every internal check.
 
-1. Pick a `template` (`home` | `pricing` | `not-found`). The PageSpec's `nodes` must reproduce
-   that template's node list in order, keyed on `(section, variant)`. Every node in every
-   template is required and non-repeatable, because the clone has exactly one composition per
-   page shape.
-2. Fill each node's `content` within the `x-maxWords` budgets (`sections/<id>.json`
-   `contentContract.copyBudget`). Each budget is the real copy length plus about 20–30%.
-3. Set `motion` to the section's single allowed `pattern`, plus its const-locked
-   `reducedMotionFallback`.
-4. Reference media and links only through `assetRole`. A PageSpec has **no href/URL field
-   anywhere**, so live endpoints cannot be smuggled in.
-5. Set `page.brandContext`. `other-brand` forbids every `must-reuse-exact`,
-   `must-not-fabricate` and `must-not-reuse-live-endpoint` role. In practice, none of the three
-   Riley templates can be emitted verbatim for another brand.
+## Modes (`page.mode`, required, closed)
 
-## Scope, routes and things deliberately NOT normalised away
+- **`clone`** — faithful reconstruction of this clone. Real Riley assets and copy are allowed as evidence, but
+  restricted roles must use their registered files (`REGISTERED_ASSET_REF`).
+- **`generation`** — a new page for another brand (`page.brand` required). Twelve named rules reject source
+  identity and content: `GENERATION_MODE_BRAND`, `_ASSET`, `_PERSON`, `_CUSTOMER`, `_SCREENSHOT`, `_COPY`, `_CLAIM`,
+  `_RATING`, `_STORE`, `_URL`, `_EMBED` (plus asset availability). Patterns live in `schema/leakage-patterns.json`,
+  built by `extraction/build_leakage_patterns.py` from `src/`, `src/data/blogPosts.json` and the CLONE_SPEC files with
+  file:line evidence; source copy is stored only as hashed 5-word shingles. Strings are normalised first (NFKC,
+  zero-width removal, Cyrillic/Greek homoglyphs, curly quotes, dash variants).
+  **Caveats:** no human reviewed these patterns; detection is string-based (paraphrase, translation or text in images
+  evades it); the generic health-claim / rating phrasings in `policy` are policy-derived, not source-derived.
+- Asset roles carry a closed `availability` (`clone-only` | `generation-safe` | `blocked-for-generation`), pinned in
+  code in **both** validators (`PINNED_AVAILABILITY`), with `generationSafeSubstitutes` and `generatedModeGuidance`.
+  Generation-safe roles: placeholder brand mark, user-supplied asset, generated illustration, placeholder
+  screenshot, fictional person avatar, placeholder logo, placeholder URL (`.example` / `.invalid` only), original copy.
 
-- **Dead sitemap slugs.** `/baby-tracker`, `/sleep-tracker`, `/sleep-training`,
-  `/sleep-regression`, `/all-in-one`, `/your-babys-sleep-simplified`, `/product-hunt` and
-  `/give-the-gift` are soft-404s on the live original and in Wayback 2025. They map to the
-  `not-found` template and **must not be recreated as landing pages**. This is enforced by
-  `ROUTE_TEMPLATE_BINDING` and the adversarial case "dead sitemap slug bound to landing
-  template". `verify_all.py` pins the exact set of 8.
-- **Excluded / pending routes.** These are listed in `templates.json` `excludedRoutes`, each
-  with a reason: `/blog`, `/blog/{category}`, `/blog/author/{slug}`,
-  `/blog/{category}/{slug}`, `/editorial-process`, `/tos`, `/privacy`, `/cookies`, and
-  `/support` (UNVERIFIED). A PageSpec targeting one is rejected.
-  **While this snapshot was being built, a concurrent agent landed the blog, text and legal
-  pages in the source** (`src/pages/routes.jsx`, `BlogIndexPage.jsx`, `BlogArticlePage.jsx`,
-  `TextPage.jsx`, `LegalPage.jsx`). They remain excluded here. `verify_all.py` prints a WARN
-  for each source route that is built but not modelled, so the gap stays visible. Rebuild this
-  design-repo to model them.
-- **Content policy.** Blog article bodies and legal/text-page copy are intentionally
-  placeholder in the clone (long-form text was not copied). Testimonials, clinician
-  names/credentials, plan prices and competitor comparison marks are real-world claims. Reuse
-  them only in `riley-clone`, and never fabricate them.
-- **Global overlay not modelled.** `App.jsx` now renders a fixed `CookieConsent` bar on every
-  route. It landed with the blog work and is recorded in
-  `templates.json` `unmodelledGlobalOverlays`.
-- **GradientBand.** The IA (`../ia.json`) splits it into `product.feature-cards` and
-  `conversion.comparison-table`. Here it is one real wrapper node with variants
-  `feature-cards-and-table` (home) and `table-only` (pricing). Each section's `iaSectionIds`
-  holds the crosswalk, which `verify_all.py` checks.
-- **Type quirks kept on purpose.** Bold Cadiz faces compute `font-weight: 400` (the family is
-  swapped, not the weight). The `h1` / `desktop-*` / `mobile-*` rules are unlayered so they
-  beat utilities.
+## Templates, routes and measured heights (built clone, 1440x900)
 
-## Motion
+Every route the clone serves is mapped exactly once (`templates/templates.json`): the 7 exact routes, the 6
+category pages, one route per post in `src/data/blogPosts.json` (221), the 8 dead sitemap slugs, 6 linked-but-unbuilt
+paths (`/blog/authors`, three `/blog/author/<slug>`, `/blog/reviewer/kate-roche`, `/support` — the clone serves the 404
+template for them) and the `*` fallback. `/blog?page=N` are views of `/blog`.
 
-- There is no scroll-reveal anywhere (measured). The closed motion enums make it
-  impossible to add one.
-- Live animation-pass values outrank CLONE_SPEC §14. Independent animation-QA corrections are
-  applied:
-  - no superpower-card hover (cursor `auto`)
-  - the mobile-menu slide is approximate (original ~264ms JS-driven)
-  - header fixes at ~54–55px
-  - blog hover animates the `scale` property
-  - featurette drag follows the pointer from anywhere, incl. the Rive canvas (earlier "no follow" reading was a timing artifact); touch fixed
-- The clone has **no** `prefers-reduced-motion` handling, so every `reducedMotionFallback` is
-  prescriptive guidance, not measured behaviour.
+| template | family | routes | measured route | page px | tallest non-shell section |
+|---|---|---:|---|---:|---|
+| `home` | marketing-home | 1 | `/` | 11465 | gradient-band 2078px (18%) |
+| `pricing` | pricing | 1 | `/pricing` | 5644 | gradient-band 1250px (22%) |
+| `not-found` | error | 15 | `/baby-tracker` | 1478 | not-found-block 850px (58%) |
+| `blog-index` | blog-listing | 1 | `/blog` | 4794 | blog-post-grid 2188px (46%) |
+| `blog-category` | blog-listing | 6 | `/blog/sleep` | 3119 | final-cta 708px (23%) |
+| `blog-article` | article | 221 | `/blog/sleep/baby-witching-hour` | 6607 | article-chapter 1081px (16%) |
+| `text-page` | text-page | 1 | `/editorial-process` | 2136 | text-page-chapter 388px (18%) |
+| `legal` | legal | 3 | `/tos` | 900 | legal-policy-embed 0px (0%) |
 
-## Versioning
+## Decomposition (R6) and retrieval (R8)
 
-`allowlistVersion` and `pageSpecVersion` are machine-checked by `verify_all.py`.
-`repositoryVersion` is documentation-only. See `registry.manifest.json` `versionFieldNote`.
+- Article bodies are split at real H2 boundaries: `article-intro` + repeatable `article-chapter`, with
+  `article-header` (incl. breadcrumbs), `article-toc`, `article-sources`, `article-share-row`, `article-related-posts`.
+- The editorial text page is split at real H3 boundaries: `text-page-header` + repeatable `text-page-chapter` +
+  `text-page-closing`.
+- Legal pages: the clone (like the original, whose third-party embed is blocked by its own CSP) renders an **empty**
+  policy-embed slot — there is no legal text or heading to split, so legal is `legal-policy-embed` only. Generation
+  mode never generates legal text; the slot points at an operator URL.
+- `cookie-consent` is a global overlay: `retrievalEligible: false`, carried in `PageSpec.overlays`, rejected in
+  `nodes[]` (`RETRIEVAL_INELIGIBLE_NODE`), pinned in both validators; `superpower-modal` and `mobile-menu` components
+  are pinned ineligible too.
+- `extraction/wrapper_gate.py` (HERO > 1800 warn / > 3000 error; one section > 50% warn / > 60% error; missing
+  measurement or wrong viewport = error) passes with no hits and an empty whitelist.
+
+## Tokens (R10)
+
+`tokens/llm/token-catalog.json` lists every token by canonical path (built from the token files);
+`token-policy.json` maps PageSpec `node.style` properties to catalog categories. `TOKEN_UNKNOWN`, `TOKEN_RAW_COLOR`,
+`TOKEN_ARBITRARY_SPACING`, `TOKEN_UNSUPPORTED_FONT` and `TOKEN_THEME_COMBINATION` enforce it. 2.0.0 adds the
+blog/article colours (category tints, promo gradient, borders), type steps (article body/h2/h3, blog titles, tabs)
+and radii, each cited to the clone source; the typography recheck at 1440/768/390 is in
+`extraction/measured-values.json` `typographyRecheck`.
+
+## Things deliberately NOT normalised away
+
+- **Dead sitemap slugs** map to `not-found` and must never become landing pages (`ROUTE_TEMPLATE_BINDING`).
+- **Author / reviewer pages are not a page family here.** The clone links to them but never built them (the blog
+  recon marked them out of scope); they render the 404 template, so they map to `not-found` (`unbuiltLink`).
+- **Placeholder long-form copy.** Article bodies and the editorial page are placeholder text in the clone; their
+  copy budgets are generation guidance, not measured against Riley's real article text.
+- **GradientBand** stays one wrapper node with variants (`feature-cards-and-table` on home, `table-only` on pricing).
+- **Type quirks**: bold Cadiz faces compute `font-weight: 400`; the `h1`/`desktop-*`/`mobile-*` rules stay unlayered.
+- **Motion**: no scroll-reveal exists; the clone has no `prefers-reduced-motion` handling, so every
+  `reducedMotionFallback` is prescriptive.
+
+## Known gaps / honesty notes
+
+- No human has reviewed the leakage patterns, the asset-role pins, the policy classification or the wrapper
+  whitelist. Agent attestation is not a human sign-off.
+- Live-vs-clone visual parity was **not** measured in this pass (no live capture was taken); the heights above are
+  of the built clone only.
+- Rive chat content lives inside `.riv` files and cannot be measured. Several CTA destinations are UNVERIFIED.
+- Generation-mode leakage detection is string-based and can be evaded by paraphrase.
 
 ## Packaging
 
-Build `design-repo.zip` last, from the parent folder, with the CLI:
+`design-repo.zip` is gitignored and never committed. If needed, build it last from the parent folder:
 `zip -r -X design-repo.zip design-repo -x '*.DS_Store' -x '__MACOSX/*' -x '*/__pycache__/*'`.
-The source project is a git repository (private remote). `design-repo.zip` is listed in its
-`.gitignore` and is not tracked — confirm with `git ls-files | grep design-repo.zip` (prints nothing).
-
-## Known gaps
-
-- The Rive chat content and timing live inside the `.riv` files and can't be measured.
-- Several CTA destinations are UNVERIFIED (role `unspecified-destination`).
-- The mobile-menu blog sub-links (M15) are UNVERIFIED and not rendered.
-- `/support` is linked from the footer, but its live status is unknown.

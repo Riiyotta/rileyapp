@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "how-riley-works",
   "registryId": "section.how-riley-works",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "feature",
   "purpose": "Three pillars (science, learning tech, individuality) with family marks and a CTA.",
   "iaSectionIds": [
@@ -13,6 +13,23 @@
       "cite": "src/components/HowRileyWorks.jsx:22-46",
       "anchor": "export default function HowRileyWorks"
     }
+  ],
+  "source": {
+    "id": "src:HowRileyWorks@24",
+    "tag": "section",
+    "file": "src/components/HowRileyWorks.jsx",
+    "lines": "24-46"
+  },
+  "semantic": {
+    "id": "how-riley-works",
+    "category": "FEATURES"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "placeholder-url",
+    "unspecified-destination",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

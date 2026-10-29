@@ -1,0 +1,437 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "page": {
+    "route": "/journal/routines/tidy-mornings",
+    "title": "A tidier morning routine",
+    "template": "blog-article",
+    "mode": "generation",
+    "theme": "riley-light",
+    "brand": {
+      "name": "Brightburrow",
+      "mark": {
+        "assetRole": "placeholder-brand-mark",
+        "assetRef": "generated:brightburrow-wordmark"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "type": "site-header",
+      "variant": "standalone",
+      "content": {
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "generated:placeholder-brand-mark-116",
+          "alt": "Brightburrow"
+        },
+        "navItems": [
+          {
+            "label": "Journal"
+          },
+          {
+            "label": "Plans"
+          }
+        ],
+        "cta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "mobileCta": {
+          "label": "Open the planner",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "article-top-bar",
+      "content": {
+        "backLabel": "Back",
+        "back": {
+          "assetRole": "internal-route"
+        },
+        "searchPlaceholder": "Search the journal"
+      },
+      "motion": {
+        "pattern": "search-dropdown-fade",
+        "reducedMotionFallback": "Show the results dropdown instantly (no 0.2s fade)."
+      }
+    },
+    {
+      "type": "article-header",
+      "content": {
+        "breadcrumbs": {
+          "rootLabel": "Journal",
+          "categoryLabel": "Routines",
+          "currentLabel": "A tidier morning routine",
+          "tone": "sleep"
+        },
+        "title": "A tidier morning routine",
+        "description": "Five small changes that make school-day mornings calmer for the whole household.",
+        "bylines": [
+          {
+            "label": "Written by:",
+            "name": "[Author name]",
+            "title": "[Operator-verified role]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-169",
+              "alt": "Generated illustration"
+            }
+          }
+        ],
+        "cover": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-201",
+          "alt": "Placeholder mark"
+        },
+        "share": {
+          "copyLabel": "Copy link",
+          "platforms": [
+            {
+              "label": "Share link",
+              "icon": {
+                "assetRole": "user-supplied-asset",
+                "assetRef": "user-supplied:share-icon"
+              }
+            }
+          ]
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-toc",
+      "content": {
+        "heading": "In this guide:",
+        "entries": [
+          {
+            "label": "Why mornings stall"
+          },
+          {
+            "label": "Set out the night before"
+          },
+          {
+            "label": "One list for everyone"
+          },
+          {
+            "label": "Keep it going"
+          }
+        ],
+        "share": {
+          "copyLabel": "Copy link",
+          "platforms": [
+            {
+              "label": "Share link",
+              "icon": {
+                "assetRole": "user-supplied-asset",
+                "assetRef": "user-supplied:share-icon"
+              }
+            }
+          ]
+        }
+      },
+      "motion": {
+        "pattern": "sticky-aside",
+        "reducedMotionFallback": "none-required: sticky positioning only (no animated transition; the progress fill stays at height 0 as on the original)."
+      }
+    },
+    {
+      "type": "article-intro",
+      "content": {
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Shared lists that stay in sync"
+          },
+          {
+            "kind": "promo",
+            "text": "Shared lists that stay in sync",
+            "cta": {
+              "label": "Start a free plan",
+              "assetRole": "unspecified-destination"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-chapter",
+      "content": {
+        "heading": "Why mornings stall",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Rainy afternoon craft ideas"
+          },
+          {
+            "kind": "subheading",
+            "text": "A tidier morning routine"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Short, practical reading for parents juggling work, school runs and the occasional rainy-day project."
+          },
+          {
+            "kind": "list",
+            "text": "Rainy afternoon craft ideas",
+            "items": [
+              {
+                "text": "Weekly planning in five minutes"
+              },
+              {
+                "text": "Weekly planning in five minutes",
+                "children": [
+                  {
+                    "text": "Weekly planning in five minutes"
+                  },
+                  {
+                    "text": "Weekly planning in five minutes"
+                  }
+                ]
+              },
+              {
+                "text": "Shared lists that stay in sync"
+              }
+            ]
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-chapter",
+      "content": {
+        "heading": "Set out the night before",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Short, practical reading for parents juggling work, school runs and the occasional rainy-day project."
+          },
+          {
+            "kind": "image",
+            "text": "A tidier morning routine",
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-335",
+              "alt": "Placeholder mark"
+            }
+          },
+          {
+            "kind": "editor-note",
+            "text": "Weekly planning in five minutes"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-chapter",
+      "content": {
+        "heading": "One list for everyone",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Pick the pieces that suit your home today and switch them off again whenever life changes shape."
+          },
+          {
+            "kind": "downloadable-image",
+            "text": "Rainy afternoon craft ideas",
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-266",
+              "alt": "Sample avatar"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-chapter",
+      "content": {
+        "heading": "Keep it going",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Shared lists that stay in sync"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-sources",
+      "content": {
+        "summaryLabel": "0 sources cited",
+        "sources": []
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-share-row",
+      "content": {
+        "label": "Share this guide:",
+        "share": {
+          "copyLabel": "Copy link",
+          "platforms": [
+            {
+              "label": "Share link",
+              "icon": {
+                "assetRole": "user-supplied-asset",
+                "assetRef": "user-supplied:share-icon"
+              }
+            }
+          ]
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "article-related-posts",
+      "content": {
+        "heading": "More from the journal",
+        "seeAllLabel": "See all",
+        "illustration": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-661"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "final-cta",
+      "content": {
+        "heading": "Plans for every kind of household",
+        "cta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "background": {
+          "assetRole": "decorative-cloud",
+          "assetRef": "generated:decorative-cloud-989"
+        },
+        "mascots": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-779"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Get the Brightburrow letter",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Journal",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Plans",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "How we write",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Help",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the app",
+          "badge": {
+            "assetRole": "user-supplied-asset",
+            "assetRef": "user-supplied:user-supplied-asset-504",
+            "alt": "Generated illustration of stacked lunch boxes"
+          },
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "generated:placeholder-brand-mark-949"
+        },
+        "copyright": "Journal"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "We use cookies to understand how the site is used.",
+        "learnMore": {
+          "label": "Read more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

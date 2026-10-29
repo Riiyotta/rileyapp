@@ -14,5 +14,7 @@
       "cite": "src/components/upper/SiteHeader.jsx:110-146",
       "anchor": "createPortal"
     }
-  ]
+  ],
+  "retrievalEligible": false,
+  "retrievalReason": "Runtime slide-up navigation drawer shown only after tapping the hamburger below 992px; header interaction state, never page content."
 }

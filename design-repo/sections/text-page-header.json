@@ -1,0 +1,63 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "text-page-header",
+  "registryId": "section.text-page-header",
+  "version": "2.0.0",
+  "category": "hero",
+  "purpose": "Text-page opener: bold H2 page title and one intro paragraph.",
+  "iaSectionIds": [
+    "text.header"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/pages/TextPage.jsx:23-29",
+      "anchor": "<section className=\"tp-prose"
+    }
+  ],
+  "source": {
+    "id": "src:TextPage@23",
+    "tag": "section",
+    "file": "src/pages/TextPage.jsx",
+    "lines": "23-29"
+  },
+  "semantic": {
+    "id": "text-page-header",
+    "category": "HERO"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_text-page-header",
+    "copyBudget": {
+      "heading": 6,
+      "intro": 40
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": false,
+    "rules": []
+  },
+  "evidence": [
+    {
+      "cite": "src/pages/TextPage.jsx:6",
+      "anchor": "Blog spec §4: /editorial-process"
+    }
+  ],
+  "notes": [
+    "No horizontal padding (original quirk): text runs edge to edge at every width."
+  ]
+}

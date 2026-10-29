@@ -1,0 +1,146 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "page": {
+    "route": "/tos",
+    "title": "Terms of Service | Riley",
+    "template": "legal",
+    "mode": "clone",
+    "theme": "riley-light"
+  },
+  "nodes": [
+    {
+      "type": "announcement-bar",
+      "content": {
+        "message": "Try Riley risk free with our 7-day free trial!",
+        "link": {
+          "assetRole": "internal-route"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-header",
+      "variant": "standalone",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/wordmark.svg",
+          "alt": "Riley logo"
+        },
+        "navItems": [
+          {
+            "label": "Blog"
+          },
+          {
+            "label": "What's New?"
+          }
+        ],
+        "cta": {
+          "label": "Get Started For Free",
+          "assetRole": "app-store-onelink"
+        },
+        "mobileCta": {
+          "label": "Try For $0",
+          "assetRole": "app-store-onelink"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "legal-policy-embed",
+      "content": {
+        "policy": "terms",
+        "embed": {
+          "assetRole": "policy-embed",
+          "embedId": "1b687b5a-20d7-48f3-be50-cae504edce40"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Stay in the loop with Riley's newsletter.",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "newsletter-endpoint"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Blog",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Pricing",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Editorial Process",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy Policy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms of Service",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Support",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the App",
+          "badge": {
+            "assetRole": "store-badge",
+            "assetRef": "/assets/icons/app-store-badge.svg",
+            "alt": "Download on the App Store"
+          },
+          "assetRole": "app-store-onelink"
+        },
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/icons/footer-logo.svg"
+        },
+        "copyright": "© 2025 Riley"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "By using this site, you accept cookies for analytics.",
+        "learnMore": {
+          "label": "Learn more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

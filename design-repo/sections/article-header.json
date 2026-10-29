@@ -1,0 +1,111 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "article-header",
+  "registryId": "section.article-header",
+  "version": "2.0.0",
+  "category": "hero",
+  "purpose": "Article opener: breadcrumb pills, H1 title, description, author (+ reviewer) bylines, updated date / read time, top share buttons and the cover image.",
+  "iaSectionIds": [
+    "article.header",
+    "article.breadcrumbs"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/article/ArticleHeader.jsx:30-61",
+      "anchor": "export function ArticleHeaderDesktop"
+    }
+  ],
+  "source": {
+    "id": "src:ArticleHeader@33",
+    "tag": "div",
+    "file": "src/components/article/ArticleHeader.jsx",
+    "lines": "33-61"
+  },
+  "semantic": {
+    "id": "article-header",
+    "category": "HERO"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "fictional-person-avatar",
+    "generated-illustration",
+    "user-supplied-asset"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_article-header",
+    "copyBudget": {
+      "breadcrumbs.rootLabel": 1,
+      "breadcrumbs.categoryLabel": 2,
+      "breadcrumbs.currentLabel": 20,
+      "title": 22,
+      "description": 52,
+      "bylines[].label": 3,
+      "bylines[].name": 5,
+      "bylines[].title": 12,
+      "bylines[].avatar.alt": 3,
+      "updatedLabel": 4,
+      "readTime": 4,
+      "cover.alt": 46,
+      "share.copyLabel": 2,
+      "share.platforms[].label": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "separate mobile markup: title, then 264px-tall cover, then description, date row, author byline only (no reviewer)",
+          "breadcrumb drops the 'Blog' crumb and first chevron",
+          "no top share row"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/article/ArticleHeader.jsx:63",
+            "anchor": "export function ArticleHeaderMobile"
+          },
+          {
+            "cite": "src/components/article/ArticleHeader.jsx:84",
+            "anchor": "reviewer={false}"
+          }
+        ]
+      },
+      {
+        "query": ">=1280px",
+        "changes": [
+          "header column padding 208px (104px at 992-1279)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/article/ArticleHeader.jsx:33",
+            "anchor": "lg:max-xl:px-[6.5rem] xl:px-[13rem]"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC_PAGES_BLOG.md:136",
+      "anchor": "| 5 | Title, description, bylines"
+    }
+  ],
+  "notes": [
+    "Breadcrumbs (IA article.breadcrumbs) render inside this header row on the original, so they are modelled as the article-breadcrumbs component of this section, not a separate node."
+  ]
+}

@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "gradient-band",
   "registryId": "section.gradient-band",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "feature",
   "purpose": "Peach radial-gradient band: (home) feature cards + 'Why Riley Stands Out' comparison table; (pricing) the table only.",
   "iaSectionIds": [
@@ -14,6 +14,23 @@
       "cite": "src/components/GradientBand.jsx:1-12",
       "anchor": "showFeatureCards = true"
     }
+  ],
+  "source": {
+    "id": "src:GradientBand@7",
+    "tag": "div",
+    "file": "src/components/GradientBand.jsx",
+    "lines": "7-12"
+  },
+  "semantic": {
+    "id": "gradient-band",
+    "category": "FEATURES"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "placeholder-url",
+    "unspecified-destination",
+    "user-supplied-asset"
   ],
   "variants": {
     "feature-cards-and-table": "home (HomePage.jsx:26 `<GradientBand />`)",

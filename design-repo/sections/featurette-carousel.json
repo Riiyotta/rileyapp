@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "featurette-carousel",
   "registryId": "section.featurette-carousel",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "carousel",
   "purpose": "'Here's how real users talk to Riley' — looping carousel pairing a Rive chat phone with a real user photo.",
   "iaSectionIds": [
@@ -13,6 +13,26 @@
       "cite": "src/components/Featurette.jsx:32-104",
       "anchor": "export default function Featurette"
     }
+  ],
+  "source": {
+    "id": "src:Featurette@36",
+    "tag": "section",
+    "file": "src/components/Featurette.jsx",
+    "lines": "36-104"
+  },
+  "semantic": {
+    "id": "featurette-carousel",
+    "category": "FEATURES"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "decorative-cloud",
+    "fictional-person-avatar",
+    "generated-illustration",
+    "placeholder-screenshot",
+    "placeholder-url",
+    "unspecified-destination",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

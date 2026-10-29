@@ -1,0 +1,63 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "text-page-chapter",
+  "registryId": "section.text-page-chapter",
+  "version": "2.0.0",
+  "category": "editorial",
+  "purpose": "One H3-bounded part of a text page: the H3 and its bullet list (items may lead with a bold label).",
+  "iaSectionIds": [
+    "text.chapter"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/pages/TextPage.jsx:30-45",
+      "anchor": "{SECTIONS.map((s) => ("
+    }
+  ],
+  "source": {
+    "id": "src:TextPage@32",
+    "tag": "h3",
+    "file": "src/pages/TextPage.jsx",
+    "lines": "32-45"
+  },
+  "semantic": {
+    "id": "text-page-chapter",
+    "category": "EDITORIAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_text-page-chapter",
+    "copyBudget": {
+      "heading": 6,
+      "items[].label": 6,
+      "items[].text": 40
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": false,
+    "repeatable": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": false,
+    "rules": []
+  },
+  "evidence": [
+    {
+      "cite": "src/pages/TextPage.jsx:8",
+      "anchor": "const SECTIONS = ["
+    }
+  ],
+  "notes": []
+}

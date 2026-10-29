@@ -1,7 +1,7 @@
 {
   "$schema": "riley-design-tokens/templates",
-  "version": "1.0.0",
-  "nodeOrderNote": "Every node in every template is required and non-repeatable: the clone has exactly one real composition per page shape and no evidence of optional sections. A PageSpec must reproduce the node list in order, keyed on (section, variant).",
+  "version": "2.0.0",
+  "nodeOrderNote": "A PageSpec must reproduce its template's node list in order, keyed on (section, variant). Nodes are required and non-repeatable unless marked: article-chapter and text-page-chapter repeat (one per real heading-bounded chapter); blog-featured-banner and blog-post-grid are optional on blog-category (empty categories).",
   "templates": {
     "home": {
       "purpose": "Homepage: full product story from promise to proof to conversion.",
@@ -98,7 +98,8 @@
           "required": true,
           "repeatable": false
         }
-      ]
+      ],
+      "family": "marketing-home"
     },
     "pricing": {
       "purpose": "Pricing: plan comparison first, then proof, comparison table, FAQ and closing CTA.",
@@ -156,10 +157,11 @@
           "required": true,
           "repeatable": false
         }
-      ]
+      ],
+      "family": "pricing"
     },
     "not-found": {
-      "purpose": "Shared 404 ('peekaboo') for unknown paths AND the 8 dead sitemap slugs.",
+      "purpose": "Shared 404 ('peekaboo') for unknown paths, the 8 dead sitemap slugs, and linked-but-unbuilt paths (author/reviewer pages, /support).",
       "iaTemplateId": "template.not-found",
       "evidence": [
         {
@@ -185,6 +187,299 @@
         },
         {
           "section": "not-found-block",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "family": "error"
+    },
+    "blog-index": {
+      "family": "blog-listing",
+      "purpose": "Blog listing: opener, search, category tabs, featured banner, paginated post grid, closing CTA.",
+      "iaTemplateId": "template.blog-index",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:15",
+          "anchor": "'/blog': BlogIndexPage"
+        },
+        {
+          "cite": "src/pages/BlogIndexPage.jsx:101",
+          "anchor": "<AnnouncementBar />"
+        }
+      ],
+      "nodes": [
+        {
+          "section": "announcement-bar",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-header",
+          "required": true,
+          "repeatable": false,
+          "variant": "standalone"
+        },
+        {
+          "section": "blog-index-hero",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog-search",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog-category-tabs",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog-featured-banner",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog-post-grid",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog-pagination",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "final-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-footer",
+          "required": true,
+          "repeatable": false
+        }
+      ]
+    },
+    "blog-category": {
+      "family": "blog-listing",
+      "purpose": "Category listing (same family as blog-index): no announcement bar, category featured set only, always 'Page 1 of 1'.",
+      "iaTemplateId": "template.blog-category",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:4",
+          "anchor": "BlogCategoryPage"
+        },
+        {
+          "cite": "src/pages/BlogIndexPage.jsx:85",
+          "anchor": "if (isCategory) {"
+        }
+      ],
+      "nodes": [
+        {
+          "section": "site-header",
+          "required": true,
+          "repeatable": false,
+          "variant": "standalone"
+        },
+        {
+          "section": "blog-index-hero",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog-search",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog-category-tabs",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog-featured-banner",
+          "required": false,
+          "repeatable": false
+        },
+        {
+          "section": "blog-post-grid",
+          "required": false,
+          "repeatable": false
+        },
+        {
+          "section": "blog-pagination",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "final-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "optionalNodeEvidence": "health and pregnancy have FEATURED = null: no banner, no cards (measured /blog/health at 1440: tabs -> pagination)."
+    },
+    "blog-article": {
+      "family": "article",
+      "purpose": "Single article: top bar, header, TOC, intro + H2 chapters, sources, share row, related, closing CTA.",
+      "iaTemplateId": "template.blog-article",
+      "routePattern": "/blog/{category}/{slug}",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:5",
+          "anchor": "BlogArticlePage"
+        },
+        {
+          "cite": "src/pages/BlogArticlePage.jsx:59",
+          "anchor": "<ArticleTopBar />"
+        }
+      ],
+      "nodes": [
+        {
+          "section": "site-header",
+          "required": true,
+          "repeatable": false,
+          "variant": "standalone"
+        },
+        {
+          "section": "article-top-bar",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "article-header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "article-toc",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "article-intro",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "article-chapter",
+          "required": true,
+          "repeatable": true
+        },
+        {
+          "section": "article-sources",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "article-share-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "article-related-posts",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "final-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-footer",
+          "required": true,
+          "repeatable": false
+        }
+      ]
+    },
+    "text-page": {
+      "family": "text-page",
+      "purpose": "Editorial/text page: title + intro, H3-bounded chapters, closing paragraph; no closing CTA.",
+      "iaTemplateId": "template.editorial",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:16",
+          "anchor": "'/editorial-process': TextPage"
+        },
+        {
+          "cite": "src/pages/TextPage.jsx:57",
+          "anchor": "<SiteFooter />"
+        }
+      ],
+      "nodes": [
+        {
+          "section": "announcement-bar",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-header",
+          "required": true,
+          "repeatable": false,
+          "variant": "standalone"
+        },
+        {
+          "section": "text-page-header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "text-page-chapter",
+          "required": true,
+          "repeatable": true
+        },
+        {
+          "section": "text-page-closing",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-footer",
+          "required": true,
+          "repeatable": false
+        }
+      ]
+    },
+    "legal": {
+      "family": "legal",
+      "purpose": "Legal policy page (/tos, /privacy, /cookies): chrome around an empty policy-embed slot, as rendered on the original.",
+      "iaTemplateId": "template.legal",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:17",
+          "anchor": "'/tos': () => <LegalPage kind=\"tos\" />"
+        },
+        {
+          "cite": "src/pages/LegalPage.jsx:6",
+          "anchor": "<main>"
+        }
+      ],
+      "nodes": [
+        {
+          "section": "announcement-bar",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "site-header",
+          "required": true,
+          "repeatable": false,
+          "variant": "standalone"
+        },
+        {
+          "section": "legal-policy-embed",
           "required": true,
           "repeatable": false
         },
@@ -314,6 +609,1318 @@
       ]
     },
     {
+      "path": "/blog",
+      "template": "blog-index",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:15",
+          "anchor": "'/blog': BlogIndexPage"
+        }
+      ],
+      "note": "/blog?page=N (query-string pages 1..37) are views of this route, not separate routes."
+    },
+    {
+      "path": "/blog/development",
+      "template": "blog-category",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:23",
+          "anchor": "(development|feeding|health|news|pregnancy|sleep)"
+        }
+      ]
+    },
+    {
+      "path": "/blog/feeding",
+      "template": "blog-category",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:23",
+          "anchor": "(development|feeding|health|news|pregnancy|sleep)"
+        }
+      ]
+    },
+    {
+      "path": "/blog/health",
+      "template": "blog-category",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:23",
+          "anchor": "(development|feeding|health|news|pregnancy|sleep)"
+        }
+      ]
+    },
+    {
+      "path": "/blog/news",
+      "template": "blog-category",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:23",
+          "anchor": "(development|feeding|health|news|pregnancy|sleep)"
+        }
+      ]
+    },
+    {
+      "path": "/blog/pregnancy",
+      "template": "blog-category",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:23",
+          "anchor": "(development|feeding|health|news|pregnancy|sleep)"
+        }
+      ]
+    },
+    {
+      "path": "/blog/sleep",
+      "template": "blog-category",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:23",
+          "anchor": "(development|feeding|health|news|pregnancy|sleep)"
+        }
+      ]
+    },
+    {
+      "path": "/blog/development/1-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/10-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/11-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/12-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/15-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/15-toddler-friendly-fathers-day-activities",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/18-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/2-5-year-old-30-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/2-month-old-baby-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/2-year-old-24-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/3-day-potty-training-method",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/3-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/4-month-old-baby-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/5-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/6-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/7-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/8-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/9-month-old-development-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/adhd-and-potty-training",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/baby-milestones-by-month",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/baby-walking-timeline-what's-normal-and-what's-not",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/developmental-delays-vs-late-bloomers",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/fine-motor-development-milestones-by-age",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/from-overwhelmed-to-confident-your-parenting-transformation-journey",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/gross-motor-skills-by-age",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/how-to-play-with-your-newborn",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/language-development-in-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/major-developmental-milestones-and-their-impact-on-sleep",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/month-by-month-baby-milestones-is-your-baby-on-track",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/motor-skills-development-and-sleep-patterns",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/naked-potty-training-method",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/newborn-baby-development-what-to-expect-in-the-first-month",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/newborn-basics-feeding-sleeping",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/newborn-developmental-milestones",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/night-time-potty-training",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/potty-training-boys",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/potty-training-girls",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/potty-training-reward-ideas",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/signs-your-child-is-ready-for-potty-training",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/toddler-regressing-in-potty-training",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/tummy-time-milestones-and-tips",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/understanding-baby-growth-charts",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/when-do-babies-smile-laugh-and-connect",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/when-do-babies-start-crawling",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/when-do-babies-start-sitting-up",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/when-should-a-baby-start-talking",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/development/your-baby's-first-year-the-complete-development-guide",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/6-month-old-feeding-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/baby-burping-techniques-for-better-sleep",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/baby-feeding-schedules",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/baby-gas-pain-at-night",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/baby-gas-relief-tips",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/baby-hunger-cues",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/bottle-transitions-for-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/cluster-feeding-explained",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/night-feedings-when-and-how-to-wean",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/night-weaning-when-and-how-to-stop-nighttime-feeding",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/what-is-combo-feeding-a-complete-guide-to-mixed-feeding-your-baby",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/feeding/what-is-dream-feeding",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/car-seat-installation",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/guide-to-vaccination-timing-for-newborns-and-infants",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/halloween-safety-tips-for-parents",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/hepatitis-b-vaccine-for-newborns",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/postpartum-mental-health-support",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/separation-anxiety-in-children",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/understanding-and-managing-toddler-tantrums",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/understanding-fevers-in-children",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/understanding-group-b-strep-and-meningitis-risk-in-newborns",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/understanding-rsv-polio-dtap-vaccines",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/health/vitamin-k-for-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/how-riley-works",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/introducing-golden-window",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/introducing-riley-together",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/introducing-the-new-riley",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/riley-public-beta-announcement",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/riley-voice-mode",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/rileys-memory-system",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/the-ultimate-guide-to-free-baby-tracker-apps",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/welcome-dr-kate-roche",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/welcome-dr-lilly-jay",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/news/why-we-built-riley",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/baby-blues-vs-postpartum-depression",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/braxton-hicks-vs-real-labor",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/childcare-planning-questions-to-ask-and-when-to-start-looking",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/creating-your-birth-plan",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/hospital-bag-essentials-what-to-pack-for-labor-and-recovery",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/how-to-prepare-your-child-for-a-new-baby",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/kick-counts-monitoring-your-baby's-movement-in-the-third-trimester",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/managing-shortness-of-breath-in-late-pregnancy",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/maternity-leave-planning-what-to-do-before-baby-arrives",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/natural-remedies-for-third-trimester-acid-reflux",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/nursery-setup-essential-items-vs-nice-to-haves",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/partners-guide-to-supporting-mom-in-the-third-trimester",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/preeclampsia-warning-signs-every-pregnant-woman-should-know",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/products-i-loved-as-a-first-time-mom",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/safe-exercise-in-the-third-trimester",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/swollen-feet-and-ankles-in-pregnancy",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/the-complete-guide-to-your-first-24-hours-after-delivery",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/third-trimester-fetal-development",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/third-trimester-sleep-survival-guide",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/when-baby-drops-understanding-lightening-and-engagement",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/pregnancy/your-babys-lungs-development-and-viability-in-the-third-trimester",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/1-month-old-sleep-guide",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/1-to-0-nap-transition",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/10-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/10-month-sleep-regression",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/11-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/12-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/12-month-sleep-regression",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/13-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/14-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/15-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/16-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/17-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/18-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/18-month-sleep-regression",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/19-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/2-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/2-to-1-nap-transition",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/2-year-old-sleep-regression",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/20-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/21-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/22-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/23-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/24-month-old-2-year-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/3-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/3-month-sleep-regression",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/3-to-2-nap-transition",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/3-year-old-toddler-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/30-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/4-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/4-month-sleep-regression-why-it-happens-and-what-you-can-do-about-it",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/4-to-3-nap-transition",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/4-year-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/5-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/5-month-sleep-regression",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/6-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/6-month-sleep-regression",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/7-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/8-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/8-month-sleep-regression",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/9-month-old-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/all-about-sleep-regressions",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-safe-sleep-what-to-know-about-the-safe-to-sleep-campaign",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-sleep-cues",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-sleep-regression-ages",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-sleep-schedule-guide-month-by-month-sleep-charts",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-sleep-training-methods",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-sleep-transitions-by-age",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-sleep-while-traveling",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-taking-short-naps",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-wake-windows-by-age",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/baby-witching-hour",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/back-to-school-sleep-schedule-for-children",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/bassinet-to-crib-transition",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/can-babies-sleep-on-their-side",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/connection-between-cognitive-leaps-and-sleep-regressions",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/contact-naps",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/core-sleep-for-children",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/crib-to-toddler-bed-transition",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/daylight-savings-spring-forward",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/early-morning-waking",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/fading-sleep-training",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/fall-back-how-to-adjust-baby-sleep-for-daylight-saving-2024",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/ferber-method-guide",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/gentle-sleep-training-techniques",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/good-bedtime-routine-looks-like",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-do-sleep-disruptions-affect-language-development-in-children",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-long-does-4-month-sleep-regression-last",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-long-should-newborn-naps-be",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-many-naps-does-your-child-need",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-to-get-twins-on-the-same-sleep-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-to-put-a-baby-to-sleep",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-to-stop-bedtime-resistance",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-to-swaddle-your-baby",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-to-transition-baby-to-their-own-room",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/how-to-transition-from-contact-naps-to-crib",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/is-it-okay-for-baby-to-sleep-on-their-stomach",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/nap-duration-guidelines-for-your-child",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/newborn-sleep-environment",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/newborn-wont-sleep-unless-held",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/nightmares-vs-night-terrors-in-children",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/normal-infant-sleep-patterns",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/one-month-old-wake-windows",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/overtired-baby-signs",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/pacifiers-and-sleep",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/rem-sleep-in-children",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/safe-baby-sleeping-positions",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/seasonal-sleep-adjustments",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-cues-decoding-your-1-month-olds-sleep-language",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-during-illness",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-during-teething",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-environment-for-your-child",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-sacks-guide",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-1-year-old-toddlers",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-10-month-old-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-11-month-old-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-2-year-old-toddlers",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-3-to-4-year-olds",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-4-month-old-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-5-month-old-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-6-month-old-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-7-month-old-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-9-month-old-babies",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-different-temperaments",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-for-naps",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-methods-compared",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/sleep-training-while-room-sharing",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/the-complete-guide-to-crib-safety",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/the-cry-it-out-method",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/two-month-old-wake-windows",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/wake-windows-vs-clock-schedule",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/what-is-newborn-day-night-confusion",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/when-do-babies-start-dreaming",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/when-do-babies-start-sleeping-through-the-night",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/when-to-start-sleep-training",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/when-to-stop-swaddling-baby-guide",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/when-to-wake-from-naps",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/white-noise-for-sleep",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/why-is-my-baby-crying-in-their-sleep",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/blog/sleep/why-your-baby-wakes-when-put-down",
+      "template": "blog-article",
+      "source": "src/data/blogPosts.json"
+    },
+    {
+      "path": "/editorial-process",
+      "template": "text-page",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:16",
+          "anchor": "'/editorial-process': TextPage"
+        }
+      ]
+    },
+    {
+      "path": "/tos",
+      "template": "legal",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:17",
+          "anchor": "'/tos': () => <LegalPage"
+        }
+      ]
+    },
+    {
+      "path": "/privacy",
+      "template": "legal",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:18",
+          "anchor": "'/privacy': () => <LegalPage"
+        }
+      ]
+    },
+    {
+      "path": "/cookies",
+      "template": "legal",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:19",
+          "anchor": "'/cookies': () => <LegalPage"
+        }
+      ]
+    },
+    {
+      "path": "/blog/authors",
+      "template": "not-found",
+      "unbuiltLink": true,
+      "evidence": [
+        {
+          "cite": "src/components/blog/categories.js:25",
+          "anchor": "href: '/blog/authors'"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_BLOG.md:589",
+          "anchor": "Author pages (`/blog/author/<slug>`, `/blog/authors`)"
+        }
+      ],
+      "note": "Linked from built pages but not built in the clone (out of scope in the blog recon); the clone serves the 404 template (App fallback / BlogArticlePage NotFound). Not a page family to model."
+    },
+    {
+      "path": "/blog/author/amanda-deluca",
+      "template": "not-found",
+      "unbuiltLink": true,
+      "evidence": [
+        {
+          "cite": "src/components/article/ArticleHeader.jsx:15",
+          "anchor": "href={`/blog/author/${post.authorSlug}`}"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_BLOG.md:589",
+          "anchor": "Author pages (`/blog/author/<slug>`, `/blog/authors`)"
+        }
+      ],
+      "note": "Linked from built pages but not built in the clone (out of scope in the blog recon); the clone serves the 404 template (App fallback / BlogArticlePage NotFound). Not a page family to model."
+    },
+    {
+      "path": "/blog/author/sam-fore",
+      "template": "not-found",
+      "unbuiltLink": true,
+      "evidence": [
+        {
+          "cite": "src/components/article/ArticleHeader.jsx:15",
+          "anchor": "href={`/blog/author/${post.authorSlug}`}"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_BLOG.md:589",
+          "anchor": "Author pages (`/blog/author/<slug>`, `/blog/authors`)"
+        }
+      ],
+      "note": "Linked from built pages but not built in the clone (out of scope in the blog recon); the clone serves the 404 template (App fallback / BlogArticlePage NotFound). Not a page family to model."
+    },
+    {
+      "path": "/blog/author/girish-gupta",
+      "template": "not-found",
+      "unbuiltLink": true,
+      "evidence": [
+        {
+          "cite": "src/components/article/ArticleHeader.jsx:15",
+          "anchor": "href={`/blog/author/${post.authorSlug}`}"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_BLOG.md:589",
+          "anchor": "Author pages (`/blog/author/<slug>`, `/blog/authors`)"
+        }
+      ],
+      "note": "Linked from built pages but not built in the clone (out of scope in the blog recon); the clone serves the 404 template (App fallback / BlogArticlePage NotFound). Not a page family to model."
+    },
+    {
+      "path": "/blog/reviewer/kate-roche",
+      "template": "not-found",
+      "unbuiltLink": true,
+      "evidence": [
+        {
+          "cite": "src/components/article/ArticleHeader.jsx:23",
+          "anchor": "href={`/blog/reviewer/${post.reviewerSlug}`}"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_BLOG.md:589",
+          "anchor": "Author pages (`/blog/author/<slug>`, `/blog/authors`)"
+        }
+      ],
+      "note": "Linked from built pages but not built in the clone (out of scope in the blog recon); the clone serves the 404 template (App fallback / BlogArticlePage NotFound). Not a page family to model."
+    },
+    {
+      "path": "/support",
+      "template": "not-found",
+      "unbuiltLink": true,
+      "evidence": [
+        {
+          "cite": "src/pages/TextPage.jsx:48",
+          "anchor": "https://rileyapp.com/support"
+        },
+        {
+          "cite": "CLONE_SPEC_PAGES_BLOG.md:589",
+          "anchor": "Author pages (`/blog/author/<slug>`, `/blog/authors`)"
+        }
+      ],
+      "note": "Linked from built pages but not built in the clone (out of scope in the blog recon); the clone serves the 404 template (App fallback / BlogArticlePage NotFound). Not a page family to model."
+    },
+    {
       "path": "*",
       "template": "not-found",
       "catchAll": true,
@@ -327,7 +1934,7 @@
     }
   ],
   "deadSlugPolicy": {
-    "statement": "Dead sitemap slugs map to 'not-found' and may never be bound to a landing/home/pricing template (enforced: graph rule ROUTE_TEMPLATE_BINDING).",
+    "statement": "Dead sitemap slugs and linked-but-unbuilt paths map to 'not-found' and may never be bound to any other template (enforced: graph rule ROUTE_TEMPLATE_BINDING).",
     "evidence": [
       {
         "cite": "CLONE_SPEC_PAGES_MARKETING.md:29",
@@ -340,151 +1947,25 @@
     ]
   },
   "excludedRoutes": {
-    "statement": "Snapshot scope = home, pricing, not-found. These routes exist on the live site (or are linked from built pages) but are NOT modelled in this snapshot, so no template is invented for them and a PageSpec targeting one is rejected. NOTE: while this snapshot was being built, a concurrent build agent landed blog/text/legal pages in src/ (src/pages/routes.jsx). They stay excluded here until a design-repo rebuild models them; verify_all.py WARNs (does not fail) for every source route that is built but excluded.",
-    "routes": [
-      {
-        "pattern": "/blog",
-        "status": "pending",
-        "reason": "Blog index: not modelled in this snapshot. BUILT CONCURRENTLY in source after this snapshot was scoped (src/pages/BlogIndexPage.jsx, CLONE_SPEC_PAGES_BLOG.md) - re-run the design-repo build to add a template.",
-        "evidence": [
-          {
-            "cite": "src/pages/routes.jsx:15",
-            "anchor": "'/blog': BlogIndexPage"
-          },
-          {
-            "cite": "src/components/upper/SiteHeader.jsx:7",
-            "anchor": "BLOG_HREF"
-          }
-        ]
-      },
-      {
-        "pattern": "/blog/{category}",
-        "status": "pending",
-        "count": 6,
-        "reason": "Category pages (development, feeding, health, news, pregnancy, sleep): not modelled; built concurrently in source (BlogCategoryPage.jsx).",
-        "evidence": [
-          {
-            "cite": "src/pages/routes.jsx:23",
-            "anchor": "BlogCategoryPage"
-          },
-          {
-            "cite": "src/components/BlogTeaser.jsx:5-12",
-            "anchor": "slug: 'development'"
-          }
-        ]
-      },
-      {
-        "pattern": "/blog/author/{slug}",
-        "status": "pending",
-        "count": 3,
-        "reason": "Author pages listed in the IA's pending groups; not built and not routed in source.",
-        "evidence": [
-          {
-            "cite": "ia.json:15",
-            "anchor": "/blog/author/{slug}"
-          }
-        ]
-      },
-      {
-        "pattern": "/blog/{category}/{slug}",
-        "status": "pending",
-        "reason": "Article pages: not modelled. Built concurrently in source (BlogArticlePage.jsx; src/data/blogPosts.json had 221 entries at snapshot, the brief quoted 231). Article bodies are placeholder text in the clone.",
-        "evidence": [
-          {
-            "cite": "src/pages/routes.jsx:25",
-            "anchor": "BlogArticlePage"
-          }
-        ]
-      },
-      {
-        "pattern": "/editorial-process",
-        "status": "pending",
-        "reason": "Text page: not modelled; built concurrently in source (TextPage.jsx), copy placeholder.",
-        "evidence": [
-          {
-            "cite": "src/pages/routes.jsx:16",
-            "anchor": "'/editorial-process': TextPage"
-          },
-          {
-            "cite": "src/components/SiteFooter.jsx:6",
-            "anchor": "/editorial-process"
-          }
-        ]
-      },
-      {
-        "pattern": "/tos",
-        "status": "pending",
-        "reason": "Legal page: not modelled; built concurrently in source (LegalPage.jsx), legal text placeholder.",
-        "evidence": [
-          {
-            "cite": "src/pages/routes.jsx:17",
-            "anchor": "'/tos'"
-          },
-          {
-            "cite": "src/components/SiteFooter.jsx:10",
-            "anchor": "/tos"
-          }
-        ]
-      },
-      {
-        "pattern": "/privacy",
-        "status": "pending",
-        "reason": "Legal page: not modelled; built concurrently in source (LegalPage.jsx), legal text placeholder.",
-        "evidence": [
-          {
-            "cite": "src/pages/routes.jsx:18",
-            "anchor": "'/privacy'"
-          },
-          {
-            "cite": "src/components/SiteFooter.jsx:9",
-            "anchor": "/privacy"
-          }
-        ]
-      },
-      {
-        "pattern": "/cookies",
-        "status": "pending",
-        "reason": "Legal page: not modelled; built concurrently in source (LegalPage.jsx), legal text placeholder.",
-        "evidence": [
-          {
-            "cite": "src/pages/routes.jsx:19",
-            "anchor": "'/cookies'"
-          },
-          {
-            "cite": "ia.json:245",
-            "anchor": "/cookies"
-          }
-        ]
-      },
-      {
-        "pattern": "/support",
-        "status": "unverified",
-        "reason": "Linked from the footer but neither specced nor built; live status UNVERIFIED (absent from the IA).",
-        "evidence": [
-          {
-            "cite": "src/components/SiteFooter.jsx:11",
-            "anchor": "/support"
-          }
-        ]
-      }
-    ]
+    "statement": "Nothing is excluded: every route the clone serves (src/pages/routes.jsx exact + pattern routes expanded over src/data/blogPosts.json) and every linked same-site path is mapped exactly once above.",
+    "routes": []
   },
-  "unmodelledGlobalOverlays": [
-    {
-      "component": "CookieConsent",
-      "iaSectionId": "chrome.cookie-consent",
-      "note": "Landed concurrently with the blog build: App.jsx now renders a fixed cookie-consent bar on EVERY route (incl. home/pricing/404). It is an out-of-flow overlay, not a section node, and is not modelled in this snapshot.",
-      "evidence": [
-        {
-          "cite": "src/App.jsx:1-24",
-          "anchor": "<CookieConsent />"
-        }
-      ]
-    }
-  ],
   "contentPolicy": {
     "longFormText": "Blog article bodies and legal/text-page copy are intentionally PLACEHOLDER in the clone (long-form text is not copied). Never treat any long-form body as real Riley copy.",
-    "realStatements": "Testimonial quotes/attributions, clinician names/credentials, plan prices/features, press logos and competitor comparison marks are real-world claims: reuse verbatim only in brandContext 'riley-clone'; never fabricate them for any brand.",
-    "shortUiCopy": "Short UI copy in schema/example.pagespec.json is taken verbatim from the built components."
-  }
+    "realStatements": "Testimonial quotes/attributions, clinician/author/reviewer names and photos, plan prices/features, promo codes, press logos, competitor names and health/development claims are real-world claims: reuse verbatim only in mode 'clone'; never fabricate or reuse them in mode 'generation'.",
+    "shortUiCopy": "Short UI copy in schema/examples/*.clone.pagespec.json is taken verbatim from the built components; *.generated.pagespec.json use original copy for the fictional Brightburrow brand."
+  },
+  "globalOverlays": [
+    {
+      "section": "cookie-consent",
+      "allTemplates": true,
+      "evidence": [
+        {
+          "cite": "src/App.jsx:21",
+          "anchor": "<CookieConsent />"
+        }
+      ],
+      "note": "Mounted once in App for every route; out of flow (position fixed). Carried in PageSpec.overlays, never in nodes[]."
+    }
+  ]
 }

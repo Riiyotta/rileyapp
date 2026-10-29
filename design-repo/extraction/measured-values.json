@@ -218,6 +218,24 @@
           "anchor": "withBg={false}"
         }
       ]
+    },
+    {
+      "id": "routes-v2",
+      "claim": "Clone serves 7 exact routes + 6 category routes + one article route per post in src/data/blogPosts.json (221); every other path renders the 404 template.",
+      "evidence": [
+        {
+          "cite": "src/pages/routes.jsx:12",
+          "anchor": "export const exactRoutes = {"
+        },
+        {
+          "cite": "src/pages/routes.jsx:22",
+          "anchor": "export const patternRoutes = ["
+        },
+        {
+          "cite": "src/App.jsx:14",
+          "anchor": "return <NotFound />"
+        }
+      ]
     }
   ],
   "qaCorrections": {
@@ -251,7 +269,14 @@
       "not-found-block.heading": 12,
       "not-found-block.body": 13,
       "final-cta.heading": 8,
-      "pricing-hero.plans[].description": 7
+      "pricing-hero.plans[].description": 7,
+      "blog-post.title (src/data/blogPosts.json)": 18,
+      "blog-post.excerpt": 43,
+      "blog-post.crumbTitle": 16,
+      "blog-post.imageAlt": 38,
+      "blog-post.authorTitle": 9,
+      "blog-post.seoTitle (page.title)": 20,
+      "blog-post.reviewer": 4
     }
   },
   "handCheckedCitations": [
@@ -322,5 +347,1741 @@
       "result": "onSubmit preventDefault - correct"
     }
   ],
-  "handCheckNote": "These 11 were read by eye against the cited lines (not just range/anchor) at build time; all describe the right content."
+  "handCheckNote": "These 11 were read by eye against the cited lines (not just range/anchor) at build time; all describe the right content.",
+  "sectionHeights": {
+    "viewport": 1440,
+    "measuredWith": "extraction/measure_sections.mjs against the BUILT clone (npm ci; npx vite build to a scratch dir; npx vite preview), headless Chromium via Playwright, viewport 1440x900, lazy images triggered by a scroll pass.",
+    "measuredOn": "2026-10-29",
+    "routeChoice": "one representative route per template (blog-article: /blog/sleep/baby-witching-hour, the blog spec's A1 article; blog-category: /blog/sleep, which has a featured set)",
+    "templates": {
+      "home": {
+        "route": "/",
+        "pageHeight": 11465,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 54
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 54,
+            "height": 80
+          },
+          {
+            "section": "hero-home",
+            "index": 0,
+            "top": 134,
+            "height": 686
+          },
+          {
+            "section": "press-marquee",
+            "index": 0,
+            "top": 820,
+            "height": 144
+          },
+          {
+            "section": "personalization-marquee",
+            "index": 0,
+            "top": 964,
+            "height": 664
+          },
+          {
+            "section": "superpowers-grid",
+            "index": 0,
+            "top": 1628,
+            "height": 664
+          },
+          {
+            "section": "featurette-carousel",
+            "index": 0,
+            "top": 2292,
+            "height": 1150
+          },
+          {
+            "section": "clinical-board",
+            "index": 0,
+            "top": 3443,
+            "height": 917
+          },
+          {
+            "section": "how-riley-works",
+            "index": 0,
+            "top": 4359,
+            "height": 836
+          },
+          {
+            "section": "testimonials-carousel",
+            "index": 0,
+            "top": 5195,
+            "height": 1058
+          },
+          {
+            "section": "gradient-band",
+            "index": 0,
+            "top": 6253,
+            "height": 2078
+          },
+          {
+            "section": "faq-clouds",
+            "index": 0,
+            "top": 8331,
+            "height": 900
+          },
+          {
+            "section": "blog-teaser",
+            "index": 0,
+            "top": 9231,
+            "height": 1032
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 10263,
+            "height": 708
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 10971,
+            "height": 494
+          }
+        ]
+      },
+      "pricing": {
+        "route": "/pricing",
+        "pageHeight": 5644,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 54
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 54,
+            "height": 80
+          },
+          {
+            "section": "pricing-hero",
+            "index": 0,
+            "top": 134,
+            "height": 1100
+          },
+          {
+            "section": "testimonials-carousel",
+            "index": 0,
+            "top": 1234,
+            "height": 1058
+          },
+          {
+            "section": "gradient-band",
+            "index": 0,
+            "top": 2292,
+            "height": 1250
+          },
+          {
+            "section": "faq-clouds",
+            "index": 0,
+            "top": 3542,
+            "height": 900
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 4442,
+            "height": 708
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 5150,
+            "height": 494
+          }
+        ]
+      },
+      "not-found": {
+        "route": "/baby-tracker",
+        "pageHeight": 1478,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 54
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 54,
+            "height": 80
+          },
+          {
+            "section": "not-found-block",
+            "index": 0,
+            "top": 134,
+            "height": 850
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 984,
+            "height": 494
+          }
+        ]
+      },
+      "blog-index": {
+        "route": "/blog",
+        "pageHeight": 4794,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 54
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 54,
+            "height": 80
+          },
+          {
+            "section": "blog-index-hero",
+            "index": 0,
+            "top": 214,
+            "height": 144
+          },
+          {
+            "section": "blog-search",
+            "index": 0,
+            "top": 438,
+            "height": 54
+          },
+          {
+            "section": "blog-category-tabs",
+            "index": 0,
+            "top": 572,
+            "height": 61
+          },
+          {
+            "section": "blog-featured-banner",
+            "index": 0,
+            "top": 665,
+            "height": 441
+          },
+          {
+            "section": "blog-post-grid",
+            "index": 0,
+            "top": 1138,
+            "height": 2188
+          },
+          {
+            "section": "blog-pagination",
+            "index": 0,
+            "top": 3438,
+            "height": 42
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 3592,
+            "height": 708
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 4300,
+            "height": 494
+          }
+        ]
+      },
+      "blog-category": {
+        "route": "/blog/sleep",
+        "pageHeight": 3119,
+        "sections": [
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "blog-index-hero",
+            "index": 0,
+            "top": 160,
+            "height": 144
+          },
+          {
+            "section": "blog-search",
+            "index": 0,
+            "top": 384,
+            "height": 54
+          },
+          {
+            "section": "blog-category-tabs",
+            "index": 0,
+            "top": 518,
+            "height": 61
+          },
+          {
+            "section": "blog-featured-banner",
+            "index": 0,
+            "top": 611,
+            "height": 412
+          },
+          {
+            "section": "blog-post-grid",
+            "index": 0,
+            "top": 1055,
+            "height": 676
+          },
+          {
+            "section": "blog-pagination",
+            "index": 0,
+            "top": 1763,
+            "height": 42
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 1853,
+            "height": 708
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 2561,
+            "height": 494
+          }
+        ]
+      },
+      "blog-article": {
+        "route": "/blog/sleep/baby-witching-hour",
+        "pageHeight": 6607,
+        "sections": [
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "article-top-bar",
+            "index": 0,
+            "top": 144,
+            "height": 54
+          },
+          {
+            "section": "article-header",
+            "index": 0,
+            "top": 278,
+            "height": 1046
+          },
+          {
+            "section": "article-toc",
+            "index": 0,
+            "top": 1412,
+            "height": 900
+          },
+          {
+            "section": "article-intro",
+            "index": 0,
+            "top": 1412,
+            "height": 492
+          },
+          {
+            "section": "article-chapter",
+            "index": 0,
+            "top": 1904,
+            "height": 524
+          },
+          {
+            "section": "article-chapter",
+            "index": 1,
+            "top": 2428,
+            "height": 1081
+          },
+          {
+            "section": "article-chapter",
+            "index": 2,
+            "top": 3509,
+            "height": 833
+          },
+          {
+            "section": "article-chapter",
+            "index": 3,
+            "top": 4342,
+            "height": 124
+          },
+          {
+            "section": "article-sources",
+            "index": 0,
+            "top": 4498,
+            "height": 108
+          },
+          {
+            "section": "article-share-row",
+            "index": 0,
+            "top": 4646,
+            "height": 134
+          },
+          {
+            "section": "article-related-posts",
+            "index": 0,
+            "top": 4868,
+            "height": 225
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 5261,
+            "height": 708
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 6049,
+            "height": 494
+          }
+        ]
+      },
+      "text-page": {
+        "route": "/editorial-process",
+        "pageHeight": 2136,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 54
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 54,
+            "height": 80
+          },
+          {
+            "section": "text-page-header",
+            "index": 0,
+            "top": 166,
+            "height": 116
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 0,
+            "top": 282,
+            "height": 208
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 1,
+            "top": 490,
+            "height": 208
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 2,
+            "top": 698,
+            "height": 208
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 3,
+            "top": 906,
+            "height": 160
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 4,
+            "top": 1066,
+            "height": 160
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 5,
+            "top": 1226,
+            "height": 388
+          },
+          {
+            "section": "text-page-closing",
+            "index": 0,
+            "top": 1614,
+            "height": 28
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 1642,
+            "height": 494
+          }
+        ]
+      },
+      "legal": {
+        "route": "/tos",
+        "pageHeight": 900,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 54
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 54,
+            "height": 80
+          },
+          {
+            "section": "legal-policy-embed",
+            "index": 0,
+            "top": 134,
+            "height": 0
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 134,
+            "height": 494
+          }
+        ]
+      }
+    },
+    "variants": {
+      "blog-category:empty": {
+        "route": "/blog/health",
+        "pageHeight": 1999,
+        "sections": [
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "blog-index-hero",
+            "index": 0,
+            "top": 160,
+            "height": 144
+          },
+          {
+            "section": "blog-search",
+            "index": 0,
+            "top": 384,
+            "height": 54
+          },
+          {
+            "section": "blog-category-tabs",
+            "index": 0,
+            "top": 518,
+            "height": 61
+          },
+          {
+            "section": "blog-pagination",
+            "index": 0,
+            "top": 643,
+            "height": 42
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 733,
+            "height": 708
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 1441,
+            "height": 494
+          }
+        ]
+      }
+    },
+    "pageHeightNote": "pageHeight = document scrollHeight. Fixed/sticky overlays (cookie consent) are not measured and take no page height. article-toc is a sticky side column beside the body at 1440 (its 900px is viewport height, not page flow)."
+  },
+  "responsiveHeights": {
+    "note": "Same tool, viewports 768x900 and 390x900 (R11 responsive recheck). Not gated; recorded so section contracts' responsive rules can be checked against real numbers.",
+    "768": {
+      "home": {
+        "route": "/",
+        "pageHeight": 14253,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "hero-home",
+            "index": 0,
+            "top": 80,
+            "height": 1259
+          },
+          {
+            "section": "press-marquee",
+            "index": 0,
+            "top": 1339,
+            "height": 144
+          },
+          {
+            "section": "personalization-marquee",
+            "index": 0,
+            "top": 1483,
+            "height": 488
+          },
+          {
+            "section": "superpowers-grid",
+            "index": 0,
+            "top": 1971,
+            "height": 932
+          },
+          {
+            "section": "featurette-carousel",
+            "index": 0,
+            "top": 2903,
+            "height": 1649
+          },
+          {
+            "section": "clinical-board",
+            "index": 0,
+            "top": 4552,
+            "height": 1403
+          },
+          {
+            "section": "how-riley-works",
+            "index": 0,
+            "top": 5955,
+            "height": 1487
+          },
+          {
+            "section": "testimonials-carousel",
+            "index": 0,
+            "top": 7442,
+            "height": 816
+          },
+          {
+            "section": "gradient-band",
+            "index": 0,
+            "top": 8258,
+            "height": 2595
+          },
+          {
+            "section": "faq-clouds",
+            "index": 0,
+            "top": 10853,
+            "height": 1100
+          },
+          {
+            "section": "blog-teaser",
+            "index": 0,
+            "top": 11953,
+            "height": 1307
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 13260,
+            "height": 440
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 13700,
+            "height": 554
+          }
+        ]
+      },
+      "pricing": {
+        "route": "/pricing",
+        "pageHeight": 5099,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "pricing-hero",
+            "index": 0,
+            "top": 80,
+            "height": 1044
+          },
+          {
+            "section": "testimonials-carousel",
+            "index": 0,
+            "top": 1124,
+            "height": 816
+          },
+          {
+            "section": "gradient-band",
+            "index": 0,
+            "top": 1940,
+            "height": 1065
+          },
+          {
+            "section": "faq-clouds",
+            "index": 0,
+            "top": 3005,
+            "height": 1100
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 4105,
+            "height": 440
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 4545,
+            "height": 554
+          }
+        ]
+      },
+      "not-found": {
+        "route": "/baby-tracker",
+        "pageHeight": 1166,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "not-found-block",
+            "index": 0,
+            "top": 80,
+            "height": 533
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 613,
+            "height": 554
+          }
+        ]
+      },
+      "blog-index": {
+        "route": "/blog",
+        "pageHeight": 7655,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "blog-index-hero",
+            "index": 0,
+            "top": 160,
+            "height": 136
+          },
+          {
+            "section": "blog-search",
+            "index": 0,
+            "top": 376,
+            "height": 54
+          },
+          {
+            "section": "blog-category-tabs",
+            "index": 0,
+            "top": 510,
+            "height": 61
+          },
+          {
+            "section": "blog-featured-banner",
+            "index": 0,
+            "top": 603,
+            "height": 817
+          },
+          {
+            "section": "blog-post-grid",
+            "index": 0,
+            "top": 1452,
+            "height": 4944
+          },
+          {
+            "section": "blog-pagination",
+            "index": 0,
+            "top": 6508,
+            "height": 42
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 6662,
+            "height": 440
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 7102,
+            "height": 554
+          }
+        ]
+      },
+      "blog-category": {
+        "route": "/blog/sleep",
+        "pageHeight": 3675,
+        "sections": [
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "blog-index-hero",
+            "index": 0,
+            "top": 160,
+            "height": 136
+          },
+          {
+            "section": "blog-search",
+            "index": 0,
+            "top": 376,
+            "height": 54
+          },
+          {
+            "section": "blog-category-tabs",
+            "index": 0,
+            "top": 510,
+            "height": 61
+          },
+          {
+            "section": "blog-featured-banner",
+            "index": 0,
+            "top": 603,
+            "height": 760
+          },
+          {
+            "section": "blog-post-grid",
+            "index": 0,
+            "top": 1395,
+            "height": 1100
+          },
+          {
+            "section": "blog-pagination",
+            "index": 0,
+            "top": 2527,
+            "height": 42
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 2617,
+            "height": 440
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 3057,
+            "height": 554
+          }
+        ]
+      },
+      "blog-category:empty": {
+        "route": "/blog/health",
+        "pageHeight": 1783,
+        "sections": [
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "blog-index-hero",
+            "index": 0,
+            "top": 160,
+            "height": 136
+          },
+          {
+            "section": "blog-search",
+            "index": 0,
+            "top": 376,
+            "height": 54
+          },
+          {
+            "section": "blog-category-tabs",
+            "index": 0,
+            "top": 510,
+            "height": 61
+          },
+          {
+            "section": "blog-pagination",
+            "index": 0,
+            "top": 635,
+            "height": 42
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 725,
+            "height": 440
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 1165,
+            "height": 554
+          }
+        ]
+      },
+      "blog-article": {
+        "route": "/blog/sleep/baby-witching-hour",
+        "pageHeight": 6821,
+        "sections": [
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "article-top-bar",
+            "index": 0,
+            "top": 96,
+            "height": 54
+          },
+          {
+            "section": "article-header",
+            "index": 0,
+            "top": 182,
+            "height": 764
+          },
+          {
+            "section": "article-toc",
+            "index": 0,
+            "top": 990,
+            "height": 372
+          },
+          {
+            "section": "article-intro",
+            "index": 0,
+            "top": 1362,
+            "height": 520
+          },
+          {
+            "section": "article-chapter",
+            "index": 0,
+            "top": 1882,
+            "height": 760
+          },
+          {
+            "section": "article-chapter",
+            "index": 1,
+            "top": 2642,
+            "height": 1361
+          },
+          {
+            "section": "article-chapter",
+            "index": 2,
+            "top": 4003,
+            "height": 865
+          },
+          {
+            "section": "article-chapter",
+            "index": 3,
+            "top": 4868,
+            "height": 144
+          },
+          {
+            "section": "article-sources",
+            "index": 0,
+            "top": 5052,
+            "height": 108
+          },
+          {
+            "section": "article-share-row",
+            "index": 0,
+            "top": 5240,
+            "height": 134
+          },
+          {
+            "section": "article-related-posts",
+            "index": 0,
+            "top": 5418,
+            "height": 285
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 5780,
+            "height": 440
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 6252,
+            "height": 554
+          }
+        ]
+      },
+      "text-page": {
+        "route": "/editorial-process",
+        "pageHeight": 2170,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "text-page-header",
+            "index": 0,
+            "top": 112,
+            "height": 116
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 0,
+            "top": 228,
+            "height": 208
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 1,
+            "top": 436,
+            "height": 208
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 2,
+            "top": 644,
+            "height": 208
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 3,
+            "top": 852,
+            "height": 160
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 4,
+            "top": 1012,
+            "height": 160
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 5,
+            "top": 1172,
+            "height": 388
+          },
+          {
+            "section": "text-page-closing",
+            "index": 0,
+            "top": 1560,
+            "height": 56
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 1616,
+            "height": 554
+          }
+        ]
+      },
+      "legal": {
+        "route": "/tos",
+        "pageHeight": 900,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "legal-policy-embed",
+            "index": 0,
+            "top": 80,
+            "height": 0
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 80,
+            "height": 554
+          }
+        ]
+      }
+    },
+    "390": {
+      "home": {
+        "route": "/",
+        "pageHeight": 14319,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "hero-home",
+            "index": 0,
+            "top": 80,
+            "height": 1226
+          },
+          {
+            "section": "press-marquee",
+            "index": 0,
+            "top": 1306,
+            "height": 144
+          },
+          {
+            "section": "personalization-marquee",
+            "index": 0,
+            "top": 1450,
+            "height": 760
+          },
+          {
+            "section": "superpowers-grid",
+            "index": 0,
+            "top": 2210,
+            "height": 948
+          },
+          {
+            "section": "featurette-carousel",
+            "index": 0,
+            "top": 3158,
+            "height": 1228
+          },
+          {
+            "section": "clinical-board",
+            "index": 0,
+            "top": 4386,
+            "height": 1437
+          },
+          {
+            "section": "how-riley-works",
+            "index": 0,
+            "top": 5822,
+            "height": 1655
+          },
+          {
+            "section": "testimonials-carousel",
+            "index": 0,
+            "top": 7477,
+            "height": 1077
+          },
+          {
+            "section": "gradient-band",
+            "index": 0,
+            "top": 8554,
+            "height": 2695
+          },
+          {
+            "section": "faq-clouds",
+            "index": 0,
+            "top": 11249,
+            "height": 1100
+          },
+          {
+            "section": "blog-teaser",
+            "index": 0,
+            "top": 12349,
+            "height": 721
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 13070,
+            "height": 536
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 13606,
+            "height": 713
+          }
+        ]
+      },
+      "pricing": {
+        "route": "/pricing",
+        "pageHeight": 6154,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "pricing-hero",
+            "index": 0,
+            "top": 80,
+            "height": 1472
+          },
+          {
+            "section": "testimonials-carousel",
+            "index": 0,
+            "top": 1552,
+            "height": 1077
+          },
+          {
+            "section": "gradient-band",
+            "index": 0,
+            "top": 2628,
+            "height": 1177
+          },
+          {
+            "section": "faq-clouds",
+            "index": 0,
+            "top": 3805,
+            "height": 1100
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 4905,
+            "height": 536
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 5441,
+            "height": 713
+          }
+        ]
+      },
+      "not-found": {
+        "route": "/baby-tracker",
+        "pageHeight": 1293,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "not-found-block",
+            "index": 0,
+            "top": 80,
+            "height": 500
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 580,
+            "height": 713
+          }
+        ]
+      },
+      "blog-index": {
+        "route": "/blog",
+        "pageHeight": 8116,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "blog-index-hero",
+            "index": 0,
+            "top": 160,
+            "height": 148
+          },
+          {
+            "section": "blog-search",
+            "index": 0,
+            "top": 324,
+            "height": 54
+          },
+          {
+            "section": "blog-category-tabs",
+            "index": 0,
+            "top": 394,
+            "height": 61
+          },
+          {
+            "section": "blog-featured-banner",
+            "index": 0,
+            "top": 487,
+            "height": 717
+          },
+          {
+            "section": "blog-post-grid",
+            "index": 0,
+            "top": 1236,
+            "height": 5364
+          },
+          {
+            "section": "blog-pagination",
+            "index": 0,
+            "top": 6712,
+            "height": 42
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 6866,
+            "height": 536
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 7402,
+            "height": 713
+          }
+        ]
+      },
+      "blog-category": {
+        "route": "/blog/sleep",
+        "pageHeight": 3849,
+        "sections": [
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "blog-index-hero",
+            "index": 0,
+            "top": 160,
+            "height": 148
+          },
+          {
+            "section": "blog-search",
+            "index": 0,
+            "top": 324,
+            "height": 54
+          },
+          {
+            "section": "blog-category-tabs",
+            "index": 0,
+            "top": 394,
+            "height": 61
+          },
+          {
+            "section": "blog-featured-banner",
+            "index": 0,
+            "top": 487,
+            "height": 631
+          },
+          {
+            "section": "blog-post-grid",
+            "index": 0,
+            "top": 1150,
+            "height": 1264
+          },
+          {
+            "section": "blog-pagination",
+            "index": 0,
+            "top": 2446,
+            "height": 42
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 2536,
+            "height": 536
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 3072,
+            "height": 713
+          }
+        ]
+      },
+      "blog-category:empty": {
+        "route": "/blog/health",
+        "pageHeight": 1922,
+        "sections": [
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "blog-index-hero",
+            "index": 0,
+            "top": 160,
+            "height": 148
+          },
+          {
+            "section": "blog-search",
+            "index": 0,
+            "top": 324,
+            "height": 54
+          },
+          {
+            "section": "blog-category-tabs",
+            "index": 0,
+            "top": 394,
+            "height": 61
+          },
+          {
+            "section": "blog-pagination",
+            "index": 0,
+            "top": 519,
+            "height": 42
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 609,
+            "height": 536
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 1145,
+            "height": 713
+          }
+        ]
+      },
+      "blog-article": {
+        "route": "/blog/sleep/baby-witching-hour",
+        "pageHeight": 7126,
+        "sections": [
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "article-top-bar",
+            "index": 0,
+            "top": 96,
+            "height": 54
+          },
+          {
+            "section": "article-header",
+            "index": 0,
+            "top": 182,
+            "height": 981
+          },
+          {
+            "section": "article-toc",
+            "index": 0,
+            "top": 1207,
+            "height": 372
+          },
+          {
+            "section": "article-intro",
+            "index": 0,
+            "top": 1579,
+            "height": 632
+          },
+          {
+            "section": "article-chapter",
+            "index": 0,
+            "top": 2211,
+            "height": 844
+          },
+          {
+            "section": "article-chapter",
+            "index": 1,
+            "top": 3055,
+            "height": 1193
+          },
+          {
+            "section": "article-chapter",
+            "index": 2,
+            "top": 4248,
+            "height": 641
+          },
+          {
+            "section": "article-chapter",
+            "index": 3,
+            "top": 4889,
+            "height": 144
+          },
+          {
+            "section": "article-sources",
+            "index": 0,
+            "top": 5073,
+            "height": 108
+          },
+          {
+            "section": "article-share-row",
+            "index": 0,
+            "top": 5261,
+            "height": 162
+          },
+          {
+            "section": "article-related-posts",
+            "index": 0,
+            "top": 5467,
+            "height": 285
+          },
+          {
+            "section": "final-cta",
+            "index": 0,
+            "top": 5828,
+            "height": 536
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 6396,
+            "height": 713
+          }
+        ]
+      },
+      "text-page": {
+        "route": "/editorial-process",
+        "pageHeight": 2749,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "text-page-header",
+            "index": 0,
+            "top": 112,
+            "height": 144
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 0,
+            "top": 256,
+            "height": 292
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 1,
+            "top": 548,
+            "height": 292
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 2,
+            "top": 840,
+            "height": 292
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 3,
+            "top": 1132,
+            "height": 216
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 4,
+            "top": 1348,
+            "height": 216
+          },
+          {
+            "section": "text-page-chapter",
+            "index": 5,
+            "top": 1564,
+            "height": 388
+          },
+          {
+            "section": "text-page-closing",
+            "index": 0,
+            "top": 1952,
+            "height": 84
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 2036,
+            "height": 713
+          }
+        ]
+      },
+      "legal": {
+        "route": "/tos",
+        "pageHeight": 900,
+        "sections": [
+          {
+            "section": "announcement-bar",
+            "index": 0,
+            "top": 0,
+            "height": 0
+          },
+          {
+            "section": "site-header",
+            "index": 0,
+            "top": 0,
+            "height": 80
+          },
+          {
+            "section": "legal-policy-embed",
+            "index": 0,
+            "top": 80,
+            "height": 0
+          },
+          {
+            "section": "site-footer",
+            "index": 0,
+            "top": 80,
+            "height": 713
+          }
+        ]
+      }
+    }
+  },
+  "typographyRecheck": {
+    "note": "Computed styles of the new families' key text elements in the built clone at 1440/768/390 (font family, size/line-height, weight, colour, margins). All match tokens/00-foundation/typography.json scale entries article-body/article-h2/article-h3/blog-featured-title/blog-card-title/blog-tab/blog-hero-subtitle and the h1 rule (64/72 >=992, 40/48 below).",
+    "values": {
+      "390": {
+        "/blog": {
+          "h1": "serif 40px/48px w400 rgb(46, 42, 66) m:0px 0px",
+          "subtitle": "sansRegular 20px/28px w400 rgb(46, 42, 66) m:0px 0px",
+          "tab": "sansBold 18px/28px w400 rgb(46, 42, 66) m:0px 0px",
+          "featuredTitle": "sansBold 24px/32px w400 rgb(46, 42, 66) m:0px 0px",
+          "cardTitle": "sansBold 24px/32px w400 rgb(46, 42, 66) m:0px 0px",
+          "pagination": "sansRegular 16px/24px w400 rgb(10, 10, 10) m:0px 0px"
+        },
+        "/blog/sleep/baby-witching-hour": {
+          "h1": "serif 40px/48px w400 rgb(46, 42, 66) m:0px 0px",
+          "bodyP": "sansRegular 16px/28px w400 rgb(46, 42, 66) m:0px 20px",
+          "h2": "sansBold 24px/32px w700 rgb(46, 42, 66) m:48px 24px",
+          "h3": "sansBold 20px/32px w600 rgb(46, 42, 66) m:32px 12px",
+          "li": "sansRegular 16px/28px w400 rgb(54, 65, 83) m:8px 4px",
+          "tocLink": "sansRegular 16px/24px w400 rgb(10, 10, 10) m:0px 0px",
+          "crumb": "sansRegular 16px/24px w400 rgb(10, 10, 10) m:0px 0px"
+        },
+        "/editorial-process": {
+          "h2": "sansRegular 24px/32px w700 rgb(16, 24, 40) m:0px 24px",
+          "h3": "sansRegular 20px/32px w600 rgb(16, 24, 40) m:32px 12px",
+          "li": "sansRegular 16px/28px w400 rgb(46, 42, 66) m:8px 8px",
+          "p": "sansRegular 16px/28px w400 rgb(46, 42, 66) m:0px 20px"
+        }
+      },
+      "768": {
+        "/blog": {
+          "h1": "serif 40px/48px w400 rgb(46, 42, 66) m:0px 0px",
+          "subtitle": "sansRegular 20px/28px w400 rgb(46, 42, 66) m:0px 0px",
+          "tab": "sansBold 18px/28px w400 rgb(46, 42, 66) m:0px 0px",
+          "featuredTitle": "sansBold 24px/32px w400 rgb(46, 42, 66) m:0px 0px",
+          "cardTitle": "sansBold 24px/32px w400 rgb(46, 42, 66) m:0px 0px",
+          "pagination": "sansRegular 16px/24px w400 rgb(10, 10, 10) m:0px 0px"
+        },
+        "/blog/sleep/baby-witching-hour": {
+          "h1": "serif 40px/48px w400 rgb(46, 42, 66) m:0px 0px",
+          "bodyP": "sansRegular 16px/28px w400 rgb(46, 42, 66) m:0px 20px",
+          "h2": "sansBold 24px/32px w700 rgb(46, 42, 66) m:48px 24px",
+          "h3": "sansBold 20px/32px w600 rgb(46, 42, 66) m:32px 12px",
+          "li": "sansRegular 16px/28px w400 rgb(54, 65, 83) m:8px 4px",
+          "tocLink": "sansRegular 16px/24px w400 rgb(10, 10, 10) m:0px 0px",
+          "crumb": "sansRegular 16px/24px w400 rgb(10, 10, 10) m:0px 0px"
+        },
+        "/editorial-process": {
+          "h2": "sansRegular 24px/32px w700 rgb(16, 24, 40) m:0px 24px",
+          "h3": "sansRegular 20px/32px w600 rgb(16, 24, 40) m:32px 12px",
+          "li": "sansRegular 16px/28px w400 rgb(46, 42, 66) m:8px 8px",
+          "p": "sansRegular 16px/28px w400 rgb(46, 42, 66) m:0px 20px"
+        }
+      },
+      "1440": {
+        "/blog": {
+          "h1": "serif 64px/72px w400 rgb(46, 42, 66) m:0px 0px",
+          "subtitle": "sansRegular 20px/28px w400 rgb(46, 42, 66) m:0px 0px",
+          "tab": "sansBold 18px/28px w400 rgb(46, 42, 66) m:0px 0px",
+          "featuredTitle": "sansBold 30px/36px w400 rgb(46, 42, 66) m:0px 8px",
+          "cardTitle": "sansBold 30px/36px w400 rgb(46, 42, 66) m:0px 8px",
+          "pagination": "sansRegular 16px/24px w400 rgb(10, 10, 10) m:0px 0px"
+        },
+        "/blog/sleep/baby-witching-hour": {
+          "h1": "serif 64px/72px w400 rgb(46, 42, 66) m:0px 0px",
+          "bodyP": "sansRegular 16px/28px w400 rgb(46, 42, 66) m:16px 16px",
+          "h2": "sansBold 24px/32px w700 rgb(46, 42, 66) m:16px 32px",
+          "h3": "sansBold 20px/32px w600 rgb(46, 42, 66) m:32px 16px",
+          "li": "sansRegular 16px/28px w400 rgb(54, 65, 83) m:8px 4px",
+          "tocLink": "sansRegular 16px/24px w400 rgb(10, 10, 10) m:0px 0px",
+          "crumb": "sansRegular 16px/24px w400 rgb(10, 10, 10) m:0px 0px"
+        },
+        "/editorial-process": {
+          "h2": "sansRegular 24px/32px w700 rgb(16, 24, 40) m:0px 24px",
+          "h3": "sansRegular 20px/32px w600 rgb(16, 24, 40) m:32px 12px",
+          "li": "sansRegular 16px/28px w400 rgb(46, 42, 66) m:8px 8px",
+          "p": "sansRegular 16px/28px w400 rgb(46, 42, 66) m:0px 20px"
+        }
+      }
+    }
+  }
 }

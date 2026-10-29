@@ -1,0 +1,62 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "blog-pagination",
+  "registryId": "section.blog-pagination",
+  "version": "2.0.0",
+  "category": "navigation",
+  "purpose": "'Prev | Page N of M | Next' pill controls linking to ?page=N; disabled ends at 50% opacity.",
+  "iaSectionIds": [
+    "blog.pagination"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/blog/BlogPagination.jsx:5-35",
+      "anchor": "export default function BlogPagination"
+    }
+  ],
+  "source": {
+    "id": "src:BlogPagination@9",
+    "tag": "div",
+    "file": "src/components/blog/BlogPagination.jsx",
+    "lines": "9-35"
+  },
+  "semantic": {
+    "id": "blog-pagination",
+    "category": "NAVIGATION"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_blog-pagination",
+    "copyBudget": {
+      "prevLabel": 1,
+      "nextLabel": 1,
+      "pageLabel": 1
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": false,
+    "rules": []
+  },
+  "evidence": [
+    {
+      "cite": "src/pages/BlogIndexPage.jsx:40",
+      "anchor": "Math.ceil(allPosts.length / PAGE_SIZE)"
+    }
+  ],
+  "notes": []
+}

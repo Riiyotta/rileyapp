@@ -1,0 +1,20 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "share-button-group",
+  "purpose": "Copy-link pill (Copied! for 2s) followed by Facebook / X / Instagram share icons.",
+  "composedOf": [
+    "Button",
+    "Icon"
+  ],
+  "usedBySections": [
+    "article-header",
+    "article-toc",
+    "article-share-row"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/article/ShareButtons.jsx:39",
+      "anchor": "function ButtonGroup"
+    }
+  ]
+}

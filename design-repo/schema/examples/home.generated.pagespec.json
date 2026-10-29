@@ -1,0 +1,1030 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "page": {
+    "route": "/",
+    "title": "Brightburrow family planner",
+    "template": "home",
+    "mode": "generation",
+    "theme": "riley-light",
+    "brand": {
+      "name": "Brightburrow",
+      "mark": {
+        "assetRole": "placeholder-brand-mark",
+        "assetRef": "generated:brightburrow-wordmark"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "type": "announcement-bar",
+      "content": {
+        "message": "New: shared shopping lists are here",
+        "link": {
+          "assetRole": "internal-route"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-header",
+      "variant": "hero-overlay",
+      "content": {
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "generated:placeholder-brand-mark-771",
+          "alt": "Brightburrow"
+        },
+        "navItems": [
+          {
+            "label": "Journal"
+          },
+          {
+            "label": "Plans"
+          }
+        ],
+        "cta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "mobileCta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "hero-home",
+      "content": {
+        "heading": "Questions answered before bedtime",
+        "inlineMascot": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-536"
+        },
+        "body": "Short, practical reading for parents juggling work, school runs and the occasional rainy-day project.",
+        "emphasis": [
+          "Weekly planning in five minutes",
+          "Shared lists that stay in sync"
+        ],
+        "cta": {
+          "label": "Open the planner",
+          "assetRole": "unspecified-destination"
+        },
+        "availability": {
+          "label": "Open the planner",
+          "badge": {
+            "assetRole": "user-supplied-asset",
+            "assetRef": "user-supplied:user-supplied-asset-387"
+          }
+        },
+        "illustration": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-773"
+        }
+      },
+      "motion": {
+        "pattern": "parallax-clouds",
+        "reducedMotionFallback": "Freeze cloud layers at parallax progress 0 (no translate/scale) and pause the horizontal cloud drift."
+      }
+    },
+    {
+      "type": "press-marquee",
+      "content": {
+        "logos": [
+          {
+            "assetRole": "placeholder-logo",
+            "assetRef": "generated:placeholder-logo-142",
+            "alt": "Placeholder logo"
+          },
+          {
+            "assetRole": "placeholder-logo",
+            "assetRef": "generated:placeholder-logo-514",
+            "alt": "Sample avatar"
+          },
+          {
+            "assetRole": "placeholder-logo",
+            "assetRef": "generated:placeholder-logo-856",
+            "alt": "Placeholder mark"
+          },
+          {
+            "assetRole": "placeholder-logo",
+            "assetRef": "generated:placeholder-logo-876",
+            "alt": "Generated illustration"
+          },
+          {
+            "assetRole": "placeholder-logo",
+            "assetRef": "generated:placeholder-logo-353",
+            "alt": "Generated illustration"
+          },
+          {
+            "assetRole": "placeholder-logo",
+            "assetRef": "generated:placeholder-logo-508",
+            "alt": "Placeholder mark"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "marquee-press-20s",
+        "reducedMotionFallback": "Stop the marquee; show the first logo row static with the edge mask kept."
+      }
+    },
+    {
+      "type": "personalization-marquee",
+      "content": {
+        "heading": "Calmer evenings start with a plan you trust",
+        "families": [
+          {
+            "assetRole": "generated-illustration",
+            "assetRef": "generated:generated-illustration-454",
+            "alt": "Sample avatar"
+          },
+          {
+            "assetRole": "generated-illustration",
+            "assetRef": "generated:generated-illustration-690",
+            "alt": "Placeholder logo"
+          },
+          {
+            "assetRole": "generated-illustration",
+            "assetRef": "generated:generated-illustration-568",
+            "alt": "Generated illustration"
+          },
+          {
+            "assetRole": "generated-illustration",
+            "assetRef": "generated:generated-illustration-190",
+            "alt": "Placeholder mark"
+          },
+          {
+            "assetRole": "generated-illustration",
+            "assetRef": "generated:generated-illustration-62",
+            "alt": "Placeholder mark"
+          },
+          {
+            "assetRole": "generated-illustration",
+            "assetRef": "generated:generated-illustration-521",
+            "alt": "Generated illustration"
+          }
+        ],
+        "body": "Short, practical reading for parents juggling work, school runs and the occasional rainy-day project.",
+        "tagline": "Weekly planning in five minutes"
+      },
+      "motion": {
+        "pattern": "marquee-family-50s-reverse",
+        "reducedMotionFallback": "Stop the marquee; show the first family row static."
+      }
+    },
+    {
+      "type": "superpowers-grid",
+      "content": {
+        "heading": "Everything your household shares in one place",
+        "cards": [
+          {
+            "label": "Open the planner",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "generated:ui-icon-81"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "generated-illustration",
+                "assetRef": "generated:generated-illustration-603"
+              },
+              "title": "Rainy afternoon craft ideas",
+              "subtitle": "Shared lists that stay in sync",
+              "features": [
+                {
+                  "title": "Shared lists that stay in sync",
+                  "description": "Shared lists that stay in sync"
+                },
+                {
+                  "title": "Rainy afternoon craft ideas",
+                  "description": "Pick the pieces that suit your home today and switch them off again whenever life changes shape."
+                },
+                {
+                  "title": "Weekly planning in five minutes",
+                  "description": "A tidier morning routine"
+                },
+                {
+                  "title": "A tidier morning routine",
+                  "description": "Weekly planning in five minutes"
+                }
+              ],
+              "cta": {
+                "label": "Browse ideas",
+                "assetRole": "placeholder-url",
+                "href": "https://brightburrow.example/start"
+              }
+            }
+          },
+          {
+            "label": "See how it works",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "generated:ui-icon-365"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "generated-illustration",
+                "assetRef": "generated:generated-illustration-992"
+              },
+              "title": "Shared lists that stay in sync",
+              "subtitle": "A tidier morning routine",
+              "features": [
+                {
+                  "title": "A tidier morning routine",
+                  "description": "Weekly planning in five minutes"
+                },
+                {
+                  "title": "Weekly planning in five minutes",
+                  "description": "Rainy afternoon craft ideas"
+                },
+                {
+                  "title": "Weekly planning in five minutes",
+                  "description": "Shared lists that stay in sync"
+                },
+                {
+                  "title": "A tidier morning routine",
+                  "description": "Short, practical reading for parents juggling work, school runs and the occasional rainy-day project."
+                }
+              ],
+              "cta": {
+                "label": "Open the planner",
+                "assetRole": "placeholder-url",
+                "href": "https://brightburrow.example/start"
+              }
+            }
+          },
+          {
+            "label": "Browse ideas",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "generated:ui-icon-878"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "generated-illustration",
+                "assetRef": "generated:generated-illustration-513"
+              },
+              "title": "A tidier morning routine",
+              "subtitle": "A tidier morning routine",
+              "features": [
+                {
+                  "title": "A tidier morning routine",
+                  "description": "Rainy afternoon craft ideas"
+                },
+                {
+                  "title": "Weekly planning in five minutes",
+                  "description": "Weekly planning in five minutes"
+                },
+                {
+                  "title": "A tidier morning routine",
+                  "description": "Weekly planning in five minutes"
+                },
+                {
+                  "title": "A tidier morning routine",
+                  "description": "Shared lists that stay in sync"
+                }
+              ],
+              "cta": {
+                "label": "See how it works",
+                "assetRole": "placeholder-url",
+                "href": "https://brightburrow.example/start"
+              }
+            }
+          },
+          {
+            "label": "Start a free plan",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "generated:ui-icon-351"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "generated-illustration",
+                "assetRef": "generated:generated-illustration-503"
+              },
+              "title": "Weekly planning in five minutes",
+              "subtitle": "Shared lists that stay in sync",
+              "features": [
+                {
+                  "title": "Shared lists that stay in sync",
+                  "description": "Weekly planning in five minutes"
+                },
+                {
+                  "title": "Rainy afternoon craft ideas",
+                  "description": "A tidier morning routine"
+                },
+                {
+                  "title": "Weekly planning in five minutes",
+                  "description": "Pick the pieces that suit your home today and switch them off again whenever life changes shape."
+                },
+                {
+                  "title": "A tidier morning routine",
+                  "description": "Pick the pieces that suit your home today and switch them off again whenever life changes shape."
+                }
+              ],
+              "cta": {
+                "label": "Start a free plan",
+                "assetRole": "placeholder-url",
+                "href": "https://brightburrow.example/start"
+              }
+            }
+          },
+          {
+            "label": "See how it works",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "generated:ui-icon-24"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "generated-illustration",
+                "assetRef": "generated:generated-illustration-60"
+              },
+              "title": "Weekly planning in five minutes",
+              "subtitle": "A tidier morning routine",
+              "features": [
+                {
+                  "title": "Rainy afternoon craft ideas",
+                  "description": "Rainy afternoon craft ideas"
+                },
+                {
+                  "title": "Shared lists that stay in sync",
+                  "description": "Rainy afternoon craft ideas"
+                },
+                {
+                  "title": "A tidier morning routine",
+                  "description": "Rainy afternoon craft ideas"
+                },
+                {
+                  "title": "Weekly planning in five minutes",
+                  "description": "Short, practical reading for parents juggling work, school runs and the occasional rainy-day project."
+                }
+              ],
+              "cta": {
+                "label": "Start a free plan",
+                "assetRole": "placeholder-url",
+                "href": "https://brightburrow.example/start"
+              }
+            }
+          },
+          {
+            "label": "Open the planner",
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "generated:ui-icon-283"
+            },
+            "modal": {
+              "mascot": {
+                "assetRole": "generated-illustration",
+                "assetRef": "generated:generated-illustration-350"
+              },
+              "title": "A tidier morning routine",
+              "subtitle": "Shared lists that stay in sync",
+              "features": [
+                {
+                  "title": "Rainy afternoon craft ideas",
+                  "description": "Rainy afternoon craft ideas"
+                },
+                {
+                  "title": "A tidier morning routine",
+                  "description": "Shared lists that stay in sync"
+                },
+                {
+                  "title": "Rainy afternoon craft ideas",
+                  "description": "A tidier morning routine"
+                },
+                {
+                  "title": "Rainy afternoon craft ideas",
+                  "description": "Weekly planning in five minutes"
+                }
+              ],
+              "cta": {
+                "label": "See how it works",
+                "assetRole": "placeholder-url",
+                "href": "https://brightburrow.example/start"
+              }
+            }
+          }
+        ],
+        "decorativeMascot": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-956"
+        }
+      },
+      "motion": {
+        "pattern": "click-opens-modal",
+        "reducedMotionFallback": "none-required: cards have no hover motion on the original; the modal opens with no entry animation."
+      }
+    },
+    {
+      "type": "featurette-carousel",
+      "content": {
+        "heading": "Notes from the Brightburrow kitchen table",
+        "slides": [
+          {
+            "rive": {
+              "assetRole": "placeholder-screenshot",
+              "assetRef": "generated:placeholder-screenshot-857",
+              "artboard": "placeholder",
+              "stateMachine": "placeholder"
+            },
+            "phoneShell": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-218"
+            },
+            "photo": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-65",
+              "alt": "Sample avatar"
+            }
+          },
+          {
+            "rive": {
+              "assetRole": "placeholder-screenshot",
+              "assetRef": "generated:placeholder-screenshot-310",
+              "artboard": "placeholder",
+              "stateMachine": "placeholder"
+            },
+            "phoneShell": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-88"
+            },
+            "photo": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-990",
+              "alt": "Generated illustration"
+            }
+          },
+          {
+            "rive": {
+              "assetRole": "placeholder-screenshot",
+              "assetRef": "generated:placeholder-screenshot-15",
+              "artboard": "placeholder",
+              "stateMachine": "placeholder"
+            },
+            "phoneShell": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-575"
+            },
+            "photo": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-577",
+              "alt": "Generated illustration"
+            }
+          }
+        ],
+        "background": {
+          "assetRole": "decorative-cloud",
+          "assetRef": "generated:decorative-cloud-542"
+        },
+        "cta": {
+          "label": "See how it works",
+          "assetRole": "unspecified-destination"
+        }
+      },
+      "motion": {
+        "pattern": "embla-loop-with-rive",
+        "reducedMotionFallback": "Snap between slides with no embla easing; do not autoplay Rive (show the first frame)."
+      }
+    },
+    {
+      "type": "clinical-board",
+      "content": {
+        "eyebrow": "From the Brightburrow team",
+        "heading": "Everything your household shares in one place",
+        "body": "Brightburrow keeps the family calendar, chores and shared lists in one tidy space so nobody has to chase the details.",
+        "advisors": [
+          {
+            "portrait": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-276",
+              "alt": "Generated illustration of stacked lunch boxes"
+            },
+            "name": "[Sample name]",
+            "credentials": "[Operator-verified credentials]"
+          },
+          {
+            "portrait": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-225",
+              "alt": "Generated illustration of stacked lunch boxes"
+            },
+            "name": "[Sample name]",
+            "credentials": "[Operator-verified credentials]"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "how-riley-works",
+      "content": {
+        "heading": "Questions answered before bedtime",
+        "items": [
+          {
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-346"
+            },
+            "title": "Weekly planning in five minutes",
+            "body": "Pick the pieces that suit your home today and switch them off again whenever life changes shape."
+          },
+          {
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-492"
+            },
+            "title": "A tidier morning routine",
+            "body": "Brightburrow keeps the family calendar, chores and shared lists in one tidy space so nobody has to chase the details."
+          },
+          {
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-590"
+            },
+            "title": "Shared lists that stay in sync",
+            "body": "Brightburrow keeps the family calendar, chores and shared lists in one tidy space so nobody has to chase the details."
+          }
+        ],
+        "cta": {
+          "label": "Open the planner",
+          "assetRole": "unspecified-destination"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "testimonials-carousel",
+      "content": {
+        "eyebrow": "From the Brightburrow team",
+        "heading": "Questions answered before bedtime",
+        "slides": [
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-908"
+            },
+            "attribution": "[Sample attribution — operator supplies a verified quote]"
+          },
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-137"
+            },
+            "attribution": "[Sample attribution — operator supplies a verified quote]"
+          },
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-894"
+            },
+            "attribution": "[Sample attribution — operator supplies a verified quote]"
+          },
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-131"
+            },
+            "attribution": "Sign up"
+          },
+          {
+            "quote": "[Sample quote placeholder. Replace with a verified customer quote supplied by the operator before publishing.]",
+            "avatar": {
+              "assetRole": "fictional-person-avatar",
+              "assetRef": "generated:fictional-person-avatar-768"
+            },
+            "attribution": "[Sample attribution — operator supplies a verified quote]"
+          }
+        ],
+        "cta": {
+          "label": "Open the planner",
+          "assetRole": "unspecified-destination"
+        }
+      },
+      "motion": {
+        "pattern": "embla-loop",
+        "reducedMotionFallback": "Snap between slides with no embla easing."
+      }
+    },
+    {
+      "type": "gradient-band",
+      "variant": "feature-cards-and-table",
+      "content": {
+        "featureCards": {
+          "eyebrow": "Made for busy households",
+          "heading": "Notes from the Brightburrow kitchen table",
+          "cards": [
+            {
+              "tone": "apricot",
+              "illustration": {
+                "assetRole": "generated-illustration",
+                "assetRef": "generated:generated-illustration-943"
+              },
+              "title": "A tidier morning routine",
+              "body": "Pick the pieces that suit your home today and switch them off again whenever life changes shape."
+            },
+            {
+              "tone": "violet-100",
+              "illustration": {
+                "assetRole": "generated-illustration",
+                "assetRef": "generated:generated-illustration-937"
+              },
+              "title": "Weekly planning in five minutes",
+              "body": "Brightburrow keeps the family calendar, chores and shared lists in one tidy space so nobody has to chase the details."
+            },
+            {
+              "tone": "marigold",
+              "illustration": {
+                "assetRole": "generated-illustration",
+                "assetRef": "generated:generated-illustration-365"
+              },
+              "title": "Rainy afternoon craft ideas",
+              "body": "Brightburrow keeps the family calendar, chores and shared lists in one tidy space so nobody has to chase the details."
+            }
+          ],
+          "cta": {
+            "label": "Browse ideas",
+            "assetRole": "unspecified-destination"
+          }
+        },
+        "comparisonTable": {
+          "eyebrow": "From the Brightburrow team",
+          "heading": "Questions answered before bedtime",
+          "body": "Pick the pieces that suit your home today and switch them off again whenever life changes shape.",
+          "featureColumnLabel": "Get started",
+          "columns": [
+            {
+              "label": "Start a free plan"
+            },
+            {
+              "label": "Browse ideas"
+            },
+            {
+              "label": "See how it works"
+            },
+            {
+              "label": "Open the planner"
+            },
+            {
+              "label": "Browse ideas"
+            },
+            {
+              "label": "Start a free plan"
+            },
+            {
+              "label": "Open the planner"
+            }
+          ],
+          "rows": [
+            {
+              "label": "See how it works",
+              "marks": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "Open the planner",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                true
+              ]
+            },
+            {
+              "label": "Start a free plan",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "Browse ideas",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "Open the planner",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                true,
+                false
+              ]
+            }
+          ],
+          "cta": {
+            "label": "Browse ideas",
+            "assetRole": "unspecified-destination"
+          }
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "faq-clouds",
+      "content": {
+        "heading": "Notes from the Brightburrow kitchen table",
+        "items": [
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-738"
+            },
+            "question": "How do I export my calendar?",
+            "answer": "Yes. Invite anyone in your household and edits show up for everyone within a few seconds."
+          },
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-317"
+            },
+            "question": "Can I share a list with my partner?",
+            "answer": "Lists stay readable without a connection and sync again once you are back online."
+          },
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-325"
+            },
+            "question": "Can I share a list with my partner?",
+            "answer": "Yes. Invite anyone in your household and edits show up for everyone within a few seconds."
+          },
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-282"
+            },
+            "question": "Does it work offline?",
+            "answer": "Lists stay readable without a connection and sync again once you are back online."
+          },
+          {
+            "portrait": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-701"
+            },
+            "question": "Can I share a list with my partner?",
+            "answer": "Yes. Invite anyone in your household and edits show up for everyone within a few seconds."
+          }
+        ],
+        "itemCta": {
+          "label": "Browse ideas",
+          "assetRole": "internal-route"
+        },
+        "itemMascot": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-932"
+        },
+        "clouds": [
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-524"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-869"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-702"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-31"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "generated:decorative-cloud-512"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "faq-clouds-float-and-open",
+        "reducedMotionFallback": "Clouds static at clear-skies positions; open/close items without size/position transition; apply blur state instantly."
+      }
+    },
+    {
+      "type": "blog-teaser",
+      "content": {
+        "eyebrow": "From the Brightburrow team",
+        "heading": "Questions answered before bedtime",
+        "categories": [
+          {
+            "label": "Browse ideas",
+            "tone": "development",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Browse ideas",
+            "tone": "neutral",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Browse ideas",
+            "tone": "health",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Browse ideas",
+            "tone": "neutral",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Browse ideas",
+            "tone": "neutral",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Browse ideas",
+            "tone": "sleep",
+            "assetRole": "internal-route"
+          }
+        ],
+        "posts": [
+          {
+            "cover": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-156",
+              "alt": "Generated illustration of stacked lunch boxes"
+            },
+            "title": "Weekly planning in five minutes",
+            "assetRole": "internal-route"
+          },
+          {
+            "cover": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-766",
+              "alt": "Illustration of a tidy kitchen noticeboard"
+            },
+            "title": "A tidier morning routine",
+            "assetRole": "internal-route"
+          },
+          {
+            "cover": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:generated-illustration-35",
+              "alt": "Illustration of a tidy kitchen noticeboard"
+            },
+            "title": "Shared lists that stay in sync",
+            "assetRole": "internal-route"
+          }
+        ],
+        "cta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        }
+      },
+      "motion": {
+        "pattern": "image-hover-scale",
+        "reducedMotionFallback": "No image scale on hover; pills keep instant opacity change."
+      }
+    },
+    {
+      "type": "final-cta",
+      "content": {
+        "heading": "Questions answered before bedtime",
+        "cta": {
+          "label": "Browse ideas",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "background": {
+          "assetRole": "decorative-cloud",
+          "assetRef": "generated:decorative-cloud-655"
+        },
+        "mascots": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:generated-illustration-174"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Get the Brightburrow letter",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Journal",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Plans",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "How we write",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Help",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the app",
+          "badge": {
+            "assetRole": "user-supplied-asset",
+            "assetRef": "user-supplied:user-supplied-asset-510",
+            "alt": "Generated illustration of stacked lunch boxes"
+          },
+          "assetRole": "placeholder-url",
+          "href": "https://brightburrow.example/start"
+        },
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "generated:placeholder-brand-mark-390"
+        },
+        "copyright": "Open"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "We use cookies to understand how the site is used.",
+        "learnMore": {
+          "label": "Read more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

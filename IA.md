@@ -1,19 +1,19 @@
 # Riley (rileyapp.com) clone — information architecture
 
 Source: https://rileyapp.com/ (live original) · local clone at /src
-Status: **measured — all templates specced and built; 3 author pages pending** · production approved: **false**
-242 routes · 8 templates · 35 unique sections
+Status: **measured: all 8 templates specced, built and modelled in design-repo 2.0.0; author/reviewer pages are linked but not built (served by the 404 template)** · production approved: **false**
+248 routes · 8 templates · 38 unique sections
 
 > Generated from `ia.json` by `build.mjs`. Edit the JSON, not this file.
 
 ## Shape of the site
 
-The largest 3 templates (Blog article, 404 (dead landing slugs), Blog category) account for 235 of 242 routes (97%). The remaining 7 routes span 5 templates.
+The largest 3 templates (Blog article, 404 (dead landing slugs + unbuilt links), Blog category) account for 241 of 248 routes (97%). The remaining 7 routes span 5 templates.
 
 | template | routes | share |
 |---|---:|---:|
-| Blog article | 221 | 91% |
-| 404 (dead landing slugs) | 8 | 3% |
+| Blog article | 221 | 89% |
+| 404 (dead landing slugs + unbuilt links) | 14 | 6% |
 | Blog category | 6 | 2% |
 | Legal policy | 3 | 1% |
 | Homepage | 1 | 0% |
@@ -23,7 +23,7 @@ The largest 3 templates (Blog article, 404 (dead landing slugs), Blog category) 
 
 ## Page chrome
 
-**15 routes carry chrome = `full`** — Homepage, Pricing, 404 (dead landing slugs), Blog index, Editorial process, Legal policy.
+**21 routes carry chrome = `full`** — Homepage, Pricing, 404 (dead landing slugs + unbuilt links), Blog index, Editorial process, Legal policy.
 
 **227 routes carry chrome = `no-announcement-bar`** — Blog category, Blog article.
 
@@ -34,20 +34,21 @@ component library or stays local to its page.
 
 | section | category | templates | routes | implementation | scope |
 |---|---|---:|---:|---|---|
-| `chrome.site-header` | CHROME | 8 | 242 | `src/components/upper/SiteHeader.jsx` | All 242 mapped routes. |
-| `chrome.site-footer` | CHROME | 8 | 242 | `src/components/SiteFooter.jsx` | All 242 mapped routes. |
-| `chrome.cookie-consent` | CHROME | 8 | 242 | `src/components/blog/CookieConsent.jsx (mounted in src/App.jsx)` | Every one of the 242 mapped routes (mounted once, globally). |
+| `chrome.site-header` | CHROME | 8 | 248 | `src/components/upper/SiteHeader.jsx` | All 248 mapped routes. |
+| `chrome.site-footer` | CHROME | 8 | 248 | `src/components/SiteFooter.jsx` | All 248 mapped routes. |
+| `chrome.cookie-consent` | CHROME | 8 | 248 | `src/components/blog/CookieConsent.jsx (mounted in src/App.jsx)` | Every one of the 248 mapped routes (mounted once, globally). |
 | `conversion.final-cta` | CONVERSION | 5 | 230 | `src/components/FinalCta.jsx` | 230 routes: homepage, pricing, the blog index, every category page and every article, directly above the footer. |
 | `article.top-bar` | ARTICLE | 1 | 221 | `src/components/article/ArticleTopBar.jsx` | All 221 articles. |
 | `article.breadcrumbs` | ARTICLE | 1 | 221 | `src/components/article/ArticleBreadcrumbs.jsx` | All 221 articles. |
 | `article.header` | ARTICLE | 1 | 221 | `src/components/article/ArticleHeader.jsx (+ AuthorByline.jsx, ShareButtons.jsx)` | All 221 articles. |
 | `article.toc` | ARTICLE | 1 | 221 | `src/components/article/ArticleToc.jsx` | All 221 articles. |
-| `article.body` | ARTICLE | 1 | 221 | `src/components/article/ArticleBody.jsx (+ PromoUnit, EditorNote, ArticleImage, DownloadableImage)` | All 221 articles. |
 | `article.sources` | ARTICLE | 1 | 221 | `src/components/article/SourcesAccordion.jsx` | All 221 articles. |
 | `article.share-row` | ARTICLE | 1 | 221 | `src/components/article/ShareButtons.jsx (variant bottom)` | All 221 articles. |
 | `article.related-posts` | ARTICLE | 1 | 221 | `src/components/article/RelatedPosts.jsx` | All 221 articles. |
-| `chrome.announcement-bar` | CHROME | 6 | 15 | `src/components/AnnouncementBar.jsx` | 15 routes: homepage, pricing, every dead landing slug, the blog index, editorial process and each legal page; absent on category and article pages. |
-| `error.not-found` | ERROR | 1 | 8 | `src/pages/NotFound.jsx` | The 8 dead sitemap slugs, plus any unknown path via the router fallback. |
+| `article.intro` | ARTICLE | 1 | 221 | `src/components/article/ArticleBody.jsx (+ PromoUnit.jsx)` | All 221 articles. |
+| `article.chapter` | ARTICLE | 1 | 221 | `src/components/article/ArticleBody.jsx (+ EditorNote, ArticleImage, DownloadableImage)` | All 221 articles (repeatable). |
+| `chrome.announcement-bar` | CHROME | 6 | 21 | `src/components/AnnouncementBar.jsx` | 21 routes: homepage, pricing, every not-found-template route, the blog index, editorial process and each legal page; absent on category and article pages. |
+| `error.not-found` | ERROR | 1 | 14 | `src/pages/NotFound.jsx` | 14 routes: the dead sitemap slugs and the linked-but-unbuilt paths (author/reviewer pages, /support), plus any unknown path via the router fallback. |
 | `blog.index-hero` | BLOG | 2 | 7 | `src/components/blog/BlogIndexHero.jsx` | Blog index and every category page (7 routes). |
 | `blog.search` | BLOG | 2 | 7 | `src/components/blog/BlogSearch.jsx` | Blog index and every category page (7 routes); articles embed the same component inside article.top-bar. |
 | `blog.category-tabs` | BLOG | 2 | 7 | `src/components/blog/BlogCategoryTabs.jsx` | Blog index and every category page (7 routes). |
@@ -68,11 +69,13 @@ component library or stays local to its page.
 | `product.feature-cards` | PRODUCT | 1 | 1 | `src/components/lower/FeatureCards.jsx (inside GradientBand.jsx)` | Homepage only (1 route); the pricing page renders the gradient band without it. |
 | `content.blog-teaser` | CONTENT | 1 | 1 | `src/components/BlogTeaser.jsx` | Homepage only (1 route). |
 | `hero.pricing-plans` | HERO | 1 | 1 | `src/components/pricing/PricingHero.jsx (+ PlanCard.jsx, upper/HeroParallaxClouds.jsx)` | Pricing only (1 route). |
-| `legal.editorial-prose` | LEGAL | 1 | 1 | `src/pages/TextPage.jsx` | Editorial process only (1 route). |
+| `text.header` | TEXT | 1 | 1 | `src/pages/TextPage.jsx` | Editorial process only (1 route). |
+| `text.chapter` | TEXT | 1 | 1 | `src/pages/TextPage.jsx` | Editorial process only (1 route; one per level-three heading). |
+| `text.closing` | TEXT | 1 | 1 | `src/pages/TextPage.jsx` | Editorial process only (1 route). |
 
 **14 shared sections** appear in more than one template and belong in a component library.
 
-**21 single-use sections** appear in exactly one template. Building these
+**24 single-use sections** appear in exactly one template. Building these
 as "reusable" components up front would be speculative — keep them page-local
 until a second caller actually appears.
 
@@ -118,9 +121,9 @@ until a second caller actually appears.
 | 8 | CHROME | `chrome.site-footer` | shared ×8 |
 | 9 | CHROME | `chrome.cookie-consent` | shared ×8 |
 
-### 404 (dead landing slugs) — `template.not-found`
+### 404 (dead landing slugs + unbuilt links) — `template.not-found`
 
-8 routes · `/baby-tracker`, `/sleep-tracker`, `/sleep-training`, `/sleep-regression`, `/all-in-one`, `/your-babys-sleep-simplified`, `/product-hunt`, `/give-the-gift` · chrome: **full**
+14 routes · `/baby-tracker`, `/sleep-tracker`, `/sleep-training`, `/sleep-regression`, `/all-in-one`, `/your-babys-sleep-simplified`, `/product-hunt`, `/give-the-gift`, `/blog/authors`, `/blog/author/amanda-deluca`, `/blog/author/sam-fore`, `/blog/author/girish-gupta`, `/blog/reviewer/kate-roche`, `/support` · chrome: **full**
 
 | # | category | section | |
 |---:|---|---|---|
@@ -176,13 +179,14 @@ until a second caller actually appears.
 | 3 | ARTICLE | `article.breadcrumbs` | page-local |
 | 4 | ARTICLE | `article.header` | page-local |
 | 5 | ARTICLE | `article.toc` | page-local |
-| 6 | ARTICLE | `article.body` | page-local |
-| 7 | ARTICLE | `article.sources` | page-local |
-| 8 | ARTICLE | `article.share-row` | page-local |
-| 9 | ARTICLE | `article.related-posts` | page-local |
-| 10 | CONVERSION | `conversion.final-cta` | shared ×5 |
-| 11 | CHROME | `chrome.site-footer` | shared ×8 |
-| 12 | CHROME | `chrome.cookie-consent` | shared ×8 |
+| 6 | ARTICLE | `article.intro` | page-local |
+| 7 | ARTICLE | `article.chapter` | page-local |
+| 8 | ARTICLE | `article.sources` | page-local |
+| 9 | ARTICLE | `article.share-row` | page-local |
+| 10 | ARTICLE | `article.related-posts` | page-local |
+| 11 | CONVERSION | `conversion.final-cta` | shared ×5 |
+| 12 | CHROME | `chrome.site-footer` | shared ×8 |
+| 13 | CHROME | `chrome.cookie-consent` | shared ×8 |
 
 ### Editorial process — `template.editorial`
 
@@ -192,9 +196,11 @@ until a second caller actually appears.
 |---:|---|---|---|
 | 1 | CHROME | `chrome.announcement-bar` | shared ×6 |
 | 2 | CHROME | `chrome.site-header` | shared ×8 |
-| 3 | LEGAL | `legal.editorial-prose` | page-local |
-| 4 | CHROME | `chrome.site-footer` | shared ×8 |
-| 5 | CHROME | `chrome.cookie-consent` | shared ×8 |
+| 3 | TEXT | `text.header` | page-local |
+| 4 | TEXT | `text.chapter` | page-local |
+| 5 | TEXT | `text.closing` | page-local |
+| 6 | CHROME | `chrome.site-footer` | shared ×8 |
+| 7 | CHROME | `chrome.cookie-consent` | shared ×8 |
 
 ### Legal policy — `template.legal`
 
@@ -216,19 +222,19 @@ _Site-wide frame: announcement bar, header, footer and cookie banner._
 
 **`chrome.announcement-bar`** — Lilac strip above the header with a one-line announcement and link; hidden below 992px.
 
-· 15 routes: homepage, pricing, every dead landing slug, the blog index, editorial process and each legal page; absent on category and article pages. · appears on 15 routes · implemented by `src/components/AnnouncementBar.jsx`
+· 21 routes: homepage, pricing, every not-found-template route, the blog index, editorial process and each legal page; absent on category and article pages. · appears on 21 routes · implemented by `src/components/AnnouncementBar.jsx`
 
 **`chrome.site-header`** — Logo, primary nav links, 'What's New?' and the app CTA; becomes fixed with blur after 54px of scroll; hamburger with slide-up menu below 992px.
 
-· All 242 mapped routes. · appears on 242 routes · implemented by `src/components/upper/SiteHeader.jsx`
+· All 248 mapped routes. · appears on 248 routes · implemented by `src/components/upper/SiteHeader.jsx`
 
 **`chrome.site-footer`** — Footer with logo, link columns, newsletter sign-up, app-store badge and copyright line.
 
-· All 242 mapped routes. · appears on 242 routes · implemented by `src/components/SiteFooter.jsx`
+· All 248 mapped routes. · appears on 248 routes · implemented by `src/components/SiteFooter.jsx`
 
 **`chrome.cookie-consent`** — Fixed bottom-right translucent cookie notice ('Learn more' → /privacy) with an OK button; hides for a year once accepted.
 
-· Every one of the 242 mapped routes (mounted once, globally). · appears on 242 routes · implemented by `src/components/blog/CookieConsent.jsx (mounted in src/App.jsx)`
+· Every one of the 248 mapped routes (mounted once, globally). · appears on 248 routes · implemented by `src/components/blog/CookieConsent.jsx (mounted in src/App.jsx)`
 
 ### HERO
 
@@ -316,7 +322,7 @@ _Error-state page bodies._
 
 **`error.not-found`** — 'Playing peekaboo' 404 body: serif heading, one-line message, 'Go back' link and wide cloud illustration; sets robots noindex.
 
-· The 8 dead sitemap slugs, plus any unknown path via the router fallback. · appears on 8 routes · implemented by `src/pages/NotFound.jsx`
+· 14 routes: the dead sitemap slugs and the linked-but-unbuilt paths (author/reviewer pages, /support), plus any unknown path via the router fallback. · appears on 14 routes · implemented by `src/pages/NotFound.jsx`
 
 ### BLOG
 
@@ -366,10 +372,6 @@ _Blocks of the single-article reading template._
 
 · All 221 articles. · appears on 221 routes · implemented by `src/components/article/ArticleToc.jsx`
 
-**`article.body`** — Rich-text article body: paragraphs, h2/h3, nested lists, citation superscripts, promo unit, editor's note and images. Body copy is placeholder in the clone.
-
-· All 221 articles. · appears on 221 routes · implemented by `src/components/article/ArticleBody.jsx (+ PromoUnit, EditorNote, ArticleImage, DownloadableImage)`
-
 **`article.sources`** — 'N sources cited' collapsible list.
 
 · All 221 articles. · appears on 221 routes · implemented by `src/components/article/SourcesAccordion.jsx`
@@ -382,14 +384,34 @@ _Blocks of the single-article reading template._
 
 · All 221 articles. · appears on 221 routes · implemented by `src/components/article/RelatedPosts.jsx`
 
+**`article.intro`** — Article lead-in: the blocks before the first H2 (opening paragraph with citation superscripts, optional promo unit). Body copy is placeholder in the clone.
+
+· All 221 articles. · appears on 221 routes · implemented by `src/components/article/ArticleBody.jsx (+ PromoUnit.jsx)`
+
+**`article.chapter`** — One H2-bounded chapter of the article body (H2, paragraphs, H3s, nested lists, images, editor's note, downloadable image); repeats once per H2.
+
+· All 221 articles (repeatable). · appears on 221 routes · implemented by `src/components/article/ArticleBody.jsx (+ EditorNote, ArticleImage, DownloadableImage)`
+
 ### LEGAL
 
 _Policy and editorial text-page bodies._
 
-**`legal.editorial-prose`** — Editorial-process prose body: headings and lists running edge to edge with no side padding (an original quirk); placeholder copy in the clone.
-
-· Editorial process only (1 route). · appears on 1 routes · implemented by `src/pages/TextPage.jsx`
-
 **`legal.policy-embed`** — Empty policy embed slot: the original's third-party policy embed is blocked by its own security policy, so the body renders 0px tall.
 
 · The 3 legal routes (/tos, /privacy, /cookies). · appears on 3 routes · implemented by `src/pages/LegalPage.jsx`
+
+### TEXT
+
+_Text-page (editorial process) blocks, split at real heading boundaries._
+
+**`text.header`** — Text-page title (bold H2) and intro paragraph; no horizontal padding (original quirk). Copy is placeholder in the clone.
+
+· Editorial process only (1 route). · appears on 1 routes · implemented by `src/pages/TextPage.jsx`
+
+**`text.chapter`** — One H3-bounded part of a text page: the H3 and its bullet list (optional bold lead labels); repeats once per H3.
+
+· Editorial process only (1 route; one per level-three heading). · appears on 1 routes · implemented by `src/pages/TextPage.jsx`
+
+**`text.closing`** — Closing paragraph with inline links (support form, full page on the original).
+
+· Editorial process only (1 route). · appears on 1 routes · implemented by `src/pages/TextPage.jsx`

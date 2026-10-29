@@ -1,0 +1,80 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "blog-index-hero",
+  "registryId": "section.blog-index-hero",
+  "version": "2.0.0",
+  "category": "hero",
+  "purpose": "Blog listing opener: mascot, serif 'Riley Articles' H1, one-line subtitle and books illustration.",
+  "iaSectionIds": [
+    "blog.index-hero"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/blog/BlogIndexHero.jsx:2-17",
+      "anchor": "export default function BlogIndexHero"
+    }
+  ],
+  "source": {
+    "id": "src:BlogIndexHero@4",
+    "tag": "div",
+    "file": "src/components/blog/BlogIndexHero.jsx",
+    "lines": "4-17"
+  },
+  "semantic": {
+    "id": "blog-index-hero",
+    "category": "HERO"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "user-supplied-asset"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_blog-index-hero",
+    "copyBudget": {
+      "mascot.alt": 3,
+      "heading": 4,
+      "subtitle": 16,
+      "illustration.alt": 3
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<768px",
+        "changes": [
+          "mascot and books illustrations hidden (md:flex)",
+          "H1 40/48 (64/72 at >=992, unlayered h1 rule)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/blog/BlogIndexHero.jsx:5",
+            "anchor": "className=\"hidden md:flex\""
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC_PAGES_BLOG.md:180",
+      "anchor": "### 2.2 BlogIndexHero"
+    }
+  ],
+  "notes": []
+}

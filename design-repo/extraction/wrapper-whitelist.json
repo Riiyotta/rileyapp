@@ -1,0 +1,5 @@
+{
+  "$schema": "riley-design-tokens/extraction/wrapper-whitelist",
+  "note": "Reviewed exceptions to the wrapper gate (extraction/wrapper_gate.py). Empty: no section in the 1440 measurements exceeds a gate threshold after the article/text-page decomposition. An entry needs template, section, maxHeightPx (> measured), justification (30+ chars) and reviewedBy; an agent reviewer must write 'agent attestation, not a human sign-off'.",
+  "entries": []
+}

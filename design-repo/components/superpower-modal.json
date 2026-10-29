@@ -15,5 +15,7 @@
       "cite": "src/components/upper/SuperpowerModal.jsx:7-78",
       "anchor": "no entry animation"
     }
-  ]
+  ],
+  "retrievalEligible": false,
+  "retrievalReason": "Runtime modal dialog opened from a superpowers card (full-screen overlay); it is interaction state of superpowers-grid, never a page section to retrieve or place."
 }

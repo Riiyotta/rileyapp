@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "blog-teaser",
   "registryId": "section.blog-teaser",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "content-teaser",
   "purpose": "Category pills + three latest article cards inviting readers to the blog.",
   "iaSectionIds": [
@@ -13,6 +13,23 @@
       "cite": "src/components/BlogTeaser.jsx:70-115",
       "anchor": "export default function BlogTeaser"
     }
+  ],
+  "source": {
+    "id": "src:BlogTeaser@74",
+    "tag": "section",
+    "file": "src/components/BlogTeaser.jsx",
+    "lines": "74-115"
+  },
+  "semantic": {
+    "id": "blog-teaser",
+    "category": "EDITORIAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "internal-route",
+    "placeholder-url",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

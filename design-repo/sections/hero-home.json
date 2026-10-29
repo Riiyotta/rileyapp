@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "hero-home",
   "registryId": "section.hero-home",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "hero",
   "purpose": "Homepage hero: the 'Panic Scrolling Stops Here' promise, value prop and primary app CTA over drifting parallax clouds.",
   "iaSectionIds": [
@@ -13,6 +13,23 @@
       "cite": "src/components/Hero.jsx:16-70",
       "anchor": "function HeroContent"
     }
+  ],
+  "source": {
+    "id": "src:Hero@18",
+    "tag": "div",
+    "file": "src/components/Hero.jsx",
+    "lines": "18-70"
+  },
+  "semantic": {
+    "id": "hero-home",
+    "category": "HERO"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "placeholder-url",
+    "unspecified-destination",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

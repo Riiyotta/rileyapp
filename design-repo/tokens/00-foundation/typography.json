@@ -268,6 +268,90 @@
           "anchor": "leading-[1.9rem] tracking-[-0.01rem]"
         }
       ]
+    },
+    "article-body": {
+      "value": "16px/28px",
+      "evidence": [
+        {
+          "cite": "src/styles/article.css:9",
+          "anchor": "line-height: 28px;"
+        }
+      ],
+      "note": "ab-p / ab-li / tp-prose body"
+    },
+    "article-h2": {
+      "value": "24px/32px",
+      "evidence": [
+        {
+          "cite": "src/styles/article.css:16",
+          "anchor": "font-size: 24px;"
+        }
+      ],
+      "note": "ab-h2 (sansBold)"
+    },
+    "article-h3": {
+      "value": "20px/32px",
+      "evidence": [
+        {
+          "cite": "src/styles/article.css:25",
+          "anchor": "font-size: 20px;"
+        }
+      ],
+      "note": "ab-h3, ab-note-h3, tp-prose h3"
+    },
+    "article-sup": {
+      "value": "12px/0",
+      "evidence": [
+        {
+          "cite": "src/styles/article.css:63",
+          "anchor": "font-size: 12px;"
+        }
+      ]
+    },
+    "blog-featured-title": {
+      "value": "30px/36px",
+      "evidence": [
+        {
+          "cite": "src/components/blog/BlogFeaturedCard.jsx:31",
+          "anchor": "text-[30px] leading-[36px]"
+        }
+      ]
+    },
+    "blog-card-title": {
+      "value": "24px/32px (wide card 30px/36px)",
+      "evidence": [
+        {
+          "cite": "src/components/blog/BlogPostCard.jsx:25",
+          "anchor": "text-[24px] leading-[32px]"
+        }
+      ]
+    },
+    "blog-hero-subtitle": {
+      "value": "20px/28px",
+      "evidence": [
+        {
+          "cite": "src/components/blog/BlogIndexHero.jsx:9",
+          "anchor": "text-[20px] leading-[28px]"
+        }
+      ]
+    },
+    "blog-tab": {
+      "value": "18px/28px",
+      "evidence": [
+        {
+          "cite": "src/components/blog/BlogCategoryTabs.jsx:16",
+          "anchor": "text-lg leading-7"
+        }
+      ]
+    },
+    "cookie-text": {
+      "value": "14px/1.5",
+      "evidence": [
+        {
+          "cite": "src/components/blog/CookieConsent.jsx:36",
+          "anchor": "fontSize: '.875rem'"
+        }
+      ]
     }
   }
 }

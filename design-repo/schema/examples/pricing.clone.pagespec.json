@@ -1,0 +1,512 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "page": {
+    "route": "/pricing",
+    "title": "Pricing | Riley",
+    "template": "pricing",
+    "mode": "clone",
+    "theme": "riley-light"
+  },
+  "nodes": [
+    {
+      "type": "announcement-bar",
+      "content": {
+        "message": "Try Riley risk free with our 7-day free trial!",
+        "link": {
+          "assetRole": "internal-route"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-header",
+      "variant": "standalone",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/wordmark.svg",
+          "alt": "Riley logo"
+        },
+        "navItems": [
+          {
+            "label": "Blog"
+          },
+          {
+            "label": "What's New?"
+          }
+        ],
+        "cta": {
+          "label": "Get Started For Free",
+          "assetRole": "app-store-onelink"
+        },
+        "mobileCta": {
+          "label": "Try For $0",
+          "assetRole": "app-store-onelink"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "pricing-hero",
+      "content": {
+        "eyebrow": "Parenting Made Simple",
+        "heading": "Expert Guidance, Tailored To Your Family",
+        "plans": [
+          {
+            "name": "Riley Plus+",
+            "description": "For families who parent as a team",
+            "avatars": [
+              {
+                "assetRole": "mascot-avatar",
+                "assetRef": "/assets/purple1.svg"
+              },
+              {
+                "assetRole": "mascot-avatar",
+                "assetRef": "/assets/purple2.svg"
+              },
+              {
+                "assetRole": "mascot-avatar",
+                "assetRef": "/assets/purple3.svg"
+              }
+            ],
+            "tagline": "Try it free for 7 days",
+            "features": [
+              {
+                "label": "Unlimited Children & Tracking",
+                "included": true
+              },
+              {
+                "label": "3+ Caregivers with their own logins",
+                "included": true
+              },
+              {
+                "label": "Unlimited Chats",
+                "included": true
+              },
+              {
+                "label": "Tracking Insights",
+                "included": true
+              },
+              {
+                "label": "Seamless Sharing",
+                "included": true
+              },
+              {
+                "label": "Advanced Memory & Customization",
+                "included": true
+              }
+            ],
+            "price": {
+              "amount": "$9.99",
+              "period": "/ month",
+              "notes": [
+                "Starting at",
+                "Billed monthly, quarterly or annually",
+                "Your first 7 days are free"
+              ]
+            }
+          },
+          {
+            "name": "Riley Basic",
+            "description": "For solo parenting or simpler setups",
+            "avatars": [
+              {
+                "assetRole": "mascot-avatar",
+                "assetRef": "/assets/purple1.svg"
+              }
+            ],
+            "tagline": "Always free",
+            "features": [
+              {
+                "label": "Unlimited Children & Tracking",
+                "included": true
+              },
+              {
+                "label": "3+ Caregivers with their own logins",
+                "included": false
+              },
+              {
+                "label": "Unlimited Chats",
+                "included": false
+              },
+              {
+                "label": "Tracking Insights",
+                "included": false
+              },
+              {
+                "label": "Seamless Sharing",
+                "included": false
+              },
+              {
+                "label": "Advanced Memory & Customization",
+                "included": false
+              }
+            ],
+            "price": {
+              "amount": "Free",
+              "notes": [
+                "Available on:"
+              ]
+            }
+          }
+        ],
+        "cta": {
+          "label": "Get Started For Free",
+          "assetRole": "app-store-onelink"
+        }
+      },
+      "motion": {
+        "pattern": "parallax-clouds",
+        "reducedMotionFallback": "Freeze cloud layers at parallax progress 0 (no translate/scale) and pause the horizontal cloud drift."
+      }
+    },
+    {
+      "type": "testimonials-carousel",
+      "content": {
+        "eyebrow": "Real Reviews, Real Families",
+        "heading": "Why Parents Love Riley",
+        "slides": [
+          {
+            "quote": "“10 days into having our newborn, we’ve already developed the habit of saying “Hm, not sure. Ask Riley” multiple times a day. Not sure what we’d do without having Riley to back our instincts.”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple1.svg"
+            },
+            "attribution": "Max L., Dad of Baby R (1 mo)"
+          },
+          {
+            "quote": "“Riley offers calm and reassurance while Google makes me spiral. With my second, it feels like we’re starting over and have forgotten everything about the newborn phase but Riley’s here for all my questions”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple2.svg"
+            },
+            "attribution": "Meg F., Mom of Baby A (5 mos) and Baby H (2 yrs)"
+          },
+          {
+            "quote": "“Compared to every other app, especially chat tools, Riley asks better questions and more relevant follow-ups based on my child’s age and the nuance of the moment - the end result is always more helpful.”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple3.svg"
+            },
+            "attribution": "Rebeckah R., Mom of Baby N. (7mo)"
+          },
+          {
+            "quote": "“Riley’s tracking and recommendations are smart and proactive.  I love that it’s personalized and remembers details about my family without me having to myself.”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple4.svg"
+            },
+            "attribution": "App Store Review"
+          },
+          {
+            "quote": "“I was traveling this week and *terrifyingly* my pump broke and I was panicking. Riley pulled through. Having a resource to text with at 1 am? 11/10.”",
+            "avatar": {
+              "assetRole": "mascot-avatar",
+              "assetRef": "/assets/purple5.svg"
+            },
+            "attribution": "R, Mom of Baby K. (5mo)"
+          }
+        ],
+        "cta": {
+          "label": "Join the club",
+          "assetRole": "unspecified-destination"
+        }
+      },
+      "motion": {
+        "pattern": "embla-loop",
+        "reducedMotionFallback": "Snap between slides with no embla easing."
+      }
+    },
+    {
+      "type": "gradient-band",
+      "variant": "table-only",
+      "content": {
+        "comparisonTable": {
+          "eyebrow": "Designed with Real Parents in Mind",
+          "heading": "Why Riley Stands Out",
+          "body": "See how Riley outshines other parenting tools with intelligent features and tailored advice. It’s the one-stop-shop for all your parenting needs!",
+          "featureColumnLabel": "Feature/Benefit",
+          "columns": [
+            {
+              "label": "Riley"
+            },
+            {
+              "label": "Google Search"
+            },
+            {
+              "label": "Reddit"
+            },
+            {
+              "label": "ChatGPT"
+            },
+            {
+              "label": "Claude"
+            },
+            {
+              "label": "Other Tracking Apps"
+            },
+            {
+              "label": "Podcasts, Books, & Blogs"
+            }
+          ],
+          "rows": [
+            {
+              "label": "24/7 Instant Answers",
+              "marks": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "Expert-Vetted, Science Backed Support",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                true
+              ]
+            },
+            {
+              "label": "Guidance Tailored to You & Your Family",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "Proactively Turns Tracking Into Tips",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "label": "All-In-One Tracking & Support",
+              "marks": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                true,
+                false
+              ]
+            }
+          ],
+          "cta": {
+            "label": "Join Riley—early, easy, free",
+            "assetRole": "unspecified-destination"
+          }
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "faq-clouds",
+      "content": {
+        "heading": "We’re Here to Make Things Clear",
+        "items": [
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/4.png"
+            },
+            "question": "How do I know I can trust Riley?",
+            "answer": "Riley's advice is grounded in the latest pediatric research and expert knowledge. We work closely with pediatricians, child development specialists, and parenting experts to ensure our information is accurate and up-to-date. Plus, Riley learns from your experiences, becoming more personalized and helpful over time."
+          },
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/5.png"
+            },
+            "question": "How is Riley different from ChatGPT or other parenting apps?",
+            "answer": "Riley isn’t just another chatbot. It learns from your baby’s age, symptoms, tracking history, and anything that's worked for your family in the past. Delivering expert-vetted advice that fits your family, not just “most families.”"
+          },
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/3.png"
+            },
+            "question": "What can’t I ask Riley?",
+            "answer": "Riley gives science-backed, personalized parenting support - but it’s not a doctor, therapist, or emergency service. It’s here for guidance on sleep, feeds, development, routines, and real-life questions - not for diagnosing medical conditions."
+          },
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/2.png"
+            },
+            "question": "Are you going to keep my kids’ data private?",
+            "answer": "Your family's privacy is our top priority. We use bank-level encryption to protect your data, and we never share your information with third parties. Riley's personalized advice is generated just for you, based on the information you choose to share. You're always in control of your data, and you can delete it at any time. Riley was built to support your parenting - not to profit from your info."
+          },
+          {
+            "portrait": {
+              "assetRole": "lifestyle-photo",
+              "assetRef": "/assets/6.png"
+            },
+            "question": "Do I need to track everything for Riley to work?",
+            "answer": "Nope. Tracking helps tailor the experience, but Riley gives helpful, relevant support even if you skip a day - or a week."
+          }
+        ],
+        "itemCta": {
+          "label": "Learn More",
+          "assetRole": "internal-route"
+        },
+        "itemMascot": {
+          "assetRole": "mascot-illustration",
+          "assetRef": "/assets/riley-up.svg"
+        },
+        "clouds": [
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-1.svg"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-2.svg"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-3.svg"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-4.svg"
+          },
+          {
+            "assetRole": "decorative-cloud",
+            "assetRef": "/assets/icons/faq-cloud-5.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "faq-clouds-float-and-open",
+        "reducedMotionFallback": "Clouds static at clear-skies positions; open/close items without size/position transition; apply blur state instantly."
+      }
+    },
+    {
+      "type": "final-cta",
+      "content": {
+        "heading": "We are raising a generation of confident parents.",
+        "cta": {
+          "label": "Get support that gets you",
+          "assetRole": "app-store-onelink"
+        },
+        "background": {
+          "assetRole": "decorative-cloud",
+          "assetRef": "/assets/background-clouds(1).svg"
+        },
+        "mascots": {
+          "assetRole": "mascot-illustration",
+          "assetRef": "/assets/mascots.svg"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Stay in the loop with Riley's newsletter.",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "newsletter-endpoint"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Blog",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Pricing",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Editorial Process",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy Policy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms of Service",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Support",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the App",
+          "badge": {
+            "assetRole": "store-badge",
+            "assetRef": "/assets/icons/app-store-badge.svg",
+            "alt": "Download on the App Store"
+          },
+          "assetRole": "app-store-onelink"
+        },
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/icons/footer-logo.svg"
+        },
+        "copyright": "© 2025 Riley"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "By using this site, you accept cookies for analytics.",
+        "learnMore": {
+          "label": "Learn more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

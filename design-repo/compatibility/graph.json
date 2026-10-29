@@ -1,7 +1,7 @@
 {
   "$schema": "riley-design-tokens/compatibility/graph",
-  "version": "1.0.0",
-  "enforcementNote": "Every rule id below has exactly one implementation in schema/semantic_validate.py (RULE_IMPLS). The validator reads `severity` and `exceptions` from THIS file at runtime, and refuses to run if the id sets differ — prose and code cannot silently diverge on ids, severities or exceptions. Each rule was checked against templates/templates.json node lists when written (see `checkedAgainstTemplates`).",
+  "version": "2.0.0",
+  "enforcementNote": "Every rule id below has exactly one implementation in schema/semantic_validate.py (RULE_IMPLS). The validator reads `severity` and `exceptions` from THIS file at runtime and refuses to run if the id sets differ. Each rule was checked against templates/templates.json node lists when written (`checkedAgainstTemplates`); the adversarial suite synthesizes one control per template.",
   "categories": {
     "announcement-bar": "shell",
     "site-header": "shell",
@@ -19,20 +19,39 @@
     "final-cta": "conversion",
     "site-footer": "shell",
     "pricing-hero": "hero",
-    "not-found-block": "error"
+    "not-found-block": "error",
+    "blog-index-hero": "hero",
+    "blog-search": "navigation",
+    "blog-category-tabs": "navigation",
+    "blog-featured-banner": "editorial",
+    "blog-post-grid": "editorial",
+    "blog-pagination": "navigation",
+    "article-top-bar": "navigation",
+    "article-header": "hero",
+    "article-toc": "navigation",
+    "article-intro": "editorial",
+    "article-chapter": "editorial",
+    "article-sources": "editorial-meta",
+    "article-share-row": "share",
+    "article-related-posts": "editorial",
+    "text-page-header": "hero",
+    "text-page-chapter": "editorial",
+    "text-page-closing": "editorial",
+    "legal-policy-embed": "legal",
+    "cookie-consent": "utility"
   },
   "rules": [
     {
       "id": "TEMPLATE_NODE_SEQUENCE",
       "severity": "error",
-      "statement": "nodes[] must match the declared template's node list in order, keyed on (section, variant), honouring required/repeatable. This is what forbids gradient-band 'table-only' on home, 'feature-cards-and-table' on pricing, and site-header 'standalone' on home.",
+      "statement": "nodes[] must match the declared template's node list in order, keyed on (section, variant), honouring required/repeatable (article-chapter and text-page-chapter repeat; blog-featured-banner and blog-post-grid are optional on blog-category).",
       "exceptions": [],
-      "checkedAgainstTemplates": "all 3 templates pass with zero findings (adversarial controls)"
+      "checkedAgainstTemplates": "all 8 templates (home, pricing, not-found, blog-index, blog-category, blog-article, text-page, legal)"
     },
     {
       "id": "ONE_PER_PAGE",
       "severity": "error",
-      "statement": "A section with constraints.onePerPage (all 17) may appear at most once per page.",
+      "statement": "A section with constraints.onePerPage (every section except the repeatable article-chapter and text-page-chapter) may appear at most once per page.",
       "exceptions": [],
       "checkedAgainstTemplates": "no template repeats a section (verified)"
     },
@@ -41,28 +60,44 @@
       "severity": "error",
       "statement": "announcement-bar, when present, is node 0.",
       "exceptions": [],
-      "checkedAgainstTemplates": "index 0 in home, pricing, not-found"
+      "checkedAgainstTemplates": "index 0 in home, pricing, not-found, blog-index, text-page, legal; absent on blog-category and blog-article"
     },
     {
-      "id": "HEADER_SECOND",
+      "id": "HEADER_AFTER_ANNOUNCEMENT",
       "severity": "error",
-      "statement": "site-header is node 1 (immediately after announcement-bar).",
+      "statement": "site-header immediately follows announcement-bar when the page has one, otherwise it is node 0.",
       "exceptions": [],
-      "checkedAgainstTemplates": "index 1 in all 3"
+      "checkedAgainstTemplates": "index 1 on home, pricing, not-found, blog-index, text-page, legal; index 0 on blog-category and blog-article (no announcement bar, measured)"
     },
     {
       "id": "FOOTER_LAST",
       "severity": "error",
       "statement": "site-footer is the last node.",
       "exceptions": [],
-      "checkedAgainstTemplates": "last in all 3"
+      "checkedAgainstTemplates": "last node in all 8 templates"
     },
     {
       "id": "HEADER_VARIANT_BINDING",
       "severity": "error",
       "statement": "site-header variant is 'hero-overlay' if and only if the next node is hero-home (the header renders inside the home Hero wrapper, Hero.jsx:94-95); otherwise 'standalone'.",
       "exceptions": [],
-      "checkedAgainstTemplates": "home: hero-overlay -> hero-home; pricing/not-found: standalone"
+      "checkedAgainstTemplates": "home: hero-overlay (next is hero-home); standalone on the other 7 templates"
+    },
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "statement": "Exactly one hero-category section per page (hero-home | pricing-hero | blog-index-hero | article-header | text-page-header), except on hero-less templates.",
+      "exceptions": [
+        {
+          "template": "not-found",
+          "reason": "The 404 template has no hero; not-found-block takes the hero slot (NotFound.jsx)."
+        },
+        {
+          "template": "legal",
+          "reason": "Legal pages render only the empty policy-embed slot between header and footer (LegalPage.jsx); no hero exists."
+        }
+      ],
+      "checkedAgainstTemplates": "1 hero on home, pricing, blog-index, blog-category, blog-article, text-page; 0 on not-found and legal (exceptions)"
     },
     {
       "id": "PRESS_FOLLOWS_HERO",
@@ -72,23 +107,11 @@
       "checkedAgainstTemplates": "home index 2 -> 3"
     },
     {
-      "id": "ONE_HERO",
-      "severity": "error",
-      "statement": "Exactly one hero-category section (hero-home | pricing-hero) per page, except on hero-less templates listed in exceptions.",
-      "exceptions": [
-        {
-          "template": "not-found",
-          "reason": "The 404 template has no hero; not-found-block takes the hero slot (NotFound.jsx:19-45)."
-        }
-      ],
-      "checkedAgainstTemplates": "home 1, pricing 1, not-found 0 (exception)"
-    },
-    {
       "id": "FINAL_CTA_PRECEDES_FOOTER",
       "severity": "error",
       "statement": "final-cta, when present, immediately precedes site-footer.",
       "exceptions": [],
-      "checkedAgainstTemplates": "home/pricing: final-cta -> site-footer; not-found has no final-cta (rule n/a)"
+      "checkedAgainstTemplates": "home, pricing, blog-index, blog-category, blog-article: final-cta -> site-footer; not-found, text-page, legal have no final-cta"
     },
     {
       "id": "NO_ADJACENT_CAROUSELS",
@@ -120,27 +143,6 @@
       "checkedAgainstTemplates": "home 2, pricing 0, not-found 0"
     },
     {
-      "id": "ROUTE_TEMPLATE_BINDING",
-      "severity": "error",
-      "statement": "If page.route is a mapped route, page.template must equal its mapped template (dead sitemap slugs -> not-found only). Routes matching templates.json excludedRoutes are rejected (not built in this snapshot). Unknown new routes are allowed.",
-      "exceptions": [],
-      "checkedAgainstTemplates": "/ home, /pricing pricing, 8 dead slugs not-found"
-    },
-    {
-      "id": "BRAND_CONTEXT_ASSET_POLICY",
-      "severity": "error",
-      "statement": "When page.brandContext is 'other-brand', no node may use an assetRole whose generationPolicy is must-reuse-exact, must-not-fabricate or must-not-reuse-live-endpoint.",
-      "exceptions": [],
-      "checkedAgainstTemplates": "every template contains at least one such role, so none can be rendered verbatim for another brand"
-    },
-    {
-      "id": "REGISTERED_ASSET_REF",
-      "severity": "error",
-      "statement": "For must-reuse-exact and must-not-fabricate roles, assetRef must be one of the role's registered files (assets/asset-roles.json); 'generated:' refs are only allowed for may-generate-new roles.",
-      "exceptions": [],
-      "checkedAgainstTemplates": "n/a (instance-level)"
-    },
-    {
       "id": "MAX_WORDS",
       "severity": "error",
       "statement": "Every string with x-maxWords in the schema must not exceed it (whitespace word count).",
@@ -162,11 +164,199 @@
       "checkedAgainstTemplates": "n/a (instance-level)"
     },
     {
+      "id": "ROUTE_TEMPLATE_BINDING",
+      "severity": "error",
+      "statement": "If page.route is a mapped route (templates.json routes: 249 incl. every article), page.template must equal its mapped template. Dead sitemap slugs and linked-but-unbuilt paths (author/reviewer pages, /support) bind to not-found only. Unknown new routes are allowed.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "every mapped route; dead slugs + unbuilt links -> not-found"
+    },
+    {
+      "id": "REGISTERED_ASSET_REF",
+      "severity": "error",
+      "statement": "For must-reuse-exact / must-not-fabricate roles the assetRef must be a registered file of the role; generated:/user-supplied:/placeholder: refs only for may-generate-new roles; /assets/ refs of generic roles must be registered files.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "PLACEHOLDER_HREF_ROLE",
+      "severity": "error",
+      "statement": "href appears only with assetRole placeholder-url, and placeholder-url always carries an href on a reserved .example/.invalid host (schema pattern).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "PAGINATION_BOUNDS",
+      "severity": "error",
+      "statement": "blog-pagination page <= totalPages; blog-category always 'Page 1 of 1'; blog-category-tabs activeIndex points at a tab.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "blog-index (Page 1 of 37 at 218 listed posts), blog-category (1 of 1)"
+    },
+    {
+      "id": "ARTICLE_BLOCK_SHAPE",
+      "severity": "error",
+      "statement": "Article blocks carry exactly the payload their kind needs (list->items, promo->cta, image/downloadable-image->image) and nothing else.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "blog-article (placeholder body: p, promo, h2, h3, ul, image, editor-note, downloadable-image)"
+    },
+    {
+      "id": "ARTICLE_CITATIONS_RESOLVE",
+      "severity": "error",
+      "statement": "Every citation superscript number in an article block resolves to an entry of article-sources.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "blog-article"
+    },
+    {
+      "id": "TOC_MATCHES_CHAPTERS",
+      "severity": "error",
+      "statement": "article-toc entries equal the article-chapter headings, in order (the TOC lists the body's H2s).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "blog-article"
+    },
+    {
+      "id": "RETRIEVAL_INELIGIBLE_NODE",
+      "severity": "error",
+      "statement": "Sections with retrievalEligible:false (runtime UI: cookie-consent) never appear in nodes[]; overlays[] holds only pinned retrieval-ineligible sections.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "cookie-consent is mounted globally (App.jsx), on every template"
+    },
+    {
+      "id": "RETRIEVAL_CONTRACT_PIN",
+      "severity": "error",
+      "statement": "Registry-level: section contracts' retrievalEligible matches the RETRIEVAL_INELIGIBLE pin in code (both validators), false needs a 30+ char reason, and any section whose id/title looks like runtime UI must be pinned.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
       "id": "ASSET_ROLE_PINNING",
       "severity": "error",
-      "statement": "assets/asset-roles.json: every real-world-weighted role keeps its pinned generationPolicy (PINNED_POLICIES in semantic_validate.py), and the role set equals the schema assetRole enums.",
+      "statement": "Registry-level: every real-world-weighted role keeps its pinned generationPolicy (PINNED_POLICIES) and EVERY role keeps its pinned availability (PINNED_AVAILABILITY); non-generation-safe roles declare generation-safe substitutes; the role set equals the schema assetRole enums.",
       "exceptions": [],
-      "checkedAgainstTemplates": "n/a (registry-level)"
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_BRAND",
+      "severity": "error",
+      "statement": "mode=generation requires page.brand and rejects the Riley brand, product and feature names, promo code and letter-spaced spellings in any copy (schema/leakage-patterns.json brand). page.brand is not allowed in mode=clone.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_ASSET",
+      "severity": "error",
+      "statement": "mode=generation rejects every non-generation-safe asset role and every Riley source file (/assets/...) ref; use generated:/user-supplied:/placeholder: refs of the role's generationSafeSubstitutes.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_PERSON",
+      "severity": "error",
+      "statement": "mode=generation rejects real people: clinicians, article authors and the medical reviewer, testimonial attributions, user-story names (leakage-patterns persons) and real-person-likeness asset roles (portraits, author avatars, user photos).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_CUSTOMER",
+      "severity": "error",
+      "statement": "mode=generation rejects real press outlets and comparison competitors (leakage-patterns organizations) and third-party trademark roles (press logos, social marks).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_SCREENSHOT",
+      "severity": "error",
+      "statement": "mode=generation rejects Riley product UI: the Rive chat animations (role rive-animation) and their artboard/state-machine identifiers; use placeholder-screenshot.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_COPY",
+      "severity": "error",
+      "statement": "mode=generation rejects any copy string sharing a 5-word shingle with Riley source copy (components, blog titles/excerpts, specs), compared as hashes after normalisation (NFKC, zero-width removal, homoglyphs, quotes, dashes).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_CLAIM",
+      "severity": "error",
+      "statement": "mode=generation rejects Riley's health/development/pricing claims (source-derived) and generic unverifiable health claims (policy list: clinically proven, pediatrician-approved, prevents SIDS, ...). Health/development claims are must-not-fabricate for this consumer parenting category.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_RATING",
+      "severity": "error",
+      "statement": "mode=generation rejects ratings and review counts (stars, N/5, N reviews, rated N, #1) and Riley's review headings: a generated page has no verified ratings.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_STORE",
+      "severity": "error",
+      "statement": "mode=generation rejects app-store marks and links (App Store, 'Download on the', OneLink, store-badge / app-store-onelink roles); store badges must be operator-supplied official artwork.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_URL",
+      "severity": "error",
+      "statement": "mode=generation rejects Riley/source domains and any URL whose host is not a reserved .example/.invalid placeholder, plus live-endpoint roles and Riley article routes.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "GENERATION_MODE_EMBED",
+      "severity": "error",
+      "statement": "mode=generation rejects Riley's policy-embed ids and vendor (Termly) and the policy-embed role; legal text is operator-supplied.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "TOKEN_UNKNOWN",
+      "severity": "error",
+      "statement": "node.style values must be canonical token paths present in tokens/llm/token-catalog.json.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "TOKEN_RAW_COLOR",
+      "severity": "error",
+      "statement": "node.style must not carry raw colour values (hex, rgb/rgba, hsl, oklch, color()); use a colour-role token.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "TOKEN_ARBITRARY_SPACING",
+      "severity": "error",
+      "statement": "node.style must not carry raw lengths (px, rem, em, %, vh/vw); use a section-spacing / radius token.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "TOKEN_UNSUPPORTED_FONT",
+      "severity": "error",
+      "statement": "node.style.fontFamily must be one of the catalog font families (Cadiz cuts, Recoleta serif).",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
+    },
+    {
+      "id": "TOKEN_THEME_COMBINATION",
+      "severity": "error",
+      "statement": "node.style token category must fit the property (surface/text/accent: color-roles; spacing: section-spacing; fontFamily: font-family; radius: radius) and colour roles must exist in page.theme; tokens of another theme are rejected.",
+      "exceptions": [],
+      "checkedAgainstTemplates": "n/a (instance-level)"
     }
-  ]
+  ],
+  "semanticCategories": {
+    "SHELL": "site chrome (announcement, header, footer); excluded from the wrapper-share gate",
+    "HERO": "page-opening composition only",
+    "PROOF": "press, experts, reviews",
+    "FEATURES": "capabilities, workflows, benefits",
+    "CONVERSION": "download / sign-up blocks",
+    "SUPPORT": "FAQ",
+    "EDITORIAL": "articles, listings, text-page chapters",
+    "NAVIGATION": "search, tabs, pagination, TOC, share rows",
+    "LEGAL": "policy bodies",
+    "ERROR": "404 body",
+    "UTILITY": "runtime overlays (not retrievable)"
+  }
 }

@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "faq-clouds",
   "registryId": "section.faq-clouds",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "faq",
   "purpose": "FAQ as floating question cards over drifting clouds that clear to the edges; an opened card centres and blurs the rest.",
   "iaSectionIds": [
@@ -13,6 +13,23 @@
       "cite": "src/components/FaqClouds.jsx:43-106",
       "anchor": "export default function FaqClouds"
     }
+  ],
+  "source": {
+    "id": "src:FaqClouds@72",
+    "tag": "section",
+    "file": "src/components/FaqClouds.jsx",
+    "lines": "72-106"
+  },
+  "semantic": {
+    "id": "faq-clouds",
+    "category": "SUPPORT"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "decorative-cloud",
+    "generated-illustration",
+    "internal-route",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

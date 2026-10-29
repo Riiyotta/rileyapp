@@ -1,0 +1,472 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "page": {
+    "route": "/blog",
+    "title": "Riley Articles | Riley",
+    "template": "blog-index",
+    "mode": "clone",
+    "theme": "riley-light"
+  },
+  "nodes": [
+    {
+      "type": "announcement-bar",
+      "content": {
+        "message": "Try Riley risk free with our 7-day free trial!",
+        "link": {
+          "assetRole": "internal-route"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-header",
+      "variant": "standalone",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/wordmark.svg",
+          "alt": "Riley logo"
+        },
+        "navItems": [
+          {
+            "label": "Blog"
+          },
+          {
+            "label": "What's New?"
+          }
+        ],
+        "cta": {
+          "label": "Get Started For Free",
+          "assetRole": "app-store-onelink"
+        },
+        "mobileCta": {
+          "label": "Try For $0",
+          "assetRole": "app-store-onelink"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "blog-index-hero",
+      "content": {
+        "mascot": {
+          "assetRole": "mascot-illustration",
+          "assetRef": "/assets/blog/icons/blogmascot.svg",
+          "alt": "Riley Mascot"
+        },
+        "heading": "Riley Articles",
+        "subtitle": "Helpful articles with all the information you need to raise happy, healthy children!",
+        "illustration": {
+          "assetRole": "brand-illustration",
+          "assetRef": "/assets/blog/icons/books.svg",
+          "alt": "Book icon"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "blog-search",
+      "content": {
+        "placeholder": "Search blog article...",
+        "emptyLabel": "No results found"
+      },
+      "motion": {
+        "pattern": "search-dropdown-fade",
+        "reducedMotionFallback": "Show the results dropdown instantly (no 0.2s fade)."
+      }
+    },
+    {
+      "type": "blog-category-tabs",
+      "content": {
+        "tabs": [
+          {
+            "label": "All",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Feeding",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Pregnancy",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Sleep",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Health",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Development",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "News",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Authors",
+            "assetRole": "internal-route"
+          }
+        ],
+        "activeIndex": 0
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "blog-featured-banner",
+      "content": {
+        "category": {
+          "label": "News",
+          "tone": "news"
+        },
+        "title": "From 3 AM Panic to Parenting Revolution: How Riley Was Born",
+        "author": {
+          "name": "Amanda DeLuca",
+          "title": "Founder & CEO of Riley, Certified Pediatric Sleep Consultant",
+          "avatar": {
+            "assetRole": "author-avatar",
+            "assetRef": "/assets/blog/authors/amanda-deluca.png",
+            "alt": "Amanda DeLuca"
+          }
+        },
+        "excerpt": "Discover the inspiring journey behind Riley, a revolutionary app empowering new parents with personalized support.",
+        "cover": {
+          "assetRole": "article-cover-photo",
+          "assetRef": "/assets/blog/why-we-built-riley.jpg",
+          "alt": "Riley founder & CEO, Amanda DeLuca, stands and smiles with her daughter"
+        },
+        "readMoreLabel": "Read more",
+        "link": {
+          "assetRole": "internal-route"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "blog-post-grid",
+      "content": {
+        "cards": [
+          {
+            "variant": "wide",
+            "category": {
+              "label": "News",
+              "tone": "news"
+            },
+            "title": "Introducing Golden Window™: AI-Powered Sleep Scheduling for Your Child",
+            "excerpt": "Discover Golden Window™, an AI-powered sleep solution that optimizes your child's sleep schedule by analyzing their unique rhythms. Say goodbye to bedtime battles and hello to peaceful evenings with personalized nap times, nighttime sleep schedules, and wake windows tailored to your child's needs.",
+            "byline": {
+              "prefix": "By",
+              "name": "Sam Fore",
+              "title": "Certified Pediatric Sleep Consultant",
+              "linked": true
+            },
+            "cover": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/introducing-golden-window.png",
+              "alt": "A screenshot of Golden Window™."
+            },
+            "link": {
+              "assetRole": "internal-route"
+            }
+          },
+          {
+            "variant": "normal",
+            "category": {
+              "label": "News",
+              "tone": "news"
+            },
+            "title": "Welcoming Dr. Lilly Jay to Riley's Clinical Advisory Board: Supporting Families Through Every Stage of Their Journey",
+            "excerpt": "Riley proudly announces that Dr. Lilly Jay, a licensed clinical psychologist specializing in infertility, medically complex pregnancies, and perinatal loss, has joined our Clinical Advisory Board to enhance our support for families navigating life's most challenging and beautiful moments.",
+            "byline": {
+              "prefix": "By",
+              "name": "Sam Fore",
+              "title": "Certified Pediatric Sleep Consultant",
+              "linked": true
+            },
+            "cover": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/welcome-dr-lilly-jay.png",
+              "alt": "Welcoming Dr. Lilly Jay"
+            },
+            "link": {
+              "assetRole": "internal-route"
+            }
+          },
+          {
+            "variant": "normal",
+            "category": {
+              "label": "Development",
+              "tone": "development"
+            },
+            "title": "When Do Babies Smile, Laugh, and Connect? Your Complete Guide to Early Social Milestones",
+            "excerpt": "Discover when babies first smile, laugh, and connect with parents. Learn key developmental milestones, signs of social engagement, and how to encourage your baby's emotional growth from 0-12 months.",
+            "byline": {
+              "prefix": "By",
+              "name": "Sam Fore",
+              "title": "Certified Pediatric Sleep Consultant",
+              "linked": false
+            },
+            "cover": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/when-do-babies-smile-laugh-and-connect.jpg",
+              "alt": "When Do Babies Smile, Laugh, and Connect? Your Complete Guide to Early Social Milestones"
+            },
+            "link": {
+              "assetRole": "internal-route"
+            }
+          },
+          {
+            "variant": "normal",
+            "category": {
+              "label": "Pregnancy",
+              "tone": "pregnancy"
+            },
+            "title": "Your Baby's Lungs: Development and Viability in the Third Trimester",
+            "excerpt": "Learn about fetal lung development in the third trimester, when babies' lungs mature for breathing, and viability milestones. Expert insights on lung maturation, surfactant production, and respiratory development.",
+            "byline": {
+              "prefix": "By",
+              "name": "Sam Fore",
+              "title": "Certified Pediatric Sleep Consultant",
+              "linked": false
+            },
+            "cover": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/your-babys-lungs-development-and-viability-in-the-third-trimester.jpg",
+              "alt": "Your Baby's Lungs: Development and Viability in the Third Trimester"
+            },
+            "link": {
+              "assetRole": "internal-route"
+            }
+          },
+          {
+            "variant": "normal",
+            "category": {
+              "label": "Pregnancy",
+              "tone": "pregnancy"
+            },
+            "title": "Baby Blues vs. Postpartum Depression: Understanding the Difference",
+            "excerpt": "Learn the key differences between baby blues and postpartum depression. Discover symptoms, duration, treatment options, and when to seek professional help for new mothers.",
+            "byline": {
+              "prefix": "By",
+              "name": "Sam Fore",
+              "title": "Certified Pediatric Sleep Consultant",
+              "linked": false
+            },
+            "cover": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/baby-blues-vs-postpartum-depression.jpg",
+              "alt": "Baby Blues vs. Postpartum Depression: Understanding the Difference"
+            },
+            "link": {
+              "assetRole": "internal-route"
+            }
+          },
+          {
+            "variant": "normal",
+            "category": {
+              "label": "Feeding",
+              "tone": "feeding"
+            },
+            "title": "What Is Combo Feeding: A Complete Guide to Mixed Feeding Your Baby",
+            "excerpt": " Learn what combo feeding is, its benefits, and how to successfully combine breastfeeding and formula feeding. Expert tips for mixed feeding schedules and common challenges.",
+            "byline": {
+              "prefix": "By",
+              "name": "Sam Fore",
+              "title": "Certified Pediatric Sleep Consultant",
+              "linked": false
+            },
+            "cover": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/what-is-combo-feeding-a-complete-guide-to-mixed-feeding-your-baby.jpg",
+              "alt": "What Is Combo Feeding: A Complete Guide to Mixed Feeding Your Baby"
+            },
+            "link": {
+              "assetRole": "internal-route"
+            }
+          },
+          {
+            "variant": "normal",
+            "category": {
+              "label": "Development",
+              "tone": "development"
+            },
+            "title": "2.5 Year Old / 30 Month Old Development Milestones: What to Expect",
+            "excerpt": "Discover essential 2.5 year old development milestones including physical, speech, and social skills. Learn what 30 month old toddlers should be doing and when to seek help.",
+            "byline": {
+              "prefix": "By",
+              "name": "Sam Fore",
+              "title": "Certified Pediatric Sleep Consultant",
+              "linked": false
+            },
+            "cover": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/2-5-year-old-30-month-old-development-milestones.jpg",
+              "alt": "2.5 Year Old / 30 Month Old Development Milestones: What to Expect"
+            },
+            "link": {
+              "assetRole": "internal-route"
+            }
+          },
+          {
+            "variant": "normal",
+            "category": {
+              "label": "Development",
+              "tone": "development"
+            },
+            "title": "2 Year Old / 24 Month Old Development Milestones: Complete Guide for Parents",
+            "excerpt": "Discover essential 2 year old development milestones including physical, speech, and social skills. Expert guide with checklists, red flags, and tips for 24-month-old toddlers.",
+            "byline": {
+              "prefix": "By",
+              "name": "Sam Fore",
+              "title": "Certified Pediatric Sleep Consultant",
+              "linked": false
+            },
+            "cover": {
+              "assetRole": "article-cover-photo",
+              "assetRef": "/assets/blog/2-year-old-24-month-old-development-milestones.jpg",
+              "alt": "2 Year Old / 24 Month Old Development Milestones: Complete Guide for Parents"
+            },
+            "link": {
+              "assetRole": "internal-route"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "blog-pagination",
+      "content": {
+        "prevLabel": "Prev",
+        "nextLabel": "Next",
+        "pageLabel": "Page",
+        "page": 1,
+        "totalPages": 37
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "final-cta",
+      "content": {
+        "heading": "We are raising a generation of confident parents.",
+        "cta": {
+          "label": "Get support that gets you",
+          "assetRole": "app-store-onelink"
+        },
+        "background": {
+          "assetRole": "decorative-cloud",
+          "assetRef": "/assets/background-clouds(1).svg"
+        },
+        "mascots": {
+          "assetRole": "mascot-illustration",
+          "assetRef": "/assets/mascots.svg"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Stay in the loop with Riley's newsletter.",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "newsletter-endpoint"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Blog",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Pricing",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Editorial Process",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy Policy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms of Service",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Support",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the App",
+          "badge": {
+            "assetRole": "store-badge",
+            "assetRef": "/assets/icons/app-store-badge.svg",
+            "alt": "Download on the App Store"
+          },
+          "assetRole": "app-store-onelink"
+        },
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/icons/footer-logo.svg"
+        },
+        "copyright": "© 2025 Riley"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "By using this site, you accept cookies for analytics.",
+        "learnMore": {
+          "label": "Learn more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

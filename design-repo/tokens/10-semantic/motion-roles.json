@@ -183,6 +183,25 @@
       "easing": "tokens.00-foundation.motion.easing.standard",
       "spec": "M13",
       "note": "original transitions the CSS `scale` property (0.3s cubic-bezier(.4,0,.2,1) -> 1.05); clone matches after the animation-fix pass"
+    },
+    "search-dropdown-fade": {
+      "value": "results dropdown fade-in 0.2s (both)",
+      "evidence": [
+        {
+          "cite": "src/styles/blog.css:6",
+          "anchor": "animation: blogSearchFade 0.2s both"
+        }
+      ],
+      "spec": "Blog spec §2.3"
+    },
+    "sticky-aside": {
+      "value": "position sticky top 80px (inner nav top 20px); no animation; progress fill height stays 0 (bg undefined on the original)",
+      "evidence": [
+        {
+          "cite": "src/components/article/ArticleToc.jsx:23",
+          "anchor": "sticky top-20 hidden h-screen"
+        }
+      ]
     }
   }
 }

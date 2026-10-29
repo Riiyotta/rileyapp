@@ -1,0 +1,83 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "article-chapter",
+  "registryId": "section.article-chapter",
+  "version": "2.0.0",
+  "category": "editorial",
+  "purpose": "One H2-bounded chapter of an article: the H2 plus every following block up to the next H2 (paragraphs, H3s, nested lists, images, editor's note, downloadable image).",
+  "iaSectionIds": [
+    "article.chapter"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/article/ArticleBody.jsx:51-53",
+      "anchor": "export function H2"
+    }
+  ],
+  "source": {
+    "id": "src:ArticleBody@52",
+    "tag": "h2",
+    "file": "src/components/article/ArticleBody.jsx",
+    "lines": "52-53"
+  },
+  "semantic": {
+    "id": "article-chapter",
+    "category": "EDITORIAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "unspecified-destination",
+    "user-supplied-asset"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_article-chapter",
+    "copyBudget": {
+      "heading": 12,
+      "blocks[].text": 80,
+      "blocks[].items[].text": 40,
+      "blocks[].items[].children[].text": 40,
+      "blocks[].image.alt": 46,
+      "blocks[].cta.label": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": false,
+    "repeatable": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "h2 margin 48 0 24 (16 0 32 at >=992); p margin 20 0 (16 0)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/styles/article.css:19",
+            "anchor": "margin: 48px 0 24px;"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "src/components/article/placeholderContent.js:17",
+      "anchor": "{ type: 'h2', text: 'Placeholder section one' }"
+    }
+  ],
+  "notes": []
+}

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "riley-clone/pagespec.schema.json",
   "title": "Riley clone PageSpec",
-  "description": "Generation-ready page composition for the Riley clone design-repo. Every node is one section instance; closed type/template/motion/assetRole enums; additionalProperties:false everywhere. `x-maxWords` is enforced by schema/semantic_validate.py (JSON Schema cannot count words). No PageSpec field carries a URL/href: links are expressed as assetRole only.",
+  "description": "Generation-ready page composition for the Riley clone design-repo (pageSpecVersion 2.0.0). Every node is one section instance; closed type/template/motion/assetRole enums; additionalProperties:false everywhere. Required closed `page.mode` (clone | generation). `x-maxWords`, generation-mode leakage, token and retrieval rules are enforced by schema/semantic_validate.py. URLs appear only as `href` on placeholder-url objects (.example/.invalid only); every other link is an assetRole the renderer resolves.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -12,7 +12,7 @@
   ],
   "properties": {
     "pageSpecVersion": {
-      "const": "1.0.0"
+      "const": "2.0.0"
     },
     "page": {
       "type": "object",
@@ -21,7 +21,7 @@
         "route",
         "title",
         "template",
-        "brandContext",
+        "mode",
         "theme"
       ],
       "properties": {
@@ -32,25 +32,66 @@
         "title": {
           "type": "string",
           "minLength": 1,
-          "x-maxWords": 12
+          "x-maxWords": 24
         },
         "template": {
           "enum": [
             "home",
             "pricing",
-            "not-found"
+            "not-found",
+            "blog-index",
+            "blog-category",
+            "blog-article",
+            "text-page",
+            "legal"
           ]
         },
-        "brandContext": {
+        "mode": {
           "enum": [
-            "riley-clone",
-            "other-brand"
-          ]
+            "clone",
+            "generation"
+          ],
+          "description": "clone = faithful reconstruction of this Riley clone (real Riley assets/copy allowed as evidence). generation = a new page for another brand built from this repo: no Riley identity, assets, people, claims, URLs or copy (GENERATION_MODE_* rules)."
         },
         "theme": {
           "enum": [
             "riley-light"
           ]
+        },
+        "brand": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "mark": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "placeholder-brand-mark",
+                    "user-supplied-asset"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                }
+              }
+            }
+          },
+          "description": "Generation mode only: the fictional/operator brand the page is generated for (GENERATION_MODE_BRAND checks it is not Riley)."
         }
       }
     },
@@ -112,9 +153,74 @@
           },
           {
             "$ref": "#/definitions/node_not-found-block"
+          },
+          {
+            "$ref": "#/definitions/node_blog-index-hero"
+          },
+          {
+            "$ref": "#/definitions/node_blog-search"
+          },
+          {
+            "$ref": "#/definitions/node_blog-category-tabs"
+          },
+          {
+            "$ref": "#/definitions/node_blog-featured-banner"
+          },
+          {
+            "$ref": "#/definitions/node_blog-post-grid"
+          },
+          {
+            "$ref": "#/definitions/node_blog-pagination"
+          },
+          {
+            "$ref": "#/definitions/node_article-top-bar"
+          },
+          {
+            "$ref": "#/definitions/node_article-header"
+          },
+          {
+            "$ref": "#/definitions/node_article-toc"
+          },
+          {
+            "$ref": "#/definitions/node_article-intro"
+          },
+          {
+            "$ref": "#/definitions/node_article-chapter"
+          },
+          {
+            "$ref": "#/definitions/node_article-sources"
+          },
+          {
+            "$ref": "#/definitions/node_article-share-row"
+          },
+          {
+            "$ref": "#/definitions/node_article-related-posts"
+          },
+          {
+            "$ref": "#/definitions/node_text-page-header"
+          },
+          {
+            "$ref": "#/definitions/node_text-page-chapter"
+          },
+          {
+            "$ref": "#/definitions/node_text-page-closing"
+          },
+          {
+            "$ref": "#/definitions/node_legal-policy-embed"
+          },
+          {
+            "$ref": "#/definitions/node_cookie-consent"
           }
         ]
       }
+    },
+    "overlays": {
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "$ref": "#/definitions/node_cookie-consent"
+      },
+      "description": "Global runtime overlays (retrievalEligible:false sections). Never page content; never allowed in nodes[] (RETRIEVAL_INELIGIBLE_NODE)."
     }
   },
   "definitions": {
@@ -176,6 +282,38 @@
               "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -219,12 +357,14 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "brand-wordmark"
+                    "brand-wordmark",
+                    "placeholder-brand-mark",
+                    "user-supplied-asset"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 },
                 "alt": {
                   "type": "string",
@@ -267,8 +407,14 @@
                 },
                 "assetRole": {
                   "enum": [
-                    "app-store-onelink"
+                    "app-store-onelink",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             },
@@ -287,8 +433,14 @@
                 },
                 "assetRole": {
                   "enum": [
-                    "app-store-onelink"
+                    "app-store-onelink",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             }
@@ -311,6 +463,38 @@
               "const": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -354,12 +538,14 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "mascot-illustration"
+                    "mascot-illustration",
+                    "generated-illustration",
+                    "user-supplied-asset"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 }
               }
             },
@@ -394,8 +580,14 @@
                 "assetRole": {
                   "enum": [
                     "app-store-onelink",
-                    "unspecified-destination"
+                    "unspecified-destination",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             },
@@ -422,12 +614,13 @@
                   "properties": {
                     "assetRole": {
                       "enum": [
-                        "store-badge"
+                        "store-badge",
+                        "user-supplied-asset"
                       ]
                     },
                     "assetRef": {
                       "type": "string",
-                      "pattern": "^(/assets/|generated:)"
+                      "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                     }
                   }
                 }
@@ -443,12 +636,14 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "brand-illustration"
+                    "brand-illustration",
+                    "generated-illustration",
+                    "user-supplied-asset"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 }
               }
             }
@@ -471,6 +666,38 @@
               "const": "Freeze cloud layers at parallax progress 0 (no translate/scale) and pause the horizontal cloud drift."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -508,12 +735,13 @@
                 "properties": {
                   "assetRole": {
                     "enum": [
-                      "press-logo"
+                      "press-logo",
+                      "placeholder-logo"
                     ]
                   },
                   "assetRef": {
                     "type": "string",
-                    "pattern": "^(/assets/|generated:)"
+                    "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                   },
                   "alt": {
                     "type": "string",
@@ -542,6 +770,38 @@
               "const": "Stop the marquee; show the first logo row static with the edge mask kept."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -587,12 +847,14 @@
                 "properties": {
                   "assetRole": {
                     "enum": [
-                      "mascot-family-mark"
+                      "mascot-family-mark",
+                      "generated-illustration",
+                      "user-supplied-asset"
                     ]
                   },
                   "assetRef": {
                     "type": "string",
-                    "pattern": "^(/assets/|generated:)"
+                    "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                   },
                   "alt": {
                     "type": "string",
@@ -631,6 +893,38 @@
               "const": "Stop the marquee; show the first family row static."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -693,7 +987,7 @@
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(/assets/|generated:)"
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                       }
                     }
                   },
@@ -718,12 +1012,14 @@
                         "properties": {
                           "assetRole": {
                             "enum": [
-                              "mascot-illustration"
+                              "mascot-illustration",
+                              "generated-illustration",
+                              "user-supplied-asset"
                             ]
                           },
                           "assetRef": {
                             "type": "string",
-                            "pattern": "^(/assets/|generated:)"
+                            "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                           }
                         }
                       },
@@ -777,8 +1073,14 @@
                           },
                           "assetRole": {
                             "enum": [
-                              "app-store-onelink"
+                              "app-store-onelink",
+                              "placeholder-url"
                             ]
+                          },
+                          "href": {
+                            "type": "string",
+                            "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                            "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                           }
                         }
                       }
@@ -797,12 +1099,14 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "mascot-illustration"
+                    "mascot-illustration",
+                    "generated-illustration",
+                    "user-supplied-asset"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 }
               }
             }
@@ -825,6 +1129,38 @@
               "const": "none-required: cards have no hover motion on the original; the modal opens with no entry animation."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -880,12 +1216,13 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "rive-animation"
+                          "rive-animation",
+                          "placeholder-screenshot"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^/assets/"
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                       },
                       "artboard": {
                         "type": "string",
@@ -907,12 +1244,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "brand-illustration"
+                          "brand-illustration",
+                          "generated-illustration",
+                          "user-supplied-asset"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(/assets/|generated:)"
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                       }
                     }
                   },
@@ -927,12 +1266,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "user-story-photo"
+                          "user-story-photo",
+                          "fictional-person-avatar",
+                          "generated-illustration"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(/assets/|generated:)"
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                       },
                       "alt": {
                         "type": "string",
@@ -959,7 +1300,7 @@
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 }
               }
             },
@@ -979,8 +1320,14 @@
                 "assetRole": {
                   "enum": [
                     "unspecified-destination",
-                    "app-store-onelink"
+                    "app-store-onelink",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             }
@@ -1003,6 +1350,38 @@
               "const": "Snap between slides with no embla easing; do not autoplay Rive (show the first frame)."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -1067,12 +1446,13 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "advisor-portrait"
+                          "advisor-portrait",
+                          "fictional-person-avatar"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(/assets/|generated:)"
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                       },
                       "alt": {
                         "type": "string",
@@ -1113,6 +1493,38 @@
               "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -1165,12 +1577,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "mascot-family-mark"
+                          "mascot-family-mark",
+                          "generated-illustration",
+                          "user-supplied-asset"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(/assets/|generated:)"
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                       }
                     }
                   },
@@ -1203,8 +1617,14 @@
                 "assetRole": {
                   "enum": [
                     "unspecified-destination",
-                    "app-store-onelink"
+                    "app-store-onelink",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             }
@@ -1227,6 +1647,38 @@
               "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -1290,12 +1742,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "mascot-avatar"
+                          "mascot-avatar",
+                          "fictional-person-avatar",
+                          "generated-illustration"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(/assets/|generated:)"
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                       }
                     }
                   },
@@ -1323,8 +1777,14 @@
                 "assetRole": {
                   "enum": [
                     "unspecified-destination",
-                    "app-store-onelink"
+                    "app-store-onelink",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             }
@@ -1347,6 +1807,38 @@
               "const": "Snap between slides with no embla easing."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -1425,12 +1917,14 @@
                         "properties": {
                           "assetRole": {
                             "enum": [
-                              "brand-illustration"
+                              "brand-illustration",
+                              "generated-illustration",
+                              "user-supplied-asset"
                             ]
                           },
                           "assetRef": {
                             "type": "string",
-                            "pattern": "^(/assets/|generated:)"
+                            "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                           }
                         }
                       },
@@ -1463,8 +1957,14 @@
                     "assetRole": {
                       "enum": [
                         "unspecified-destination",
-                        "app-store-onelink"
+                        "app-store-onelink",
+                        "placeholder-url"
                       ]
+                    },
+                    "href": {
+                      "type": "string",
+                      "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                      "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                     }
                   }
                 }
@@ -1566,8 +2066,14 @@
                     "assetRole": {
                       "enum": [
                         "unspecified-destination",
-                        "app-store-onelink"
+                        "app-store-onelink",
+                        "placeholder-url"
                       ]
+                    },
+                    "href": {
+                      "type": "string",
+                      "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                      "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                     }
                   }
                 }
@@ -1592,6 +2098,38 @@
               "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -1714,8 +2252,14 @@
                     "assetRole": {
                       "enum": [
                         "unspecified-destination",
-                        "app-store-onelink"
+                        "app-store-onelink",
+                        "placeholder-url"
                       ]
+                    },
+                    "href": {
+                      "type": "string",
+                      "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                      "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                     }
                   }
                 }
@@ -1740,6 +2284,38 @@
               "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -1794,12 +2370,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "lifestyle-photo"
+                          "lifestyle-photo",
+                          "generated-illustration",
+                          "user-supplied-asset"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(/assets/|generated:)"
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                       }
                     }
                   },
@@ -1846,12 +2424,14 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "mascot-illustration"
+                    "mascot-illustration",
+                    "generated-illustration",
+                    "user-supplied-asset"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 }
               }
             },
@@ -1874,7 +2454,7 @@
                   },
                   "assetRef": {
                     "type": "string",
-                    "pattern": "^(/assets/|generated:)"
+                    "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                   }
                 }
               }
@@ -1898,6 +2478,38 @@
               "const": "Clouds static at clear-skies positions; open/close items without size/position transition; apply blur state instantly."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -1992,12 +2604,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "blog-cover-photo"
+                          "blog-cover-photo",
+                          "generated-illustration",
+                          "user-supplied-asset"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(/assets/|generated:)"
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                       },
                       "alt": {
                         "type": "string",
@@ -2035,8 +2649,14 @@
                 "assetRole": {
                   "enum": [
                     "app-store-onelink",
-                    "internal-route"
+                    "internal-route",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             }
@@ -2059,6 +2679,38 @@
               "const": "No image scale on hover; pills keep instant opacity change."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -2104,8 +2756,14 @@
                 },
                 "assetRole": {
                   "enum": [
-                    "app-store-onelink"
+                    "app-store-onelink",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             },
@@ -2124,7 +2782,7 @@
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 }
               }
             },
@@ -2138,12 +2796,14 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "mascot-illustration"
+                    "mascot-illustration",
+                    "generated-illustration",
+                    "user-supplied-asset"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 }
               }
             }
@@ -2166,6 +2826,38 @@
               "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -2219,8 +2911,14 @@
                 },
                 "assetRole": {
                   "enum": [
-                    "newsletter-endpoint"
+                    "newsletter-endpoint",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             },
@@ -2279,12 +2977,13 @@
                   "properties": {
                     "assetRole": {
                       "enum": [
-                        "store-badge"
+                        "store-badge",
+                        "user-supplied-asset"
                       ]
                     },
                     "assetRef": {
                       "type": "string",
-                      "pattern": "^(/assets/|generated:)"
+                      "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                     },
                     "alt": {
                       "type": "string",
@@ -2295,8 +2994,14 @@
                 },
                 "assetRole": {
                   "enum": [
-                    "app-store-onelink"
+                    "app-store-onelink",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             },
@@ -2310,12 +3015,14 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "brand-wordmark"
+                    "brand-wordmark",
+                    "placeholder-brand-mark",
+                    "user-supplied-asset"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 }
               }
             },
@@ -2343,6 +3050,38 @@
               "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -2418,12 +3157,14 @@
                       "properties": {
                         "assetRole": {
                           "enum": [
-                            "mascot-avatar"
+                            "mascot-avatar",
+                            "fictional-person-avatar",
+                            "generated-illustration"
                           ]
                         },
                         "assetRef": {
                           "type": "string",
-                          "pattern": "^(/assets/|generated:)"
+                          "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                         }
                       }
                     }
@@ -2504,8 +3245,14 @@
                 },
                 "assetRole": {
                   "enum": [
-                    "app-store-onelink"
+                    "app-store-onelink",
+                    "placeholder-url"
                   ]
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
                 }
               }
             }
@@ -2528,6 +3275,38 @@
               "const": "Freeze cloud layers at parallax progress 0 (no translate/scale) and pause the horizontal cloud drift."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     },
@@ -2593,12 +3372,14 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "brand-illustration"
+                    "brand-illustration",
+                    "generated-illustration",
+                    "user-supplied-asset"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(/assets/|generated:)"
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
                 }
               }
             }
@@ -2621,6 +3402,2679 @@
               "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
             }
           }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_blog-index-hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "blog-index-hero"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mascot",
+            "heading",
+            "subtitle",
+            "illustration"
+          ],
+          "properties": {
+            "mascot": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef",
+                "alt"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "mascot-illustration",
+                    "generated-illustration",
+                    "user-supplied-asset"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 0,
+                  "x-maxWords": 3
+                }
+              }
+            },
+            "heading": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "subtitle": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 16
+            },
+            "illustration": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef",
+                "alt"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "brand-illustration",
+                    "generated-illustration",
+                    "user-supplied-asset"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 0,
+                  "x-maxWords": 3
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_blog-search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "blog-search"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "placeholder",
+            "emptyLabel"
+          ],
+          "properties": {
+            "placeholder": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "emptyLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "search-dropdown-fade"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "Show the results dropdown instantly (no 0.2s fade)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_blog-category-tabs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "blog-category-tabs"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tabs",
+            "activeIndex"
+          ],
+          "properties": {
+            "tabs": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 10,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "assetRole"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 2
+                  },
+                  "assetRole": {
+                    "enum": [
+                      "internal-route"
+                    ]
+                  }
+                }
+              }
+            },
+            "activeIndex": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_blog-featured-banner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "blog-featured-banner"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "category",
+            "title",
+            "author",
+            "excerpt",
+            "cover",
+            "readMoreLabel",
+            "link"
+          ],
+          "properties": {
+            "category": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "label",
+                "tone"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 2
+                },
+                "tone": {
+                  "enum": [
+                    "sleep",
+                    "feeding",
+                    "development",
+                    "news",
+                    "health",
+                    "pregnancy",
+                    "default"
+                  ]
+                }
+              }
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 22
+            },
+            "author": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "title",
+                "avatar"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 4
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 12
+                },
+                "avatar": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "assetRole",
+                    "assetRef",
+                    "alt"
+                  ],
+                  "properties": {
+                    "assetRole": {
+                      "enum": [
+                        "author-avatar",
+                        "fictional-person-avatar"
+                      ]
+                    },
+                    "assetRef": {
+                      "type": "string",
+                      "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                    },
+                    "alt": {
+                      "type": "string",
+                      "minLength": 0,
+                      "x-maxWords": 3
+                    }
+                  }
+                }
+              }
+            },
+            "excerpt": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 52
+            },
+            "cover": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef",
+                "alt"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "article-cover-photo",
+                    "generated-illustration",
+                    "user-supplied-asset"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 0,
+                  "x-maxWords": 46
+                }
+              }
+            },
+            "readMoreLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 3
+            },
+            "link": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "internal-route"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_blog-post-grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "blog-post-grid"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "cards"
+          ],
+          "properties": {
+            "cards": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 8,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "variant",
+                  "category",
+                  "title",
+                  "excerpt",
+                  "byline",
+                  "cover",
+                  "link"
+                ],
+                "properties": {
+                  "variant": {
+                    "enum": [
+                      "wide",
+                      "normal"
+                    ]
+                  },
+                  "category": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "tone"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "x-maxWords": 2
+                      },
+                      "tone": {
+                        "enum": [
+                          "sleep",
+                          "feeding",
+                          "development",
+                          "news",
+                          "health",
+                          "pregnancy",
+                          "default"
+                        ]
+                      }
+                    }
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 22
+                  },
+                  "excerpt": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 52
+                  },
+                  "byline": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "prefix",
+                      "name",
+                      "title",
+                      "linked"
+                    ],
+                    "properties": {
+                      "prefix": {
+                        "type": "string",
+                        "minLength": 1,
+                        "x-maxWords": 1
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "x-maxWords": 4
+                      },
+                      "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "x-maxWords": 12
+                      },
+                      "linked": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "cover": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "assetRole",
+                      "assetRef",
+                      "alt"
+                    ],
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "article-cover-photo",
+                          "generated-illustration",
+                          "user-supplied-asset"
+                        ]
+                      },
+                      "assetRef": {
+                        "type": "string",
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                      },
+                      "alt": {
+                        "type": "string",
+                        "minLength": 0,
+                        "x-maxWords": 46
+                      }
+                    }
+                  },
+                  "link": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "assetRole"
+                    ],
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "internal-route"
+                        ]
+                      }
+                    }
+                  },
+                  "date": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 4
+                  }
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_blog-pagination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "blog-pagination"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "prevLabel",
+            "nextLabel",
+            "pageLabel",
+            "page",
+            "totalPages"
+          ],
+          "properties": {
+            "prevLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 1
+            },
+            "nextLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 1
+            },
+            "pageLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 1
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "totalPages": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_article-top-bar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "article-top-bar"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "backLabel",
+            "back",
+            "searchPlaceholder"
+          ],
+          "properties": {
+            "backLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 2
+            },
+            "back": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "internal-route"
+                  ]
+                }
+              }
+            },
+            "searchPlaceholder": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "search-dropdown-fade"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "Show the results dropdown instantly (no 0.2s fade)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_article-header": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "article-header"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "breadcrumbs",
+            "title",
+            "description",
+            "bylines",
+            "cover",
+            "share"
+          ],
+          "properties": {
+            "breadcrumbs": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "rootLabel",
+                "categoryLabel",
+                "currentLabel",
+                "tone"
+              ],
+              "properties": {
+                "rootLabel": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 1
+                },
+                "categoryLabel": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 2
+                },
+                "currentLabel": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 20
+                },
+                "tone": {
+                  "enum": [
+                    "sleep",
+                    "feeding",
+                    "development",
+                    "news",
+                    "health",
+                    "pregnancy",
+                    "default"
+                  ]
+                }
+              }
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 22
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 52
+            },
+            "bylines": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 2,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "name",
+                  "avatar"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 3
+                  },
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 5
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 12
+                  },
+                  "avatar": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "assetRole",
+                      "assetRef",
+                      "alt"
+                    ],
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "author-avatar",
+                          "fictional-person-avatar"
+                        ]
+                      },
+                      "assetRef": {
+                        "type": "string",
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                      },
+                      "alt": {
+                        "type": "string",
+                        "minLength": 0,
+                        "x-maxWords": 3
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "updatedLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "readTime": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "cover": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef",
+                "alt"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "article-cover-photo",
+                    "generated-illustration",
+                    "user-supplied-asset"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 0,
+                  "x-maxWords": 46
+                }
+              }
+            },
+            "share": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "copyLabel",
+                "platforms"
+              ],
+              "properties": {
+                "copyLabel": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 2
+                },
+                "platforms": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "icon"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "x-maxWords": 4
+                      },
+                      "icon": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "assetRole",
+                          "assetRef"
+                        ],
+                        "properties": {
+                          "assetRole": {
+                            "enum": [
+                              "social-share-mark",
+                              "user-supplied-asset"
+                            ]
+                          },
+                          "assetRef": {
+                            "type": "string",
+                            "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_article-toc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "article-toc"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "heading",
+            "entries",
+            "share"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "entries": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 20,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 12
+                  }
+                }
+              }
+            },
+            "share": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "copyLabel",
+                "platforms"
+              ],
+              "properties": {
+                "copyLabel": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 2
+                },
+                "platforms": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "icon"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "x-maxWords": 4
+                      },
+                      "icon": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "assetRole",
+                          "assetRef"
+                        ],
+                        "properties": {
+                          "assetRole": {
+                            "enum": [
+                              "social-share-mark",
+                              "user-supplied-asset"
+                            ]
+                          },
+                          "assetRef": {
+                            "type": "string",
+                            "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "sticky-aside"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: sticky positioning only (no animated transition; the progress fill stays at height 0 as on the original)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_article-intro": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "article-intro"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "blocks"
+          ],
+          "properties": {
+            "blocks": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 8,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "text"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "paragraph",
+                      "subheading",
+                      "list",
+                      "promo",
+                      "image",
+                      "downloadable-image",
+                      "editor-note"
+                    ]
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 80
+                  },
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 12,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "text"
+                      ],
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "x-maxWords": 40
+                        },
+                        "children": {
+                          "type": "array",
+                          "minItems": 0,
+                          "maxItems": 8,
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "text"
+                            ],
+                            "properties": {
+                              "text": {
+                                "type": "string",
+                                "minLength": 1,
+                                "x-maxWords": 40
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "image": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "assetRole",
+                      "assetRef",
+                      "alt"
+                    ],
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "article-cover-photo",
+                          "generated-illustration",
+                          "user-supplied-asset"
+                        ]
+                      },
+                      "assetRef": {
+                        "type": "string",
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                      },
+                      "alt": {
+                        "type": "string",
+                        "minLength": 0,
+                        "x-maxWords": 46
+                      }
+                    }
+                  },
+                  "cta": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "assetRole"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "x-maxWords": 4
+                      },
+                      "assetRole": {
+                        "enum": [
+                          "unspecified-destination"
+                        ]
+                      }
+                    }
+                  },
+                  "citations": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 5,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 30
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_article-chapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "article-chapter"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "heading",
+            "blocks"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 12
+            },
+            "blocks": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 16,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "text"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "paragraph",
+                      "subheading",
+                      "list",
+                      "promo",
+                      "image",
+                      "downloadable-image",
+                      "editor-note"
+                    ]
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 80
+                  },
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 12,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "text"
+                      ],
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "x-maxWords": 40
+                        },
+                        "children": {
+                          "type": "array",
+                          "minItems": 0,
+                          "maxItems": 8,
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "text"
+                            ],
+                            "properties": {
+                              "text": {
+                                "type": "string",
+                                "minLength": 1,
+                                "x-maxWords": 40
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "image": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "assetRole",
+                      "assetRef",
+                      "alt"
+                    ],
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "article-cover-photo",
+                          "generated-illustration",
+                          "user-supplied-asset"
+                        ]
+                      },
+                      "assetRef": {
+                        "type": "string",
+                        "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                      },
+                      "alt": {
+                        "type": "string",
+                        "minLength": 0,
+                        "x-maxWords": 46
+                      }
+                    }
+                  },
+                  "cta": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "assetRole"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "x-maxWords": 4
+                      },
+                      "assetRole": {
+                        "enum": [
+                          "unspecified-destination"
+                        ]
+                      }
+                    }
+                  },
+                  "citations": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 5,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 30
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_article-sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "article-sources"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "summaryLabel",
+            "sources"
+          ],
+          "properties": {
+            "summaryLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "sources": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 30,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "citation",
+                  "link"
+                ],
+                "properties": {
+                  "citation": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 40
+                  },
+                  "link": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "assetRole"
+                    ],
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "source-citation",
+                          "placeholder-url"
+                        ]
+                      },
+                      "href": {
+                        "type": "string",
+                        "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                        "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_article-share-row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "article-share-row"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "share"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "share": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "copyLabel",
+                "platforms"
+              ],
+              "properties": {
+                "copyLabel": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 2
+                },
+                "platforms": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "icon"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "x-maxWords": 4
+                      },
+                      "icon": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "assetRole",
+                          "assetRef"
+                        ],
+                        "properties": {
+                          "assetRole": {
+                            "enum": [
+                              "social-share-mark",
+                              "user-supplied-asset"
+                            ]
+                          },
+                          "assetRef": {
+                            "type": "string",
+                            "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_article-related-posts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "article-related-posts"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "heading",
+            "seeAllLabel",
+            "illustration"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 6
+            },
+            "seeAllLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 3
+            },
+            "illustration": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "brand-illustration",
+                    "generated-illustration",
+                    "user-supplied-asset"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(/assets/|generated:|user-supplied:|placeholder:)"
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_text-page-header": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "text-page-header"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "heading",
+            "intro"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 6
+            },
+            "intro": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 40
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_text-page-chapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "text-page-chapter"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "heading",
+            "items"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 6
+            },
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 10,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "text"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 6
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 40
+                  }
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_text-page-closing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "text-page-closing"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text",
+            "links"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 40
+            },
+            "links": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 2,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "assetRole"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 8
+                  },
+                  "assetRole": {
+                    "enum": [
+                      "internal-route",
+                      "unspecified-destination"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_legal-policy-embed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "legal-policy-embed"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "policy",
+            "embed"
+          ],
+          "properties": {
+            "policy": {
+              "enum": [
+                "terms",
+                "privacy",
+                "cookies"
+              ]
+            },
+            "embed": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "policy-embed",
+                    "placeholder-url"
+                  ]
+                },
+                "embedId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 1
+                },
+                "href": {
+                  "type": "string",
+                  "pattern": "^https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/[^\\s]*)?$",
+                  "description": "Only for assetRole placeholder-url (enforced by PLACEHOLDER_HREF_ROLE): reserved .example/.invalid domains only."
+                }
+              }
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
+        }
+      }
+    },
+    "node_cookie-consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "type": {
+          "const": "cookie-consent"
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "message",
+            "learnMore",
+            "acceptLabel"
+          ],
+          "properties": {
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 10
+            },
+            "learnMore": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "label",
+                "assetRole"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 3
+                },
+                "assetRole": {
+                  "enum": [
+                    "internal-route"
+                  ]
+                }
+              }
+            },
+            "acceptLabel": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 2
+            }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "reducedMotionFallback"
+          ],
+          "properties": {
+            "pattern": {
+              "enum": [
+                "static"
+              ]
+            },
+            "reducedMotionFallback": {
+              "const": "none-required: no section-level motion (primitive hover/press colour changes only)."
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "surface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spacing": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fontFamily": {
+              "type": "string",
+              "minLength": 1
+            },
+            "radius": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Optional per-node token overrides. Values must be canonical token paths from tokens/llm/token-catalog.json (TOKEN_* rules in semantic_validate.py): no raw colours, no raw lengths, catalog fonts only, colour roles must exist in page.theme."
         }
       }
     }

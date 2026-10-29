@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "site-footer",
   "registryId": "section.site-footer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "shell",
   "purpose": "Newsletter signup, footer nav, app download block, logo and copyright.",
   "iaSectionIds": [
@@ -13,6 +13,23 @@
       "cite": "src/components/SiteFooter.jsx:19-75",
       "anchor": "export default function SiteFooter"
     }
+  ],
+  "source": {
+    "id": "src:SiteFooter@21",
+    "tag": "footer",
+    "file": "src/components/SiteFooter.jsx",
+    "lines": "21-75"
+  },
+  "semantic": {
+    "id": "site-footer",
+    "category": "SHELL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "internal-route",
+    "placeholder-brand-mark",
+    "placeholder-url",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

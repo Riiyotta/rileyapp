@@ -1,0 +1,19 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "author-byline",
+  "purpose": "Avatar (82px round) with label, linked name and title.",
+  "composedOf": [
+    "Avatar",
+    "Text",
+    "TextLink"
+  ],
+  "usedBySections": [
+    "article-header"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/article/AuthorByline.jsx:2",
+      "anchor": "export default function AuthorByline"
+    }
+  ]
+}

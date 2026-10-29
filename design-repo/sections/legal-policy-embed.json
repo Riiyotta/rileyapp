@@ -1,0 +1,64 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "legal-policy-embed",
+  "registryId": "section.legal-policy-embed",
+  "version": "2.0.0",
+  "category": "legal",
+  "purpose": "Third-party policy embed slot for /tos, /privacy, /cookies. The original's embed is blocked by its own CSP, so the body renders 0px tall; replicated as rendered (no policy text).",
+  "iaSectionIds": [
+    "legal.policy-embed"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/pages/LegalPage.jsx:14-24",
+      "anchor": "export default function LegalPage"
+    }
+  ],
+  "source": {
+    "id": "src:LegalPage@19",
+    "tag": "main",
+    "file": "src/pages/LegalPage.jsx",
+    "lines": "19-24"
+  },
+  "semantic": {
+    "id": "legal-policy-embed",
+    "category": "LEGAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "placeholder-url"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_legal-policy-embed",
+    "copyBudget": {
+      "embed.embedId": 1
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": false,
+    "rules": []
+  },
+  "evidence": [
+    {
+      "cite": "src/pages/LegalPage.jsx:6",
+      "anchor": "CSP, so <main> renders empty (0px)"
+    }
+  ],
+  "notes": [
+    "R6 decomposition (legal header + one section per heading) does not apply: the clone renders no legal text at all, so there are no headings to split on. A generated legal page must use operator-supplied text (generation mode) and is out of this repo's measured scope."
+  ]
+}

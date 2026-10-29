@@ -1,0 +1,308 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "page": {
+    "route": "/editorial-process",
+    "title": "Editorial Process | Riley",
+    "template": "text-page",
+    "mode": "clone",
+    "theme": "riley-light"
+  },
+  "nodes": [
+    {
+      "type": "announcement-bar",
+      "content": {
+        "message": "Try Riley risk free with our 7-day free trial!",
+        "link": {
+          "assetRole": "internal-route"
+        }
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-header",
+      "variant": "standalone",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/wordmark.svg",
+          "alt": "Riley logo"
+        },
+        "navItems": [
+          {
+            "label": "Blog"
+          },
+          {
+            "label": "What's New?"
+          }
+        ],
+        "cta": {
+          "label": "Get Started For Free",
+          "assetRole": "app-store-onelink"
+        },
+        "mobileCta": {
+          "label": "Try For $0",
+          "assetRole": "app-store-onelink"
+        }
+      },
+      "motion": {
+        "pattern": "header-load-and-sticky",
+        "reducedMotionFallback": "Render header and nav fully visible on load (no fade/stagger); keep the fixed-after-scroll switch but without transition; open the mobile menu without the slide."
+      }
+    },
+    {
+      "type": "text-page-header",
+      "content": {
+        "heading": "Riley's Editorial Process",
+        "intro": "Placeholder introduction — the full editorial process page is on rileyapp.com."
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Content Development",
+        "items": [
+          {
+            "label": "Placeholder label 1:",
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "label": "Placeholder label 2:",
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "label": "Placeholder label 3:",
+            "text": "Placeholder sentence for this step of the process."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Review and Editing",
+        "items": [
+          {
+            "label": "Placeholder label 1:",
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "label": "Placeholder label 2:",
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "label": "Placeholder label 3:",
+            "text": "Placeholder sentence for this step of the process."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Clinical Advisory Board Review",
+        "items": [
+          {
+            "label": "Placeholder label 1:",
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "label": "Placeholder label 2:",
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "label": "Placeholder label 3:",
+            "text": "Placeholder sentence for this step of the process."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Final Approval and Publication",
+        "items": [
+          {
+            "label": "Placeholder label 1:",
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "label": "Placeholder label 2:",
+            "text": "Placeholder sentence for this step of the process."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Ongoing Maintenance",
+        "items": [
+          {
+            "label": "Placeholder label 1:",
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "label": "Placeholder label 2:",
+            "text": "Placeholder sentence for this step of the process."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-chapter",
+      "content": {
+        "heading": "Editorial Standards",
+        "items": [
+          {
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "text": "Placeholder sentence for this step of the process."
+          },
+          {
+            "text": "Placeholder sentence for this step of the process."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "text-page-closing",
+      "content": {
+        "text": "Placeholder closing paragraph — questions can be sent through our support form.",
+        "links": [
+          {
+            "label": "our support form",
+            "assetRole": "internal-route"
+          },
+          {
+            "label": "Read the full page on rileyapp.com",
+            "assetRole": "unspecified-destination"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    },
+    {
+      "type": "site-footer",
+      "content": {
+        "newsletter": {
+          "prompt": "Stay in the loop with Riley's newsletter.",
+          "placeholder": "Email",
+          "submitLabel": "Sign up",
+          "assetRole": "newsletter-endpoint"
+        },
+        "linkColumns": [
+          [
+            {
+              "label": "Blog",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Pricing",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Editorial Process",
+              "assetRole": "internal-route"
+            }
+          ],
+          [
+            {
+              "label": "Privacy Policy",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Terms of Service",
+              "assetRole": "internal-route"
+            },
+            {
+              "label": "Support",
+              "assetRole": "internal-route"
+            }
+          ]
+        ],
+        "app": {
+          "heading": "Get the App",
+          "badge": {
+            "assetRole": "store-badge",
+            "assetRef": "/assets/icons/app-store-badge.svg",
+            "alt": "Download on the App Store"
+          },
+          "assetRole": "app-store-onelink"
+        },
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "/assets/icons/footer-logo.svg"
+        },
+        "copyright": "© 2025 Riley"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "type": "cookie-consent",
+      "content": {
+        "message": "By using this site, you accept cookies for analytics.",
+        "learnMore": {
+          "label": "Learn more",
+          "assetRole": "internal-route"
+        },
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "pattern": "static",
+        "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only)."
+      }
+    }
+  ]
+}

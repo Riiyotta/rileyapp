@@ -1,0 +1,20 @@
+{
+  "$schema": "riley-design-tokens/component",
+  "id": "article-block",
+  "purpose": "Rich-text block renderer: paragraph, H2/H3, nested list, citation superscript, inline link, image, downloadable image.",
+  "composedOf": [
+    "Text",
+    "TextLink",
+    "Image"
+  ],
+  "usedBySections": [
+    "article-intro",
+    "article-chapter"
+  ],
+  "evidence": [
+    {
+      "cite": "src/components/article/ArticleBody.jsx:72",
+      "anchor": "function Block({ block })"
+    }
+  ]
+}

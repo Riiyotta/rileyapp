@@ -2,7 +2,7 @@
   "$schema": "riley-design-tokens/section",
   "id": "superpowers-grid",
   "registryId": "section.superpowers-grid",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "feature",
   "purpose": "Self-segmentation: six 'superpower' cards, each opening a mascot modal with four ways Riley helps.",
   "iaSectionIds": [
@@ -13,6 +13,23 @@
       "cite": "src/components/Superpowers.jsx:6-45",
       "anchor": "export default function Superpowers"
     }
+  ],
+  "source": {
+    "id": "src:Superpowers@17",
+    "tag": "section",
+    "file": "src/components/Superpowers.jsx",
+    "lines": "17-45"
+  },
+  "semantic": {
+    "id": "superpowers-grid",
+    "category": "FEATURES"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "placeholder-url",
+    "ui-icon",
+    "user-supplied-asset"
   ],
   "variants": {},
   "contentContract": {

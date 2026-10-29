@@ -1,0 +1,79 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "article-related-posts",
+  "registryId": "section.article-related-posts",
+  "version": "2.0.0",
+  "category": "editorial",
+  "purpose": "'You'll also love these posts:' heading with 3D-glasses illustration and a 'See All' button; the carousel itself renders empty on the original and the clone.",
+  "iaSectionIds": [
+    "article.related-posts"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/article/RelatedPosts.jsx:5-32",
+      "anchor": "export default function RelatedPosts"
+    }
+  ],
+  "source": {
+    "id": "src:RelatedPosts@8",
+    "tag": "div",
+    "file": "src/components/article/RelatedPosts.jsx",
+    "lines": "8-32"
+  },
+  "semantic": {
+    "id": "article-related-posts",
+    "category": "EDITORIAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "user-supplied-asset"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_article-related-posts",
+    "copyBudget": {
+      "heading": 6,
+      "seeAllLabel": 3
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": "<992px",
+        "changes": [
+          "illustration stacks above the heading (row at >=992)"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/article/RelatedPosts.jsx:11",
+            "anchor": "lg:flex-row"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "src/components/article/RelatedPosts.jsx:1",
+      "anchor": "renders EMPTY (0px)"
+    }
+  ],
+  "notes": [
+    "No post cards are modelled: the original renders the carousel empty at every width, so there is no measured card design to generate."
+  ]
+}

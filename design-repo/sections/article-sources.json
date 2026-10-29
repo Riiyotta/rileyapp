@@ -1,0 +1,63 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "article-sources",
+  "registryId": "section.article-sources",
+  "version": "2.0.0",
+  "category": "editorial-meta",
+  "purpose": "'N sources cited' white accordion; collapsed list kept screen-reader-only for #source-N anchors.",
+  "iaSectionIds": [
+    "article.sources"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/article/SourcesAccordion.jsx:18-44",
+      "anchor": "export default function SourcesAccordion"
+    }
+  ],
+  "source": {
+    "id": "src:SourcesAccordion@21",
+    "tag": "div",
+    "file": "src/components/article/SourcesAccordion.jsx",
+    "lines": "21-44"
+  },
+  "semantic": {
+    "id": "article-sources",
+    "category": "EDITORIAL"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [
+    "placeholder-url"
+  ],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_article-sources",
+    "copyBudget": {
+      "summaryLabel": 4,
+      "sources[].citation": 40
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "static",
+    "motionRoles": [
+      "button-state",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "none-required: no section-level motion (primitive hover/press colour changes only).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": false,
+    "rules": []
+  },
+  "evidence": [
+    {
+      "cite": "CLONE_SPEC_PAGES_BLOG.md:447",
+      "anchor": "### 3.9 SourcesAccordion"
+    }
+  ],
+  "notes": []
+}

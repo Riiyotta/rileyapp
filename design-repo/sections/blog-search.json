@@ -1,0 +1,76 @@
+{
+  "$schema": "riley-design-tokens/section",
+  "id": "blog-search",
+  "registryId": "section.blog-search",
+  "version": "2.0.0",
+  "category": "navigation",
+  "purpose": "Pill search field with a live results dropdown (category + title + highlighted snippet per hit).",
+  "iaSectionIds": [
+    "blog.search"
+  ],
+  "implementedBy": [
+    {
+      "cite": "src/components/blog/BlogSearch.jsx:26-69",
+      "anchor": "export default function BlogSearch"
+    }
+  ],
+  "source": {
+    "id": "src:BlogSearch@36",
+    "tag": "div",
+    "file": "src/components/blog/BlogSearch.jsx",
+    "lines": "36-69"
+  },
+  "semantic": {
+    "id": "blog-search",
+    "category": "NAVIGATION"
+  },
+  "retrievalEligible": true,
+  "generatedAssetRoles": [],
+  "variants": {},
+  "contentContract": {
+    "schemaRef": "#/definitions/node_blog-search",
+    "copyBudget": {
+      "placeholder": 4,
+      "emptyLabel": 4
+    },
+    "budgetRule": "maxWords = longest real copy for that field in the clone (blog data: src/data/blogPosts.json) + ~20-30% headroom. Long-form body fields (article blocks, text-page items) are PLACEHOLDER in the clone, so their budgets are generation guidance, not measured against Riley's real article text."
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "pattern": "search-dropdown-fade",
+    "motionRoles": [
+      "search-dropdown-fade",
+      "link-hover-opacity"
+    ],
+    "reducedMotionFallback": "Show the results dropdown instantly (no 0.2s fade).",
+    "reducedMotionFallbackStatus": "prescriptive: the source has no prefers-reduced-motion handling (grep of src/ and index.html finds none)"
+  },
+  "responsive": {
+    "materiallyDifferent": true,
+    "rules": [
+      {
+        "query": ">=992px",
+        "changes": [
+          "field capped at max-width 448 (lg:max-w-md); full width below"
+        ],
+        "evidence": [
+          {
+            "cite": "src/components/blog/BlogSearch.jsx:26",
+            "anchor": "widthClass = 'lg:max-w-md'"
+          }
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "cite": "src/components/blog/BlogSearch.jsx:5",
+      "anchor": "the clone"
+    }
+  ],
+  "notes": [
+    "The original queries a search API; the clone filters the local post list. The dropdown is runtime UI, but the field itself is a persistent, retrievable control."
+  ]
+}

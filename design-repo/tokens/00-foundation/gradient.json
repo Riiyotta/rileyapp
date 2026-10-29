@@ -93,6 +93,18 @@
           "anchor": "#FFD55D_0%"
         }
       ]
+    },
+    "promo-green": {
+      "value": "linear-gradient(253.62deg, #FFDF78 5.6%, #D2F2D2 72.1%)",
+      "evidence": [
+        {
+          "cite": "src/components/article/PromoUnit.jsx:12",
+          "anchor": "linear-gradient(253.62deg, #FFDF78 5.6%, #D2F2D2 72.1%)"
+        }
+      ],
+      "usedBy": [
+        "article-intro (promo unit)"
+      ]
     }
   }
 }

@@ -1,24 +1,1314 @@
 {
-  "$schema": "riley-design-tokens/llm/token-catalog",
-  "note": "What a generator may reference, by full canonical path (tokens.<layer>.<file>.<group>.<key>). Prefer 20-component > 10-semantic > 00-foundation.",
-  "categories": {
-    "color": "tokens.00-foundation.color",
-    "gradient": "tokens.00-foundation.gradient",
-    "typography": "tokens.00-foundation.typography",
-    "breakpoint": "tokens.00-foundation.breakpoint",
-    "radius": "tokens.00-foundation.radius",
-    "elevation": "tokens.00-foundation.elevation",
-    "motion": "tokens.00-foundation.motion",
-    "color-roles": "tokens.10-semantic.color-roles",
-    "typography-roles": "tokens.10-semantic.typography-roles",
-    "motion-roles": "tokens.10-semantic.motion-roles",
-    "button": "tokens.20-component.button",
-    "card": "tokens.20-component.card",
-    "pill": "tokens.20-component.pill",
-    "table": "tokens.20-component.table",
-    "nav": "tokens.20-component.nav",
-    "container": "tokens.30-layout.container",
-    "section-spacing": "tokens.30-layout.section-spacing",
-    "theme": "tokens.themes.riley-light"
+ "$schema": "riley-design-tokens/llm/token-catalog",
+ "generatedBy": "extraction/build_token_catalog.py (verify_all.py re-runs it with --check)",
+ "note": "Every token a generator may reference, by canonical path. PageSpec node.style values must be one of these keys (schema/semantic_validate.py TOKEN_* rules). Prefer 20-component > 10-semantic > 00-foundation.",
+ "categories": {
+  "breakpoint": [
+   "tokens.00-foundation.breakpoint"
+  ],
+  "button": [
+   "tokens.20-component.button"
+  ],
+  "card": [
+   "tokens.20-component.card"
+  ],
+  "color": [
+   "tokens.00-foundation.color"
+  ],
+  "color-roles": [
+   "tokens.10-semantic.color-roles"
+  ],
+  "container": [
+   "tokens.30-layout.container"
+  ],
+  "elevation": [
+   "tokens.00-foundation.elevation"
+  ],
+  "font-family": [
+   "tokens.00-foundation.typography"
+  ],
+  "gradient": [
+   "tokens.00-foundation.gradient"
+  ],
+  "motion": [
+   "tokens.00-foundation.motion"
+  ],
+  "motion-roles": [
+   "tokens.10-semantic.motion-roles"
+  ],
+  "nav": [
+   "tokens.20-component.nav"
+  ],
+  "pill": [
+   "tokens.20-component.pill"
+  ],
+  "radius": [
+   "tokens.00-foundation.radius"
+  ],
+  "section-spacing": [
+   "tokens.30-layout.section-spacing"
+  ],
+  "table": [
+   "tokens.20-component.table"
+  ],
+  "type-scale": [
+   "tokens.00-foundation.typography"
+  ],
+  "typography-roles": [
+   "tokens.10-semantic.typography-roles"
+  ]
+ },
+ "themes": {
+  "riley-light": [
+   "action.primary",
+   "action.primary-active",
+   "action.primary-disabled",
+   "action.primary-hover",
+   "action.promo",
+   "border.control",
+   "border.divider",
+   "border.subtle",
+   "border.tab",
+   "icon.breadcrumb",
+   "icon.star",
+   "pill.category-default",
+   "pill.category-development",
+   "pill.category-feeding",
+   "pill.category-health",
+   "pill.category-news",
+   "pill.category-pregnancy",
+   "pill.category-sleep",
+   "pill.development",
+   "pill.health",
+   "pill.neutral",
+   "pill.sleep",
+   "status.excluded",
+   "status.included",
+   "surface.card",
+   "surface.cookie",
+   "surface.feature-apricot",
+   "surface.feature-marigold",
+   "surface.featurette",
+   "surface.lilac",
+   "surface.page",
+   "surface.subtle",
+   "text.ink",
+   "text.link",
+   "text.muted",
+   "text.on-brand",
+   "text.primary",
+   "text.prose",
+   "text.prose-strong",
+   "text.secondary",
+   "text.success",
+   "text.tab-inactive",
+   "toc.track"
+  ]
+ },
+ "fontFamilies": [
+  "tokens.00-foundation.typography.families.sans-black",
+  "tokens.00-foundation.typography.families.sans-bold",
+  "tokens.00-foundation.typography.families.sans-book",
+  "tokens.00-foundation.typography.families.sans-regular",
+  "tokens.00-foundation.typography.families.sans-semibold",
+  "tokens.00-foundation.typography.families.serif"
+ ],
+ "counts": {
+  "breakpoint": 8,
+  "button": 16,
+  "card": 17,
+  "color": 43,
+  "color-roles": 43,
+  "container": 7,
+  "elevation": 4,
+  "font-family": 6,
+  "gradient": 10,
+  "motion": 35,
+  "motion-roles": 18,
+  "nav": 7,
+  "pill": 4,
+  "radius": 14,
+  "section-spacing": 14,
+  "table": 5,
+  "type-scale": 27,
+  "typography-roles": 16
+ },
+ "tokens": {
+  "tokens.00-foundation.breakpoint.tokens.2xl": {
+   "category": "breakpoint",
+   "value": "1440px"
+  },
+  "tokens.00-foundation.breakpoint.tokens.blog-scroller-max": {
+   "category": "breakpoint",
+   "value": "639px"
+  },
+  "tokens.00-foundation.breakpoint.tokens.faq-open-min": {
+   "category": "breakpoint",
+   "value": "961px"
+  },
+  "tokens.00-foundation.breakpoint.tokens.faq-table-max": {
+   "category": "breakpoint",
+   "value": "960px"
+  },
+  "tokens.00-foundation.breakpoint.tokens.lg": {
+   "category": "breakpoint",
+   "value": "992px"
+  },
+  "tokens.00-foundation.breakpoint.tokens.md": {
+   "category": "breakpoint",
+   "value": "768px"
+  },
+  "tokens.00-foundation.breakpoint.tokens.sm": {
+   "category": "breakpoint",
+   "value": "640px"
+  },
+  "tokens.00-foundation.breakpoint.tokens.xl": {
+   "category": "breakpoint",
+   "value": "1280px"
+  },
+  "tokens.00-foundation.color.tokens.apricot": {
+   "category": "color",
+   "value": "#ffa552"
+  },
+  "tokens.00-foundation.color.tokens.category-development": {
+   "category": "color",
+   "value": "#E0FFE0"
+  },
+  "tokens.00-foundation.color.tokens.category-feeding": {
+   "category": "color",
+   "value": "#FFEAA7"
+  },
+  "tokens.00-foundation.color.tokens.category-health": {
+   "category": "color",
+   "value": "#FFC7C3"
+  },
+  "tokens.00-foundation.color.tokens.category-news": {
+   "category": "color",
+   "value": "#CFF6FF"
+  },
+  "tokens.00-foundation.color.tokens.category-pregnancy": {
+   "category": "color",
+   "value": "#8DE8B2"
+  },
+  "tokens.00-foundation.color.tokens.category-sleep": {
+   "category": "color",
+   "value": "#EACDFF"
+  },
+  "tokens.00-foundation.color.tokens.cookie-surface": {
+   "category": "color",
+   "value": "rgba(255,255,255,.9)"
+  },
+  "tokens.00-foundation.color.tokens.gray-200": {
+   "category": "color",
+   "value": "#e5e7eb"
+  },
+  "tokens.00-foundation.color.tokens.gray-300": {
+   "category": "color",
+   "value": "#d1d5dc"
+  },
+  "tokens.00-foundation.color.tokens.gray-400": {
+   "category": "color",
+   "value": "#99a1af"
+  },
+  "tokens.00-foundation.color.tokens.gray-50": {
+   "category": "color",
+   "value": "#f9fafb"
+  },
+  "tokens.00-foundation.color.tokens.gray-500": {
+   "category": "color",
+   "value": "#6a7282"
+  },
+  "tokens.00-foundation.color.tokens.gray-700": {
+   "category": "color",
+   "value": "#364153"
+  },
+  "tokens.00-foundation.color.tokens.gray-900": {
+   "category": "color",
+   "value": "#101828"
+  },
+  "tokens.00-foundation.color.tokens.ink": {
+   "category": "color",
+   "value": "#0a0a0a"
+  },
+  "tokens.00-foundation.color.tokens.latte-100": {
+   "category": "color",
+   "value": "#fcfbfa"
+  },
+  "tokens.00-foundation.color.tokens.latte-125": {
+   "category": "color",
+   "value": "#c7c3c0"
+  },
+  "tokens.00-foundation.color.tokens.latte-150": {
+   "category": "color",
+   "value": "#f9f5f1"
+  },
+  "tokens.00-foundation.color.tokens.marigold": {
+   "category": "color",
+   "value": "#ffd55d"
+  },
+  "tokens.00-foundation.color.tokens.neutral-200": {
+   "category": "color",
+   "value": "#e5e5e5"
+  },
+  "tokens.00-foundation.color.tokens.pill-development": {
+   "category": "color",
+   "value": "#ffd6a7"
+  },
+  "tokens.00-foundation.color.tokens.pill-health": {
+   "category": "color",
+   "value": "#ffc9c9"
+  },
+  "tokens.00-foundation.color.tokens.pill-neutral": {
+   "category": "color",
+   "value": "#f1f5f9"
+  },
+  "tokens.00-foundation.color.tokens.pill-sleep": {
+   "category": "color",
+   "value": "#e7e5e4"
+  },
+  "tokens.00-foundation.color.tokens.plan-check-green": {
+   "category": "color",
+   "value": "#008A56"
+  },
+  "tokens.00-foundation.color.tokens.plan-cross-red": {
+   "category": "color",
+   "value": "#ED614B"
+  },
+  "tokens.00-foundation.color.tokens.promo-mint": {
+   "category": "color",
+   "value": "#D2F2D2"
+  },
+  "tokens.00-foundation.color.tokens.promo-violet": {
+   "category": "color",
+   "value": "#7B63F5"
+  },
+  "tokens.00-foundation.color.tokens.promo-yellow": {
+   "category": "color",
+   "value": "#FFDF78"
+  },
+  "tokens.00-foundation.color.tokens.purple-100": {
+   "category": "color",
+   "value": "#5934c5"
+  },
+  "tokens.00-foundation.color.tokens.purple-active": {
+   "category": "color",
+   "value": "#5a20e1"
+  },
+  "tokens.00-foundation.color.tokens.purple-disabled": {
+   "category": "color",
+   "value": "rgb(208,183,243)"
+  },
+  "tokens.00-foundation.color.tokens.purple-hover": {
+   "category": "color",
+   "value": "#7a55fd"
+  },
+  "tokens.00-foundation.color.tokens.sea-green-100": {
+   "category": "color",
+   "value": "#4ca67e"
+  },
+  "tokens.00-foundation.color.tokens.slate-100": {
+   "category": "color",
+   "value": "#f1f5f9"
+  },
+  "tokens.00-foundation.color.tokens.slate-800": {
+   "category": "color",
+   "value": "#1d293d"
+  },
+  "tokens.00-foundation.color.tokens.star": {
+   "category": "color",
+   "value": "#ffdd7d"
+  },
+  "tokens.00-foundation.color.tokens.tangerine": {
+   "category": "color",
+   "value": "#ff914d"
+  },
+  "tokens.00-foundation.color.tokens.text-primary": {
+   "category": "color",
+   "value": "#2e2a42"
+  },
+  "tokens.00-foundation.color.tokens.toc-track": {
+   "category": "color",
+   "value": "#D9D9D9"
+  },
+  "tokens.00-foundation.color.tokens.violet-100": {
+   "category": "color",
+   "value": "#d7befc"
+  },
+  "tokens.00-foundation.color.tokens.white": {
+   "category": "color",
+   "value": "#ffffff"
+  },
+  "tokens.00-foundation.elevation.tokens.2xl": {
+   "category": "elevation",
+   "value": "0 25px 50px -12px #00000040"
+  },
+  "tokens.00-foundation.elevation.tokens.default": {
+   "category": "elevation",
+   "value": "0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a"
+  },
+  "tokens.00-foundation.elevation.tokens.md": {
+   "category": "elevation",
+   "value": "0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a"
+  },
+  "tokens.00-foundation.elevation.tokens.sm": {
+   "category": "elevation",
+   "value": "0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a"
+  },
+  "tokens.00-foundation.gradient.tokens.faq": {
+   "category": "gradient",
+   "value": "radial-gradient(rgb(165,201,242) 0, #f9f5f1 70%)"
+  },
+  "tokens.00-foundation.gradient.tokens.features": {
+   "category": "gradient",
+   "value": "radial-gradient(534.59% 131.83% at 43.09% 3.04%, #FF93AB 0%, #FF9C7F 2.14%, #FFA168 23.66%, #F9F5F1 65.12%)"
+  },
+  "tokens.00-foundation.gradient.tokens.modal-explorer": {
+   "category": "gradient",
+   "value": "radial-gradient(58.33% 52.53% at 50% 50%, #FFD55D 0%, #FFF 100%)"
+  },
+  "tokens.00-foundation.gradient.tokens.modal-guide": {
+   "category": "gradient",
+   "value": "radial-gradient(64.92% 39.36% at 50.04% 52.53%, #4598E6 0%, #FFF 100%)"
+  },
+  "tokens.00-foundation.gradient.tokens.modal-softie": {
+   "category": "gradient",
+   "value": "radial-gradient(64.92% 39.36% at 50.04% 52.53%, #62D09E 0%, #FFF 100%)"
+  },
+  "tokens.00-foundation.gradient.tokens.modal-spark": {
+   "category": "gradient",
+   "value": "radial-gradient(58.33% 52.53% at 50% 50%, #E8899E 0%, #FFF 100%)"
+  },
+  "tokens.00-foundation.gradient.tokens.modal-uplifter": {
+   "category": "gradient",
+   "value": "radial-gradient(58.33% 52.53% at 50% 50%, #FFA552 0%, #FFF 100%)"
+  },
+  "tokens.00-foundation.gradient.tokens.modal-worrier": {
+   "category": "gradient",
+   "value": "radial-gradient(58.33% 52.53% at 50% 50%, #D7BEFC 0%, #FFF 100%)"
+  },
+  "tokens.00-foundation.gradient.tokens.pricing-radial": {
+   "category": "gradient",
+   "value": "radial-gradient(45.01% 50.02% at 50% 52.71%, #ff914d 0, #f9f5f1 100%)"
+  },
+  "tokens.00-foundation.gradient.tokens.promo-green": {
+   "category": "gradient",
+   "value": "linear-gradient(253.62deg, #FFDF78 5.6%, #D2F2D2 72.1%)"
+  },
+  "tokens.00-foundation.motion.duration.base": {
+   "category": "motion",
+   "value": "300ms"
+  },
+  "tokens.00-foundation.motion.duration.clear-skies": {
+   "category": "motion",
+   "value": "2550ms"
+  },
+  "tokens.00-foundation.motion.duration.clear-skies-delay": {
+   "category": "motion",
+   "value": "1000ms"
+  },
+  "tokens.00-foundation.motion.duration.cloud-float-fast": {
+   "category": "motion",
+   "value": "50s"
+  },
+  "tokens.00-foundation.motion.duration.cloud-float-medium": {
+   "category": "motion",
+   "value": "85s"
+  },
+  "tokens.00-foundation.motion.duration.cloud-float-slow": {
+   "category": "motion",
+   "value": "100s"
+  },
+  "tokens.00-foundation.motion.duration.family-marquee": {
+   "category": "motion",
+   "value": "50s"
+  },
+  "tokens.00-foundation.motion.duration.faq-cloud-float": {
+   "category": "motion",
+   "value": "10s"
+  },
+  "tokens.00-foundation.motion.duration.faq-open": {
+   "category": "motion",
+   "value": "350ms"
+  },
+  "tokens.00-foundation.motion.duration.faq-plus": {
+   "category": "motion",
+   "value": "450ms"
+  },
+  "tokens.00-foundation.motion.duration.fast": {
+   "category": "motion",
+   "value": "150ms"
+  },
+  "tokens.00-foundation.motion.duration.header-fade": {
+   "category": "motion",
+   "value": "500ms"
+  },
+  "tokens.00-foundation.motion.duration.menu": {
+   "category": "motion",
+   "value": "250ms"
+  },
+  "tokens.00-foundation.motion.duration.nav-container": {
+   "category": "motion",
+   "value": "300ms"
+  },
+  "tokens.00-foundation.motion.duration.nav-item": {
+   "category": "motion",
+   "value": "600ms"
+  },
+  "tokens.00-foundation.motion.duration.press-marquee": {
+   "category": "motion",
+   "value": "20s"
+  },
+  "tokens.00-foundation.motion.easing.ease": {
+   "category": "motion",
+   "value": "ease"
+  },
+  "tokens.00-foundation.motion.easing.ease-in-out": {
+   "category": "motion",
+   "value": "ease-in-out"
+  },
+  "tokens.00-foundation.motion.easing.ease-out": {
+   "category": "motion",
+   "value": "cubic-bezier(0,0,0.58,1)"
+  },
+  "tokens.00-foundation.motion.easing.framer-default-tween": {
+   "category": "motion",
+   "value": "cubic-bezier(0.25,0.1,0.35,1)"
+  },
+  "tokens.00-foundation.motion.easing.linear": {
+   "category": "motion",
+   "value": "linear"
+  },
+  "tokens.00-foundation.motion.easing.standard": {
+   "category": "motion",
+   "value": "cubic-bezier(0.4,0,0.2,1)"
+  },
+  "tokens.00-foundation.motion.embla.duration": {
+   "category": "motion",
+   "value": "25"
+  },
+  "tokens.00-foundation.motion.embla.friction": {
+   "category": "motion",
+   "value": "0.68"
+  },
+  "tokens.00-foundation.motion.parallax.layer-1-range": {
+   "category": "motion",
+   "value": "-20%"
+  },
+  "tokens.00-foundation.motion.parallax.layer-2-range": {
+   "category": "motion",
+   "value": "-35%"
+  },
+  "tokens.00-foundation.motion.parallax.layer-3-range": {
+   "category": "motion",
+   "value": "-50%"
+  },
+  "tokens.00-foundation.motion.parallax.layer-4-range": {
+   "category": "motion",
+   "value": "-100%"
+  },
+  "tokens.00-foundation.motion.parallax.layer-4-scale": {
+   "category": "motion",
+   "value": "0.8 -> 1.2"
+  },
+  "tokens.00-foundation.motion.parallax.progress-formula": {
+   "category": "motion",
+   "value": "clamp(scrollY / (heroTop + heroHeight), 0, 1)"
+  },
+  "tokens.00-foundation.motion.stagger.nav-delay-children": {
+   "category": "motion",
+   "value": "100ms"
+  },
+  "tokens.00-foundation.motion.stagger.nav-stagger-step": {
+   "category": "motion",
+   "value": "200ms"
+  },
+  "tokens.00-foundation.motion.thresholds.embla-drag-threshold": {
+   "category": "motion",
+   "value": "10px"
+  },
+  "tokens.00-foundation.motion.thresholds.faq-clear-skies-visibility": {
+   "category": "motion",
+   "value": "0.2"
+  },
+  "tokens.00-foundation.motion.thresholds.header-sticky-scrolly": {
+   "category": "motion",
+   "value": "54-55px"
+  },
+  "tokens.00-foundation.radius.tokens.article-image": {
+   "category": "radius",
+   "value": "10px"
+  },
+  "tokens.00-foundation.radius.tokens.blog-image": {
+   "category": "radius",
+   "value": "35px"
+  },
+  "tokens.00-foundation.radius.tokens.button": {
+   "category": "radius",
+   "value": "32px"
+  },
+  "tokens.00-foundation.radius.tokens.card": {
+   "category": "radius",
+   "value": "24px"
+  },
+  "tokens.00-foundation.radius.tokens.cookie-bar-top": {
+   "category": "radius",
+   "value": "30px 30px 0 0"
+  },
+  "tokens.00-foundation.radius.tokens.editor-note": {
+   "category": "radius",
+   "value": "14px"
+  },
+  "tokens.00-foundation.radius.tokens.faq-item": {
+   "category": "radius",
+   "value": "24px 24px 0 24px"
+  },
+  "tokens.00-foundation.radius.tokens.featurette-card": {
+   "category": "radius",
+   "value": "30px"
+  },
+  "tokens.00-foundation.radius.tokens.pagination-pill": {
+   "category": "radius",
+   "value": "100px (rounded-[6.25rem])"
+  },
+  "tokens.00-foundation.radius.tokens.pill": {
+   "category": "radius",
+   "value": "40px"
+  },
+  "tokens.00-foundation.radius.tokens.plan-card-mobile": {
+   "category": "radius",
+   "value": "16px"
+  },
+  "tokens.00-foundation.radius.tokens.round": {
+   "category": "radius",
+   "value": "9999px"
+  },
+  "tokens.00-foundation.radius.tokens.search-field": {
+   "category": "radius",
+   "value": "80px (rounded-[5rem])"
+  },
+  "tokens.00-foundation.radius.tokens.table": {
+   "category": "radius",
+   "value": "16px"
+  },
+  "tokens.00-foundation.typography.families.sans-black": {
+   "category": "font-family",
+   "value": "sansBlack"
+  },
+  "tokens.00-foundation.typography.families.sans-bold": {
+   "category": "font-family",
+   "value": "sansBold, \"sansBold Fallback\""
+  },
+  "tokens.00-foundation.typography.families.sans-book": {
+   "category": "font-family",
+   "value": "sansBook, \"sansBook Fallback\""
+  },
+  "tokens.00-foundation.typography.families.sans-regular": {
+   "category": "font-family",
+   "value": "sansRegular, \"sansRegular Fallback\""
+  },
+  "tokens.00-foundation.typography.families.sans-semibold": {
+   "category": "font-family",
+   "value": "sansSemibold, \"sansSemibold Fallback\""
+  },
+  "tokens.00-foundation.typography.families.serif": {
+   "category": "font-family",
+   "value": "\"serif\", \"serif Fallback\""
+  },
+  "tokens.00-foundation.typography.scale.announcement": {
+   "category": "type-scale",
+   "value": "1rem/1.9rem, letter-spacing -0.01rem"
+  },
+  "tokens.00-foundation.typography.scale.article-body": {
+   "category": "type-scale",
+   "value": "16px/28px"
+  },
+  "tokens.00-foundation.typography.scale.article-h2": {
+   "category": "type-scale",
+   "value": "24px/32px"
+  },
+  "tokens.00-foundation.typography.scale.article-h3": {
+   "category": "type-scale",
+   "value": "20px/32px"
+  },
+  "tokens.00-foundation.typography.scale.article-sup": {
+   "category": "type-scale",
+   "value": "12px/0"
+  },
+  "tokens.00-foundation.typography.scale.blog-card-title": {
+   "category": "type-scale",
+   "value": "24px/32px (wide card 30px/36px)"
+  },
+  "tokens.00-foundation.typography.scale.blog-featured-title": {
+   "category": "type-scale",
+   "value": "30px/36px"
+  },
+  "tokens.00-foundation.typography.scale.blog-hero-subtitle": {
+   "category": "type-scale",
+   "value": "20px/28px"
+  },
+  "tokens.00-foundation.typography.scale.blog-tab": {
+   "category": "type-scale",
+   "value": "18px/28px"
+  },
+  "tokens.00-foundation.typography.scale.caption": {
+   "category": "type-scale",
+   "value": "0.875rem/1.225rem"
+  },
+  "tokens.00-foundation.typography.scale.cookie-text": {
+   "category": "type-scale",
+   "value": "14px/1.5"
+  },
+  "tokens.00-foundation.typography.scale.desktop-body": {
+   "category": "type-scale",
+   "value": "1.25rem/1.875rem"
+  },
+  "tokens.00-foundation.typography.scale.desktop-h1": {
+   "category": "type-scale",
+   "value": "5rem/6rem"
+  },
+  "tokens.00-foundation.typography.scale.desktop-h2": {
+   "category": "type-scale",
+   "value": "3.75rem/4.875rem"
+  },
+  "tokens.00-foundation.typography.scale.desktop-h3": {
+   "category": "type-scale",
+   "value": "2.5rem/3rem"
+  },
+  "tokens.00-foundation.typography.scale.desktop-h4": {
+   "category": "type-scale",
+   "value": "1.625rem/2.1125rem"
+  },
+  "tokens.00-foundation.typography.scale.faq-h2": {
+   "category": "type-scale",
+   "value": "80px/1.3"
+  },
+  "tokens.00-foundation.typography.scale.h1-desktop": {
+   "category": "type-scale",
+   "value": "4rem/4.5rem"
+  },
+  "tokens.00-foundation.typography.scale.h1-mobile": {
+   "category": "type-scale",
+   "value": "2.5rem/3rem"
+  },
+  "tokens.00-foundation.typography.scale.lg-desktop-h4": {
+   "category": "type-scale",
+   "value": "1.5rem/2.1125rem"
+  },
+  "tokens.00-foundation.typography.scale.mobile-body": {
+   "category": "type-scale",
+   "value": "1rem/1.5rem"
+  },
+  "tokens.00-foundation.typography.scale.mobile-h1": {
+   "category": "type-scale",
+   "value": "2.5rem/3rem"
+  },
+  "tokens.00-foundation.typography.scale.mobile-h2": {
+   "category": "type-scale",
+   "value": "1.625rem/2.1125rem"
+  },
+  "tokens.00-foundation.typography.scale.mobile-h3": {
+   "category": "type-scale",
+   "value": "1.25rem/2.1125rem"
+  },
+  "tokens.00-foundation.typography.scale.mobile-h4": {
+   "category": "type-scale",
+   "value": "1rem/1.3rem"
+  },
+  "tokens.00-foundation.typography.scale.nav-link": {
+   "category": "type-scale",
+   "value": "1.125rem/1.5rem"
+  },
+  "tokens.00-foundation.typography.scale.pill": {
+   "category": "type-scale",
+   "value": "0.875rem/1.25rem"
+  },
+  "tokens.10-semantic.color-roles.roles.action.primary": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.purple-100"
+  },
+  "tokens.10-semantic.color-roles.roles.action.primary-active": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.purple-active"
+  },
+  "tokens.10-semantic.color-roles.roles.action.primary-disabled": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.purple-disabled"
+  },
+  "tokens.10-semantic.color-roles.roles.action.primary-hover": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.purple-hover"
+  },
+  "tokens.10-semantic.color-roles.roles.action.promo": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.promo-violet"
+  },
+  "tokens.10-semantic.color-roles.roles.border.control": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.neutral-200"
+  },
+  "tokens.10-semantic.color-roles.roles.border.divider": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.gray-300"
+  },
+  "tokens.10-semantic.color-roles.roles.border.subtle": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.latte-125"
+  },
+  "tokens.10-semantic.color-roles.roles.border.tab": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.gray-200"
+  },
+  "tokens.10-semantic.color-roles.roles.icon.breadcrumb": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.gray-400"
+  },
+  "tokens.10-semantic.color-roles.roles.icon.star": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.star"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.category-default": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.gray-200"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.category-development": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.category-development"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.category-feeding": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.category-feeding"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.category-health": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.category-health"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.category-news": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.category-news"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.category-pregnancy": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.category-pregnancy"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.category-sleep": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.category-sleep"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.development": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.pill-development"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.health": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.pill-health"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.neutral": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.pill-neutral"
+  },
+  "tokens.10-semantic.color-roles.roles.pill.sleep": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.pill-sleep"
+  },
+  "tokens.10-semantic.color-roles.roles.status.excluded": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.plan-cross-red"
+  },
+  "tokens.10-semantic.color-roles.roles.status.included": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.plan-check-green"
+  },
+  "tokens.10-semantic.color-roles.roles.surface.card": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.white"
+  },
+  "tokens.10-semantic.color-roles.roles.surface.cookie": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.cookie-surface"
+  },
+  "tokens.10-semantic.color-roles.roles.surface.feature-apricot": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.apricot"
+  },
+  "tokens.10-semantic.color-roles.roles.surface.feature-marigold": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.marigold"
+  },
+  "tokens.10-semantic.color-roles.roles.surface.featurette": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.tangerine"
+  },
+  "tokens.10-semantic.color-roles.roles.surface.lilac": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.violet-100"
+  },
+  "tokens.10-semantic.color-roles.roles.surface.page": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.latte-150"
+  },
+  "tokens.10-semantic.color-roles.roles.surface.subtle": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.latte-100"
+  },
+  "tokens.10-semantic.color-roles.roles.text.ink": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.ink"
+  },
+  "tokens.10-semantic.color-roles.roles.text.link": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.purple-100"
+  },
+  "tokens.10-semantic.color-roles.roles.text.muted": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.text-primary"
+  },
+  "tokens.10-semantic.color-roles.roles.text.on-brand": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.white"
+  },
+  "tokens.10-semantic.color-roles.roles.text.primary": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.text-primary"
+  },
+  "tokens.10-semantic.color-roles.roles.text.prose": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.gray-700"
+  },
+  "tokens.10-semantic.color-roles.roles.text.prose-strong": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.gray-900"
+  },
+  "tokens.10-semantic.color-roles.roles.text.secondary": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.slate-800"
+  },
+  "tokens.10-semantic.color-roles.roles.text.success": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.sea-green-100"
+  },
+  "tokens.10-semantic.color-roles.roles.text.tab-inactive": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.gray-500"
+  },
+  "tokens.10-semantic.color-roles.roles.toc.track": {
+   "category": "color-roles",
+   "value": "tokens.00-foundation.color.tokens.toc-track"
+  },
+  "tokens.10-semantic.motion-roles.roles.button-state": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.base"
+  },
+  "tokens.10-semantic.motion-roles.roles.embla-loop": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.embla.duration"
+  },
+  "tokens.10-semantic.motion-roles.roles.faq-clear-skies": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.clear-skies"
+  },
+  "tokens.10-semantic.motion-roles.roles.faq-cloud-float": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.faq-cloud-float"
+  },
+  "tokens.10-semantic.motion-roles.roles.faq-open": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.faq-open"
+  },
+  "tokens.10-semantic.motion-roles.roles.header-load-fade": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.header-fade"
+  },
+  "tokens.10-semantic.motion-roles.roles.header-sticky": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.base"
+  },
+  "tokens.10-semantic.motion-roles.roles.hero-cloud-drift": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.cloud-float-slow"
+  },
+  "tokens.10-semantic.motion-roles.roles.image-hover-scale": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.base"
+  },
+  "tokens.10-semantic.motion-roles.roles.link-hover-opacity": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.fast"
+  },
+  "tokens.10-semantic.motion-roles.roles.marquee-family": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.family-marquee"
+  },
+  "tokens.10-semantic.motion-roles.roles.marquee-press": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.press-marquee"
+  },
+  "tokens.10-semantic.motion-roles.roles.mobile-menu-slide": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.menu"
+  },
+  "tokens.10-semantic.motion-roles.roles.nav-stagger": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.duration.nav-item"
+  },
+  "tokens.10-semantic.motion-roles.roles.rive-autoplay": {
+   "category": "motion-roles",
+   "value": "null"
+  },
+  "tokens.10-semantic.motion-roles.roles.scroll-parallax": {
+   "category": "motion-roles",
+   "value": "tokens.00-foundation.motion.parallax.progress-formula"
+  },
+  "tokens.10-semantic.motion-roles.roles.search-dropdown-fade": {
+   "category": "motion-roles",
+   "value": "results dropdown fade-in 0.2s (both)"
+  },
+  "tokens.10-semantic.motion-roles.roles.sticky-aside": {
+   "category": "motion-roles",
+   "value": "position sticky top 80px (inner nav top 20px); no animation; progress fill height stays 0 (bg undefined on the original)"
+  },
+  "tokens.10-semantic.typography-roles.roles.blog.card-title": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.desktop-body\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.caption\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.blog.pill": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.sans-bold\", \"size\": \"tokens.00-foundation.typography.scale.pill\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-bold\", \"size\": \"tokens.00-foundation.typography.scale.pill\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.body.default": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.mobile-body\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.mobile-body\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.body.large": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.desktop-body\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.mobile-body\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.button.label": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.sans-bold\", \"size\": \"tokens.00-foundation.typography.scale.mobile-body\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-bold\", \"size\": \"tokens.00-foundation.typography.scale.mobile-body\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.caption": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.caption\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.caption\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.card.label-serif": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.desktop-h4\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.mobile-h4\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.card.title": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.lg-desktop-h4\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.mobile-h3\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.eyebrow": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.desktop-body\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.mobile-body\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.footer.link": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.sans-semibold\", \"size\": \"tokens.00-foundation.typography.scale.mobile-body\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-semibold\", \"size\": \"tokens.00-foundation.typography.scale.mobile-body\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.heading.big": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.desktop-h2\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.mobile-h1\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.heading.faq": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.faq-h2\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.mobile-h1\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.heading.hero": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.h1-desktop\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.h1-mobile\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.heading.section": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.desktop-h3\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.mobile-h2\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.nav.link": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.sans-bold\", \"size\": \"tokens.00-foundation.typography.scale.nav-link\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-semibold\", \"size\": \"tokens.00-foundation.typography.scale.desktop-body\"}}"
+  },
+  "tokens.10-semantic.typography-roles.roles.quote.testimonial": {
+   "category": "typography-roles",
+   "value": "{\"desktop\": {\"family\": \"tokens.00-foundation.typography.families.serif\", \"size\": \"tokens.00-foundation.typography.scale.desktop-h4\"}, \"mobile\": {\"family\": \"tokens.00-foundation.typography.families.sans-regular\", \"size\": \"tokens.00-foundation.typography.scale.desktop-h4\"}}"
+  },
+  "tokens.20-component.button.newsletter-submit.background": {
+   "category": "button",
+   "value": "tokens.10-semantic.color-roles.roles.action.primary"
+  },
+  "tokens.20-component.button.newsletter-submit.hover": {
+   "category": "button",
+   "value": "none"
+  },
+  "tokens.20-component.button.newsletter-submit.radius": {
+   "category": "button",
+   "value": "78.641px"
+  },
+  "tokens.20-component.button.primary.background": {
+   "category": "button",
+   "value": "tokens.10-semantic.color-roles.roles.action.primary"
+  },
+  "tokens.20-component.button.primary.background-active": {
+   "category": "button",
+   "value": "tokens.10-semantic.color-roles.roles.action.primary-active"
+  },
+  "tokens.20-component.button.primary.background-disabled": {
+   "category": "button",
+   "value": "tokens.10-semantic.color-roles.roles.action.primary-disabled"
+  },
+  "tokens.20-component.button.primary.background-hover": {
+   "category": "button",
+   "value": "tokens.10-semantic.color-roles.roles.action.primary-hover"
+  },
+  "tokens.20-component.button.primary.gap": {
+   "category": "button",
+   "value": "14px"
+  },
+  "tokens.20-component.button.primary.height": {
+   "category": "button",
+   "value": "56px (60px for size lg at ≥640)"
+  },
+  "tokens.20-component.button.primary.padding": {
+   "category": "button",
+   "value": "16px 32px (+ inner span 0 20px)"
+  },
+  "tokens.20-component.button.primary.radius": {
+   "category": "button",
+   "value": "tokens.00-foundation.radius.tokens.button"
+  },
+  "tokens.20-component.button.primary.stateModel": {
+   "category": "button",
+   "value": "JS inline style: pressed ? active : hovered ? hover : base"
+  },
+  "tokens.20-component.button.primary.text": {
+   "category": "button",
+   "value": "tokens.10-semantic.color-roles.roles.text.on-brand"
+  },
+  "tokens.20-component.button.primary.transition": {
+   "category": "button",
+   "value": "tokens.10-semantic.motion-roles.roles.button-state"
+  },
+  "tokens.20-component.button.round-arrow.background": {
+   "category": "button",
+   "value": "rgba(255,255,255,.3) + backdrop-filter blur(8px)"
+  },
+  "tokens.20-component.button.round-arrow.size": {
+   "category": "button",
+   "value": "29x29, padding 8px"
+  },
+  "tokens.20-component.card.faq-item.radius": {
+   "category": "card",
+   "value": "tokens.00-foundation.radius.tokens.faq-item"
+  },
+  "tokens.20-component.card.faq-item.shadow": {
+   "category": "card",
+   "value": "tokens.00-foundation.elevation.tokens.md"
+  },
+  "tokens.20-component.card.faq-item.width": {
+   "category": "card",
+   "value": "295px closed / 350px (capped 320) open"
+  },
+  "tokens.20-component.card.feature.maxHeight": {
+   "category": "card",
+   "value": "25rem"
+  },
+  "tokens.20-component.card.feature.radius": {
+   "category": "card",
+   "value": "tokens.00-foundation.radius.tokens.card"
+  },
+  "tokens.20-component.card.feature.tones": {
+   "category": "card",
+   "value": "[\"apricot\", \"violet-100\", \"marigold\"]"
+  },
+  "tokens.20-component.card.plan.background": {
+   "category": "card",
+   "value": "tokens.10-semantic.color-roles.roles.surface.card"
+  },
+  "tokens.20-component.card.plan.border": {
+   "category": "card",
+   "value": "tokens.10-semantic.color-roles.roles.border.subtle"
+  },
+  "tokens.20-component.card.plan.radius": {
+   "category": "card",
+   "value": "24px ≥640 / 16px <640"
+  },
+  "tokens.20-component.card.plan.shadow": {
+   "category": "card",
+   "value": "none"
+  },
+  "tokens.20-component.card.superpower.background": {
+   "category": "card",
+   "value": "tokens.10-semantic.color-roles.roles.surface.card"
+  },
+  "tokens.20-component.card.superpower.cursor": {
+   "category": "card",
+   "value": "auto (not pointer), per animation-QA on the original"
+  },
+  "tokens.20-component.card.superpower.hover": {
+   "category": "card",
+   "value": "none on the original (animation-QA, measured live); CLONE_SPEC §4.1/M12 claim of a gray-50 hover is superseded"
+  },
+  "tokens.20-component.card.superpower.radius": {
+   "category": "card",
+   "value": "tokens.00-foundation.radius.tokens.card"
+  },
+  "tokens.20-component.card.superpower.shadow": {
+   "category": "card",
+   "value": "tokens.00-foundation.elevation.tokens.default"
+  },
+  "tokens.20-component.card.testimonial-panel.background": {
+   "category": "card",
+   "value": "tokens.10-semantic.color-roles.roles.surface.lilac"
+  },
+  "tokens.20-component.card.testimonial-panel.radius": {
+   "category": "card",
+   "value": "tokens.00-foundation.radius.tokens.card"
+  },
+  "tokens.20-component.nav.footer.link-color": {
+   "category": "nav",
+   "value": "tokens.10-semantic.color-roles.roles.text.link"
+  },
+  "tokens.20-component.nav.footer.link-hover": {
+   "category": "nav",
+   "value": "none"
+  },
+  "tokens.20-component.nav.header.divider": {
+   "category": "nav",
+   "value": "tokens.10-semantic.color-roles.roles.border.divider"
+  },
+  "tokens.20-component.nav.header.height": {
+   "category": "nav",
+   "value": "80px"
+  },
+  "tokens.20-component.nav.header.link-color": {
+   "category": "nav",
+   "value": "tokens.10-semantic.color-roles.roles.text.link"
+  },
+  "tokens.20-component.nav.header.padding": {
+   "category": "nav",
+   "value": "12px 16px; md: 12px 60px"
+  },
+  "tokens.20-component.nav.header.sticky-shadow": {
+   "category": "nav",
+   "value": "tokens.00-foundation.elevation.tokens.md"
+  },
+  "tokens.20-component.pill.blog-category.hover": {
+   "category": "pill",
+   "value": "tokens.10-semantic.motion-roles.roles.link-hover-opacity"
+  },
+  "tokens.20-component.pill.blog-category.padding": {
+   "category": "pill",
+   "value": "6px 16px"
+  },
+  "tokens.20-component.pill.blog-category.radius": {
+   "category": "pill",
+   "value": "tokens.00-foundation.radius.tokens.pill"
+  },
+  "tokens.20-component.pill.blog-category.text": {
+   "category": "pill",
+   "value": "tokens.10-semantic.color-roles.roles.text.secondary"
+  },
+  "tokens.20-component.table.comparison.cell-background": {
+   "category": "table",
+   "value": "tokens.10-semantic.color-roles.roles.surface.card"
+  },
+  "tokens.20-component.table.comparison.cell-border": {
+   "category": "table",
+   "value": "border-left 1px #000 + ::before 1px connector through the 16px row gap"
+  },
+  "tokens.20-component.table.comparison.compact-at": {
+   "category": "table",
+   "value": "tokens.00-foundation.breakpoint.tokens.faq-table-max"
+  },
+  "tokens.20-component.table.comparison.panel-background": {
+   "category": "table",
+   "value": "tokens.10-semantic.color-roles.roles.surface.page"
+  },
+  "tokens.20-component.table.comparison.row-gap": {
+   "category": "table",
+   "value": "16px (border-spacing-y-4)"
+  },
+  "tokens.30-layout.container.tokens.blog-card": {
+   "category": "container",
+   "value": "18rem (288px)"
+  },
+  "tokens.30-layout.container.tokens.cta-wrapper-default": {
+   "category": "container",
+   "value": "14rem (224px)"
+  },
+  "tokens.30-layout.container.tokens.faq-heading-max": {
+   "category": "container",
+   "value": "50rem (800px)"
+  },
+  "tokens.30-layout.container.tokens.hero-max": {
+   "category": "container",
+   "value": "80rem (1280px)"
+  },
+  "tokens.30-layout.container.tokens.page-max": {
+   "category": "container",
+   "value": "90rem (1440px)"
+  },
+  "tokens.30-layout.container.tokens.pricing-grid-max": {
+   "category": "container",
+   "value": "56rem (896px)"
+  },
+  "tokens.30-layout.container.tokens.table-max": {
+   "category": "container",
+   "value": "72rem (1152px)"
+  },
+  "tokens.30-layout.section-spacing.tokens.article-blocks": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"p 16px 0, h2 16px 0 32px, h3 32px 0 16px, ul 8px 0 20px\", \"mobile\": \"p 20px 0, h2 48px 0 24px, h3 32px 0 12px, ul 20px 0\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.article-column": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"body row padding 88px (xl) / 44px (lg), TOC|prose gap 88px, header padding 208px (xl)\", \"mobile\": \"20px sides, prose gap 40px\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.blog-listing": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"0 64px (lg:px-16), content top margin 80px, column gap 80px\", \"mobile\": \"0 16px (768: 32px), column gap 16px\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.blog-teaser": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"100px 36px\", \"mobile\": \"32px 16px\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.clinical-board": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"64px 96px\", \"mobile\": \"64px 20px\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.featurette": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"80px 44px\", \"mobile\": \"80px 20px\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.final-cta": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"224px 320px\", \"mobile\": \"80px 32px 160px\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.gradient-band": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"44px 32px\", \"mobile\": \"44px 16px\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.how-riley-works": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"80px (80px 16px at 2xl)\", \"mobile\": \"80px 20px\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.pricing-hero": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"64px vertical, content px 56\", \"mobile\": \"48px (768) / 32px (390)\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.site-footer": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"88px 60px\", \"mobile\": \"48px 32px\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.superpowers-card": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"80px 224px 120px\", \"mobile\": \"60px 16px 120px (768) / 60px 20px 96px (390)\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.testimonials": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"80px 280px\", \"mobile\": \"32px 0 (390: 20px sides)\"}"
+  },
+  "tokens.30-layout.section-spacing.tokens.text-page-prose": {
+   "category": "section-spacing",
+   "value": "{\"desktop\": \"no horizontal padding (original quirk), max-width 1440, top margin 32px; h3 32px 0 12px\", \"mobile\": \"same (text runs edge to edge)\"}"
   }
+ }
 }
